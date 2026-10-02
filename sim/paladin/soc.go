@@ -57,6 +57,7 @@ func (paladin *Paladin) registerSealOfCommand() {
 	}
 
 	for i, rank := range ranks {
+		i := i // per-iteration copy: closures below must not see a later index (go 1.21 loop semantics)
 		rank := rank
 		if paladin.Level < rank.level {
 			break

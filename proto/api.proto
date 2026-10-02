@@ -56,8 +56,12 @@ message Player {
 	int32 isb_warlocks = 43;
 	int32 isb_spriests = 44;
 
-	// WoW Forever: enables Forever combat rules (DoT crits, no SoD runes, etc).
+	// WoW Forever: vanilla class kits at any level (no SoD runes or skill books) plus Forever's
+	// combat rule changes (DoT crits, ...).
 	bool forever_ruleset = 49;
+	// With forever_ruleset: keep the Forever class kit but use Classic combat rules, to measure
+	// what Forever's rule changes are worth.
+	bool forever_classic_combat_rules = 50;
 
 	// Items/enchants/etc to include in the database.
 	SimDatabase database = 18;

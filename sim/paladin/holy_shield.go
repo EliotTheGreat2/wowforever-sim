@@ -30,6 +30,7 @@ func (paladin *Paladin) registerHolyShield() {
 	blockBonus := 30.0 * core.BlockRatingPerBlockChance
 
 	for i, values := range HolyShieldValues {
+		i := i // per-iteration copy: closures below must not see a later index (go 1.21 loop semantics)
 		rank := i + 1
 		level := values.level
 		spellID := values.spellID

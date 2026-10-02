@@ -7,19 +7,19 @@ import (
 )
 
 func (rogue *Rogue) registerSinisterStrikeSpell() {
-	flatDamageBonus := map[int32]float64{
+	flatDamageBonus := core.AtLevel(rogue.Level, map[int32]float64{
 		25: 15,
 		40: 33,
 		50: 52,
 		60: 68,
-	}[rogue.Level]
+	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(rogue.Level, map[int32]int32{
 		25: 1759,
 		40: 8621,
 		50: 11293,
 		60: 11294,
-	}[rogue.Level]
+	})
 
 	rogue.SinisterStrike = rogue.RegisterSpell(core.SpellConfig{
 		ClassSpellMask: ClassSpellMask_RogueSinisterStrike,

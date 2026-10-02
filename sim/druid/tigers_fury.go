@@ -13,19 +13,19 @@ func (druid *Druid) registerTigersFurySpell() {
 		return
 	}
 
-	actionID := core.ActionID{SpellID: map[int32]int32{
+	actionID := core.ActionID{SpellID: core.AtLevel(druid.Level, map[int32]int32{
 		25: 5217,
 		40: 6793,
 		50: 9845,
 		60: 9846,
-	}[druid.Level]}
+	})}
 
-	dmgBonus := map[int32]float64{
+	dmgBonus := core.AtLevel(druid.Level, map[int32]float64{
 		25: 10.0,
 		40: 20.0,
 		50: 30.0,
 		60: 40.0,
-	}[druid.Level]
+	})
 
 	druid.TigersFuryAura = druid.RegisterAura(core.Aura{
 		Label:    "Tiger's Fury Aura",

@@ -8,26 +8,26 @@ import (
 func (warrior *Warrior) registerExecuteSpell() {
 	hasSuddenDeathRune := warrior.HasRune(proto.WarriorRune_RuneSuddenDeath)
 
-	flatDamage := map[int32]float64{
+	flatDamage := core.AtLevel(warrior.Level, map[int32]float64{
 		25: 125,
 		40: 325,
 		50: 450,
 		60: 600,
-	}[warrior.Level]
+	})
 
-	convertedRageDamage := map[int32]float64{
+	convertedRageDamage := core.AtLevel(warrior.Level, map[int32]float64{
 		25: 3,
 		40: 9,
 		50: 12,
 		60: 15,
-	}[warrior.Level]
+	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(warrior.Level, map[int32]int32{
 		25: 5308,
 		40: 20660,
 		50: 20661,
 		60: 20662,
-	}[warrior.Level]
+	})
 
 	var rageMetrics *core.ResourceMetrics
 	warrior.Execute = warrior.RegisterSpell(BattleStance|BerserkerStance, core.SpellConfig{

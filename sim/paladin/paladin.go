@@ -309,6 +309,20 @@ func (paladin *Paladin) ResetCurrentPaladinAura() {
 }
 
 func (paladin *Paladin) getPrimarySealSpell(primarySeal proto.PaladinSeal) *core.Spell {
+	// A leveling character may not have the chosen seal yet (Seal of Command is a talent);
+	// fall back to a seal it does know.
+	if seal := paladin.getPrimarySealSpellExact(primarySeal); seal != nil {
+		return seal
+	}
+	for _, seal := range []*core.Spell{paladin.sealOfRighteousness, paladin.sealOfTheCrusader, paladin.sealOfCommand, paladin.sealOfMartyrdom} {
+		if seal != nil {
+			return seal
+		}
+	}
+	return nil
+}
+
+func (paladin *Paladin) getPrimarySealSpellExact(primarySeal proto.PaladinSeal) *core.Spell {
 	// Used in the Cast Primary Seal APLAction to get the max rank spell for the level.
 	switch primarySeal {
 	case proto.PaladinSeal_Martyrdom:

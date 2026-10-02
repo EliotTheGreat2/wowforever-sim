@@ -105,6 +105,26 @@
      }
     }
    }
+  },
+  {
+   "action": {
+    "condition": {
+     "not": {
+      "val": {
+       "spellIsKnown": {
+        "spellId": {
+         "spellId": 18807
+        }
+       }
+      }
+     }
+    },
+    "castSpell": {
+     "spellId": {
+      "spellId": 10934
+     }
+    }
+   }
   }
  ]
 }

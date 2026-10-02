@@ -26,17 +26,17 @@ func (warrior *Warrior) registerSlamSpell() {
 		castTime = time.Millisecond*1500 - time.Millisecond*100*time.Duration(warrior.Talents.ImprovedSlam)
 	}
 
-	requiredLevel := map[int32]int{
+	requiredLevel := core.AtLevel(warrior.Level, map[int32]int{
 		40: 38,
 		50: 46,
 		60: 54,
-	}[warrior.Level]
+	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(warrior.Level, map[int32]int32{
 		40: 8820,
 		50: 11604,
 		60: 11605,
-	}[warrior.Level]
+	})
 
 	warrior.SlamMH = warrior.newSlamHitSpell(true)
 	canHitOffhand := hasBloodSurgeRune && warrior.AutoAttacks.IsDualWielding
@@ -81,23 +81,23 @@ func (warrior *Warrior) registerSlamSpell() {
 }
 
 func (warrior *Warrior) newSlamHitSpell(isMH bool) *WarriorSpell {
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(warrior.Level, map[int32]int32{
 		40: 8820,
 		50: 11604,
 		60: 11605,
-	}[warrior.Level]
+	})
 
-	requiredLevel := map[int32]float64{
+	requiredLevel := core.AtLevel(warrior.Level, map[int32]float64{
 		40: 38,
 		50: 46,
 		60: 54,
-	}[warrior.Level]
+	})
 
-	flatDamageBonus := map[int32]float64{
+	flatDamageBonus := core.AtLevel(warrior.Level, map[int32]float64{
 		40: 43,
 		50: 68,
 		60: 87,
-	}[warrior.Level]
+	})
 
 	flags := core.SpellFlagMeleeMetrics | core.SpellFlagNoOnCastComplete
 	damageFunc := warrior.MHWeaponDamage

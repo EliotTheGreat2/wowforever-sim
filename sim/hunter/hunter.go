@@ -156,12 +156,12 @@ func (hunter *Hunter) GetHunter() *Hunter {
 
 func (hunter *Hunter) AddRaidBuffs(raidBuffs *proto.RaidBuffs) {
 	if raidBuffs.TrueshotAura && hunter.Talents.TrueshotAura {
-		hunter.AddStat(stats.RangedAttackPower, map[int32]float64{
+		hunter.AddStat(stats.RangedAttackPower, core.AtLevel(hunter.Level, map[int32]float64{
 			25: 0,
 			40: 100,
 			50: 150,
 			60: 200,
-		}[hunter.Level])
+		}))
 	}
 
 	raidBuffs.AspectOfTheLion = true

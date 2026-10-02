@@ -10,19 +10,19 @@ import (
 func (warrior *Warrior) registerOverpowerSpell(cdTimer *core.Timer) {
 	hasTasteForBloodRune := warrior.HasRune(proto.WarriorRune_RuneTasteForBlood)
 
-	bonusDamage := map[int32]float64{
+	bonusDamage := core.AtLevel(warrior.Level, map[int32]float64{
 		25: 5,
 		40: 15,
 		50: 25,
 		60: 35,
-	}[warrior.Level]
+	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(warrior.Level, map[int32]int32{
 		25: 7384,
 		40: 7887,
 		50: 11584,
 		60: 11585,
-	}[warrior.Level]
+	})
 
 	warrior.RegisterAura(core.Aura{
 		Label:    "Overpower Trigger",

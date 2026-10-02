@@ -1034,12 +1034,12 @@ func ApplyInspiration(character *Character, uptime float64) {
 
 func DevotionAuraAura(unit *Unit, points int32) *Aura {
 	level := unit.Level
-	spellID := map[int32]int32{
+	spellID := AtLevel(level, map[int32]int32{
 		25: 643,
 		40: 1032,
 		50: 10292,
 		60: 10293,
-	}[level]
+	})
 
 	updateStats := BuffSpellByLevel[DevotionAura][level]
 	updateStats = updateStats.Multiply(1 + .125*float64(points))
@@ -1060,18 +1060,18 @@ func DevotionAuraAura(unit *Unit, points int32) *Aura {
 
 func StoneskinTotemAura(unit *Unit, points int32) *Aura {
 	level := unit.Level
-	spellID := map[int32]int32{
+	spellID := AtLevel(level, map[int32]int32{
 		25: 8155,
 		40: 10406,
 		50: 10407,
 		60: 10408,
-	}[level]
-	meleeDamageReduction := map[int32]float64{
+	})
+	meleeDamageReduction := AtLevel(level, map[int32]float64{
 		25: -11,
 		40: -16,
 		50: -22,
 		60: -30,
-	}[level]
+	})
 	meleeDamageReduction *= 1 + .1*float64(points)
 	meleeDamageReduction = math.Floor(meleeDamageReduction)
 
@@ -1123,19 +1123,19 @@ func ImprovedWindwallTotemAura(unit *Unit) *Aura {
 
 func RetributionAura(character *Character, points int32) *Aura {
 	level := character.Level
-	spellID := map[int32]int32{
+	spellID := AtLevel(level, map[int32]int32{
 		25: 7294,
 		40: 10299,
 		50: 10300,
 		60: 10301,
-	}[level]
+	})
 
-	baseDamage := map[int32]int32{
+	baseDamage := AtLevel(level, map[int32]int32{
 		25: 5,
 		40: 12,
 		50: 16,
 		60: 20,
-	}[level]
+	})
 
 	actionID := ActionID{SpellID: spellID}
 
@@ -1172,19 +1172,19 @@ func RetributionAura(character *Character, points int32) *Aura {
 
 func ThornsAura(character *Character, points int32) *Aura {
 	level := character.Level
-	spellID := map[int32]int32{
+	spellID := AtLevel(level, map[int32]int32{
 		25: 1075,
 		40: 8914,
 		50: 9756,
 		60: 9910,
-	}[level]
+	})
 
-	baseDamage := map[int32]int32{
+	baseDamage := AtLevel(level, map[int32]int32{
 		25: 9,
 		40: 12,
 		50: 15,
 		60: 18,
-	}[level]
+	})
 
 	actionID := ActionID{SpellID: spellID}
 	damage := float64(baseDamage) * (1 + 0.25*float64(points))
@@ -1221,17 +1221,17 @@ func ThornsAura(character *Character, points int32) *Aura {
 // 		return
 // 	}
 
-// 	spellID := map[int32]int32{
+// 	spellID := AtLevel(level, map[int32]int32{
 // 		40: 20912,
 // 		50: 20913,
 // 		60: 20914,
-// 	}[level]
+// 	})
 
-// 	physReduction := map[int32]int32{
+// 	physReduction := AtLevel(level, map[int32]int32{
 // 		40: 14,
 // 		50: 19,
 // 		60: 24,
-// 	}[level]
+// 	})
 
 // 	blockDamage := map[int32]int32{
 // 		40: 21,
@@ -1854,7 +1854,7 @@ func ManaTideTotemAura(character *Character, actionTag int32) *Aura {
 		40: 170, // Rank 1
 		50: 230, // Rank 2
 		60: 290, // Rank 3
-	}[character.Level]
+	}[FloorBracket(character.Level)]
 
 	return character.GetOrRegisterAura(Aura{
 		Label:    "ManaTideTotem-" + actionID.String(),
@@ -2026,16 +2026,16 @@ func TrueshotAura(unit *Unit) *Aura {
 	}
 
 	level := unit.Level
-	spellID := map[int32]int32{
+	spellID := AtLevel(level, map[int32]int32{
 		40: 19506,
 		50: 20905,
 		60: 20906,
-	}[level]
-	rangedAP := map[int32]float64{
+	})
+	rangedAP := AtLevel(level, map[int32]float64{
 		40: 100,
 		50: 150,
 		60: 200,
-	}[level]
+	})
 
 	aura := MakePermanent(unit.RegisterAura(Aura{
 		Label:      "Trueshot Aura",
@@ -2054,12 +2054,12 @@ func TrueshotAura(unit *Unit) *Aura {
 }
 
 func BlessingOfMightAura(unit *Unit, impBomPts int32, level int32) *Aura {
-	spellID := map[int32]int32{
+	spellID := AtLevel(level, map[int32]int32{
 		25: 19835,
 		40: 19836,
 		50: 19837,
 		60: TernaryInt32(IncludeAQ, 25291, 19838),
-	}[level]
+	})
 
 	bonusAP := math.Floor(BuffSpellByLevel[BlessingOfMight][level][stats.AttackPower] * (1 + 0.04*float64(impBomPts)))
 

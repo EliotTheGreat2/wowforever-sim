@@ -15,7 +15,7 @@ import "github.com/wowsims/sod/sim/core/proto"
 // Until those land, Forever mode runs vanilla level-60 talents with Forever-wide rules.
 
 // DotsCanCrit reports whether this warlock's periodic damage can crit:
-// always in Forever, or with the SoD Pandemic rune.
+// under Forever's combat rules, or with the SoD Pandemic rune.
 func (warlock *Warlock) DotsCanCrit() bool {
-	return warlock.Forever || warlock.HasRune(proto.WarlockRune_RuneHelmPandemic)
+	return warlock.ForeverCombatRules || warlock.HasRune(proto.WarlockRune_RuneHelmPandemic)
 }

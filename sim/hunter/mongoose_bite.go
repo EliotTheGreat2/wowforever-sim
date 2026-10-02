@@ -83,12 +83,12 @@ func (hunter *Hunter) registerMongooseBiteSpell() {
 		},
 	})
 
-	rank := map[int32]int{
+	rank := core.AtLevel(hunter.Level, map[int32]int{
 		25: 1,
 		40: 2,
 		50: 3,
 		60: 4,
-	}[hunter.Level]
+	})
 
 	config := hunter.getMongooseBiteConfig(rank)
 	hunter.MongooseBite = hunter.GetOrRegisterSpell(config)

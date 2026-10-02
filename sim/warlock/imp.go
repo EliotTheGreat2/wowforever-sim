@@ -14,56 +14,65 @@ func (warlock *Warlock) makeImp() *WarlockPet {
 		PowerModifier: 0.33,
 	}
 
-	switch warlock.Level {
-	case 25:
-		cfg.Stats = stats.Stats{
-			stats.Strength:  47,
-			stats.Agility:   25,
-			stats.Stamina:   49,
-			stats.Intellect: 94,
-			stats.Spirit:    95,
-			stats.Mana:      149,
-			stats.MP5:       0,
-			stats.MeleeCrit: 3.454 * core.CritRatingPerCritChance,
-			stats.SpellCrit: 0.9075 * core.CritRatingPerCritChance,
+	// WoW Forever: stats are measured at 25/40/50/60; other levels blend the two nearest.
+	cfgAt := func(level int32) PetConfig {
+		cfg := cfg
+		switch level {
+		case 25:
+			cfg.Stats = stats.Stats{
+				stats.Strength:  47,
+				stats.Agility:   25,
+				stats.Stamina:   49,
+				stats.Intellect: 94,
+				stats.Spirit:    95,
+				stats.Mana:      149,
+				stats.MP5:       0,
+				stats.MeleeCrit: 3.454 * core.CritRatingPerCritChance,
+				stats.SpellCrit: 0.9075 * core.CritRatingPerCritChance,
+			}
+		case 40:
+			cfg.Stats = stats.Stats{
+				stats.Strength:  70,
+				stats.Agility:   29,
+				stats.Stamina:   67,
+				stats.Intellect: 163,
+				stats.Spirit:    163,
+				stats.Mana:      318,
+				stats.MP5:       0,
+				stats.MeleeCrit: 3.454 * core.CritRatingPerCritChance,
+				stats.SpellCrit: 0.9075 * core.CritRatingPerCritChance,
+			}
+		case 50:
+			cfg.Stats = stats.Stats{
+				stats.Strength:  101,
+				stats.Agility:   32,
+				stats.Stamina:   71,
+				stats.Intellect: 212,
+				stats.Spirit:    211,
+				stats.Mana:      476,
+				stats.MP5:       0,
+				stats.MeleeCrit: 3.454 * core.CritRatingPerCritChance,
+				stats.SpellCrit: 0.9075 * core.CritRatingPerCritChance,
+			}
+		case 60:
+			cfg.Stats = stats.Stats{
+				stats.Strength:  122,
+				stats.Agility:   35,
+				stats.Stamina:   86,
+				stats.Intellect: 264,
+				stats.Spirit:    260,
+				stats.Mana:      576,
+				stats.MP5:       0,
+				stats.MeleeCrit: 3.454 * core.CritRatingPerCritChance,
+				stats.SpellCrit: 0.9075 * core.CritRatingPerCritChance,
+			}
 		}
-	case 40:
-		cfg.Stats = stats.Stats{
-			stats.Strength:  70,
-			stats.Agility:   29,
-			stats.Stamina:   67,
-			stats.Intellect: 163,
-			stats.Spirit:    163,
-			stats.Mana:      318,
-			stats.MP5:       0,
-			stats.MeleeCrit: 3.454 * core.CritRatingPerCritChance,
-			stats.SpellCrit: 0.9075 * core.CritRatingPerCritChance,
-		}
-	case 50:
-		cfg.Stats = stats.Stats{
-			stats.Strength:  101,
-			stats.Agility:   32,
-			stats.Stamina:   71,
-			stats.Intellect: 212,
-			stats.Spirit:    211,
-			stats.Mana:      476,
-			stats.MP5:       0,
-			stats.MeleeCrit: 3.454 * core.CritRatingPerCritChance,
-			stats.SpellCrit: 0.9075 * core.CritRatingPerCritChance,
-		}
-	case 60:
-		cfg.Stats = stats.Stats{
-			stats.Strength:  122,
-			stats.Agility:   35,
-			stats.Stamina:   86,
-			stats.Intellect: 264,
-			stats.Spirit:    260,
-			stats.Mana:      576,
-			stats.MP5:       0,
-			stats.MeleeCrit: 3.454 * core.CritRatingPerCritChance,
-			stats.SpellCrit: 0.9075 * core.CritRatingPerCritChance,
-		}
+		return cfg
 	}
+	cfg = cfgAt(core.FloorBracket(warlock.Level))
+	cfg.Stats = core.BlendStats(warlock.Level, func(l int32) stats.Stats { return cfgAt(l).Stats })
+	cfg.AutoAttacks.MainHand.BaseDamageMin = core.BlendFloat(warlock.Level, func(l int32) float64 { return cfgAt(l).AutoAttacks.MainHand.BaseDamageMin })
+	cfg.AutoAttacks.MainHand.BaseDamageMax = core.BlendFloat(warlock.Level, func(l int32) float64 { return cfgAt(l).AutoAttacks.MainHand.BaseDamageMax })
 
 	return warlock.makePet(cfg, warlock.Options.Summon == proto.WarlockOptions_Imp)
 }

@@ -342,18 +342,18 @@ func (rogue *Rogue) registerInstantPoisonSpell() {
 }
 
 func (rogue *Rogue) registerDeadlyPoisonSpell() {
-	baseDamageTick := map[int32]float64{
+	baseDamageTick := core.AtLevel(rogue.Level, map[int32]float64{
 		25: 9,
 		40: 13,
 		50: 20,
 		60: 34, //updated to Rank 5
-	}[rogue.Level]
-	spellID := map[int32]int32{
+	})
+	spellID := core.AtLevel(rogue.Level, map[int32]int32{
 		25: 2823,
 		40: 2824,
 		50: 11355,
 		60: 25351,
-	}[rogue.Level]
+	})
 
 	hasDeadlyBrew := rogue.HasRune(proto.RogueRune_RuneDeadlyBrew)
 
@@ -607,26 +607,26 @@ func (rogue *Rogue) registerNumbingPoisonSpell() {
 
 // Make a source based variant of Instant Poison
 func (rogue *Rogue) makeInstantPoison(procSource PoisonProcSource) *core.Spell {
-	baseDamageByLevel := map[int32]float64{
+	baseDamageByLevel := core.AtLevel(rogue.Level, map[int32]float64{
 		25: 19,
 		40: 44,
 		50: 67,
 		60: 112,
-	}[rogue.Level]
+	})
 
-	damageVariance := map[int32]float64{
+	damageVariance := core.AtLevel(rogue.Level, map[int32]float64{
 		25: 6,
 		40: 12,
 		50: 18,
 		60: 36,
-	}[rogue.Level]
+	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(rogue.Level, map[int32]int32{
 		25: 8679,
 		40: 8688,
 		50: 11338,
 		60: 11340,
-	}[rogue.Level]
+	})
 
 	hasDeadlyBrew := rogue.HasRune(proto.RogueRune_RuneDeadlyBrew)
 

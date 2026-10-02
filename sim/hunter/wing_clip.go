@@ -43,12 +43,12 @@ func (hunter *Hunter) getWingClipConfig(rank int) core.SpellConfig {
 }
 
 func (hunter *Hunter) registerWingClipSpell() {
-	rank := map[int32]int{
+	rank := core.AtLevel(hunter.Level, map[int32]int{
 		25: 1,
 		40: 2,
 		50: 3,
 		60: 3,
-	}[hunter.Level]
+	})
 
 	config := hunter.getWingClipConfig(rank)
 	hunter.WingClip = hunter.GetOrRegisterSpell(config)

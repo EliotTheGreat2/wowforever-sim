@@ -42,6 +42,13 @@ func (druid *Druid) GetCatWeapon(level int32) core.Weapon {
 		MaxRange:             core.MaxMeleeAttackRange,
 	}
 
+	// WoW Forever: claw damage is measured at 25/40/50/60; other levels blend the two nearest.
+	if lo, _, _ := core.LevelBlend(level); level != lo && level != 40 && level != 50 && level != 60 {
+		claws.BaseDamageMin = core.BlendFloat(level, func(l int32) float64 { return druid.GetCatWeapon(l).BaseDamageMin })
+		claws.BaseDamageMax = core.BlendFloat(level, func(l int32) float64 { return druid.GetCatWeapon(l).BaseDamageMax })
+		return claws
+	}
+
 	switch level {
 	case 60:
 		// Avg: 54.8

@@ -8,19 +8,19 @@ import (
 func (warrior *Warrior) registerSunderArmorSpell() *WarriorSpell {
 	warrior.SunderArmorAuras = warrior.NewEnemyAuraArray(core.SunderArmorAura)
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(warrior.Level, map[int32]int32{
 		25: 7405,
 		40: 8380,
 		50: 11596,
 		60: 11597,
-	}[warrior.Level]
+	})
 
-	spell_level := map[int32]int32{
+	spell_level := core.AtLevel(warrior.Level, map[int32]int32{
 		25: 22,
 		40: 34,
 		50: 46,
 		60: 58,
-	}[warrior.Level]
+	})
 
 	var effectiveStacks int32
 	var canApplySunder bool

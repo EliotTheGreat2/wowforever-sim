@@ -8,33 +8,33 @@ import (
 )
 
 func (rogue *Rogue) registerEviscerate() {
-	flatDamage := map[int32]float64{
+	flatDamage := core.AtLevel(rogue.Level, map[int32]float64{
 		25: 10,
 		40: 22,
 		50: 34,
 		60: 54,
-	}[rogue.Level]
+	})
 
-	comboDamageBonus := map[int32]float64{
+	comboDamageBonus := core.AtLevel(rogue.Level, map[int32]float64{
 		25: 31,
 		40: 77,
 		50: 110,
 		60: 170,
-	}[rogue.Level]
+	})
 
-	damageVariance := map[int32]float64{
+	damageVariance := core.AtLevel(rogue.Level, map[int32]float64{
 		25: 20,
 		40: 44,
 		50: 68,
 		60: 108,
-	}[rogue.Level]
+	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(rogue.Level, map[int32]int32{
 		25: 6762,
 		40: 8624,
 		50: 11299,
 		60: 31016,
-	}[rogue.Level]
+	})
 
 	cutToTheChase := rogue.HasRune(proto.RogueRune_RuneCutToTheChase)
 

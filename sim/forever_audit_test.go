@@ -29,6 +29,10 @@ type foreverSpec struct {
 	ClassID     int32           `json:"classId"`
 	SpecOptions json.RawMessage `json:"specOptions"`
 	Distance    float64         `json:"distance"`
+	Levels      map[string]struct {
+		Talents string  `json:"talents"`
+		Gear    []int32 `json:"gear"`
+	} `json:"levels"`
 }
 
 func loadForeverSpecs(t *testing.T) []foreverSpec {
@@ -43,11 +47,33 @@ func loadForeverSpecs(t *testing.T) []foreverSpec {
 	return specs
 }
 
-// ForeverPlayer builds a level-60 Forever player for one manifest entry.
+// foreverPlayer builds a level-60 Forever player for one manifest entry.
 func foreverPlayer(t *testing.T, s foreverSpec, forever bool) *proto.Player {
+	return foreverPlayerAt(t, s, forever, 60)
+}
+
+// foreverPlayerAt builds a Forever player at any level 10-60 from the per-level presets.
+func foreverPlayerAt(t *testing.T, s foreverSpec, forever bool, level int32) *proto.Player {
 	gear, err := os.ReadFile("../" + s.Gear)
 	if err != nil {
 		t.Fatal(err)
+	}
+	talents := s.Talents
+	if level < 60 {
+		lv, ok := s.Levels[fmt.Sprint(level)]
+		if !ok {
+			t.Fatalf("%s: no preset for level %d", s.Key, level)
+		}
+		talents = lv.Talents
+		items := make([]string, len(lv.Gear))
+		for i, id := range lv.Gear {
+			if id == 0 {
+				items[i] = "{}"
+			} else {
+				items[i] = fmt.Sprintf(`{"id":%d}`, id)
+			}
+		}
+		gear = []byte(`{"items":[` + strings.Join(items, ",") + `]}`)
 	}
 	rotation := `{"type":"TypeAuto"}`
 	if s.Rotation != nil {
@@ -58,11 +84,11 @@ func foreverPlayer(t *testing.T, s foreverSpec, forever bool) *proto.Player {
 		rotation = string(b)
 	}
 	playerJSON := fmt.Sprintf(`{
-		"name": "Forever", "level": 60, "class": %d, "race": %q,
+		"name": "Forever", "level": %d, "class": %d, "race": %q,
 		"talentsString": %q, "equipment": %s, "rotation": %s,
 		"distanceFromTarget": %v, "reactionTimeMs": 150, "channelClipDelayMs": 50,
 		"foreverRuleset": %v, %q: %s
-	}`, s.ClassID, s.Race, s.Talents, gear, rotation, s.Distance, forever, toCamel(s.Key), s.SpecOptions)
+	}`, level, s.ClassID, s.Race, talents, gear, rotation, s.Distance, forever, toCamel(s.Key), s.SpecOptions)
 
 	player := &proto.Player{}
 	if err := protojson.Unmarshal([]byte(playerJSON), player); err != nil {
@@ -209,5 +235,60 @@ func TestForeverDumpKnownSpells(t *testing.T) {
 	b, _ := json.MarshalIndent(out, "", " ")
 	if err := os.WriteFile("../ui/core/forever/known_spells.json", b, 0644); err != nil {
 		t.Fatal(err)
+	}
+}
+
+// TestForeverAllLevels sims every supported spec at levels 10-60 (every 5 levels) and
+// fails on errors, no damage, or damage that drops as the character levels up.
+//
+//	go test --tags=with_db ./sim -run TestForeverAllLevels -v
+func TestForeverAllLevels(t *testing.T) {
+	RegisterAll()
+	levels := []int32{10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60}
+	for _, s := range loadForeverSpecs(t) {
+		if s.Role == "Healer" {
+			continue
+		}
+		s := s
+		t.Run(s.Key, func(t *testing.T) {
+			var line []string
+			prev := 0.0
+			for _, level := range levels {
+				req := foreverRaidRequest(foreverPlayerAt(t, s, true, level), s.Role, 300)
+				req.Encounter.Targets = []*proto.Target{core.ForeverBossTarget(level)}
+				res := core.RunRaidSim(req)
+				if res.Error != nil {
+					t.Fatalf("level %d: %s", level, res.Error.Message)
+				}
+				p := res.RaidMetrics.Parties[0].Players[0]
+				if os.Getenv("FOREVER_DEBUG") == fmt.Sprintf("%s:%d", s.Key, level) {
+					for _, w := range rotationWarnings(req) {
+						t.Logf("   warning: %s", w)
+					}
+					for _, a := range p.Actions {
+						var casts, dmg float64
+						for _, tg := range a.Targets {
+							casts += float64(tg.Casts)
+							dmg += tg.Damage
+						}
+						t.Logf("   %-40v casts/iter %6.1f  dps %6.1f", a.Id, casts/300, dmg/300/180)
+					}
+					t.Logf("   equipment: %v", req.Raid.Parties[0].Players[0].Equipment)
+				}
+				v := p.Dps.Avg
+				if s.Role == "Tank" {
+					v = p.Threat.Avg
+				}
+				if v <= 0 || v != v {
+					t.Errorf("level %d: no output (%v)", level, v)
+				}
+				if prev > 0 && v < prev*0.85 {
+					t.Errorf("level %d: output fell from %.0f to %.0f", level, prev, v)
+				}
+				prev = v
+				line = append(line, fmt.Sprintf("%d:%.0f", level, v))
+			}
+			t.Logf("%-20s %s", s.Key, strings.Join(line, "  "))
+		})
 	}
 }

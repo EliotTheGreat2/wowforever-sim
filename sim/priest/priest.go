@@ -181,7 +181,10 @@ func New(character *core.Character, talents string) *Priest {
 		return 6.25 + priest.GetStat(stats.Spirit)/8
 	}
 
-	priest.ShadowfiendPet = priest.NewShadowfiend()
+	// Shadowfiend is a Season of Discovery skill book; WoW Forever (vanilla classes) has no Shadowfiend.
+	if !priest.Forever {
+		priest.ShadowfiendPet = priest.NewShadowfiend()
+	}
 
 	if priest.HasRune(proto.PriestRune_RuneHelmEyeOfTheVoid) {
 		priest.EyeOfTheVoidPet = priest.NewEyeOfTheVoid()

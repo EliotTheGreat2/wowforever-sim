@@ -49,26 +49,26 @@ func (hp *HunterPet) NewPetAbility(abilityType PetAbilityType, isPrimary bool) *
 
 // https://www.wowhead.com/classic/spell=3009/claw
 func (hp *HunterPet) newClaw() *core.Spell {
-	baseDamageMin := map[int32]float64{
+	baseDamageMin := core.AtLevel(hp.Owner.Level, map[int32]float64{
 		25: 16,
 		40: 26,
 		50: 35,
 		60: 43,
-	}[hp.Owner.Level]
+	})
 
-	baseDamageMax := map[int32]float64{
+	baseDamageMax := core.AtLevel(hp.Owner.Level, map[int32]float64{
 		25: 22,
 		40: 36,
 		50: 49,
 		60: 59,
-	}[hp.Owner.Level]
+	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(hp.Owner.Level, map[int32]int32{
 		25: 16830,
 		40: 16832,
 		50: 3010,
 		60: 3009,
-	}[hp.Owner.Level]
+	})
 
 	ApCoeff := 1.5 / 14
 
@@ -107,26 +107,26 @@ func (hp *HunterPet) newClaw() *core.Spell {
 
 // https://www.wowhead.com/classic/spell=17261/bite
 func (hp *HunterPet) newBite() *core.Spell {
-	baseDamageMin := map[int32]float64{
+	baseDamageMin := core.AtLevel(hp.Owner.Level, map[int32]float64{
 		25: 31,
 		40: 49,
 		50: 66,
 		60: 81,
-	}[hp.Owner.Level]
+	})
 
-	baseDamageMax := map[int32]float64{
+	baseDamageMax := core.AtLevel(hp.Owner.Level, map[int32]float64{
 		25: 37,
 		40: 59,
 		50: 80,
 		60: 91,
-	}[hp.Owner.Level]
+	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(hp.Owner.Level, map[int32]int32{
 		25: 17257,
 		40: 17259,
 		50: 17260,
 		60: 17261,
-	}[hp.Owner.Level]
+	})
 
 	ApCoeff := 2.15 / 14
 
@@ -169,26 +169,26 @@ func (hp *HunterPet) newBite() *core.Spell {
 
 // https://www.wowhead.com/classic/spell=25012/lightning-breath
 func (hp *HunterPet) newLightningBreath() *core.Spell {
-	baseDamageMin := map[int32]float64{
+	baseDamageMin := core.AtLevel(hp.Owner.Level, map[int32]float64{
 		25: 36,
 		40: 36,
 		50: 78,
 		60: 99,
-	}[hp.Owner.Level]
+	})
 
-	baseDamageMax := map[int32]float64{
+	baseDamageMax := core.AtLevel(hp.Owner.Level, map[int32]float64{
 		25: 41,
 		40: 41,
 		50: 91,
 		60: 113,
-	}[hp.Owner.Level]
+	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(hp.Owner.Level, map[int32]int32{
 		25: 25009,
 		40: 25009, // rank 4 not available in SoD Phase 2
 		50: 25011,
 		60: 25012,
-	}[hp.Owner.Level]
+	})
 
 	ApCoeff := 3.65 / 14
 	SpCoeff := 0.429
@@ -226,26 +226,26 @@ func (hp *HunterPet) newLightningBreath() *core.Spell {
 
 // https://www.wowhead.com/classic/spell=24579/screech
 func (hp *HunterPet) newScreech() *core.Spell {
-	baseDamageMin := map[int32]float64{
+	baseDamageMin := core.AtLevel(hp.Owner.Level, map[int32]float64{
 		25: 12,
 		40: 12,
 		50: 19,
 		60: 26,
-	}[hp.Owner.Level]
+	})
 
-	baseDamageMax := map[int32]float64{
+	baseDamageMax := core.AtLevel(hp.Owner.Level, map[int32]float64{
 		25: 16,
 		40: 16,
 		50: 25,
 		60: 46,
-	}[hp.Owner.Level]
+	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(hp.Owner.Level, map[int32]int32{
 		15: 24580,
 		40: 24580,
 		50: 24581,
 		60: 24582,
-	}[hp.Owner.Level]
+	})
 
 	ApCoeff := 1.15 / 14
 
@@ -328,18 +328,18 @@ func (hp *HunterPet) newScreech() *core.Spell {
 
 // https://www.wowhead.com/classic/spell=24587/scorpid-poison
 func (hp *HunterPet) newScorpidPoison() *core.Spell {
-	baseDamageTick := map[int32]float64{
+	baseDamageTick := core.AtLevel(hp.Owner.Level, map[int32]float64{
 		25: 3,
 		40: 6,
 		50: 6,
 		60: 8,
-	}[hp.Owner.Level]
-	spellID := map[int32]int32{
+	})
+	spellID := core.AtLevel(hp.Owner.Level, map[int32]int32{
 		25: 24583,
 		40: 24586,
 		50: 24586,
 		60: 24587,
-	}[hp.Owner.Level]
+	})
 
 	ApCoeff := 0.07 / 5
 
@@ -416,18 +416,18 @@ func (hp *HunterPet) newScorpidPoison() *core.Spell {
 
 // https://www.wowhead.com/classic/spell=444681/lava-breath
 func (hp *HunterPet) newLavaBreath() *core.Spell {
-	baseDamageMin := map[int32]float64{
+	baseDamageMin := core.AtLevel(hp.Owner.Level, map[int32]float64{
 		50: 78,
 		60: 101,
-	}[hp.Owner.Level]
-	baseDamageMax := map[int32]float64{
+	})
+	baseDamageMax := core.AtLevel(hp.Owner.Level, map[int32]float64{
 		50: 91,
 		60: 116,
-	}[hp.Owner.Level]
-	spellID := map[int32]int32{
+	})
+	spellID := core.AtLevel(hp.Owner.Level, map[int32]int32{
 		50: 444678,
 		60: 444681,
-	}[hp.Owner.Level]
+	})
 
 	ApCoeff := 3.65 / 14
 	SpCoeff := 0.429

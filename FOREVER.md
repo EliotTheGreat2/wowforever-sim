@@ -22,7 +22,9 @@ Built on [WoWSims Season of Discovery](https://github.com/wowsims/sod) (MIT). Or
 | 1,876 vanilla items merged from wowsims/classic; Manual Crowd Pummeler + Rivenspike effects ported | Done |
 | Quick Sim page (`ui/forever/`): class -> spec -> Sim, addon paste import, ability breakdown, Forever-vs-Classic delta, best-stat finder | Done, browser-tested every spec |
 | Healer sims (Resto Druid/Shaman, Holy Paladin, Holy Priest) | Blocked: healing spells not implemented in the engine |
-| Every level 1-59 | Not started: engine only has base stats for 25/40/50/60 |
+| Every level 10-60 (Quick Sim level picker, per-level talents/gear/boss) | Done, every spec audited at 10-60 |
+| Per-level base stats, crit/dodge ratios (1-60) | Done: cmangos classic-db + vmangos sniffed data, anchored to engine values (`tools/forever/gen_levels.py`) |
+| Spell ranks by level + rotation rank fallback | Done: vanilla spell table ranks (`tools/forever/gen_spell_ranks.py`) |
 | Top Gear, hosted site | Not started |
 
 ## Run it
@@ -65,4 +67,27 @@ Delete it on a normal machine.
 FOREVER_DUMP=1 go test --tags=with_db ./sim -run TestForeverDumpKnownSpells   # spells the engine knows per spec
 python3 tools/forever/gen_specs.py /path/to/wowsims-classic                    # rotations, gear, ui/core/forever/specs.json
 go test --tags=with_db ./sim -run TestForeverAllSpecs -v                      # audit every spec
+```
+
+## Leveling support (levels 10-60)
+
+The SoD engine only had data for levels 25/40/50/60. For WoW Forever:
+
+- `sim/core/base_stats_forever_gen.go` (generated): base attributes/health/mana per level from
+  cmangos classic-db, agility-per-crit/dodge from vmangos' sniffed tables, intellect-per-spell-crit
+  from the client game table. Engine values at 25/40/50/60 are reproduced exactly.
+- `sim/core/forever_levels.go`: `AtLevel` for the ~130 bracket-keyed tables (spell IDs pick the exact
+  rank learned at that level; damage values blend between brackets), buff tables for every level,
+  pet/form stat blending, the rotation rank fallback, and `ForeverBossTarget`.
+- Fixed along the way: paladin seal/Holy Shield loop-variable capture (crashes at in-between levels),
+  primary-seal action when the seal isn't learned yet, Windfury Totem buff ID in the Enhancement
+  rotation (it re-dropped the totem ~57 times per fight, at every level), no-op buff totem casts,
+  Shadowfiend (SoD skill book) appearing in Forever, invalid 71-point talent strings for Bear/healers.
+- `forever_classic_combat_rules` keeps the Forever class kit but turns off Forever's combat changes,
+  so the page's "worth X% vs Classic" compares rules only.
+
+```sh
+python3 tools/forever/gen_levels.py        # per-level stats
+python3 tools/forever/gen_spell_ranks.py   # spell rank families
+go test --tags=with_db ./sim -run TestForeverAllLevels -v   # every spec, levels 10-60
 ```

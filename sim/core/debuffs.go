@@ -458,11 +458,11 @@ const JudgementAuraTag = "Judgement"
 
 // TODO: Classic verify logic
 func JudgementOfWisdomAura(target *Unit, level int32) *Aura {
-	spellID := map[int32]int32{
+	spellID := AtLevel(level, map[int32]int32{
 		40: 20186,
 		50: 20354,
 		60: 20355,
-	}[level]
+	})
 	actionID := ActionID{SpellID: spellID}
 
 	jowMana := 0.0
@@ -512,25 +512,25 @@ func JudgementOfWisdomAura(target *Unit, level int32) *Aura {
 }
 
 func JudgementOfLightAura(target *Unit, level int32, units []*Unit) *Aura {
-	auraActionID := ActionID{SpellID: map[int32]int32{
+	auraActionID := ActionID{SpellID: AtLevel(level, map[int32]int32{
 		30: 20185,
 		40: 20344,
 		50: 20345,
 		60: 20346,
-	}[level]}
-	healActionID := ActionID{SpellID: map[int32]int32{
+	})}
+	healActionID := ActionID{SpellID: AtLevel(level, map[int32]int32{
 		30: 20267,
 		40: 20341,
 		50: 20342,
 		60: 20343,
-	}[level]}
+	})}
 
-	jolHealth := map[int32]float64{
+	jolHealth := AtLevel(level, map[int32]float64{
 		30: 25.0,
 		40: 34.0,
 		50: 49.0,
 		60: 61.0,
-	}[level]
+	})
 
 	for _, playerOrPet := range units {
 		unit := playerOrPet
@@ -579,7 +579,8 @@ func JudgementOfTheCrusaderAura(caster *Unit, target *Unit, level int32, mult fl
 	var spellId int32
 	var bonus float64
 
-	switch level {
+	// Rank-based: use the rank available at the highest measured bracket at or below level.
+	switch FloorBracket(level) {
 	case 25:
 		spellId = 20300
 		bonus = 50
@@ -725,23 +726,23 @@ func CurseOfElementsAura(target *Unit, playerLevel int32) *Aura {
 		return nil
 	}
 
-	spellID := map[int32]int32{
+	spellID := AtLevel(playerLevel, map[int32]int32{
 		40: 1490,
 		50: 11721,
 		60: 11722,
-	}[playerLevel]
+	})
 
-	resistance := map[int32]float64{
+	resistance := AtLevel(playerLevel, map[int32]float64{
 		40: 45,
 		50: 60,
 		60: 75,
-	}[playerLevel]
+	})
 
-	dmgMod := map[int32]float64{
+	dmgMod := AtLevel(playerLevel, map[int32]float64{
 		40: 1.06,
 		50: 1.08,
 		60: 1.10,
-	}[playerLevel]
+	})
 
 	aura := target.GetOrRegisterAura(Aura{
 		Label:      "Curse of Elements",
@@ -765,20 +766,20 @@ func CurseOfShadowAura(target *Unit, playerLevel int32) *Aura {
 		return nil
 	}
 
-	spellID := map[int32]int32{
+	spellID := AtLevel(playerLevel, map[int32]int32{
 		50: 17862,
 		60: 17937,
-	}[playerLevel]
+	})
 
-	resistance := map[int32]float64{
+	resistance := AtLevel(playerLevel, map[int32]float64{
 		50: 60,
 		60: 75,
-	}[playerLevel]
+	})
 
-	dmgMod := map[int32]float64{
+	dmgMod := AtLevel(playerLevel, map[int32]float64{
 		50: 1.08,
 		60: 1.10,
-	}[playerLevel]
+	})
 
 	aura := target.GetOrRegisterAura(Aura{
 		Label:      "Curse of Shadow",
@@ -848,17 +849,17 @@ func HolySunderAura(target *Unit) *Aura {
 }
 
 func HemorrhageAura(target *Unit, casterLevel int32) *Aura {
-	debuffBonusDamage := map[int32]float64{
+	debuffBonusDamage := AtLevel(casterLevel, map[int32]float64{
 		40: 3,
 		50: 5,
 		60: 7,
-	}[casterLevel]
+	})
 
-	spellID := map[int32]int32{
+	spellID := AtLevel(casterLevel, map[int32]int32{
 		40: 16511,
 		50: 17347,
 		60: 17348,
-	}[casterLevel]
+	})
 
 	return target.GetOrRegisterAura(Aura{
 		Label:     "Hemorrhage",
@@ -974,19 +975,19 @@ func WintersChillAura(target *Unit) *Aura {
 var majorArmorReductionEffectCategory = "MajorArmorReduction"
 
 func SunderArmorAura(target *Unit, playerLevel int32) *Aura {
-	spellID := map[int32]int32{
+	spellID := AtLevel(playerLevel, map[int32]int32{
 		25: 7405,
 		40: 8380,
 		50: 11596,
 		60: 11597,
-	}[playerLevel]
+	})
 
-	arpen := map[int32]float64{
+	arpen := AtLevel(playerLevel, map[int32]float64{
 		25: 180,
 		40: 270,
 		50: 360,
 		60: 450,
-	}[playerLevel]
+	})
 
 	var effect *ExclusiveEffect
 	aura := target.GetOrRegisterAura(Aura{
@@ -1013,19 +1014,19 @@ func SunderArmorAura(target *Unit, playerLevel int32) *Aura {
 }
 
 func ExposeArmorAura(target *Unit, improvedEA int32, playerLevel int32) *Aura {
-	spellID := map[int32]int32{
+	spellID := AtLevel(playerLevel, map[int32]int32{
 		25: 8647,
 		40: 8650,
 		50: 11197,
 		60: 11198,
-	}[playerLevel]
+	})
 
-	arpen := map[int32]float64{
+	arpen := AtLevel(playerLevel, map[int32]float64{
 		25: 400,
 		40: 1050,
 		50: 1375,
 		60: 1700,
-	}[playerLevel]
+	})
 
 	arpen *= []float64{1, 1.25, 1.5}[improvedEA]
 
@@ -1055,13 +1056,13 @@ func SebaciousPoisonAura(target *Unit, improvedEA int32, playerLevel int32) *Aur
 		return nil
 	}
 
-	spellID := map[int32]int32{
+	spellID := AtLevel(playerLevel, map[int32]int32{
 		60: 439462,
-	}[playerLevel]
+	})
 
-	arpen := map[int32]float64{
+	arpen := AtLevel(playerLevel, map[int32]float64{
 		60: 1700,
-	}[playerLevel]
+	})
 
 	arpen *= []float64{1, 1.25, 1.5}[improvedEA]
 
@@ -1136,26 +1137,26 @@ func HomunculiAttackPowerAura(target *Unit, playerLevel int32) *Aura {
 const CurseOfRecklessnessDuration = time.Minute * 2
 
 func CurseOfRecklessnessAura(target *Unit, playerLevel int32) *Aura {
-	spellID := map[int32]int32{
+	spellID := AtLevel(playerLevel, map[int32]int32{
 		25: 704,
 		40: 7658,
 		50: 7659,
 		60: 11717,
-	}[playerLevel]
+	})
 
-	arpen := map[int32]float64{
+	arpen := AtLevel(playerLevel, map[int32]float64{
 		25: 140,
 		40: 290,
 		50: 465,
 		60: 640,
-	}[playerLevel]
+	})
 
-	ap := map[int32]float64{
+	ap := AtLevel(playerLevel, map[int32]float64{
 		25: 20,
 		40: 45,
 		50: 65,
 		60: 90,
-	}[playerLevel]
+	})
 
 	aura := target.GetOrRegisterAura(Aura{
 		Label:      "Curse of Recklessness",
@@ -1177,33 +1178,33 @@ func CurseOfRecklessnessAura(target *Unit, playerLevel int32) *Aura {
 // Decreases the armor of the target by X for 40 sec.
 // Improved: Your Faerie Fire and Faerie Fire (Feral) also increase the chance for all attacks to hit that target by 1% for 40 sec.
 func FaerieFireAura(target *Unit, playerLevel int32) *Aura {
-	spellID := map[int32]int32{
+	spellID := AtLevel(playerLevel, map[int32]int32{
 		25: 770,
 		40: 778,
 		50: 9749,
 		60: 9907,
-	}[playerLevel]
+	})
 
 	return faerieFireAuraInternal(target, "Faerie Fire", spellID, playerLevel)
 }
 
 func FaerieFireFeralAura(target *Unit, playerLevel int32) *Aura {
-	spellID := map[int32]int32{
+	spellID := AtLevel(playerLevel, map[int32]int32{
 		40: 17390,
 		50: 17391,
 		60: 17392,
-	}[playerLevel]
+	})
 
 	return faerieFireAuraInternal(target, "Faerie Fire (Feral)", spellID, playerLevel)
 }
 
 func faerieFireAuraInternal(target *Unit, label string, spellID int32, playerLevel int32) *Aura {
-	arPen := map[int32]float64{
+	arPen := AtLevel(playerLevel, map[int32]float64{
 		25: 175,
 		40: 285,
 		50: 395,
 		60: 505,
-	}[playerLevel]
+	})
 
 	aura := target.GetOrRegisterAura(Aura{
 		Label:    label,
@@ -1255,19 +1256,19 @@ func MeleeHunterDodgeReductionAura(target *Unit, _ int32) *Aura {
 }
 
 func CurseOfWeaknessAura(target *Unit, points int32, playerLevel int32) *Aura {
-	spellID := map[int32]int32{
+	spellID := AtLevel(playerLevel, map[int32]int32{
 		25: 6205,
 		40: 7646,
 		50: 11707,
 		60: 11708,
-	}[playerLevel]
+	})
 
-	modDmgReduction := map[int32]float64{
+	modDmgReduction := AtLevel(playerLevel, map[int32]float64{
 		25: -10,
 		40: -15,
 		50: -22,
 		60: -31,
-	}[playerLevel]
+	})
 
 	modDmgReduction *= []float64{1, 1.06, 1.13, 1.20}[points]
 	modDmgReduction = math.Floor(modDmgReduction)
@@ -1290,19 +1291,19 @@ func CurseOfWeaknessAura(target *Unit, points int32, playerLevel int32) *Aura {
 const HuntersMarkAuraTag = "HuntersMark"
 
 func HuntersMarkAura(target *Unit, points int32, playerLevel int32) *Aura {
-	spellID := map[int32]int32{
+	spellID := AtLevel(playerLevel, map[int32]int32{
 		25: 14323,
 		40: 14324,
 		50: 14324,
 		60: 14325,
-	}[playerLevel]
+	})
 
-	bonus := map[int32]float64{
+	bonus := AtLevel(playerLevel, map[int32]float64{
 		25: 45,
 		40: 75,
 		50: 75,
 		60: 110,
-	}[playerLevel]
+	})
 
 	bonus *= 1 + 0.03*float64(points)
 
@@ -1327,18 +1328,18 @@ func HuntersMarkAura(target *Unit, points int32, playerLevel int32) *Aura {
 }
 
 func DemoralizingRoarAura(target *Unit, points int32, playerLevel int32) *Aura {
-	spellID := map[int32]int32{
+	spellID := AtLevel(playerLevel, map[int32]int32{
 		25: 1735,
 		40: 9490,
 		50: 9747,
 		60: 9898,
-	}[playerLevel]
-	baseAPReduction := map[int32]float64{
+	})
+	baseAPReduction := AtLevel(playerLevel, map[int32]float64{
 		25: 55,
 		40: 73,
 		50: 108,
 		60: 138,
-	}[playerLevel]
+	})
 
 	aura := target.GetOrRegisterAura(Aura{
 		Label:    "DemoralizingRoar-" + strconv.Itoa(int(points)),

@@ -65,57 +65,64 @@ func (hunter *Hunter) NewHunterPet() *HunterPet {
 		attackSpeed = 2.5
 	}
 
-	switch hunter.Level {
-	case 25:
-		baseMinDamage = 6.5 * attackSpeed
-		baseMaxDamage = 12.5 * attackSpeed
-		hunterPetBaseStats = stats.Stats{
-			stats.Strength:  53,
-			stats.Agility:   45,
-			stats.Stamina:   120,
-			stats.Intellect: 29,
-			stats.Spirit:    39,
+	// WoW Forever: pet stats are measured at 25/40/50/60; other levels blend the two nearest.
+	petAt := func(level int32) (minDmg, maxDmg float64, st stats.Stats) {
+		switch level {
+		case 25:
+			minDmg = 6.5 * attackSpeed
+			maxDmg = 12.5 * attackSpeed
+			st = stats.Stats{
+				stats.Strength:  53,
+				stats.Agility:   45,
+				stats.Stamina:   120,
+				stats.Intellect: 29,
+				stats.Spirit:    39,
 
-			stats.AttackPower: -20,
-		}
-	case 40:
-		baseMinDamage = 9.5 * attackSpeed
-		baseMaxDamage = 15.5 * attackSpeed
-		hunterPetBaseStats = stats.Stats{
-			stats.Strength:  78,
-			stats.Agility:   66,
-			stats.Stamina:   160,
-			stats.Intellect: 37,
-			stats.Spirit:    55,
+				stats.AttackPower: -20,
+			}
+		case 40:
+			minDmg = 9.5 * attackSpeed
+			maxDmg = 15.5 * attackSpeed
+			st = stats.Stats{
+				stats.Strength:  78,
+				stats.Agility:   66,
+				stats.Stamina:   160,
+				stats.Intellect: 37,
+				stats.Spirit:    55,
 
-			stats.AttackPower: -20,
-		}
-	case 50:
-		baseMinDamage = 23.5 * attackSpeed
-		baseMaxDamage = 27.5 * attackSpeed
-		hunterPetBaseStats = stats.Stats{
-			stats.Strength:  113,
-			stats.Agility:   82,
-			stats.Stamina:   257,
-			stats.Intellect: 43,
-			stats.Spirit:    67,
+				stats.AttackPower: -20,
+			}
+		case 50:
+			minDmg = 23.5 * attackSpeed
+			maxDmg = 27.5 * attackSpeed
+			st = stats.Stats{
+				stats.Strength:  113,
+				stats.Agility:   82,
+				stats.Stamina:   257,
+				stats.Intellect: 43,
+				stats.Spirit:    67,
 
-			stats.AttackPower: -20,
-		}
-	case 60:
-		// TODO:
-		baseMinDamage = 18.17 * attackSpeed
-		baseMaxDamage = 27.66 * attackSpeed
-		hunterPetBaseStats = stats.Stats{
-			stats.Strength:  136,
-			stats.Agility:   100,
-			stats.Stamina:   274,
-			stats.Intellect: 50,
-			stats.Spirit:    80,
+				stats.AttackPower: -20,
+			}
+		case 60:
+			// TODO:
+			minDmg = 18.17 * attackSpeed
+			maxDmg = 27.66 * attackSpeed
+			st = stats.Stats{
+				stats.Strength:  136,
+				stats.Agility:   100,
+				stats.Stamina:   274,
+				stats.Intellect: 50,
+				stats.Spirit:    80,
 
-			stats.AttackPower: -20,
+				stats.AttackPower: -20,
+			}
 		}
+		return
 	}
+	hunterPetBaseStats = core.BlendStats(hunter.Level, func(l int32) stats.Stats { _, _, st := petAt(l); return st })
+	baseMinDamage = core.BlendFloat(hunter.Level, func(l int32) float64 { v, _, _ := petAt(l); return v })
+	baseMaxDamage = core.BlendFloat(hunter.Level, func(l int32) float64 { _, v, _ := petAt(l); return v })
 
 	hp := &HunterPet{
 		Pet:         core.NewPet(petConfig.Name, &hunter.Character, hunterPetBaseStats, hunter.makeStatInheritance(), true, false),

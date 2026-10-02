@@ -30,6 +30,9 @@ type DynamicDamageTakenModifier func(sim *Simulation, spell *Spell, result *Spel
 // Unit is an abstraction of a Character/Boss/Pet/etc, containing functionality
 // shared by all of them.
 type Unit struct {
+	// WoW Forever: let rotations fall back to lower spell ranks this unit knows.
+	ForeverRankFallback bool
+
 	Type UnitType
 
 	// Index of this unit with its group.

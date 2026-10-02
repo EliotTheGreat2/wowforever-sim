@@ -109,6 +109,15 @@ func (rot *APLRotation) GetAPLAura(sourceUnit UnitReference, auraId *proto.Actio
 	}
 
 	aura := NewAuraReference(sourceUnit, auraId)
+	if aura.Get() == nil && rot.unit.ForeverRankFallback && auraId.GetSpellId() != 0 {
+		for _, alt := range ForeverRankAlternatives(auraId.GetSpellId()) {
+			altID := &proto.ActionID{RawId: &proto.ActionID_SpellId{SpellId: alt}, Tag: auraId.Tag}
+			if candidate := NewAuraReference(sourceUnit, altID); candidate.Get() != nil {
+				aura = candidate
+				break
+			}
+		}
+	}
 	if aura.Get() == nil {
 		rot.ValidationWarning("No aura found on %s for: %s", sourceUnit.Get().Label, ProtoToActionID(auraId))
 	}
@@ -121,6 +130,15 @@ func (rot *APLRotation) GetAPLICDAura(sourceUnit UnitReference, auraId *proto.Ac
 	}
 
 	aura := NewIcdAuraReference(sourceUnit, auraId)
+	if aura.Get() == nil && rot.unit.ForeverRankFallback && auraId.GetSpellId() != 0 {
+		for _, alt := range ForeverRankAlternatives(auraId.GetSpellId()) {
+			altID := &proto.ActionID{RawId: &proto.ActionID_SpellId{SpellId: alt}, Tag: auraId.Tag}
+			if candidate := NewIcdAuraReference(sourceUnit, altID); candidate.Get() != nil {
+				aura = candidate
+				break
+			}
+		}
+	}
 	if aura.Get() == nil {
 		rot.ValidationWarning("No aura found on %s for: %s", sourceUnit.Get().Label, ProtoToActionID(auraId))
 	}
@@ -154,6 +172,17 @@ func (rot *APLRotation) GetAPLSpell(spellId *proto.ActionID) *Spell {
 		}
 	} else {
 		spell = rot.unit.GetSpell(actionID)
+		// WoW Forever: a rotation written for level 60 names max ranks; at lower levels use
+		// the highest rank of the same spell this character knows.
+		if spell == nil && rot.unit.ForeverRankFallback && actionID.SpellID != 0 {
+			for _, alt := range ForeverRankAlternatives(actionID.SpellID) {
+				// Skip same-named proc/judgement effects: only something the player actually casts.
+				if candidate := rot.unit.GetSpell(ActionID{SpellID: alt, Tag: actionID.Tag}); candidate != nil && candidate.isPlayerCastable() {
+					spell = candidate
+					break
+				}
+			}
+		}
 	}
 
 	if spell == nil {

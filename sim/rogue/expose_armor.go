@@ -11,19 +11,19 @@ func (rogue *Rogue) registerExposeArmorSpell() {
 		return core.ExposeArmorAura(target, rogue.Talents.ImprovedExposeArmor, rogue.Level)
 	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(rogue.Level, map[int32]int32{
 		25: 8647,
 		40: 8650,
 		50: 11197,
 		60: 11198,
-	}[rogue.Level]
+	})
 
-	arpenPerCombo := map[int32]float64{
+	arpenPerCombo := core.AtLevel(rogue.Level, map[int32]float64{
 		25: 80,
 		40: 210,
 		50: 275,
 		60: 340,
-	}[rogue.Level]
+	})
 
 	arpenPerCombo *= []float64{1, 1.25, 1.5}[rogue.Talents.ImprovedExposeArmor]
 

@@ -11,11 +11,11 @@ func (rogue *Rogue) registerHemorrhageSpell() {
 		return
 	}
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(rogue.Level, map[int32]int32{
 		40: 16511,
 		50: 17347,
 		60: 17348,
-	}[rogue.Level]
+	})
 
 	actionID := core.ActionID{SpellID: spellID}
 

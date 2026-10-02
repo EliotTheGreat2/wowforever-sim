@@ -8,19 +8,19 @@ import (
 )
 
 func (rogue *Rogue) registerAmbushSpell() {
-	flatDamageBonus := map[int32]float64{
+	flatDamageBonus := core.AtLevel(rogue.Level, map[int32]float64{
 		25: 28,
 		40: 50,
 		50: 92,
 		60: 116,
-	}[rogue.Level]
+	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(rogue.Level, map[int32]int32{
 		25: 8676,
 		40: 8725,
 		50: 11268,
 		60: 11269,
-	}[rogue.Level]
+	})
 
 	// waylay := rogue.HasRune(proto.RogueRune_RuneWaylay)
 	hasCutthroatRune := rogue.HasRune(proto.RogueRune_RuneCutthroat)

@@ -82,6 +82,9 @@ func (x *APLActionCastPaladinPrimarySeal) Execute(sim *core.Simulation) {
 }
 
 func (x *APLActionCastPaladinPrimarySeal) IsReady(sim *core.Simulation) bool {
+	if x.paladin.primarySeal == nil {
+		return false
+	}
 	return sim.CurrentTime > x.lastAction && x.paladin.primarySeal.CanCast(sim, x.paladin.CurrentTarget)
 }
 

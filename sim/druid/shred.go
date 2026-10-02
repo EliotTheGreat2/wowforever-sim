@@ -14,12 +14,12 @@ const ShredFlatDmgMultiplier = 0.75    // decreases flat damage modifier multipl
 
 func (druid *Druid) registerShredSpell() {
 	damageMultiplier := 2.25
-	flatDamageBonus := map[int32]float64{
+	flatDamageBonus := core.AtLevel(druid.Level, map[int32]float64{
 		25: 24,
 		40: 44,
 		50: 64,
 		60: 80,
-	}[druid.Level] * ShredFlatDmgMultiplier
+	}) * ShredFlatDmgMultiplier
 
 	// In-game testing concluded that, unintuitively, Idol of the Dream's 1.02x damage applies to the original 2.25x
 	// Shred mod, and to the flat damage bonus, but that the .75x SoD buff happens additively after Idol
@@ -27,12 +27,12 @@ func (druid *Druid) registerShredSpell() {
 
 	druid.Shred = druid.RegisterSpell(Cat, core.SpellConfig{
 		ClassSpellMask: ClassSpellMask_DruidShred,
-		ActionID: core.ActionID{SpellID: map[int32]int32{
+		ActionID: core.ActionID{SpellID: core.AtLevel(druid.Level, map[int32]int32{
 			25: 5221,
 			40: 8992,
 			50: 9829,
 			60: 9830,
-		}[druid.Level]},
+		})},
 		SpellSchool: core.SpellSchoolPhysical,
 		DefenseType: core.DefenseTypeMelee,
 		ProcMask:    core.ProcMaskMeleeMHSpecial,

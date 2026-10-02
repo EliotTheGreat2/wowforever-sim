@@ -13,12 +13,12 @@ func (rogue *Rogue) registerQuickDrawSpell() {
 		return
 	}
 
-	ammoBonusDamage := map[int32]float64{
+	ammoBonusDamage := core.AtLevel(rogue.Level, map[int32]float64{
 		25: 7.5,
 		40: 13,
 		50: 15,
 		60: 20,
-	}[rogue.Level]
+	})
 	normalizedAmmoBonusDamage := ammoBonusDamage / 2.8
 
 	// Quick Draw applies a 50% slow, but bosses are immune

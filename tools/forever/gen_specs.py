@@ -59,7 +59,7 @@ SPECS = [
     # key, class, label, role, talents, classic apl, classic gear, weights, weapons, ranged types, faction
     ('balance_druid', DRUID, 'Balance', 'Caster DPS', '5000550012551251--5005031', 'balance_druid/apls/balance.apl.json', 'balance_druid/gear_sets/p0.bis.gear.json', caster(ARCANE, NATURE), 'caster', [4], HORDE),
     ('feral_druid', DRUID, 'Feral (Cat)', 'Melee DPS', '500005301-5500021323202151-05', 'feral_druid/apls/feral.apl.json', 'feral_druid/gear_sets/p2.pre-bis.gear.json', FERAL, 'twohand', [4], HORDE),
-    ('feral_tank_druid', DRUID, 'Guardian (Bear)', 'Tank', '-503232132322010353120300313511-20350001', 'feral_tank_druid/apls/default.apl.json', None, BEAR, 'twohand', [4], HORDE),
+    ('feral_tank_druid', DRUID, 'Guardian (Bear)', 'Tank', '-5052501303022151-55042', 'feral_tank_druid/apls/default.apl.json', None, BEAR, 'twohand', [4], HORDE),
     ('restoration_druid', DRUID, 'Restoration', 'Healer', '05320031103--230023312131502331050313051', None, None, HEALER, 'caster', [4], HORDE),
     ('elemental_shaman', SHAMAN, 'Elemental', 'Caster DPS', '050331552000151--50105301005', 'elemental_shaman/apls/default.apl.json', None, caster(NATURE), 'caster_shield', [7], HORDE),
     ('enhancement_shaman', SHAMAN, 'Enhancement', 'Melee DPS', '05-5025002105023051-05105301', 'enhancement_shaman/apls/default.apl.json', None, MELEE_STR, 'twohand', [7], HORDE),
@@ -120,14 +120,34 @@ def score(item, weights, melee):
     return s
 
 
-def pick(cls, weights, weapons, ranged_types, faction, current):
+_POOLS = {}
+
+
+def leveling_ok(item, level):
+    """Gear a character could realistically wear at `level`: usable, and from content around that level."""
+    if item.get('requiresLevel', 0) > level:
+        return False
+    if level < 60:
+        # Leveling characters wear greens and dungeon blues from content near their level.
+        if item.get('quality', 0) > 3 or item.get('ilvl', 0) > level + 7:
+            return False
+    return True
+
+
+def pick(cls, weights, weapons, ranged_types, faction, current, level=60):
     melee = weapons in ('twohand', 'dual', 'shield') and weights is not HEALER
-    pool = [i for i in ITEMS.values() if preraid_ok(i, cls, faction)]
+    key = (cls, faction, id(weights), melee)
+    if key not in _POOLS:
+        # Score once per spec; each level just takes the best item it can use.
+        _POOLS[key] = sorted((i for i in ITEMS.values() if preraid_ok(i, cls, faction)), key=lambda i: score(i, weights, melee), reverse=True)
+    pool = _POOLS[key]
     used = {x for x in current if x}
 
     def best(pred):
-        cands = sorted((i for i in pool if pred(i) and (i['id'] not in used or not i.get('unique'))), key=lambda i: score(i, weights, melee), reverse=True)
-        return cands[0]['id'] if cands else None
+        for i in pool:
+            if leveling_ok(i, level) and pred(i) and (i['id'] not in used or not i.get('unique')):
+                return i['id']
+        return None
 
     out = list(current)
     for slot, t in enumerate(SLOT_TYPES[:14]):
@@ -269,12 +289,59 @@ OVERRIDE_APL = {
     },
 }
 
+# Low-level fillers appended after a rotation's own filler: the level-60 filler (e.g. Starfire)
+# may not be learned yet; the engine picks the highest rank of these the character knows.
+def _unless_known(spell_id, filler_id):
+    return {'action': {'condition': {'not': {'val': {'spellIsKnown': {'spellId': {'spellId': spell_id}}}}},
+                       'castSpell': {'spellId': {'spellId': filler_id}}}}
+
+
+LOW_LEVEL_FILLER = {
+    # Max-rank IDs, so the engine falls back to the highest rank the character has learned.
+    'balance_druid': [_unless_known(25298, 9912)],  # Wrath until Starfire (level 20)
+    'shadow_priest': [_unless_known(18807, 10934)],  # Smite until Mind Flay (talent)
+}
+
 # Extra actions inserted before the filler (last) action of a rotation.
 EXTRA_BEFORE_FILLER = {
     # Classic's mage rotation never uses Evocation and runs dry on pre-raid mana pools.
     'mage': [{'action': {'condition': {'and': {'vals': [cmp_('OpLt', MANA_PCT, '12%'), cmp_('OpGt', REMAINING, '10s')]}},
                          'channelSpell': {'spellId': {'spellId': 12051}, 'interruptIf': cmp_('OpGt', MANA_PCT, '90%')}}}],
 }
+
+
+# Spell/aura IDs in wowsims/classic rotations that this engine registers under another ID.
+REWRITE_IDS = {
+    'enhancement_shaman': {10611: 10612},  # Windfury Totem buff: the engine's rank-3 buff is 10612
+}
+
+
+# Buff totems (Windfury, Strength of Earth, Grace of Air, Mana Spring) are modeled as group buffs
+# in this engine; dropping one from a rotation only costs a GCD and mana. The Quick Sim page
+# applies the shaman's own totems as buffs instead.
+NOOP_TOTEM_IDS = {8512, 10613, 10614, 8075, 8160, 8161, 10442, 25361, 8835, 10627, 25359,
+                  5675, 10495, 10496, 10497}
+
+
+def drop_noop_totems(key, apl):
+    if not key.endswith('_shaman'):
+        return apl
+    apl['priorityList'] = [a for a in apl['priorityList']
+                           if a.get('action', {}).get('castSpell', {}).get('spellId', {}).get('spellId') not in NOOP_TOTEM_IDS]
+    return apl
+
+
+def rewrite_ids(key, node):
+    mapping = REWRITE_IDS.get(key, {})
+    if isinstance(node, dict):
+        if isinstance(node.get('spellId'), int) and node['spellId'] in mapping:
+            node['spellId'] = mapping[node['spellId']]
+        for v in node.values():
+            rewrite_ids(key, v)
+    elif isinstance(node, list):
+        for v in node:
+            rewrite_ids(key, v)
+    return node
 
 
 def clean_rotation(apl):
@@ -286,11 +353,80 @@ def clean_rotation(apl):
     return apl
 
 
+TREES = {DRUID: 'druid', HUNTER: 'hunter', MAGE: 'mage', PALADIN: 'paladin', PRIEST: 'priest', ROGUE: 'rogue',
+         SHAMAN: 'shaman', WARLOCK: 'warlock', WARRIOR: 'warrior'}
+
+
+def trim_talents(cls, talents, points):
+    """Cut a level-60 build down to `points` talent points the way a leveling player spends them.
+
+    Main tree first. Players rush the tree's deep talents (Shadowform, Mortal Strike, Bloodthirst,
+    Stormstrike...), so each row first gets only the points needed to unlock the next row, taking
+    the build's own talents in that row; once the deepest talented row is reached, everything left
+    is filled top row down, then the other trees. Prerequisites always sit in earlier rows, so
+    every intermediate build is legal (5 points per row in that tree).
+    """
+    trees = json.load(open(f'ui/core/talents/trees/{TREES[cls]}.json'))
+    parts = (talents.split('-') + ['', '', ''])[:3]
+    for i, part in enumerate(parts):
+        if len(part) > len(trees[i]['talents']):
+            raise ValueError(f'{TREES[cls]} talents {talents!r}: tree {i} has {len(part)} entries but only {len(trees[i]["talents"])} talents')
+    alloc = [[int(c) for c in part] + [0] * (len(trees[i]['talents']) - len(part)) for i, part in enumerate(parts)]
+    if points >= 51 and sum(map(sum, alloc)) != 51:
+        raise ValueError(f'{TREES[cls]} talents {talents!r} spend {sum(map(sum, alloc))} points, not 51')
+    order = sorted(range(3), key=lambda i: -sum(alloc[i]))
+    out = [[0] * len(trees[i]['talents']) for i in range(3)]
+    left = points
+
+    def give(t, j, n):
+        nonlocal left
+        take = max(0, min(n, alloc[t][j] - out[t][j], left))
+        out[t][j] += take
+        left -= take
+
+    def prereqs_met(t, j):
+        pre = trees[t]['talents'][j].get('prereqLocation')
+        if not pre:
+            return True
+        for k, tal in enumerate(trees[t]['talents']):
+            if tal['location'] == pre:
+                return out[t][k] >= tal['maxPoints']
+        return True
+
+    # Pass 1: rush the main tree's deepest talented row.
+    main = order[0]
+    rows = {}
+    for j, tal in enumerate(trees[main]['talents']):
+        rows.setdefault(tal['location']['rowIdx'], []).append(j)
+    deepest = max((r for r, js in rows.items() if any(alloc[main][j] for j in js)), default=0)
+    for r in sorted(rows):
+        if r >= deepest:
+            for j in rows[r]:
+                if prereqs_met(main, j):
+                    give(main, j, alloc[main][j])
+            break
+        needed = 5 * (r + 1)
+        for j in rows[r]:
+            give(main, j, needed - sum(out[main]))
+    # Pass 2: everything else, main tree first, top row down.
+    for t in order:
+        for j in range(len(alloc[t])):
+            if prereqs_met(t, j):
+                give(t, j, alloc[t][j])
+    # Prerequisites unlocked late in pass 2 (same-row arrows) get a final sweep.
+    for t in order:
+        for j in range(len(alloc[t])):
+            give(t, j, alloc[t][j])
+    return '-'.join(''.join(map(str, row)).rstrip('0') for row in out).rstrip('-')
+
+
 def main():
     classic_db = json.load(open(os.path.join(CLASSIC, 'assets/database/db.json')))
     classic_spells = {x['id']: x for x in classic_db.get('spellIcons', [])}
     manifest = []
     for key, cls, label, role, talents, apl_src, gear_src, weights, weapons, ranged, faction in SPECS:
+        if role != 'Healer':
+            trim_talents(cls, talents, 51)  # validates the level-60 build
         current = [None] * 17
         source = 'auto-picked pre-raid'
         if gear_src:
@@ -313,9 +449,10 @@ def main():
             if key in OVERRIDE_APL:
                 apl = OVERRIDE_APL[key]
             else:
-                apl = clean_rotation(remap_rotation(key, json.load(open(os.path.join(CLASSIC, 'ui', apl_src))), classic_spells))
+                apl = drop_noop_totems(key, clean_rotation(rewrite_ids(key, remap_rotation(key, json.load(open(os.path.join(CLASSIC, 'ui', apl_src))), classic_spells))))
                 if key in EXTRA_BEFORE_FILLER:
                     apl['priorityList'][-1:-1] = EXTRA_BEFORE_FILLER[key]
+                apl['priorityList'] += LOW_LEVEL_FILLER.get(key, [])
             json.dump(apl, open(apl_path, 'w'), indent=1)
 
         manifest.append({
@@ -324,6 +461,14 @@ def main():
             'faction': 'Horde' if faction == HORDE else 'Alliance',
             'race': RACE[cls], 'specOptions': OPTIONS.get(key, {'options': {}}),
             'supported': role != 'Healer',
+            # Per-level builds for leveling sims (level 60 uses the entries above).
+            'levels': {} if role == 'Healer' else {
+                str(L): {
+                    'talents': trim_talents(cls, talents, L - 9),
+                    'gear': [x or 0 for x in pick(cls, weights, weapons, ranged, faction, [None] * 17, level=L)],
+                }
+                for L in range(10, 60)
+            },
             # inlined for the Quick Sim page so it needs a single import
             'gearSpec': {'items': [{'id': x} if x else {} for x in items]},
             'rotationJson': json.load(open(apl_path)) if apl_path else {'type': 'TypeAuto'},

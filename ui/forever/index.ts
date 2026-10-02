@@ -3,6 +3,7 @@
 import './forever.css';
 
 import specsJson from '../core/forever/specs.json';
+import spellNamesJson from '../core/forever/spell_names.json';
 import { RaidSimRequest, RaidSimResult, StatWeightsRequest } from '../core/proto/api';
 import { EquipmentSpec, Race, SimDatabase, Stat } from '../core/proto/common';
 import { ActionId } from '../core/proto_utils/action_id';
@@ -25,9 +26,14 @@ type ForeverSpec = {
 	gearSpec: { items: Array<{ id?: number; enchant?: number }> };
 	rotationJson: unknown;
 	specOptions: Record<string, unknown>;
+	// Leveling presets for levels 10-59 (level 60 uses gearSpec/talents).
+	levels: Record<string, { talents: string; gear: number[] }>;
 };
 
 const SPECS = specsJson as unknown as ForeverSpec[];
+// Class spell names by ID from the vanilla spell data, so ability names show even when the
+// usual name lookup (local database, then Wowhead) can't find a rank.
+const SPELL_NAMES = spellNamesJson as Record<string, string>;
 
 type ClassInfo = { id: number; name: string; enumName: string; color: string; ink: string; icon: string; races: string[] };
 
@@ -65,14 +71,31 @@ const TREE_TO_SPEC: Record<number, string[]> = {
 const SLOT_NAMES = ['Head', 'Neck', 'Shoulder', 'Back', 'Chest', 'Wrist', 'Hands', 'Waist', 'Legs', 'Feet', 'Ring', 'Ring', 'Trinket', 'Trinket', 'Main hand', 'Off hand', 'Ranged'];
 
 const ITERATIONS = 3000;
-const FIGHT_SECONDS = 180;
+const MIN_LEVEL = 10;
+const MAX_LEVEL = 60;
+
+// A level-60 raid boss lasts a few minutes; a leveling dungeon boss goes down much faster,
+// and mana-limited classes would look far worse than they play over a 3-minute fight.
+function fightSeconds(level: number): number {
+	if (level >= 60) return 180;
+	if (level >= 30) return 120;
+	return 60;
+}
 
 const ICON = (name: string) => `https://wow.zamimg.com/images/wow/icons/large/${name}.jpg`;
 
 // ---------------------------------------------------------------------------
 // State
 
-type Character = { source: 'preset' | 'import'; imported?: boolean; gear: ForeverSpec['gearSpec']; talents: string; race: string; note?: string };
+type Character = {
+	source: 'preset' | 'import';
+	imported?: boolean;
+	level: number;
+	gear: ForeverSpec['gearSpec'];
+	talents: string;
+	race: string;
+	note?: string;
+};
 
 const state: {
 	cls?: ClassInfo;
@@ -114,13 +137,13 @@ function render() {
 		</header>`),
 		h(`<section>
 			<h1>How hard do you hit?</h1>
-			<p class="fs-lede">Pick your class, sim, done. Uses WoW Forever's combat rules with a level 60 character against a raid boss.</p>
+			<p class="fs-lede">Pick your class and level, sim, done. Uses WoW Forever's combat rules against a boss two levels above you, from level 10 to 60.</p>
 		</section>`),
 		renderClassStep(),
 		renderCharacterStep(),
 		renderSimStep(),
 		h(`<div id="fs-results"></div>`),
-		h(`<p class="fs-foot">Preview: Forever's new talents and items aren't in the game data yet, so builds use vanilla talents and pre-raid gear. Healer sims are coming later.
+		h(`<p class="fs-foot">Preview: Forever's new talents and items aren't in the game data yet, so builds use vanilla talents and typical gear for your level. Healer sims are coming later.
 			Built on <a href="https://github.com/wowsims/sod" target="_blank" rel="noopener">WoWSims</a> (MIT).</p>`),
 	);
 }
@@ -162,7 +185,7 @@ function renderCharacterStep(): HTMLElement {
 		<div>
 			<h2 id="s2">Set up your character</h2>
 			<div class="fs-choice" role="group" aria-label="Character source">
-				<button type="button" class="fs-spec" data-src="preset" aria-pressed="${state.character?.source !== 'import'}">Pre-raid gear</button>
+				<button type="button" class="fs-spec" data-src="preset" aria-pressed="${state.character?.source !== 'import'}">Suggested gear</button>
 				<button type="button" class="fs-spec" data-src="import" aria-pressed="${state.character?.source === 'import'}">Paste from addon</button>
 			</div>
 			<div class="fs-char-body"></div>
@@ -172,7 +195,7 @@ function renderCharacterStep(): HTMLElement {
 
 	step.querySelectorAll<HTMLButtonElement>('[data-src]').forEach(b =>
 		b.addEventListener('click', () => {
-			if (b.dataset.src === 'preset') usePreset();
+			if (b.dataset.src === 'preset') usePreset(state.character?.level ?? MAX_LEVEL);
 			else state.character = { ...state.character!, source: 'import' };
 			render();
 		}),
@@ -214,9 +237,20 @@ function renderCharacterStep(): HTMLElement {
 	}
 
 	const row = h(`<div class="fs-row">
+		<label class="fs-field">Level<select id="fs-level"></select></label>
 		<label class="fs-field">Race<select id="fs-race"></select></label>
 	</div>`);
-	const sel = row.querySelector('select')!;
+	const levelSel = row.querySelector<HTMLSelectElement>('#fs-level')!;
+	for (let l = MAX_LEVEL; l >= MIN_LEVEL; l--) {
+		levelSel.append(h(`<option value="${l}" ${state.character?.level === l ? 'selected' : ''}>${l}</option>`));
+	}
+	levelSel.addEventListener('change', () => {
+		const race = state.character!.race;
+		usePreset(Number(levelSel.value));
+		state.character!.race = race;
+		render();
+	});
+	const sel = row.querySelector<HTMLSelectElement>('#fs-race')!;
 	for (const r of state.cls!.races) {
 		sel.append(h(`<option value="${r}" ${state.character?.race === r ? 'selected' : ''}>${RACE_LABEL[r]}</option>`));
 	}
@@ -228,7 +262,14 @@ function renderCharacterStep(): HTMLElement {
 }
 
 function renderGearList(): HTMLElement {
-	const details = h(`<details class="fs-gear"><summary>See the gear (${esc(state.character?.source === 'import' ? 'from your addon export' : 'pre-raid dungeon and crafted gear')})</summary><ul></ul></details>`);
+	const ch = state.character;
+	const what =
+		ch?.source === 'import'
+			? 'from your addon export'
+			: ch && ch.level < MAX_LEVEL
+				? `typical gear for level ${ch.level}`
+				: 'pre-raid dungeon and crafted gear';
+	const details = h(`<details class="fs-gear"><summary>See the gear (${esc(what)})</summary><ul></ul></details>`);
 	const ul = details.querySelector('ul')!;
 	details.addEventListener(
 		'toggle',
@@ -269,20 +310,28 @@ function pickClass(cls: ClassInfo) {
 	const specs = SPECS.filter(s => s.classId === cls.id && s.supported);
 	state.spec = specs.length === 1 ? specs[0] : undefined;
 	state.character = undefined;
-	if (state.spec) usePreset();
+	if (state.spec) usePreset(MAX_LEVEL);
 	render();
 }
 
 function pickSpec(spec: ForeverSpec) {
 	state.spec = spec;
-	if (state.character?.source !== 'import') usePreset();
+	if (state.character?.source !== 'import') usePreset(state.character?.level ?? MAX_LEVEL);
 	render();
 }
 
-function usePreset() {
+function usePreset(level = state.character?.level ?? MAX_LEVEL) {
 	const spec = state.spec!;
 	const race = state.cls!.races.includes(spec.race) ? spec.race : state.cls!.races[0];
-	state.character = { source: 'preset', gear: spec.gearSpec, talents: spec.talents, race, note: undefined };
+	const leveling = level < MAX_LEVEL ? spec.levels[String(level)] : undefined;
+	state.character = {
+		source: 'preset',
+		level,
+		gear: leveling ? { items: leveling.gear.map(id => (id ? { id } : {})) } : spec.gearSpec,
+		talents: leveling ? leveling.talents : spec.talents,
+		race,
+		note: undefined,
+	};
 }
 
 function importAddon(text: string) {
@@ -310,17 +359,21 @@ function importAddon(text: string) {
 		if (!it?.id) return {};
 		return { id: Number(it.id), ...(it.enchant ? { enchant: Number(it.enchant) } : {}), ...(it.randomSuffix ? { randomSuffix: Number(it.randomSuffix) } : {}) };
 	});
-	const level = Number(data.level ?? 60);
+	const exportedLevel = Number(data.level ?? MAX_LEVEL) || MAX_LEVEL;
+	const level = Math.min(MAX_LEVEL, Math.max(MIN_LEVEL, exportedLevel));
 	state.cls = cls;
 	state.spec = spec;
 	setClassColor(cls);
 	state.character = {
 		source: 'import',
 		imported: true,
+		level,
 		gear: { items },
 		talents: talents || spec.talents,
 		race: raceName ?? spec.race,
-		note: `Imported ${RACE_LABEL[raceName ?? spec.race]} ${cls.name}, talents ${trees.join('/')}.` + (level !== 60 ? ` Your character is level ${level}; the sim uses level 60.` : ''),
+		note:
+			`Imported level ${exportedLevel} ${RACE_LABEL[raceName ?? spec.race]} ${cls.name}, talents ${trees.join('/')}.` +
+			(exportedLevel < MIN_LEVEL ? ` The sim starts at level ${MIN_LEVEL}, so it runs as level ${MIN_LEVEL}.` : ''),
 	};
 }
 
@@ -332,24 +385,75 @@ const signals = { abort: { onTrigger: () => {} } } as unknown as SimSignals;
 // Blunt weapons take weightstones; blades take sharpening stones. (WeaponType: 3 fist, 4 mace, 8 staff)
 const BLUNT = new Set([3, 4, 8]);
 
-function weaponImbue(spec: ForeverSpec, weaponType: number | undefined): string | undefined {
-	if (weaponType === undefined) return undefined;
-	if (spec.classId === 7) return 'WindfuryWeapon';
+function weaponImbue(spec: ForeverSpec, level: number, weaponType: number | undefined, offHand = false): string | undefined {
+	if (weaponType === undefined || weaponType === 5 || weaponType === 7) return undefined; // held off-hands, shields
+	if (spec.classId === 7) {
+		// Windfury Weapon is learned at 30; it doesn't stack with itself, so the off hand gets Rockbiter.
+		return level >= 30 && !offHand ? 'WindfuryWeapon' : 'RockbiterWeapon';
+	}
 	if (spec.role === 'Ranged DPS') return undefined;
-	return BLUNT.has(weaponType) ? 'DenseWeightstone' : 'DenseSharpeningStone';
+	const blunt = BLUNT.has(weaponType);
+	if (level >= 35) return blunt ? 'DenseWeightstone' : 'DenseSharpeningStone';
+	if (level >= 25) return blunt ? 'SolidWeightstone' : 'SolidSharpeningStone';
+	return undefined;
 }
 
-function consumesFor(spec: ForeverSpec, mainHandType?: number, offHandType?: number): Record<string, unknown> {
+// Consumables only from the level a character can use them (Elixir of the Mongoose and Giants: 46,
+// Greater Arcane Elixir: 47, Major Mana Potion: 49, Brilliant Wizard Oil: 45).
+function consumesFor(spec: ForeverSpec, level: number, mainHandType?: number, offHandType?: number): Record<string, unknown> {
 	if (spec.role === 'Caster DPS') {
-		return { defaultPotion: 'MajorManaPotion', spellPowerBuff: 'GreaterArcaneElixir', mainHandImbue: 'BrilliantWizardOil', ...(spec.classId === 8 ? { defaultConjured: 'ConjuredDemonicRune' } : {}) };
+		return {
+			...(level >= 49 ? { defaultPotion: 'MajorManaPotion' } : {}),
+			...(level >= 47 ? { spellPowerBuff: 'GreaterArcaneElixir' } : {}),
+			...(level >= 45 ? { mainHandImbue: 'BrilliantWizardOil' } : {}),
+			...(spec.classId === 8 && level >= 45 ? { defaultConjured: 'ConjuredDemonicRune' } : {}),
+		};
 	}
-	const mh = weaponImbue(spec, mainHandType);
-	const oh = weaponImbue(spec, offHandType);
+	const mh = weaponImbue(spec, level, mainHandType);
+	const oh = weaponImbue(spec, level, offHandType, true);
 	return {
-		agilityElixir: 'ElixirOfTheMongoose',
-		strengthBuff: 'ElixirOfGiants',
+		...(level >= 46 ? { agilityElixir: 'ElixirOfTheMongoose', strengthBuff: 'ElixirOfGiants' } : {}),
 		...(mh ? { mainHandImbue: mh } : {}),
-		...(oh && offHandType !== 7 && offHandType !== 5 ? { offHandImbue: oh === 'WindfuryWeapon' ? 'RockbiterWeapon' : oh } : {}),
+		...(oh ? { offHandImbue: oh } : {}),
+	};
+}
+
+// Generic boss for a level: two levels higher (three at 60), armor and melee damage blended from the
+// engine's level 25/40/50/60 boss presets. Mirrors core.ForeverBossTarget.
+function bossTarget(level: number): Record<string, unknown> {
+	const at = (m: Record<number, number>) => {
+		if (level < 25) return (m[25] * level) / 25;
+		const brackets = [25, 40, 50, 60];
+		for (let i = 0; i + 1 < brackets.length; i++) {
+			const lo = brackets[i],
+				hi = brackets[i + 1];
+			if (level <= hi) return m[lo] + ((m[hi] - m[lo]) * (level - lo)) / (hi - lo);
+		}
+		return m[60];
+	};
+	const stats = new Array(44).fill(0);
+	stats[26] = Math.round(at({ 25: 1104, 40: 2053, 50: 3137, 60: 3731 })); // armor
+	stats[17] = level >= 60 ? 805 : 574; // attack power
+	stats[34] = 127393; // health
+	return {
+		level: level >= 60 ? 63 : level + 2,
+		stats,
+		mobType: 'MobTypeDemon',
+		swingSpeed: 2,
+		minBaseDamage: Math.round(at({ 25: 400, 40: 1000, 50: 2000, 60: 3000 })),
+		parryHaste: true,
+		damageSpread: 0.3333,
+	};
+}
+
+// A shaman's own buff totems are modeled as group buffs in the engine.
+function shamanTotems(spec: ForeverSpec, level: number): Record<string, unknown> {
+	if (spec.classId !== 7) return {};
+	const melee = spec.role !== 'Caster DPS';
+	return {
+		...(level >= 10 && melee ? { strengthOfEarthTotem: 'TristateEffectRegular' } : {}),
+		...(level >= 42 && melee ? { graceOfAirTotem: 'TristateEffectRegular' } : {}),
+		...(level >= 26 && !melee ? { manaSpringTotem: 'TristateEffectRegular' } : {}),
 	};
 }
 
@@ -370,10 +474,11 @@ async function buildRequest(forever: boolean, iterations: number): Promise<RaidS
 		name: 'You',
 		race: ch.race,
 		class: cls.enumName,
-		level: 60,
+		level: ch.level,
 		equipment: ch.gear,
 		consumes: consumesFor(
 			spec,
+			ch.level,
 			ch.gear.items[14]?.id ? database.getItemById(ch.gear.items[14].id!)?.weaponType : undefined,
 			ch.gear.items[15]?.id ? database.getItemById(ch.gear.items[15].id!)?.weaponType : undefined,
 		),
@@ -385,11 +490,13 @@ async function buildRequest(forever: boolean, iterations: number): Promise<RaidS
 		distanceFromTarget: spec.distance,
 		reactionTimeMs: 150,
 		channelClipDelayMs: 50,
-		foreverRuleset: forever,
+		// Both runs use the Forever class kit at this level; the comparison run only switches
+		// Forever's combat rule changes off.
+		foreverRuleset: true,
+		foreverClassicCombatRules: !forever,
 		[toCamel(spec.key)]: spec.specOptions,
 		database: SimDatabase.toJson(gear.toDatabase()),
 	};
-	const target = (await db()).getPresetTarget('SoD/Level 60')?.target;
 	return RaidSimRequest.fromJson({
 		raid: {
 			parties: [{ players: [player] }],
@@ -399,17 +506,18 @@ async function buildRequest(forever: boolean, iterations: number): Promise<RaidS
 				powerWordFortitude: 'TristateEffectImproved',
 				divineSpirit: true,
 				...(physical ? { battleShout: 'TristateEffectImproved' } : {}),
+				...shamanTotems(spec, ch.level),
 			},
 			debuffs: {},
 			tanks: spec.role === 'Tank' ? [{ type: 'Player', index: 0 }] : [],
 		},
 		encounter: {
-			duration: FIGHT_SECONDS,
+			duration: fightSeconds(ch.level),
 			durationVariation: 15,
 			executeProportion20: 0.2,
 			executeProportion25: 0.25,
 			executeProportion35: 0.35,
-			targets: [target ? (target as any) : {}],
+			targets: [bossTarget(ch.level)],
 		} as any,
 		simOptions: { iterations, randomSeed: String(Math.floor(Math.random() * 1e9)) },
 	} as any);
@@ -448,6 +556,7 @@ async function showResults(el: HTMLElement, res: RaidSimResult, vanilla: RaidSim
 		return;
 	}
 	const spec = state.spec!;
+	const level = state.character!.level;
 	const p = res.raidMetrics!.parties[0].players[0];
 	const vp = vanilla.raidMetrics?.parties[0].players[0];
 	const tank = spec.role === 'Tank';
@@ -460,7 +569,8 @@ async function showResults(el: HTMLElement, res: RaidSimResult, vanilla: RaidSim
 		<div class="fs-result-head">
 			<div class="fs-big">${Math.round(main).toLocaleString()}<small>${tank ? 'threat per second' : 'damage per second'}</small></div>
 		</div>
-		<p class="fs-sub">${esc(spec.spec)} ${esc(state.cls!.name)}${tank ? `, ${Math.round(p.dps!.avg)} DPS` : ''}. Most fights land between
+		<p class="fs-sub">Level ${level} ${esc(spec.spec)} ${esc(state.cls!.name)}${tank ? `, ${Math.round(p.dps!.avg)} DPS` : ''},
+			${fightSeconds(level) / 60}-minute fights against a level ${level >= 60 ? 63 : level + 2} boss. Most fights land between
 			<strong>${Math.round(main - stdev)}</strong> and <strong>${Math.round(main + stdev)}</strong>.</p>
 		<p class="fs-sub">WoW Forever's combat changes are worth <strong>${delta >= 0 ? '+' : ''}${delta.toFixed(1)}%</strong> for you compared with Classic rules.</p>
 		<h3>Where your damage comes from</h3>
@@ -490,16 +600,21 @@ async function showResults(el: HTMLElement, res: RaidSimResult, vanilla: RaidSim
 			ActionId.fromProto(entry.id).fill().catch(() => null),
 			new Promise<null>(resolve => setTimeout(() => resolve(null), 1500)),
 		]);
-		const name = [entry.owner, actionId?.name].filter(Boolean).join(': ') || 'Other';
+		const spellId = entry.id?.rawId?.oneofKind === 'spellId' ? entry.id.rawId.spellId : 0;
+		const looked = actionId?.name && !actionId.name.includes('??') ? actionId.name : undefined;
+		const name = [entry.owner, looked ?? SPELL_NAMES[spellId]].filter(Boolean).join(': ') || 'Other';
 		const cur = grouped.get(name) ?? { name, icon: actionId?.iconUrl, dmg: 0 };
 		cur.dmg += entry.dmg;
 		grouped.set(name, cur);
 	}
-	const rows = [...grouped.values()].sort((a, b) => b.dmg - a.dmg).slice(0, 8);
+	const rows = [...grouped.values()]
+		.filter(r => r.dmg / ITERATIONS / fightSeconds(level) >= 0.5)
+		.sort((a, b) => b.dmg - a.dmg)
+		.slice(0, 8);
 	const top = rows[0]?.dmg ?? 1;
 	const bars = card.querySelector('.fs-bars')!;
 	for (const row of rows) {
-		const dps = row.dmg / ITERATIONS / FIGHT_SECONDS;
+		const dps = row.dmg / ITERATIONS / fightSeconds(state.character!.level);
 		bars.append(
 			h(`<div class="fs-bar">
 				<img src="${row.icon ?? ICON('inv_misc_questionmark')}" alt="" loading="lazy" />

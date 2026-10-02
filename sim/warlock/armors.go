@@ -8,26 +8,26 @@ import (
 )
 
 func (warlock *Warlock) applyDemonArmor() {
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(warlock.Level, map[int32]int32{
 		25: 706,
 		40: 11733,
 		50: 11734,
 		60: 11735,
-	}[warlock.Level]
+	})
 
-	armor := map[int32]float64{
+	armor := core.AtLevel(warlock.Level, map[int32]float64{
 		25: 210.0,
 		40: 390.0,
 		50: 480.0,
 		60: 570.0,
-	}[warlock.Level]
+	})
 
-	shadowRes := map[int32]float64{
+	shadowRes := core.AtLevel(warlock.Level, map[int32]float64{
 		25: 3.0,
 		40: 9.0,
 		50: 12.0,
 		60: 15.0,
-	}[warlock.Level]
+	})
 
 	warlock.AddStat(stats.Armor, armor)
 	warlock.AddStat(stats.ShadowResistance, shadowRes)

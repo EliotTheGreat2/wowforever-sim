@@ -41,8 +41,10 @@ func (priest *Priest) ApplyRunes() {
 	// Feet
 	priest.registerDispersionSpell()
 
-	// Skill Books
-	priest.registerShadowfiendSpell()
+	// Skill Books (not in WoW Forever)
+	if !priest.Forever {
+		priest.registerShadowfiendSpell()
+	}
 }
 
 func (priest *Priest) applyShoulderRuneEffect() {

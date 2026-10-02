@@ -183,12 +183,12 @@ func (hunter *Hunter) makeQueueSpellsAndAura() *core.Spell {
 }
 
 func (hunter *Hunter) registerRaptorStrikeSpell() {
-	rank := map[int32]int{
+	rank := core.AtLevel(hunter.Level, map[int32]int{
 		25: 4,
 		40: 6,
 		50: 7,
 		60: 8,
-	}[hunter.Level]
+	})
 
 	hasMeleeSpecialist := hunter.HasRune(proto.HunterRune_RuneBeltMeleeSpecialist)
 	config := hunter.getRaptorStrikeConfig(rank)

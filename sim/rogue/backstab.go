@@ -8,19 +8,19 @@ import (
 )
 
 func (rogue *Rogue) registerBackstabSpell() {
-	flatDamageBonus := map[int32]float64{
+	flatDamageBonus := core.AtLevel(rogue.Level, map[int32]float64{
 		25: 32,
 		40: 60,
 		50: 90,
 		60: core.TernaryFloat64(core.IncludeAQ, 150, 140),
-	}[rogue.Level]
+	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(rogue.Level, map[int32]int32{
 		25: 2590,
 		40: 8721,
 		50: 11279,
 		60: core.TernaryInt32(core.IncludeAQ, 25300, 11281),
-	}[rogue.Level]
+	})
 
 	// waylay := rogue.HasRune(proto.RogueRune_RuneWaylay)
 	hasCutthroatRune := rogue.HasRune(proto.RogueRune_RuneCutthroat)

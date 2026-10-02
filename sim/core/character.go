@@ -55,8 +55,10 @@ type Character struct {
 	// ISB External configuration
 	IsbConfig IsbConfig
 
-	// WoW Forever ruleset (see forever.go).
+	// WoW Forever: vanilla class kit at any level (no SoD runes or skill books).
 	Forever bool
+	// WoW Forever combat rule changes (DoT crits, ...). Off when comparing against Classic rules.
+	ForeverCombatRules bool
 
 	// Base stats for this Character.
 	baseStats stats.Stats
@@ -207,6 +209,8 @@ func NewCharacter(party *Party, partyIndex int, player *proto.Player) Character 
 	character.PseudoStats.CanBlock = character.OffHand().WeaponType == proto.WeaponType_WeaponTypeShield
 	character.PseudoStats.InFrontOfTarget = player.InFrontOfTarget
 	character.Forever = player.ForeverRuleset
+	character.ForeverCombatRules = player.ForeverRuleset && !player.ForeverClassicCombatRules
+	character.Unit.ForeverRankFallback = player.ForeverRuleset
 
 	if player.EnableItemSwap && player.ItemSwap != nil {
 		character.enableItemSwap(player.ItemSwap)

@@ -5,27 +5,27 @@ import (
 )
 
 func (warrior *Warrior) registerHeroicStrikeSpell(realismICD *core.Cooldown) {
-	flatDamageBonus := map[int32]float64{
+	flatDamageBonus := core.AtLevel(warrior.Level, map[int32]float64{
 		25: 44,
 		40: 80,
 		50: 111,
 		60: core.TernaryFloat64(core.IncludeAQ, 157, 138),
-	}[warrior.Level]
+	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(warrior.Level, map[int32]int32{
 		25: 1608,
 		40: 11565,
 		50: 11566,
 		60: core.TernaryInt32(core.IncludeAQ, 25286, 11567),
-	}[warrior.Level]
+	})
 
 	// No known equation
-	threat := map[int32]float64{
+	threat := core.AtLevel(warrior.Level, map[int32]float64{
 		25: 68,  //guess
 		40: 103, //guess
 		50: 120,
 		60: core.TernaryFloat64(core.IncludeAQ, 173, 145),
-	}[warrior.Level]
+	})
 
 	warrior.HeroicStrike = warrior.RegisterSpell(AnyStance, core.SpellConfig{
 		ActionID:       core.ActionID{SpellID: spellID},
@@ -65,26 +65,26 @@ func (warrior *Warrior) registerHeroicStrikeSpell(realismICD *core.Cooldown) {
 }
 
 func (warrior *Warrior) registerCleaveSpell(realismICD *core.Cooldown) {
-	flatDamageBonus := map[int32]float64{
+	flatDamageBonus := core.AtLevel(warrior.Level, map[int32]float64{
 		25: 5,
 		40: 18,
 		50: 32,
 		60: 50,
-	}[warrior.Level]
+	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(warrior.Level, map[int32]int32{
 		25: 845,
 		40: 11608,
 		50: 11609,
 		60: 20569,
-	}[warrior.Level]
+	})
 
-	threat := map[int32]float64{
+	threat := core.AtLevel(warrior.Level, map[int32]float64{
 		25: 20, //guess
 		40: 60, //guess
 		50: 80,
 		60: 100,
-	}[warrior.Level]
+	})
 
 	flatDamageBonus *= []float64{1, 1.4, 1.8, 2.2}[warrior.Talents.ImprovedCleave]
 

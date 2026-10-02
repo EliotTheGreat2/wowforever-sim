@@ -8,29 +8,29 @@ import (
 
 func (druid *Druid) registerFaerieFireSpell() {
 	spellClassMask := ClassSpellMask_DruidFaerieFire
-	actionID := core.ActionID{SpellID: map[int32]int32{
+	actionID := core.ActionID{SpellID: core.AtLevel(druid.Level, map[int32]int32{
 		25: 770,
 		40: 778,
 		50: 9749,
 		60: 9907,
-	}[druid.Level]}
+	})}
 	manaCostOptions := core.ManaCostOptions{
-		FlatCost: map[int32]float64{
+		FlatCost: core.AtLevel(druid.Level, map[int32]float64{
 			25: 55,
 			40: 75,
 			50: 95,
 			60: 115,
-		}[druid.Level],
+		}),
 	}
 	gcd := core.GCDDefault
 	ignoreHaste := false
 	cd := core.Cooldown{}
-	flatThreatBonus := 2. * map[int32]float64{
+	flatThreatBonus := 2. * core.AtLevel(druid.Level, map[int32]float64{
 		25: 18,
 		40: 30,
 		50: 42,
 		60: 54,
-	}[druid.Level]
+	})
 	flags := core.SpellFlagNone
 	formMask := Humanoid | Moonkin
 
@@ -40,11 +40,11 @@ func (druid *Druid) registerFaerieFireSpell() {
 
 	if druid.InForm(Cat|Bear) && druid.Talents.FaerieFireFeral {
 		spellClassMask = ClassSpellMask_DruidFaerieFireFeral
-		actionID = core.ActionID{SpellID: map[int32]int32{
+		actionID = core.ActionID{SpellID: core.AtLevel(druid.Level, map[int32]int32{
 			40: 17390,
 			50: 17391,
 			60: 17392,
-		}[druid.Level]}
+		})}
 		manaCostOptions = core.ManaCostOptions{}
 		gcd = time.Second
 		ignoreHaste = true

@@ -5,26 +5,26 @@ import (
 )
 
 func (warrior *Warrior) registerHamstringSpell() {
-	damage := map[int32]float64{
+	damage := core.AtLevel(warrior.Level, map[int32]float64{
 		25: 5,
 		40: 18,
 		50: 18,
 		60: 45,
-	}[warrior.Level]
+	})
 
-	spellID := map[int32]int32{
+	spellID := core.AtLevel(warrior.Level, map[int32]int32{
 		25: 1715,
 		40: 7372,
 		50: 7372,
 		60: 27584,
-	}[warrior.Level]
+	})
 
-	spell_level := map[int32]int32{
+	spell_level := core.AtLevel(warrior.Level, map[int32]int32{
 		25: 8,
 		40: 32,
 		50: 32,
 		60: 54,
-	}[warrior.Level]
+	})
 
 	warrior.Hamstring = warrior.RegisterSpell(BattleStance|BerserkerStance, core.SpellConfig{
 		ClassSpellMask: ClassSpellMask_WarriorHamstring,
