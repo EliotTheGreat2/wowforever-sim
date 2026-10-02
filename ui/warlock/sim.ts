@@ -15,7 +15,12 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 	cssClass: 'warlock-sim-ui',
 	cssScheme: 'warlock',
 	// List any known bugs / issues here and they'll be shown on the site.
-	knownIssues: [],
+	knownIssues: [
+		'Modeled Forever change: damage-over-time effects can critically strike (toggle "WoW Forever Rules" in Settings to compare).',
+		'Talents are vanilla trees. Forever talents (Pandemic, Malediction, Improved Drains, Decimation, ...) need datamined values.',
+		'Gear is a pre-raid placeholder from vanilla dungeons/crafting. Forever items from new dungeons and raids are not in the database yet.',
+		'Bane of Agony (Curse of Agony moving off the curse slot) is not modeled yet.',
+	],
 
 	// All stats for which EP should be calculated.
 	epStats: [
@@ -113,7 +118,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 		race: Presets.OtherDefaults.race,
 
 		// Default equipped gear.
-		gear: Presets.DefaultGear.gear,
+		gear: Presets.ForeverPreRaidGear.gear,
 
 		// Default EP weights for sorting gear in the gear picker.
 		epWeights: Stats.fromMap(
@@ -135,20 +140,20 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 			},
 		),
 		// Default consumes settings.
-		consumes: Presets.DefaultConsumes,
+		consumes: Presets.ForeverConsumes,
 		// Default talents.
-		talents: Presets.DefaultTalents.data,
+		talents: Presets.ForeverAffTalents.data,
 		// Default spec-specific settings.
 		specOptions: Presets.DefaultOptions,
 
 		// Default buffs and debuffs settings.
-		raidBuffs: Presets.DefaultRaidBuffs,
+		raidBuffs: Presets.ForeverRaidBuffs,
 
 		partyBuffs: PartyBuffs.create({}),
 
-		individualBuffs: Presets.DefaultIndividualBuffs,
+		individualBuffs: Presets.ForeverIndividualBuffs,
 
-		debuffs: Presets.DefaultDebuffs,
+		debuffs: Presets.ForeverDebuffs,
 
 		other: Presets.OtherDefaults,
 	},
@@ -177,7 +182,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 	petConsumeInputs: [ConsumablesInputs.PetAttackPowerConsumable, ConsumablesInputs.PetAgilityConsumable, ConsumablesInputs.PetStrengthConsumable],
 	// Inputs to include in the 'Other' section on the settings tab.
 	otherInputs: {
-		inputs: [WarlockInputs.PetPoolManaInput(), OtherInputs.DistanceFromTarget, OtherInputs.ChannelClipDelay],
+		inputs: [OtherInputs.ForeverRuleset, WarlockInputs.PetPoolManaInput(), OtherInputs.DistanceFromTarget, OtherInputs.ChannelClipDelay],
 	},
 	itemSwapSlots: [ItemSlot.ItemSlotMainHand, ItemSlot.ItemSlotOffHand, ItemSlot.ItemSlotRanged],
 	encounterPicker: {
@@ -188,6 +193,8 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 	presets: {
 		// Preset talents that the user can quickly select.
 		talents: [
+			Presets.ForeverAffTalents,
+			Presets.ForeverDestroTalents,
 			...Presets.TalentPresets[Phase.Phase7],
 			...Presets.TalentPresets[Phase.Phase6],
 			...Presets.TalentPresets[Phase.Phase5],
@@ -198,6 +205,8 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 		],
 		// Preset rotations that the user can quickly select.
 		rotations: [
+			Presets.ForeverAffRotation,
+			Presets.ForeverDestroRotation,
 			...Presets.APLPresets[Phase.Phase7],
 			...Presets.APLPresets[Phase.Phase6],
 			...Presets.APLPresets[Phase.Phase5],
@@ -209,6 +218,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 
 		// Preset gear configurations that the user can quickly select.
 		gear: [
+			Presets.ForeverPreRaidGear,
 			...Presets.GearPresets[Phase.Phase7],
 			...Presets.GearPresets[Phase.Phase6],
 			...Presets.GearPresets[Phase.Phase5],
@@ -218,11 +228,16 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecWarlock, {
 			...Presets.GearPresets[Phase.Phase1],
 		],
 		// Preset builds (gear, talents, APL) that the user can quickly select.
-		builds: [Presets.PresetBuildAff, Presets.PresetBuildDemo, Presets.PresetBuildDestro],
+		builds: [Presets.ForeverBuildAff, Presets.ForeverBuildDestro, Presets.PresetBuildAff, Presets.PresetBuildDemo, Presets.PresetBuildDestro],
 	},
 
 	autoRotation: player => {
 		const level = player.getLevel();
+		// Forever site: always use Forever rotations at 60 so the Forever Rules toggle
+		// compares rule sets on the same rotation.
+		if (level === 60) {
+			return (player.getTalentTree() === 2 ? Presets.ForeverDestroRotation : Presets.ForeverAffRotation).rotation.rotation!;
+		}
 		if (level < 50) {
 			return Presets.DefaultAPLs[player.getLevel()][player.getTalentTree()].rotation.rotation!;
 		}

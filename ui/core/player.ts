@@ -245,6 +245,7 @@ export class Player<SpecType extends Spec> {
 	private reactionTime = 0;
 	private channelClipDelay = 0;
 	private inFrontOfTarget = false;
+	private foreverRuleset = true;
 	private distanceFromTarget = 0;
 	private healingModel: HealingModel = HealingModel.create();
 	private healingEnabled = false;
@@ -889,6 +890,18 @@ export class Player<SpecType extends Spec> {
 		return this.inFrontOfTarget;
 	}
 
+	// WoW Forever: enables Forever combat rules in the sim (DoT crits, no SoD runes).
+	getForeverRuleset(): boolean {
+		return this.foreverRuleset;
+	}
+
+	setForeverRuleset(eventID: EventID, newForeverRuleset: boolean) {
+		if (newForeverRuleset === this.foreverRuleset) return;
+
+		this.foreverRuleset = newForeverRuleset;
+		this.miscOptionsChangeEmitter.emit(eventID);
+	}
+
 	setInFrontOfTarget(eventID: EventID, newInFrontOfTarget: boolean) {
 		if (newInFrontOfTarget === this.inFrontOfTarget) return;
 
@@ -1345,6 +1358,7 @@ export class Player<SpecType extends Spec> {
 				reactionTimeMs: this.getReactionTime(),
 				channelClipDelayMs: this.getChannelClipDelay(),
 				inFrontOfTarget: this.getInFrontOfTarget(),
+				foreverRuleset: this.getForeverRuleset(),
 				distanceFromTarget: this.getDistanceFromTarget(),
 				healingModel: this.getHealingModel(),
 				isbUsingShadowflame: this.getIsbUsingShadowflame(),
@@ -1408,6 +1422,7 @@ export class Player<SpecType extends Spec> {
 				this.setReactionTime(eventID, proto.reactionTimeMs);
 				this.setChannelClipDelay(eventID, proto.channelClipDelayMs);
 				this.setInFrontOfTarget(eventID, proto.inFrontOfTarget);
+				this.setForeverRuleset(eventID, proto.foreverRuleset);
 				this.setDistanceFromTarget(eventID, proto.distanceFromTarget);
 				this.setHealingModel(eventID, proto.healingModel || HealingModel.create());
 				this.setIsbSbFrequency(eventID, proto.isbSbFrequency);
@@ -1431,6 +1446,7 @@ export class Player<SpecType extends Spec> {
 		TypedEvent.freezeAllAndDo(() => {
 			this.setReactionTime(eventID, 200);
 			this.setInFrontOfTarget(eventID, isTankSpec(this.spec));
+			this.setForeverRuleset(eventID, true);
 			this.setHealingModel(
 				eventID,
 				HealingModel.create({

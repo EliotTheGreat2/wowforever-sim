@@ -227,7 +227,7 @@ export abstract class SimUI extends Component {
 		if (config.simStatus.status == LaunchStatus.Unlaunched) {
 			statusStr = 'This sim is a WORK IN PROGRESS. It is not fully developed and should not be used for general purposes.';
 		} else if (config.simStatus.status == LaunchStatus.Alpha) {
-			statusStr = 'This sim is in ALPHA status. New runes and items may not yet be functional and further testing is needed.';
+			statusStr = 'WoW Forever preview. Only confirmed Forever rules are modeled; see the issues below for what is still a placeholder.';
 		} else {
 			statusStr = `This sim is in BETA status. New runes and items should be mostly functional.`;
 		}

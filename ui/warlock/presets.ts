@@ -46,6 +46,10 @@ import DestroAplP5JSON from './apls/p5/destruction.apl.json';
 import AffAplP6JSON from './apls/p6/affliction.apl.json';
 import DemoAplP6JSON from './apls/p6/demonology.apl.json';
 import DestroAplP6JSON from './apls/p6/destruction.apl.json';
+// WoW Forever
+import ForeverAffAplJSON from './apls/forever/affliction.apl.json';
+import ForeverDestroAplJSON from './apls/forever/destruction.apl.json';
+import ForeverPreRaidGearJSON from './gear_sets/forever/preraid_placeholder.gear.json';
 // gear
 import DestructionGearJSON from './gear_sets/p1/destruction.gear.json';
 import FireImpGearJSON from './gear_sets/p2/fire.imp.gear.json';
@@ -381,3 +385,62 @@ export const OtherDefaults = {
 	race: Race.RaceOrc,
 	channelClipDelay: 150,
 };
+
+///////////////////////////////////////////////////////////////////////////
+//                                 WoW Forever
+///////////////////////////////////////////////////////////////////////////
+// Placeholders until Forever talents/items are datamined: vanilla talent trees,
+// pre-Molten Core spell ranks, and dungeon/crafted pre-raid gear.
+
+const isLevel60 = (player: Player<any>) => player.getLevel() === 60;
+
+export const ForeverPreRaidGear = PresetUtils.makePresetGear('Forever Pre-Raid', ForeverPreRaidGearJSON, { customCondition: isLevel60 });
+
+export const ForeverAffRotation = PresetUtils.makePresetAPLRotation('Forever Aff', ForeverAffAplJSON, { customCondition: isLevel60 });
+export const ForeverDestroRotation = PresetUtils.makePresetAPLRotation('Forever Destro', ForeverDestroAplJSON, { customCondition: isLevel60 });
+
+export const ForeverAffTalents = {
+	name: 'Forever Aff',
+	data: SavedTalents.create({ talentsString: '4500253012201005--50502051020001' }),
+	enableWhen: isLevel60,
+};
+export const ForeverDestroTalents = {
+	name: 'Forever Destro',
+	data: SavedTalents.create({ talentsString: '05002-035004-5050205102005151' }),
+	enableWhen: isLevel60,
+};
+
+export const ForeverBuildAff = PresetUtils.makePresetBuild('Forever Affliction', {
+	gear: ForeverPreRaidGear,
+	talents: ForeverAffTalents,
+	rotation: ForeverAffRotation,
+});
+export const ForeverBuildDestro = PresetUtils.makePresetBuild('Forever Destruction', {
+	gear: ForeverPreRaidGear,
+	talents: ForeverDestroTalents,
+	rotation: ForeverDestroRotation,
+});
+
+// Vanilla consumables only (no Season of Discovery items).
+export const ForeverConsumes = Consumes.create({
+	defaultPotion: Potions.MajorManaPotion,
+	defaultConjured: Conjured.ConjuredDemonicRune,
+	flask: Flask.FlaskOfSupremePower,
+	spellPowerBuff: SpellPowerBuff.GreaterArcaneElixir,
+	firePowerBuff: FirePowerBuff.ElixirOfGreaterFirepower,
+	food: Food.FoodRunnTumTuberSurprise,
+	mainHandImbue: WeaponImbue.BrilliantWizardOil,
+});
+
+// Buffs a normal Forever group can bring (no SoD world buffs).
+export const ForeverRaidBuffs = RaidBuffs.create({
+	arcaneBrilliance: true,
+	giftOfTheWild: TristateEffect.TristateEffectImproved,
+	powerWordFortitude: TristateEffect.TristateEffectImproved,
+	divineSpirit: true,
+});
+export const ForeverIndividualBuffs = IndividualBuffs.create({
+	blessingOfKings: true,
+	blessingOfWisdom: TristateEffect.TristateEffectImproved,
+});
+export const ForeverDebuffs = Debuffs.create({});

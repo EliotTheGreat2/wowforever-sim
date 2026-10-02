@@ -168,6 +168,9 @@ export class Encounter {
 
 	static getPresetTargetForLevel(playerLevel: number, sim: Sim): PresetTarget {
 		const presetTargets = sim.db.getAllPresetTargets();
+		// WoW Forever: prefer the plain "Level N" boss over SoD raid-specific targets.
+		const genericTarget = presetTargets.find(target => /\/Level \d+$/.test(target.path) && (target?.target?.level ?? 0) > playerLevel);
+		if (genericTarget) return genericTarget;
 		const target = presetTargets.find(target => target?.target?.level && target?.target?.level > playerLevel);
 		return target ?? presetTargets[0];
 	}

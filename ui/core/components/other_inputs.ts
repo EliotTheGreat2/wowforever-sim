@@ -112,6 +112,19 @@ export const InFrontOfTarget = {
 	},
 };
 
+export const ForeverRuleset = {
+	id: 'forever-ruleset',
+	type: 'boolean' as const,
+	label: 'WoW Forever Rules',
+	labelTooltip:
+		'Simulate with WoW Forever combat rules: damage-over-time effects can crit and Season of Discovery runes are disabled. Turn off to compare against vanilla rules.',
+	changedEvent: (player: Player<any>) => player.miscOptionsChangeEmitter,
+	getValue: (player: Player<any>) => player.getForeverRuleset(),
+	setValue: (eventID: EventID, player: Player<any>, newValue: boolean) => {
+		player.setForeverRuleset(eventID, newValue);
+	},
+};
+
 export const DistanceFromTarget = {
 	id: 'distance-from-target',
 	type: 'number' as const,
