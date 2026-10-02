@@ -44,10 +44,10 @@ func main() {
 	}
 	var useFS = flag.Bool("usefs", false, "Use local file system for client files. Set to true during development.")
 	var wasm = flag.Bool("wasm", false, "Use wasm for sim instead of web server apis. Can only be used with usefs=true")
-	var simName = flag.String("sim", "", "Name of simulator to launch (ex: balance_druid, elemental_shaman, etc)")
+	var simName = flag.String("sim", "warlock", "Name of simulator to launch (ex: balance_druid, elemental_shaman, etc)")
 	var host = flag.String("host", "localhost:3333", "URL to host the interface on.")
 	var launch = flag.Bool("launch", true, "auto launch browser")
-	var skipVersionCheck = flag.Bool("nvc", false, "set true to skip version check")
+	var skipVersionCheck = flag.Bool("nvc", true, "set true to skip version check (WoW Forever fork: skipped by default)")
 
 	flag.Parse()
 
