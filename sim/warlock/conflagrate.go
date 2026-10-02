@@ -61,7 +61,8 @@ func (warlock *Warlock) getConflagrateConfig(rank int) core.SpellConfig {
 			}
 
 			// Conflag now doesn't consume Immo or Shadowflame when using Backdraft
-			if !hasBackdraftRune {
+			keepImmolate := warlock.foreverConflagKeepsImmolateChance > 0 && sim.Proc(warlock.foreverConflagKeepsImmolateChance, "Shadow and Flame")
+			if !hasBackdraftRune && !keepImmolate {
 				immoTime := core.NeverExpires
 				shadowflameTime := core.NeverExpires
 

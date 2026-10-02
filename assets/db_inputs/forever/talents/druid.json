@@ -1,0 +1,882 @@
+{
+ "class": "druid",
+ "build": "1.60.1.70170",
+ "source": "https://wow-forever.gg/talents/druid/",
+ "trees": [
+  {
+   "name": "Balance",
+   "talents": [
+    {
+     "name": "Improved Wrath",
+     "key": "improved_wrath",
+     "tier": 1,
+     "col": 0,
+     "maxRank": 5,
+     "requires": null,
+     "description": "Reduces cast time by 0.1/0.2/0.3/0.4/0.5 sec and Mana cost by 10/20/30/40/50%",
+     "perRank": [
+      [
+       0.1,
+       0.2,
+       0.3,
+       0.4,
+       0.5
+      ],
+      [
+       10.0,
+       20.0,
+       30.0,
+       40.0,
+       50.0
+      ]
+     ]
+    },
+    {
+     "name": "Genesis",
+     "key": "genesis",
+     "tier": 1,
+     "col": 1,
+     "maxRank": 5,
+     "requires": null,
+     "description": "Increases periodic damage and healing by 1/2/3/4/5%",
+     "perRank": [
+      [
+       1.0,
+       2.0,
+       3.0,
+       4.0,
+       5.0
+      ]
+     ]
+    },
+    {
+     "name": "Moonglow",
+     "key": "moonglow",
+     "tier": 2,
+     "col": 0,
+     "maxRank": 3,
+     "requires": null,
+     "description": "Reduces Mana cost of damaging spells by 8/17/25%",
+     "perRank": [
+      [
+       8.0,
+       17.0,
+       25.0
+      ]
+     ]
+    },
+    {
+     "name": "Improved Moonfire",
+     "key": "improved_moonfire",
+     "tier": 2,
+     "col": 1,
+     "maxRank": 2,
+     "requires": null,
+     "description": "Increases damage and critical strike chance by 5/10%",
+     "perRank": [
+      [
+       5.0,
+       10.0
+      ]
+     ]
+    },
+    {
+     "name": "Nature's Majesty",
+     "key": "nature_s_majesty",
+     "tier": 2,
+     "col": 2,
+     "maxRank": 2,
+     "requires": null,
+     "description": "Increases critical strike chance by 2/4%",
+     "perRank": [
+      [
+       2.0,
+       4.0
+      ]
+     ]
+    },
+    {
+     "name": "Nature's Reach",
+     "key": "nature_s_reach",
+     "tier": 2,
+     "col": 3,
+     "maxRank": 2,
+     "requires": null,
+     "description": "Increases range by 10/20% and hit chance by 2/4%",
+     "perRank": [
+      [
+       10.0,
+       20.0
+      ],
+      [
+       2.0,
+       4.0
+      ]
+     ]
+    },
+    {
+     "name": "Improved Entangling Roots",
+     "key": "improved_entangling_roots",
+     "tier": 3,
+     "col": 0,
+     "maxRank": 3,
+     "requires": null,
+     "description": "Increases damage by 25/50/75%, victims take 25/50/75% more without interrupting",
+     "perRank": [
+      [
+       25.0,
+       50.0,
+       75.0
+      ],
+      [
+       25.0,
+       50.0,
+       75.0
+      ]
+     ]
+    },
+    {
+     "name": "Nature's Splendor",
+     "key": "nature_s_splendor",
+     "tier": 3,
+     "col": 2,
+     "maxRank": 1,
+     "requires": "Nature's Majesty",
+     "description": "Increases duration: Moonfire +3 sec, Rejuvenation +3 sec, Regrowth +6 sec, Insect Swarm +2 sec",
+     "perRank": []
+    },
+    {
+     "name": "Insect Swarm",
+     "key": "insect_swarm",
+     "tier": 4,
+     "col": 0,
+     "maxRank": 1,
+     "requires": null,
+     "description": "Decreases enemy hit chance by 2%, causes 48 Nature damage over 12 sec",
+     "perRank": []
+    },
+    {
+     "name": "Vengeance",
+     "key": "vengeance",
+     "tier": 4,
+     "col": 1,
+     "maxRank": 5,
+     "requires": "Improved Moonfire",
+     "description": "Increases critical strike damage bonus by 20/40/60/80/100%",
+     "perRank": [
+      [
+       20.0,
+       40.0,
+       60.0,
+       80.0,
+       100.0
+      ]
+     ]
+    },
+    {
+     "name": "Improved Starfire",
+     "key": "improved_starfire",
+     "tier": 4,
+     "col": 2,
+     "maxRank": 5,
+     "requires": null,
+     "description": "Reduces cast time by 0.1/0.2/0.3/0.4/0.5 sec, 3/6/9/12/15% chance to stun for 3 sec",
+     "perRank": [
+      [
+       0.1,
+       0.2,
+       0.3,
+       0.4,
+       0.5
+      ],
+      [
+       3.0,
+       6.0,
+       9.0,
+       12.0,
+       15.0
+      ]
+     ]
+    },
+    {
+     "name": "Overgrowth",
+     "key": "overgrowth",
+     "tier": 5,
+     "col": 1,
+     "maxRank": 2,
+     "requires": null,
+     "description": "Increases max targets for Entangling Roots by 1/2",
+     "perRank": [
+      [
+       1.0,
+       2.0
+      ]
+     ]
+    },
+    {
+     "name": "Nature's Grace",
+     "key": "nature_s_grace",
+     "tier": 5,
+     "col": 2,
+     "maxRank": 1,
+     "requires": null,
+     "description": "Non-periodic spell criticals increase spellcasting speed and reduce global cooldown by 10% for 3 sec",
+     "perRank": []
+    },
+    {
+     "name": "Eclipse",
+     "key": "eclipse",
+     "tier": 5,
+     "col": 3,
+     "maxRank": 3,
+     "requires": null,
+     "description": "Wrath reduces next 2 Starfire cast times by 0.17/0.33/0.50 sec, stores 4 charges, lasts 15 sec",
+     "perRank": [
+      [
+       0.17,
+       0.33,
+       0.5
+      ]
+     ]
+    },
+    {
+     "name": "Moonfury",
+     "key": "moonfury",
+     "tier": 6,
+     "col": 2,
+     "maxRank": 5,
+     "requires": null,
+     "description": "Increases Arcane and Nature spell damage by 2/4/6/8/10%",
+     "perRank": [
+      [
+       2.0,
+       4.0,
+       6.0,
+       8.0,
+       10.0
+      ]
+     ]
+    },
+    {
+     "name": "Moonkin Form",
+     "key": "moonkin_form",
+     "tier": 7,
+     "col": 1,
+     "maxRank": 1,
+     "requires": null,
+     "description": "Increases Omen of Clarity trigger by 100%, Armor by 360%, party crit by 3%, grants Polymorph immunity, prevents healing spells",
+     "perRank": []
+    }
+   ]
+  },
+  {
+   "name": "Feral Combat",
+   "talents": [
+    {
+     "name": "Ferocity",
+     "key": "ferocity",
+     "tier": 1,
+     "col": 0,
+     "maxRank": 5,
+     "requires": null,
+     "description": "Reduces cost of Maul, Primal Bite, Swipe, Claw, Rake by 1/2/3/4/5 Rage or Energy",
+     "perRank": [
+      [
+       1.0,
+       2.0,
+       3.0,
+       4.0,
+       5.0
+      ]
+     ]
+    },
+    {
+     "name": "Heart of the Wild",
+     "key": "heart_of_the_wild",
+     "tier": 1,
+     "col": 1,
+     "maxRank": 5,
+     "requires": null,
+     "description": "Increases Intellect by 2/4/6/8/10%; Bear/Dire Bear Stamina by 4/8/12/16/20%; Cat Strength by 2/4/6/8/10%",
+     "perRank": [
+      [
+       2.0,
+       4.0,
+       6.0,
+       8.0,
+       10.0
+      ],
+      [
+       4.0,
+       8.0,
+       12.0,
+       16.0,
+       20.0
+      ],
+      [
+       2.0,
+       4.0,
+       6.0,
+       8.0,
+       10.0
+      ]
+     ]
+    },
+    {
+     "name": "Feral Swiftness",
+     "key": "feral_swiftness",
+     "tier": 2,
+     "col": 0,
+     "maxRank": 2,
+     "requires": null,
+     "description": "Increases Cat movement speed by 15/30%, Dodge chance by 2/4%",
+     "perRank": [
+      [
+       15.0,
+       30.0
+      ],
+      [
+       2.0,
+       4.0
+      ]
+     ]
+    },
+    {
+     "name": "Feral Instinct",
+     "key": "feral_instinct",
+     "tier": 2,
+     "col": 1,
+     "maxRank": 3,
+     "requires": null,
+     "description": "Increases Swipe damage by 30%, reduces detection while Prowling as if 3 levels higher",
+     "perRank": []
+    },
+    {
+     "name": "Brutal Impact",
+     "key": "brutal_impact",
+     "tier": 2,
+     "col": 2,
+     "maxRank": 2,
+     "requires": null,
+     "description": "Increases Bash and Pounce stun by 0.5/1 sec, reduces Bash cooldown by 15/30 sec",
+     "perRank": [
+      [
+       0.5,
+       1.0
+      ],
+      [
+       15.0,
+       30.0
+      ]
+     ]
+    },
+    {
+     "name": "Thick Hide",
+     "key": "thick_hide",
+     "tier": 2,
+     "col": 3,
+     "maxRank": 3,
+     "requires": null,
+     "description": "Gain 1/2/3 base Armor per level plus 0.67/1.33/2 per defense skill beyond 5x level",
+     "perRank": [
+      [
+       1.0,
+       2.0,
+       3.0
+      ],
+      [
+       0.67,
+       1.33,
+       2.0
+      ]
+     ]
+    },
+    {
+     "name": "Shredding Attacks",
+     "key": "shredding_attacks",
+     "tier": 3,
+     "col": 0,
+     "maxRank": 3,
+     "requires": null,
+     "description": "Reduces Shred Energy cost by 6/12/18, Lacerate Rage cost by 1/2/3",
+     "perRank": [
+      [
+       6.0,
+       12.0,
+       18.0
+      ],
+      [
+       1.0,
+       2.0,
+       3.0
+      ]
+     ]
+    },
+    {
+     "name": "Savage Fury",
+     "key": "savage_fury",
+     "tier": 3,
+     "col": 1,
+     "maxRank": 2,
+     "requires": null,
+     "description": "Increases Claw, Rake, Shred, Maul, Swipe damage by 5/10%",
+     "perRank": [
+      [
+       5.0,
+       10.0
+      ]
+     ]
+    },
+    {
+     "name": "Feral Charge",
+     "key": "feral_charge",
+     "tier": 3,
+     "col": 2,
+     "maxRank": 1,
+     "requires": null,
+     "description": "Charge enemy, immobilizing for 4 sec and interrupting spells (requires Bear/Dire Bear Form)",
+     "perRank": []
+    },
+    {
+     "name": "Sharpened Claws",
+     "key": "sharpened_claws",
+     "tier": 3,
+     "col": 3,
+     "maxRank": 2,
+     "requires": null,
+     "description": "Increases critical strike chance in Bear, Dire Bear, Cat Form by 3/6%",
+     "perRank": [
+      [
+       3.0,
+       6.0
+      ]
+     ]
+    },
+    {
+     "name": "Shifting Power",
+     "key": "shifting_power",
+     "tier": 4,
+     "col": 0,
+     "maxRank": 1,
+     "requires": "Shredding Attacks",
+     "description": "Cost reduced by effects that reduce Shapeshifting cost",
+     "perRank": []
+    },
+    {
+     "name": "Primal Bite",
+     "key": "primal_bite",
+     "tier": 4,
+     "col": 1,
+     "maxRank": 1,
+     "requires": "Savage Fury",
+     "description": "Deals 100% normal damage plus 26, generates high threat",
+     "perRank": []
+    },
+    {
+     "name": "Predatory Strikes",
+     "key": "predatory_strikes",
+     "tier": 4,
+     "col": 2,
+     "maxRank": 3,
+     "requires": null,
+     "description": "Increases melee Attack Power in Cat, Bear, Dire Bear by 50/100/150% of level",
+     "perRank": [
+      [
+       50.0,
+       100.0,
+       150.0
+      ]
+     ]
+    },
+    {
+     "name": "Blood Frenzy",
+     "key": "blood_frenzy",
+     "tier": 4,
+     "col": 3,
+     "maxRank": 2,
+     "requires": "Sharpened Claws",
+     "description": "50/100% chance to gain 5 Rage on critical strike in Bear/Dire Bear; Cat combo point abilities gain additional combo point on critical",
+     "perRank": [
+      [
+       50.0,
+       100.0
+      ]
+     ]
+    },
+    {
+     "name": "Improved Shifting Power",
+     "key": "improved_shifting_power",
+     "tier": 5,
+     "col": 0,
+     "maxRank": 2,
+     "requires": "Shifting Power",
+     "description": "Reduces Shifting Power cooldown by 4/8 sec",
+     "perRank": [
+      [
+       4.0,
+       8.0
+      ]
+     ]
+    },
+    {
+     "name": "Leader of the Pack",
+     "key": "leader_of_the_pack",
+     "tier": 5,
+     "col": 1,
+     "maxRank": 1,
+     "requires": null,
+     "description": "Increases party critical strike chance within 45 yards by 3% (requires Cat, Bear, Dire Bear Form)",
+     "perRank": []
+    },
+    {
+     "name": "Predatory Instincts",
+     "key": "predatory_instincts",
+     "tier": 5,
+     "col": 2,
+     "maxRank": 2,
+     "requires": null,
+     "description": "Increases critical strike damage bonus of melee abilities by 10/20%",
+     "perRank": [
+      [
+       10.0,
+       20.0
+      ]
+     ]
+    },
+    {
+     "name": "Natural Reaction",
+     "key": "natural_reaction",
+     "tier": 6,
+     "col": 1,
+     "maxRank": 5,
+     "requires": null,
+     "description": "Increases Dodge by 1/2/3/4/5%, 20/40/60/80/100% chance to gain 5 Rage when dodging",
+     "perRank": [
+      [
+       1.0,
+       2.0,
+       3.0,
+       4.0,
+       5.0
+      ],
+      [
+       20.0,
+       40.0,
+       60.0,
+       80.0,
+       100.0
+      ]
+     ]
+    },
+    {
+     "name": "Rend and Tear",
+     "key": "rend_and_tear",
+     "tier": 6,
+     "col": 2,
+     "maxRank": 5,
+     "requires": "Predatory Strikes",
+     "description": "Increases damage on Bleeding targets by 2/4/6/8/10%",
+     "perRank": [
+      [
+       2.0,
+       4.0,
+       6.0,
+       8.0,
+       10.0
+      ]
+     ]
+    },
+    {
+     "name": "Berserk",
+     "key": "berserk",
+     "tier": 7,
+     "col": 1,
+     "maxRank": 1,
+     "requires": "Leader of the Pack",
+     "description": "Primal Bite hits 3 targets, removes cooldown, increases combo ability crit by 100%, grants Fear immunity for 15 sec (requires Cat/Bear/Dire Bear)",
+     "perRank": []
+    }
+   ]
+  },
+  {
+   "name": "Restoration",
+   "talents": [
+    {
+     "name": "Nature's Focus",
+     "key": "nature_s_focus",
+     "tier": 1,
+     "col": 0,
+     "maxRank": 5,
+     "requires": null,
+     "description": "14/28/42/56/70% chance to avoid interruption while casting Arcane and Nature spells",
+     "perRank": [
+      [
+       14.0,
+       28.0,
+       42.0,
+       56.0,
+       70.0
+      ]
+     ]
+    },
+    {
+     "name": "Furor",
+     "key": "furor",
+     "tier": 1,
+     "col": 1,
+     "maxRank": 5,
+     "requires": null,
+     "description": "20/40/60/80/100% chance to gain 10 Rage in Bear/Dire Bear; regain 20/40/60/80/100% Cat Energy plus 2/4/6/8/10 per second out of form, max 20/40/60/80/100",
+     "perRank": [
+      [
+       20.0,
+       40.0,
+       60.0,
+       80.0,
+       100.0
+      ],
+      [
+       20.0,
+       40.0,
+       60.0,
+       80.0,
+       100.0
+      ],
+      [
+       2.0,
+       4.0,
+       6.0,
+       8.0,
+       10.0
+      ],
+      [
+       20.0,
+       40.0,
+       60.0,
+       80.0,
+       100.0
+      ]
+     ]
+    },
+    {
+     "name": "Naturalist",
+     "key": "naturalist",
+     "tier": 2,
+     "col": 0,
+     "maxRank": 5,
+     "requires": null,
+     "description": "Reduces Healing Touch cast time by 0.1/0.2/0.3/0.4/0.5 sec, increases all damage by 1/2/3/4/5%",
+     "perRank": [
+      [
+       0.1,
+       0.2,
+       0.3,
+       0.4,
+       0.5
+      ],
+      [
+       1.0,
+       2.0,
+       3.0,
+       4.0,
+       5.0
+      ]
+     ]
+    },
+    {
+     "name": "Subtlety",
+     "key": "subtlety",
+     "tier": 2,
+     "col": 1,
+     "maxRank": 3,
+     "requires": null,
+     "description": "Reduces threat from Nature and Arcane spells by 10/20/30%",
+     "perRank": [
+      [
+       10.0,
+       20.0,
+       30.0
+      ]
+     ]
+    },
+    {
+     "name": "Natural Shapeshifter",
+     "key": "natural_shapeshifter",
+     "tier": 2,
+     "col": 2,
+     "maxRank": 3,
+     "requires": null,
+     "description": "Reduces Shapeshifting Mana cost by 10/20/30%",
+     "perRank": [
+      [
+       10.0,
+       20.0,
+       30.0
+      ]
+     ]
+    },
+    {
+     "name": "Reflection",
+     "key": "reflection",
+     "tier": 3,
+     "col": 0,
+     "maxRank": 3,
+     "requires": null,
+     "description": "17/33/50% of Mana regeneration continues while casting",
+     "perRank": [
+      [
+       17.0,
+       33.0,
+       50.0
+      ]
+     ]
+    },
+    {
+     "name": "Gift of Nature",
+     "key": "gift_of_nature",
+     "tier": 3,
+     "col": 1,
+     "maxRank": 5,
+     "requires": null,
+     "description": "Increases all healing spell effects by 2/4/6/8/10%",
+     "perRank": [
+      [
+       2.0,
+       4.0,
+       6.0,
+       8.0,
+       10.0
+      ]
+     ]
+    },
+    {
+     "name": "Gift of the Earthmother",
+     "key": "gift_of_the_earthmother",
+     "tier": 3,
+     "col": 2,
+     "maxRank": 1,
+     "requires": null,
+     "description": "Reduces global cooldown by 0.5 sec on Rejuvenation, Swiftmend, Wild Growth",
+     "perRank": []
+    },
+    {
+     "name": "Tranquil Spirit",
+     "key": "tranquil_spirit",
+     "tier": 4,
+     "col": 0,
+     "maxRank": 5,
+     "requires": null,
+     "description": "Reduces Mana cost of Healing Touch and Tranquility by 2/4/6/8/10%",
+     "perRank": [
+      [
+       2.0,
+       4.0,
+       6.0,
+       8.0,
+       10.0
+      ]
+     ]
+    },
+    {
+     "name": "Improved Rejuvenation",
+     "key": "improved_rejuvenation",
+     "tier": 4,
+     "col": 1,
+     "maxRank": 3,
+     "requires": null,
+     "description": "Increases Rejuvenation effect by 5/10/15%",
+     "perRank": [
+      [
+       5.0,
+       10.0,
+       15.0
+      ]
+     ]
+    },
+    {
+     "name": "Swiftmend",
+     "key": "swiftmend",
+     "tier": 4,
+     "col": 2,
+     "maxRank": 1,
+     "requires": null,
+     "description": "Instantly heals target with Rejuvenation or Regrowth equal to full duration periodic effect",
+     "perRank": []
+    },
+    {
+     "name": "Nature's Swiftness",
+     "key": "nature_s_swiftness",
+     "tier": 5,
+     "col": 0,
+     "maxRank": 1,
+     "requires": "Naturalist",
+     "description": "Next Nature spell becomes instant cast when activated",
+     "perRank": []
+    },
+    {
+     "name": "Living Spirit",
+     "key": "living_spirit",
+     "tier": 5,
+     "col": 1,
+     "maxRank": 3,
+     "requires": null,
+     "description": "Increases Spirit by 5/10/15%",
+     "perRank": [
+      [
+       5.0,
+       10.0,
+       15.0
+      ]
+     ]
+    },
+    {
+     "name": "Improved Tranquility",
+     "key": "improved_tranquility",
+     "tier": 5,
+     "col": 2,
+     "maxRank": 2,
+     "requires": null,
+     "description": "Reduces threat by 50/100%, cooldown by 30/60 sec",
+     "perRank": [
+      [
+       50.0,
+       100.0
+      ],
+      [
+       30.0,
+       60.0
+      ]
+     ]
+    },
+    {
+     "name": "Improved Regrowth",
+     "key": "improved_regrowth",
+     "tier": 6,
+     "col": 1,
+     "maxRank": 5,
+     "requires": "Improved Rejuvenation",
+     "description": "Increases Regrowth critical effect chance by 10/20/30/40/50%",
+     "perRank": [
+      [
+       10.0,
+       20.0,
+       30.0,
+       40.0,
+       50.0
+      ]
+     ]
+    },
+    {
+     "name": "Wild Growth",
+     "key": "wild_growth",
+     "tier": 7,
+     "col": 1,
+     "maxRank": 1,
+     "requires": "Living Spirit",
+     "description": "Heals target and party for 280 over 7 sec within 43.5 yards, front-loaded",
+     "perRank": []
+    }
+   ]
+  }
+ ]
+}

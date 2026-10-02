@@ -60,9 +60,10 @@ func (warlock *Warlock) getDrainSoulBaseConfig(rank int) core.SpellConfig {
 				if hasSoulSiphonRune {
 					dot.SnapshotAttackerMultiplier *= warlock.calcSoulSiphonMultiplier(target, sim.IsExecutePhase20())
 				}
+				dot.SnapshotAttackerMultiplier *= warlock.calcForeverSoulSiphon(target)
 			},
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-				dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)
+				dot.CalcAndDealPeriodicSnapshotDamage(sim, target, core.Ternary(warlock.ForeverCombatRules, dot.OutcomeSnapshotCrit, dot.OutcomeTick))
 			},
 		},
 

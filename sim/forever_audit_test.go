@@ -19,19 +19,22 @@ import (
 //	go test --tags=with_db ./sim -run TestForeverAllSpecs -v
 
 type foreverSpec struct {
-	Key         string          `json:"key"`
-	Spec        string          `json:"spec"`
-	Role        string          `json:"role"`
-	Talents     string          `json:"talents"`
-	Rotation    *string         `json:"rotation"`
-	Gear        string          `json:"gear"`
-	Race        string          `json:"race"`
-	ClassID     int32           `json:"classId"`
-	SpecOptions json.RawMessage `json:"specOptions"`
-	Distance    float64         `json:"distance"`
-	Levels      map[string]struct {
-		Talents string  `json:"talents"`
-		Gear    []int32 `json:"gear"`
+	Key     string `json:"key"`
+	Spec    string `json:"spec"`
+	Role    string `json:"role"`
+	Talents string `json:"talents"`
+	// WoW Forever talent tree build, for specs whose Forever talents are implemented.
+	ForeverTalents string          `json:"foreverTalents"`
+	Rotation       *string         `json:"rotation"`
+	Gear           string          `json:"gear"`
+	Race           string          `json:"race"`
+	ClassID        int32           `json:"classId"`
+	SpecOptions    json.RawMessage `json:"specOptions"`
+	Distance       float64         `json:"distance"`
+	Levels         map[string]struct {
+		Talents        string  `json:"talents"`
+		ForeverTalents string  `json:"foreverTalents"`
+		Gear           []int32 `json:"gear"`
 	} `json:"levels"`
 }
 
@@ -58,13 +61,13 @@ func foreverPlayerAt(t *testing.T, s foreverSpec, forever bool, level int32) *pr
 	if err != nil {
 		t.Fatal(err)
 	}
-	talents := s.Talents
+	talents, foreverTalents := s.Talents, s.ForeverTalents
 	if level < 60 {
 		lv, ok := s.Levels[fmt.Sprint(level)]
 		if !ok {
 			t.Fatalf("%s: no preset for level %d", s.Key, level)
 		}
-		talents = lv.Talents
+		talents, foreverTalents = lv.Talents, lv.ForeverTalents
 		items := make([]string, len(lv.Gear))
 		for i, id := range lv.Gear {
 			if id == 0 {
@@ -87,8 +90,8 @@ func foreverPlayerAt(t *testing.T, s foreverSpec, forever bool, level int32) *pr
 		"name": "Forever", "level": %d, "class": %d, "race": %q,
 		"talentsString": %q, "equipment": %s, "rotation": %s,
 		"distanceFromTarget": %v, "reactionTimeMs": 150, "channelClipDelayMs": 50,
-		"foreverRuleset": %v, %q: %s
-	}`, level, s.ClassID, s.Race, talents, gear, rotation, s.Distance, forever, toCamel(s.Key), s.SpecOptions)
+		"foreverRuleset": %v, "foreverTalentsString": %q, %q: %s
+	}`, level, s.ClassID, s.Race, talents, gear, rotation, s.Distance, forever, core.Ternary(forever, foreverTalents, ""), toCamel(s.Key), s.SpecOptions)
 
 	player := &proto.Player{}
 	if err := protojson.Unmarshal([]byte(playerJSON), player); err != nil {

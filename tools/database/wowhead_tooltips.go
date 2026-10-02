@@ -782,7 +782,8 @@ func (item WowheadItemResponse) ToItemProto() *proto.UIItem {
 	return itemProto
 }
 
-var itemSetNameRegex = regexp.MustCompile(fmt.Sprintf(`<a href="\/%s[\-a-z]*\/item-set=-?([0-9]+)\/(.*)" class="q">([^<]+)<`, core.WowheadBranch))
+// Any Wowhead branch (classic, forever, ...), so the WoW Forever item import can reuse this.
+var itemSetNameRegex = regexp.MustCompile(`<a href="\/[a-z][\-a-z]*\/item-set=-?([0-9]+)\/(.*)" class="q">([^<]+)<`)
 
 func (item WowheadItemResponse) GetItemSetID() int {
 	idStr := item.GetTooltipRegexString(itemSetNameRegex, 1)

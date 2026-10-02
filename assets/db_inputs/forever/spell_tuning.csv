@@ -1,0 +1,78 @@
+class,spell,part,forever_max,classic_max,direct_coeff,tick_coeff,source,note
+# WoW Forever spell retuning, max-rank tooltip values (level 60), beta Sept 2026.
+# part: direct = initial hit, dot = periodic part, all = both. Values are max-rank averages.
+# forever_max / classic_max scales every rank of the spell. Coefficients (optional) replace the
+# engine's spell power coefficient: direct_coeff for the hit, tick_coeff per tick.
+# Sources: fc = https://foreverchanges.pro/spellbook/<class>
+#          bf = https://us.forums.blizzard.com/en/wow/t/thoughts-on-spell-casting-numbers-included/2359883
+warlock,Shadow Bolt,direct,268,510,0.857,,fc+bf,
+warlock,Immolate,direct,158,279,0.20,,fc+bf,
+warlock,Immolate,dot,275,510,,0.13,fc+bf,
+warlock,Corruption,dot,438,822,,0.20,fc+bf,
+warlock,Curse of Agony,dot,552,1044,,0.133,bf,Bane of Agony in Forever; 2s ticks for 24s
+warlock,Curse of Doom,dot,1742,3200,,,fc,Bane of Doom in Forever
+warlock,Siphon Life,dot,410,450,,0.05,fc+bf,
+warlock,Drain Life,dot,255,355,,0.10,fc+bf,
+warlock,Drain Soul,dot,420,455,,,fc,
+warlock,Searing Pain,direct,116.5,226,,,fc,
+warlock,Soul Fire,direct,438.5,804.5,,,fc,
+warlock,Shadowburn,direct,273.5,488,,,fc,
+warlock,Conflagrate,direct,282,502,0.429,,bf,fc tooltip 179-222 (older build); bf 251-313
+warlock,Rain of Fire,dot,884,912,,,fc,
+warlock,Hellfire,dot,210,213,,,fc,
+warlock,Death Coil,direct,460,476,,,fc,
+mage,Fireball,direct,483,678,1.0,,fc+bf,
+mage,Fireball,dot,60,76,,,fc,
+mage,Fire Blast,direct,453,485,0.429,,fc+bf,
+mage,Flamestrike,direct,424,423.5,,,fc,
+mage,Flamestrike,dot,332,340,,,fc,
+mage,Arcane Missiles,dot,209,230,,0.20,fc+bf,
+mage,Arcane Explosion,direct,248.5,259.5,,,fc,
+mage,Scorch,direct,181.5,258.5,0.429,,fc+bf,
+mage,Frostbolt,direct,475,535,0.814,,fc+bf,
+mage,Frost Nova,direct,75.5,77.5,,,fc,
+mage,Blizzard,dot,1168,1192,,,fc,
+mage,Cone of Cold,direct,343,353,,,fc,
+mage,Pyroblast,direct,583,803,1.0,,fc+bf,
+mage,Pyroblast,dot,212,268,,,fc,
+mage,Blast Wave,direct,493,503,,,fc,
+priest,Smite,direct,170,393,,,fc,
+priest,Holy Fire,direct,208,402,,,fc,
+priest,Holy Fire,dot,75,145,,,fc,
+priest,Shadow Word: Pain,dot,762,852,,0.20,fc+bf,
+priest,Mind Blast,direct,485,517,0.429,,fc+bf,
+priest,Starshards,dot,1800,936,,,fc,
+priest,Devouring Plague,dot,848,904,,0.10,fc+bf,
+priest,Mind Flay,dot,390,426,,0.167,fc+bf,
+priest,Holy Nova,direct,187,195,,,fc,
+druid,Wrath,direct,91,250,0.571,,fc+bf,Wrath base raised ~50% on Sept 24 (already in fc value)
+druid,Moonfire,direct,135,205,0.15,,fc+bf,
+druid,Moonfire,dot,240,384,,0.13,fc+bf,
+druid,Entangling Roots,dot,234,270,,,fc,
+druid,Starfire,direct,381,540,1.0,,fc+bf,
+druid,Insect Swarm,dot,186,324,,0.158,fc+bf,
+druid,Hurricane,dot,132,134,,,fc,
+druid,Rip,dot,549,606,,,fc,
+druid,Rake,direct,61,58,,,fc,
+druid,Rake,dot,102,96,,,fc,
+shaman,Lightning Bolt,direct,200.5,452.5,0.714,,fc+bf,
+shaman,Earth Shock,direct,301,531,,,fc,
+shaman,Flame Shock,direct,166,292,0.214,,fc+bf,
+shaman,Flame Shock,dot,176,320,,0.10,fc+bf,
+shaman,Frost Shock,direct,287,506,,,fc,
+shaman,Magma Totem,direct,73,75,,,fc,
+shaman,Chain Lightning,direct,126,534.5,0.571,,fc+bf,
+shaman,Frostbrand Weapon,direct,169,187,,,fc,
+paladin,Exorcism,direct,502,534,,,fc,
+paladin,Holy Shock,direct,258,380,,,fc,
+paladin,Hammer of Wrath,direct,498,530,,,fc,
+paladin,Holy Shield,direct,221,130,,,fc,
+paladin,Retribution Aura,direct,30,20,,,fc,
+hunter,Serpent Sting,dot,555,555,,,fc,classic value not shown on fc; left unscaled
+hunter,Arcane Shot,direct,217,183,,,fc,
+hunter,Volley,dot,112,80,,,fc,
+rogue,Eviscerate,direct,399,429,,,fc,5 combo points
+rogue,Rupture,dot,469,800,,,fc,5 combo points
+rogue,Instant Poison VI,direct,88,130,,,fc,
+rogue,Deadly Poison V,dot,92,136,,,fc,
+warrior,Revenge,direct,153,90,,,fc,

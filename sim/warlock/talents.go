@@ -34,6 +34,9 @@ func (warlock *Warlock) ApplyTalents() {
 	warlock.applyImprovedImmolate()
 	warlock.applyRuin()
 	warlock.applyEmberstorm()
+
+	// WoW Forever talent trees
+	warlock.applyForeverTalents()
 }
 
 func (warlock *Warlock) applyWeaponImbue() {
@@ -593,7 +596,20 @@ func (warlock *Warlock) applyDemonicSacrifice() {
 			succubusAura.Deactivate(sim)
 			voidwalkerAura.Deactivate(sim)
 
-			switch warlock.ActivePet {
+			sacrificed := warlock.ActivePet
+			if warlock.foreverDemonicSacrificeSwap() {
+				switch sacrificed {
+				case warlock.Imp:
+					sacrificed = warlock.Succubus
+				case warlock.Succubus:
+					sacrificed = warlock.Imp
+				case warlock.Voidwalker:
+					sacrificed = warlock.Felhunter
+				case warlock.Felhunter:
+					sacrificed = warlock.Voidwalker
+				}
+			}
+			switch sacrificed {
 			case warlock.Felguard:
 				felhunterAura.Activate(sim)
 				impAura.Activate(sim)

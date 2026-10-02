@@ -1,0 +1,52 @@
+Affliction | 1 | 0 | Improved Life Tap | 2 | - | Increases the amount of Mana awarded by your Life Tap spell by 10/20%.
+Affliction | 1 | 1 | Suppression | 5 | - | Improves your chance to hit by 1/2/3/4/5% and reduces all threat you generate by 4/8/12/16/20%.
+Affliction | 1 | 2 | Improved Corruption | 5 | - | Reduces the casting time of your Corruption spell by 0.4/0.8/1.2/1.6/2 sec and increases the damage it deals by 2/4/6/8/10%.
+Affliction | 2 | 0 | Malediction | 5 | - | Increases all periodic damage done by your Warlock spells by 1/2/3/4/5%.
+Affliction | 2 | 1 | Soul Harvest | 2 | - | Killing a non-trivial target afflicted by your Drain Soul increases your Mana regeneration by 50/100% for 10 sec and allows 50/100% of normal Mana regeneration to continue while casting.
+Affliction | 2 | 2 | Improved Drains | 3 | - | Increases health drained or damage done by your Drain Life, Drain Soul, and Wrack spells by 7/13/20%.
+Affliction | 3 | 0 | Improved Bane of Agony | 2 | - | Increases the damage done by your Bane of Agony by 5/10%.
+Affliction | 3 | 1 | Fel Concentration | 3 | - | Gives you a 23/47/70% chance to avoid interruption caused by damage while channeling or casting your Drain Life, Drain Mana, Drain Soul, or Wrack spells.
+Affliction | 3 | 2 | Amplify Curse | 1 | - | Increases the effect of your next Curse of Weakness or Bane of Agony by 50%, or your next Curse of Exhaustion by 20%. Lasts 30 sec.
+Affliction | 3 | 3 | Pandemic | 3 | - | Increases the critical strike damage bonus of your Corruption, Bane of Agony, Bane of Doom, Drain Soul, Drain Life, Siphon Life, and Wrack spells by 33/67/100%.
+Affliction | 4 | 0 | Malevolence | 5 | - | Increases the critical effect chance of your Shadow spells by 1/2/3/4/5%.
+Affliction | 4 | 1 | Nightfall | 2 | - | Gives your Corruption, Drain Soul, Drain Life, and Wrack spells a 2/4% chance to cause you to enter a Shadow Trance after damaging the opponent. The Shadow Trance reduces the casting time of your next Shadow Bolt spell by 100%.
+Affliction | 4 | 2 | Curse of Exhaustion | 1 | Amplify Curse | Reduces the target's movement speed by 30% for 12 sec. Only one Curse per Warlock can be active on any one target.
+Affliction | 5 | 0 | Siphon Life | 1 | - | Transfers 11 health from the target to the caster every 3 sec. Lasts 30 sec.
+Affliction | 5 | 1 | Soul Siphon | 3 | - | Increases the damage done or health drained by your Drain Life, Drain Soul, and Wrack spells by 4/8/12% per each of your other Affliction effects active on the target, up to a maximum increase of 12/24/36%.
+Affliction | 6 | 0 | Shadow Mastery | 5 | - | Increases the damage dealt or life drained by your Shadow spells by 1/2/3/4/5%.
+Affliction | 7 | 0 | Wrack | 1 | Siphon Life | Tears the target apart from within, inflicting 36 Shadow damage every 1 sec and increasing the damage they take from your other Shadow damage over time effects by 10% for 6 sec.
+Demonology | 1 | 0 | Improved Health Funnel | 2 | - | Increases the amount of health transferred by your Health Funnel spell by 20/40%, reduces its health cost by 15/30%, and reduces all threat your Health Funnel generates by 50/100%. Allows Health Funnel to be used regardless of your demon's health.
+Demonology | 1 | 1 | Improved Imp | 3 | - | Increases the damage of your Imp's Firebolt spell by 10/20/30% and the effect of its Fire Shield spell by 10/20/30%.
+Demonology | 1 | 2 | Demonic Embrace | 5 | - | Increases your total Stamina by 3/6/9/12/15%.
+Demonology | 1 | 3 | Unholy Power | 5 | - | Increases all damage done by your Imp, Voidwalker, Succubus, Incubus, and Felhunter pets by 2/4/6/8/10%.
+Demonology | 2 | 0 | Demonic Aegis | 2 | - | Increases the effectiveness of your Demon Skin and Demon Armor spells by 15/30%.
+Demonology | 2 | 1 | Improved Voidwalker | 3 | - | Increases the effectiveness of your Voidwalker's Torment, Consume Shadows, Sacrifice, and Suffering spells by 10/20/30%.
+Demonology | 2 | 2 | Fel Vitality | 3 | - | Increases the maximum health and Mana of your Imp, Voidwalker, Succubus, Incubus, and Felhunter by 5/10/15%, and increases your maximum Mana by 5/10/15%.
+Demonology | 2 | 3 | Demonic Energies | 2 | - | You heal your pet for 8/15% of all spell damage you deal. When you gain Mana from Life Tap, your summoned demon gains 50/100% of the Mana you gain.
+Demonology | 3 | 0 | Improved Sayaad | 3 | - | Increases the effect of your Succubus' and Incubus' Lash of Pain and Soothing Kiss spells by 10/20/30%, and increases the duration of your Succubus' and Incubus' Seduction and Lesser Invisibility spells by 10/20/30%.
+Demonology | 3 | 1 | Demonic Sacrifice | 1 | - | When activated, sacrifices your summoned Demon to enhance the opposing aspect of your power, granting you an effect that lasts 120 min. The effect is canceled if any Demon is summoned. Imp: Increases your Shadow damage by 15%. Voidwalker: Restores 2% of your total Mana every 4 sec. Succubus/Incubus: Increases your Fire damage by 15%. Felhunter: Restores 3% of your total Health every 4 sec.
+Demonology | 3 | 2 | Master Summoner | 2 | - | Reduces the casting time of your Imp, Voidwalker, Succubus, Incubus, and Felhunter Summoning spells by 2/4 sec and the Mana cost by 20/40%.
+Demonology | 4 | 0 | Decimation | 2 | - | Reduces the cooldown of your Soul Fire spell by 45/90%. When you cast Shadow Bolt or Searing Pain on an enemy below 35% health, they deal 3/6% increased damage, and for the next 10 sec your Soul Fire spell has its cast time reduced by 20/40% and costs no Soul Shards.
+Demonology | 4 | 1 | Fel Domination | 1 | Master Summoner | Your next Imp, Voidwalker, Succubus, Incubus, or Felhunter Summon spell has its casting time reduced by 5.5 sec and its Mana cost reduced by 50%.
+Demonology | 4 | 2 | Demonic Brand | 3 | - | Your Searing Pain generates 17/33/50% less threat and brands the target for 10 sec.
+Demonology | 5 | 0 | Improved Felhunter | 3 | - | Increases the Attack Power reduction of your Felhunter's Tainted Blood, the healing of its Devour Magic, and the detection level of its Paranoia by 10/20/30%, and reduces the cooldown of its Spell Lock by 2/4/6 sec.
+Demonology | 5 | 1 | Soul Link | 1 | Demonic Sacrifice | When active, 30% of all damage taken by the caster is taken by your Imp, Voidwalker, Succubus, Incubus, or Felhunter Demon instead. In addition, both the Demon and the master will inflict 3% more damage. Lasts as long as the Demon is active.
+Demonology | 5 | 2 | Demonic Knowledge | 3 | - | Increases your spell damage and your Demon pet's spell damage by up to 33/67/100% of your level while you have a summoned Demon pet active.
+Demonology | 6 | 0 | Master Demonologist | 5 | - | Grants both the Warlock and the summoned demon an effect as long as that demon is active. Imp - Increases Fire damage done by 2/4/6/8/10%. Voidwalker - Reduces Physical damage taken by 2/4/6/8/10%. Succubus/Incubus - Increases Shadow damage done by 2/4/6/8/10%. Felhunter - Reduces Magic damage taken by 2/4/6/8/10%.
+Demonology | 7 | 0 | Demonic Pact | 1 | Soul Link | Your Demonic Sacrifice effect is no longer cancelled by summoning a different Demon pet. Resummoning the sacrificed pet will still cancel the effect.
+Destruction | 1 | 0 | Destructive Reach | 2 | - | Increases the range of your damaging spells by 10/20%.
+Destruction | 1 | 1 | Improved Shadow Bolt | 5 | - | Your Shadow Bolt critical strikes increase Shadow damage taken by the target from your attacks by 4/8/12/16/20% for 12 sec.
+Destruction | 1 | 2 | Bane | 5 | - | Reduces the casting time of your Shadow Bolt, Immolate, and Incinerate spells by 0.1/0.2/0.3/0.4/0.5 sec and your Soul Fire spell by 0.4/0.8/1.2/1.6/2 sec.
+Destruction | 2 | 0 | Molten Skin | 5 | - | Reduces all damage taken by 2/4/6/8/10%.
+Destruction | 2 | 1 | Cataclysm | 3 | - | Reduces the Mana cost of your Destruction spells by 3/6/10%.
+Destruction | 2 | 2 | Aftermath | 5 | - | Increases the initial damage of your Immolate spell by 10/20/30/40/50% and your Conflagrate spell has a 20/40/60/80/100% chance to Daze the target, reducing the target's movement speed by 50% for 5 sec.
+Destruction | 3 | 0 | Ruin | 5 | - | Increases the critical strike damage bonus of your Destruction spells by 20/40/60/80/100%.
+Destruction | 3 | 1 | Shadowburn | 1 | - | Instantly blasts the target for 62 to 70 Shadow damage. If a non-trivial target dies within 8 sec of being hit with Shadowburn, the caster gains a Soul Shard.
+Destruction | 4 | 0 | Intensity | 3 | - | Gives you a 23/47/70% chance to resist interruption caused by damage while casting or channeling any Destruction spell.
+Destruction | 4 | 1 | Agonizing Flames | 3 | - | Increases the critical strike chance of your Searing Pain spell by 3/7/10% and the damage done by all your Destruction spells by 3/7/10%.
+Destruction | 4 | 2 | Conflagrate | 1 | - | Ignites a target that is already afflicted by your Immolate spell, dealing 84 to 106 Fire damage and consuming your Immolate effect.
+Destruction | 5 | 0 | Pyroclasm | 2 | Intensity | Gives your Soul Fire spell a 13/26% chance to Stun the target for 3 sec, and your Rain of Fire and Hellfire spells a 13/26% chance over their duration to Stun targets they damage for 3 sec.
+Destruction | 5 | 1 | Bane of Havoc | 1 | - | Afflicts the target for 5 min, causing 15% of all damage done by the Warlock to other targets to also be dealt to the cursed target. Bane of Havoc is limited to 1 target, and only one Bane per Warlock can be active on any one target.
+Destruction | 5 | 2 | Fire and Brimstone | 3 | Conflagrate | Increases the critical strike chance of your Conflagrate spell by 8/17/25%.
+Destruction | 6 | 0 | Shadow and Flame | 5 | - | Hitting an enemy with Conflagrate increases all Shadow damage you deal by 2/4/6/8/10% for 20 sec, and hitting an enemy with Shadowburn increases all Fire damage you deal by 2/4/6/8/10% for 20 sec. In addition, Conflagrate has a 20/40/60/80/100% chance not to consume Immolate, and Shadowburn has a 20/40/60/80/100% chance to instantly refund a Soul Shard.
+Destruction | 7 | 0 | Incinerate | 1 | Bane of Havoc | Deals 90 to 104 Fire damage to your target and an additional 25% damage if the target is afflicted by Immolate.

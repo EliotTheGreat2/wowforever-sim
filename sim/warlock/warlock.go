@@ -58,6 +58,7 @@ const (
 	ClassSpellMask_WarlockSummonSuccubus
 	ClassSpellMask_WarlockSummonSuccubusLashOfPain
 	ClassSpellMask_WarlockSummonVoidwalker
+	ClassSpellMask_WarlockWrack
 
 	ClassSpellMask_WarlockAll = 1<<iota - 1
 
@@ -162,6 +163,12 @@ type Warlock struct {
 
 	// Extra state and logic variables
 	activeEffects                map[int32]int32 // Used by the 6pT2 DPS bonus
+
+	// WoW Forever talents (forever_talents.go)
+	foreverSoulSiphonPerEffect        float64
+	foreverSoulSiphonMax              float64
+	foreverConflagKeepsImmolateChance float64
+	foreverWrack                      *core.Spell
 	backdraftCastSpeed           float64
 	demonicKnowledgeSp           float64
 	maintainBuffsOnSacrifice     bool    // Whether to disable the Master Demonologist and Demonic Sacrifice buffs when sacrificing/summoning pets. Used by TAQ 4pc
@@ -236,6 +243,7 @@ func NewWarlock(character *core.Character, options *proto.Player, warlockOptions
 		Options:   warlockOptions,
 	}
 	core.FillTalentsProto(warlock.Talents.ProtoReflect(), options.TalentsString, TalentTreeSizes)
+	warlock.useForeverTalentLayout()
 	warlock.EnableManaBar()
 
 	warlock.AddStatDependency(stats.Strength, stats.AttackPower, core.APPerStrength[character.Class])

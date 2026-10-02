@@ -43,3 +43,4 @@ wowsimsod*.h
 bin/
 lib/python3.13
 pyvenv.cfg
+__pycache__/

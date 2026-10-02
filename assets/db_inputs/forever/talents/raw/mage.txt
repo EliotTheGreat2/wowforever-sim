@@ -1,0 +1,54 @@
+Arcane | 1 | 0 | Wand Specialization | 2 | - | Increases your damage with Wands by 13/25%.
+Arcane | 1 | 1 | Arcane Focus | 5 | - | Improves your chance to hit with Arcane spells by 1/2/3/4/5%.
+Arcane | 1 | 2 | Improved Channeling | 5 | - | Gives you a 20/40/60/80/100% chance to avoid interruption caused by damage while channeling Arcane Missiles and a 14/28/42/56/70% chance while casting Arcane Blast.
+Arcane | 2 | 0 | Arcane Subtlety | 2 | - | Reduces your target's resistance to all your spells by 8/15 and reduces the threat caused by your Arcane spells by 15/30%.
+Arcane | 2 | 1 | Magic Absorption | 2 | - | Increases all your resistances by 5/10 and causes all spells you fully resist to restore 1/2% of your total mana.
+Arcane | 2 | 2 | Arcane Concentration | 5 | - | Gives you a 2/4/6/8/10% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.
+Arcane | 2 | 3 | Arcane Resilience | 2 | - | Increases your Armor by an amount equal to 25/50% of your Intellect.
+Arcane | 3 | 0 | Arcane Geometry | 2 | - | Increases the range of your Arcane spells by 3/6 yards.
+Arcane | 3 | 1 | Arcane Impact | 3 | - | Increases the critical strike chance of your Arcane spells by 2/4/6%.
+Arcane | 3 | 2 | Arcane Blast | 1 | - | Blasts the target with energy, dealing 50 to 58 Arcane damage. Each time you cast Arcane Blast, the damage of all your other spells is increased by 10% and the mana cost of Arcane Blast is increased by 175%. Effect stacks up to 4 times and lasts 8 sec or until any other damage spell is cast.
+Arcane | 4 | 0 | Arcane Shielding | 2 | - | Decreases the Mana lost per point of damage taken when your Mana Shield spell is active by 17/33% and increases the resistances granted by your Mage Armor spell by 25/50%.
+Arcane | 4 | 1 | Improved Counterspell | 2 | - | Your Counterspell also Silences the target for 2/4 sec.
+Arcane | 4 | 2 | Arcane Meditation | 3 | Arcane Concentration | Allows 17/33/50% of your Mana regeneration to continue while casting.
+Arcane | 4 | 3 | Missile Barrage | 1 | - | Gives your Arcane Blast spell a 40% chance, and your Fireball, Frostbolt, and Frostfire Bolt spells a 20% chance to reduce the channeled duration of your next Arcane Missiles spell by 50%, reduce the Mana cost by 100%, and missiles fire every 0.5 sec.
+Arcane | 5 | 0 | Presence of Mind | 1 | - | When activated, your next Mage spell with a casting time less than 10 sec becomes an instant cast spell.
+Arcane | 5 | 1 | Arcane Mind | 5 | - | Increases your Intellect by 2/4/6/8/10% and increases the critical strike damage bonus of your Arcane spells by 20/40/60/80/100%.
+Arcane | 6 | 1 | Arcane Instability | 3 | - | Increases the damage done by your spells by 1/2/3% and your critical strike chance by 1/2/3%.
+Arcane | 7 | 1 | Arcane Power | 1 | Presence of Mind | For the next 15 sec, your spells deal 30% more damage while costing 30% more mana to cast.
+Fire | 1 | 0 | Wake of Fire | 2 | - | Reduces the cooldown of your Fire Blast spell by 1/2 sec. Killing a non-trivial target increases the critical strike chance of your next Fire Blast cast within 30 sec by 25/50%.
+Fire | 1 | 1 | Incineration | 3 | - | Increases the critical strike chance of your Fire Blast, Ice Lance, Arcane Blast, and Scorch spells by 2/4/6%.
+Fire | 1 | 2 | Improved Fireball | 5 | - | Reduces the casting time of your Fireball and Frostfire Bolt spells by 0.1/0.2/0.3/0.4/0.5 sec.
+Fire | 2 | 0 | Ignite | 5 | - | Your critical strikes from Fire damage spells cause the target to burn for an additional 8/16/24/32/40% of your spell's damage over 4 sec.
+Fire | 2 | 1 | Flame Throwing | 2 | - | Increases the range of your Fire spells by 3/6 yards.
+Fire | 2 | 2 | Impact | 3 | - | Gives your Fire spells a 3/7/10% chance to stun the target for 2 sec.
+Fire | 3 | 0 | Burning Soul | 3 | - | Gives your Fire spells a 23/47/70% chance to not lose casting time when you take damage and reduces the threat caused by your Fire spells by 10/20/30%.
+Fire | 3 | 1 | Improved Flamestrike | 3 | - | Increases the critical strike chance of your Flamestrike spell by 5/10/15%.
+Fire | 3 | 2 | Pyroblast | 1 | - | Hurls an immense fiery boulder that causes 95 to 125 Fire damage and an additional 44 Fire damage over 12 sec.
+Fire | 4 | 0 | Improved Scorch | 3 | - | Your Scorch spell has a 33/67/100% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases all Fire damage you deal to your target by 3% and lasts 30 sec, stacking up to 5 times.
+Fire | 4 | 1 | Improved Fire Ward | 2 | - | Causes your Fire Ward to have a 10/20% chance to reflect Fire spells while active.
+Fire | 4 | 2 | Heating Up | 1 | Pyroblast | Non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch reduce the cast time of your next Pyroblast cast within 20 sec by 25%, stacking up to 3 times.
+Fire | 4 | 3 | Master of Elements | 3 | - | Your Fire and Frost critical strikes will refund 10/20/30% of their base mana cost.
+Fire | 5 | 0 | Critical Mass | 3 | - | Increases the critical strike chance of your Fire spells by 2/4/6%.
+Fire | 5 | 1 | Blast Wave | 1 | - | A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 148 to 178 Fire damage, and Dazing them for 50% reduced movement speed for 6 sec.
+Fire | 6 | 0 | Fire Power | 5 | - | Increases the damage done by your Fire spells by 2/4/6/8/10%.
+Fire | 7 | 0 | Combustion | 1 | Critical Mass | When activated, this spell causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by 10%. This effect lasts until you have caused 3 non-periodic critical strikes with Fire spells.
+Frost | 1 | 0 | Frost Warding | 2 | - | Increases the Armor and resistance given by your Frost Armor and Ice Armor spells by 15/30%. In addition, gives your Frost Ward a 10/20% chance to reflect Frost spells and effects while active.
+Frost | 1 | 1 | Improved Frostbolt | 5 | - | Reduces the casting time of your Frostbolt spell by 0.1/0.2/0.3/0.4/0.5 sec.
+Frost | 1 | 2 | Elemental Precision | 5 | - | Improves your chance to hit with Frost and Fire spells by 1/2/3/4/5%.
+Frost | 2 | 0 | Ice Shards | 5 | - | Increases the critical strike damage bonus of your Frost spells by 20/40/60/80/100%.
+Frost | 2 | 1 | Permafrost | 3 | - | Increases the duration of your Chill effects by 11/22/33% and reduces the target's speed by an additional 3/7/10%.
+Frost | 2 | 2 | Improved Frost Nova | 2 | - | Reduces the cooldown of your Frost Nova spell by 2/4 sec.
+Frost | 2 | 3 | Frostbite | 3 | - | Gives your Chill effects a 5/10/15% chance to Freeze the target for 5 sec.
+Frost | 3 | 0 | Piercing Ice | 3 | - | Increases the damage done by your Frost spells by 2/4/6%.
+Frost | 3 | 1 | Frost Channeling | 3 | - | Reduces the mana cost of your Frost spells by 5/10/15% and reduces the threat caused by your Frost spells by 10/20/30%.
+Frost | 3 | 2 | Ice Lance | 1 | - | Deals 26 to 30 Frost damage to an enemy target. Deals 300% increased damage to Frozen targets.
+Frost | 3 | 3 | Improved Blizzard | 3 | - | Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by 15/25/40% for 1.5 sec.
+Frost | 4 | 0 | Arctic Reach | 2 | - | Increases the range of your Frostbolt and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by 10/20%.
+Frost | 4 | 1 | Ice Block | 1 | - | You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec, but during that time you cannot attack, move, or cast spells.
+Frost | 4 | 2 | Shatter | 3 | - | Increases the critical strike chance of all your spells against Frozen targets by 17/33/50%.
+Frost | 5 | 0 | Improved Cone of Cold | 3 | - | Increases the damage dealt by your Cone of Cold spell by 12/23/35%.
+Frost | 5 | 1 | Cold Snap | 1 | - | Finishes the remaining cooldown on all your other Frost spells.
+Frost | 5 | 2 | Fingers of Frost | 2 | Ice Lance | Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 1/2 spells cast as if the target were Frozen. Lasts 15 sec.
+Frost | 6 | 1 | Winter's Chill | 5 | - | Gives your Frost damage spells a 20/40/60/80/100% chance to apply the Winter's Chill effect, which increases the chance your Ice Lance and Frostbolt spells will critically hit the target by 2% for 15 sec. Stacks up to 1/2/3/4/5 times.
+Frost | 7 | 1 | Ice Barrier | 1 | Cold Snap | Instantly shields you, absorbing 431 damage. Lasts 1 min. While the shield holds, your spellcasts will not be interrupted or delayed from taking damage.

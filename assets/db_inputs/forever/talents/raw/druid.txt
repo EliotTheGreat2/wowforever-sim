@@ -1,0 +1,52 @@
+Balance | 1 | 0 | Improved Wrath | 5 | - | Reduces cast time by 0.1/0.2/0.3/0.4/0.5 sec and Mana cost by 10/20/30/40/50%
+Balance | 1 | 1 | Genesis | 5 | - | Increases periodic damage and healing by 1/2/3/4/5%
+Balance | 2 | 0 | Moonglow | 3 | - | Reduces Mana cost of damaging spells by 8/17/25%
+Balance | 2 | 1 | Improved Moonfire | 2 | - | Increases damage and critical strike chance by 5/10%
+Balance | 2 | 2 | Nature's Majesty | 2 | - | Increases critical strike chance by 2/4%
+Balance | 2 | 3 | Nature's Reach | 2 | - | Increases range by 10/20% and hit chance by 2/4%
+Balance | 3 | 0 | Improved Entangling Roots | 3 | - | Increases damage by 25/50/75%, victims take 25/50/75% more without interrupting
+Balance | 3 | 2 | Nature's Splendor | 1 | Nature's Majesty | Increases duration: Moonfire +3 sec, Rejuvenation +3 sec, Regrowth +6 sec, Insect Swarm +2 sec
+Balance | 4 | 0 | Insect Swarm | 1 | - | Decreases enemy hit chance by 2%, causes 48 Nature damage over 12 sec
+Balance | 4 | 1 | Vengeance | 5 | Improved Moonfire | Increases critical strike damage bonus by 20/40/60/80/100%
+Balance | 4 | 2 | Improved Starfire | 5 | - | Reduces cast time by 0.1/0.2/0.3/0.4/0.5 sec, 3/6/9/12/15% chance to stun for 3 sec
+Balance | 5 | 1 | Overgrowth | 2 | - | Increases max targets for Entangling Roots by 1/2
+Balance | 5 | 2 | Nature's Grace | 1 | - | Non-periodic spell criticals increase spellcasting speed and reduce global cooldown by 10% for 3 sec
+Balance | 5 | 3 | Eclipse | 3 | - | Wrath reduces next 2 Starfire cast times by 0.17/0.33/0.50 sec, stores 4 charges, lasts 15 sec
+Balance | 6 | 2 | Moonfury | 5 | - | Increases Arcane and Nature spell damage by 2/4/6/8/10%
+Balance | 7 | 1 | Moonkin Form | 1 | - | Increases Omen of Clarity trigger by 100%, Armor by 360%, party crit by 3%, grants Polymorph immunity, prevents healing spells
+Feral Combat | 1 | 0 | Ferocity | 5 | - | Reduces cost of Maul, Primal Bite, Swipe, Claw, Rake by 1/2/3/4/5 Rage or Energy
+Feral Combat | 1 | 1 | Heart of the Wild | 5 | - | Increases Intellect by 2/4/6/8/10%; Bear/Dire Bear Stamina by 4/8/12/16/20%; Cat Strength by 2/4/6/8/10%
+Feral Combat | 2 | 0 | Feral Swiftness | 2 | - | Increases Cat movement speed by 15/30%, Dodge chance by 2/4%
+Feral Combat | 2 | 1 | Feral Instinct | 3 | - | Increases Swipe damage by 30%, reduces detection while Prowling as if 3 levels higher
+Feral Combat | 2 | 2 | Brutal Impact | 2 | - | Increases Bash and Pounce stun by 0.5/1 sec, reduces Bash cooldown by 15/30 sec
+Feral Combat | 2 | 3 | Thick Hide | 3 | - | Gain 1/2/3 base Armor per level plus 0.67/1.33/2 per defense skill beyond 5x level
+Feral Combat | 3 | 0 | Shredding Attacks | 3 | - | Reduces Shred Energy cost by 6/12/18, Lacerate Rage cost by 1/2/3
+Feral Combat | 3 | 1 | Savage Fury | 2 | - | Increases Claw, Rake, Shred, Maul, Swipe damage by 5/10%
+Feral Combat | 3 | 2 | Feral Charge | 1 | - | Charge enemy, immobilizing for 4 sec and interrupting spells (requires Bear/Dire Bear Form)
+Feral Combat | 3 | 3 | Sharpened Claws | 2 | - | Increases critical strike chance in Bear, Dire Bear, Cat Form by 3/6%
+Feral Combat | 4 | 0 | Shifting Power | 1 | Shredding Attacks | Cost reduced by effects that reduce Shapeshifting cost
+Feral Combat | 4 | 1 | Primal Bite | 1 | Savage Fury | Deals 100% normal damage plus 26, generates high threat
+Feral Combat | 4 | 2 | Predatory Strikes | 3 | - | Increases melee Attack Power in Cat, Bear, Dire Bear by 50/100/150% of level
+Feral Combat | 4 | 3 | Blood Frenzy | 2 | Sharpened Claws | 50/100% chance to gain 5 Rage on critical strike in Bear/Dire Bear; Cat combo point abilities gain additional combo point on critical
+Feral Combat | 5 | 0 | Improved Shifting Power | 2 | Shifting Power | Reduces Shifting Power cooldown by 4/8 sec
+Feral Combat | 5 | 1 | Leader of the Pack | 1 | - | Increases party critical strike chance within 45 yards by 3% (requires Cat, Bear, Dire Bear Form)
+Feral Combat | 5 | 2 | Predatory Instincts | 2 | - | Increases critical strike damage bonus of melee abilities by 10/20%
+Feral Combat | 6 | 1 | Natural Reaction | 5 | - | Increases Dodge by 1/2/3/4/5%, 20/40/60/80/100% chance to gain 5 Rage when dodging
+Feral Combat | 6 | 2 | Rend and Tear | 5 | Predatory Strikes | Increases damage on Bleeding targets by 2/4/6/8/10%
+Feral Combat | 7 | 1 | Berserk | 1 | Leader of the Pack | Primal Bite hits 3 targets, removes cooldown, increases combo ability crit by 100%, grants Fear immunity for 15 sec (requires Cat/Bear/Dire Bear)
+Restoration | 1 | 0 | Nature's Focus | 5 | - | 14/28/42/56/70% chance to avoid interruption while casting Arcane and Nature spells
+Restoration | 1 | 1 | Furor | 5 | - | 20/40/60/80/100% chance to gain 10 Rage in Bear/Dire Bear; regain 20/40/60/80/100% Cat Energy plus 2/4/6/8/10 per second out of form, max 20/40/60/80/100
+Restoration | 2 | 0 | Naturalist | 5 | - | Reduces Healing Touch cast time by 0.1/0.2/0.3/0.4/0.5 sec, increases all damage by 1/2/3/4/5%
+Restoration | 2 | 1 | Subtlety | 3 | - | Reduces threat from Nature and Arcane spells by 10/20/30%
+Restoration | 2 | 2 | Natural Shapeshifter | 3 | - | Reduces Shapeshifting Mana cost by 10/20/30%
+Restoration | 3 | 0 | Reflection | 3 | - | 17/33/50% of Mana regeneration continues while casting
+Restoration | 3 | 1 | Gift of Nature | 5 | - | Increases all healing spell effects by 2/4/6/8/10%
+Restoration | 3 | 2 | Gift of the Earthmother | 1 | - | Reduces global cooldown by 0.5 sec on Rejuvenation, Swiftmend, Wild Growth
+Restoration | 4 | 0 | Tranquil Spirit | 5 | - | Reduces Mana cost of Healing Touch and Tranquility by 2/4/6/8/10%
+Restoration | 4 | 1 | Improved Rejuvenation | 3 | - | Increases Rejuvenation effect by 5/10/15%
+Restoration | 4 | 2 | Swiftmend | 1 | - | Instantly heals target with Rejuvenation or Regrowth equal to full duration periodic effect
+Restoration | 5 | 0 | Nature's Swiftness | 1 | Naturalist | Next Nature spell becomes instant cast when activated
+Restoration | 5 | 1 | Living Spirit | 3 | - | Increases Spirit by 5/10/15%
+Restoration | 5 | 2 | Improved Tranquility | 2 | - | Reduces threat by 50/100%, cooldown by 30/60 sec
+Restoration | 6 | 1 | Improved Regrowth | 5 | Improved Rejuvenation | Increases Regrowth critical effect chance by 10/20/30/40/50%
+Restoration | 7 | 1 | Wild Growth | 1 | Living Spirit | Heals target and party for 280 over 7 sec within 43.5 yards, front-loaded

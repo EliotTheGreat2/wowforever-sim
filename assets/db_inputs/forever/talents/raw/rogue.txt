@@ -1,0 +1,53 @@
+Assassination | 1 | 0 | Improved Gouge | 3 | - | Increases duration by 0.5/1/1.5 sec
+Assassination | 1 | 1 | Remorseless Attacks | 2 | - | 20/40% crit chance after kill, lasts 20 sec
+Assassination | 1 | 2 | Malice | 5 | - | +1/2/3/4/5% crit chance with attacks and Poisons
+Assassination | 2 | 0 | Ruthlessness | 3 | - | 20/40/60% chance finishing moves add Combo Point
+Assassination | 2 | 1 | Murder | 2 | - | +2/4% damage vs Humanoid and Giant targets
+Assassination | 2 | 2 | Improved Slice and Dice | 3 | - | +15/30/45% duration
+Assassination | 3 | 0 | Relentless Strikes | 1 | - | 20% chance finishing moves restore 25 Energy per Combo Point
+Assassination | 3 | 1 | Improved Expose Armor | 2 | - | Reduces cost by 5/10, refunds 1/2 Combo Points at 5 CP
+Assassination | 3 | 2 | Lethality | 5 | Malice | +4/8/12/16/20% crit damage bonus
+Assassination | 4 | 0 | Vile Poisons | 5 | - | +4/8/12/16/20% poison damage, +8/16/24/32/40% resist dispel
+Assassination | 4 | 1 | Cold Blood | 1 | - | Next ability guaranteed crit
+Assassination | 4 | 2 | Improved Poisons | 5 | - | +2/4/6/8/10% application chance, 10/20/30/40/50% no consume
+Assassination | 5 | 0 | Vigor | 2 | - | +5/10 maximum Energy
+Assassination | 5 | 1 | Mutilate | 1 | - | Instant dual-wield attack 75% + 17.2 per weapon, +20% vs Poisoned, 2 CP
+Assassination | 5 | 2 | Improved Kidney Shot | 2 | - | +5/10% poison and attack damage taken by target
+Assassination | 6 | 1 | Seal Fate | 5 | - | 20/40/60/80/100% chance critical strikes add extra Combo Point
+Assassination | 7 | 1 | Venom | 1 | Mutilate | Finishing move: +30% poison damage, +10% application, 9-21 sec duration
+Combat | 1 | 0 | Improved Eviscerate | 3 | - | +7/13/20% damage
+Combat | 1 | 1 | Improved Sinister Strike | 2 | - | -3/-5 Energy cost
+Combat | 1 | 2 | Lightning Reflexes | 5 | - | +1/2/3/4/5% Dodge chance
+Combat | 2 | 0 | Puncturing Wounds | 3 | - | +10/20/30% Backstab crit, +5/10/15% Mutilate crit, 15/30/45% extra CP
+Combat | 2 | 1 | Deflection | 3 | - | +2/4/6% Parry chance
+Combat | 2 | 2 | Precision | 3 | - | +1/2/3% hit chance
+Combat | 3 | 0 | Endurance | 2 | - | -30/60% Sprint and Evasion cooldown
+Combat | 3 | 1 | Riposte | 1 | Deflection | Strike after parrying opponent's attack
+Combat | 3 | 2 | Improved Sprint | 2 | - | 50/100% chance remove movement impairing effects
+Combat | 4 | 0 | Improved Kick | 2 | - | 50/100% chance Silence target for 2 sec
+Combat | 4 | 1 | Flawless Execution | 1 | - | -10 Energy cost for Eviscerate
+Combat | 4 | 2 | Dual Wield Specialization | 5 | Precision | +5/10/15/20/25% off-hand weapon damage
+Combat | 5 | 1 | Blade Flurry | 1 | - | +20% attack speed, strikes additional nearby opponent, 15 sec
+Combat | 5 | 2 | Hack and Slash | 5 | - | Axe/Sword: 1/2/3/4/5% extra attack; Dagger/Fist: +1/2/3/4/5% crit; Mace: ignore 3/6/9/12/15% armor
+Combat | 6 | 1 | Weapon Expertise | 2 | Blade Flurry | -1/2% Dodge and Parry chance for attacks
+Combat | 6 | 2 | Aggression | 3 | - | +2/4/6% Sinister Strike, Backstab, Eviscerate damage
+Combat | 7 | 1 | Adrenaline Rush | 1 | - | +100% Energy regen for 15 sec
+Subtlety | 1 | 0 | Camouflage | 5 | - | -3/6/9/12/15% Stealth speed penalty, -2/3/4/5/6 sec cooldown
+Subtlety | 1 | 1 | Master of Deception | 3 | - | Detect as 1/2/3 levels higher while Stealthed
+Subtlety | 1 | 2 | Opportunity | 2 | - | +5/10% Backstab, Garrote, Ambush, Mutilate damage
+Subtlety | 2 | 0 | Setup | 3 | - | 33/67/100% chance add Combo Point after Dodging or resisting
+Subtlety | 2 | 1 | Elusiveness | 2 | - | -45/90 sec Vanish and Blind cooldown
+Subtlety | 2 | 2 | Dirty Tricks | 2 | - | -25/50% Sap and Blind Energy cost
+Subtlety | 2 | 3 | Improved Ambush | 3 | - | +15/30/45% Ambush crit chance
+Subtlety | 3 | 0 | Initiative | 3 | - | 33/67/100% chance add extra Combo Point with Ambush, Garrote, Cheap Shot
+Subtlety | 3 | 1 | Ghostly Strike | 1 | - | 125% (180% dagger) damage, +15% Dodge for 7 sec, 1 CP
+Subtlety | 3 | 2 | Improved Distract | 2 | - | +3/5 yds radius, -1/-2 level Stealth detection
+Subtlety | 4 | 0 | Heightened Senses | 2 | - | Detect as 1/3 levels higher, -2/4% spell and ranged hit taken
+Subtlety | 4 | 1 | Premeditation | 1 | - | Add 2 Combo Points, must use within 20 sec
+Subtlety | 4 | 2 | Serrated Blades | 3 | - | -3/6/9% target armor, +10/20/30% Rupture damage
+Subtlety | 5 | 0 | Dirty Deeds | 2 | - | -10/20 Energy Cheap Shot and Garrote, Garrote no longer requires behind
+Subtlety | 5 | 1 | Preparation | 1 | - | Reset cooldowns on other Rogue abilities
+Subtlety | 5 | 2 | Hemorrhage | 1 | Serrated Blades | 100% (145% dagger) damage, +15% Rupture damage taken, 15 sec, 1 CP
+Subtlety | 6 | 0 | Quietus | 5 | Dirty Deeds | +2/4/6/8/10% damage vs targets below 35% health
+Subtlety | 6 | 1 | Cutthroat | 5 | - | 3/6/9/12/15% chance next Ambush within 10 sec ignores Stealth requirement
+Subtlety | 7 | 1 | Thousand Cuts | 1 | Preparation | Rupture periodic damage reduces Hemorrhage/Backstab cost by 3, stacks 5x

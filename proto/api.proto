@@ -62,6 +62,9 @@ message Player {
 	// With forever_ruleset: keep the Forever class kit but use Classic combat rules, to measure
 	// what Forever's rule changes are worth.
 	bool forever_classic_combat_rules = 50;
+	// With forever_ruleset: a talent string for the WoW Forever talent trees (tools/forever/gen_talents.py).
+	// When empty, talents_string is read as classic talents.
+	string forever_talents_string = 51;
 
 	// Items/enchants/etc to include in the database.
 	SimDatabase database = 18;

@@ -75,13 +75,14 @@ func (warlock *Warlock) getDrainLifeBaseConfig(rank int) core.SpellConfig {
 				if hasSoulSiphonRune {
 					dot.SnapshotAttackerMultiplier *= warlock.calcSoulSiphonMultiplier(target, false)
 				}
+				dot.SnapshotAttackerMultiplier *= warlock.calcForeverSoulSiphon(target)
 
 				// Drain Life heals so it snapshots target modifiers
 				// Update 2024-06-29: It no longer snapshots on PTR
 				// dot.SnapshotAttackerMultiplier *= dot.Spell.TargetDamageMultiplier(dot.Spell.Unit.AttackTables[target.UnitIndex][dot.Spell.CastType], true)
 			},
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-				result := dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)
+				result := dot.CalcAndDealPeriodicSnapshotDamage(sim, target, core.Ternary(warlock.ForeverCombatRules, dot.OutcomeSnapshotCrit, dot.OutcomeTick))
 
 				health := result.Damage
 				if hasMasterChannelerRune {

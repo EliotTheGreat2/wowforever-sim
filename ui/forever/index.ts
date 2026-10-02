@@ -18,6 +18,8 @@ type ForeverSpec = {
 	spec: string;
 	role: 'Caster DPS' | 'Melee DPS' | 'Ranged DPS' | 'Tank' | 'Healer';
 	talents: string;
+	// WoW Forever talent tree build; set for specs whose Forever talents the engine implements.
+	foreverTalents?: string;
 	race: string;
 	faction: string;
 	supported: boolean;
@@ -27,7 +29,7 @@ type ForeverSpec = {
 	rotationJson: unknown;
 	specOptions: Record<string, unknown>;
 	// Leveling presets for levels 10-59 (level 60 uses gearSpec/talents).
-	levels: Record<string, { talents: string; gear: number[] }>;
+	levels: Record<string, { talents: string; foreverTalents?: string; gear: number[] }>;
 };
 
 const SPECS = specsJson as unknown as ForeverSpec[];
@@ -93,6 +95,9 @@ type Character = {
 	level: number;
 	gear: ForeverSpec['gearSpec'];
 	talents: string;
+	// Forever-tree talent string (sent as foreverTalentsString); empty when the spec still sims
+	// with Classic talents.
+	foreverTalents: string;
 	race: string;
 	note?: string;
 };
@@ -143,7 +148,7 @@ function render() {
 		renderCharacterStep(),
 		renderSimStep(),
 		h(`<div id="fs-results"></div>`),
-		h(`<p class="fs-foot">Preview: Forever's new talents and items aren't in the game data yet, so builds use vanilla talents and typical gear for your level. Healer sims are coming later.
+		h(`<p class="fs-foot">Preview: Forever spell numbers are from the beta (Sept 2026). Warlocks use Forever's talent trees; other classes use Classic talents until theirs are added. Forever's new items aren't in the game data yet, so builds use typical gear for your level. Healer sims are coming later.
 			Built on <a href="https://github.com/wowsims/sod" target="_blank" rel="noopener">WoWSims</a> (MIT).</p>`),
 	);
 }
@@ -329,6 +334,7 @@ function usePreset(level = state.character?.level ?? MAX_LEVEL) {
 		level,
 		gear: leveling ? { items: leveling.gear.map(id => (id ? { id } : {})) } : spec.gearSpec,
 		talents: leveling ? leveling.talents : spec.talents,
+		foreverTalents: (leveling ? leveling.foreverTalents : spec.foreverTalents) ?? '',
 		race,
 		note: undefined,
 	};
@@ -364,15 +370,21 @@ function importAddon(text: string) {
 	state.cls = cls;
 	state.spec = spec;
 	setClassColor(cls);
+	// A Forever client exports talents in Forever's trees. Specs whose Forever talents the sim
+	// implements use them as-is; the others fall back to the suggested build for this level.
+	const preset = level < MAX_LEVEL ? spec.levels[String(level)] : undefined;
+	const usesForever = !!spec.foreverTalents;
 	state.character = {
 		source: 'import',
 		imported: true,
 		level,
 		gear: { items },
-		talents: talents || spec.talents,
+		talents: preset ? preset.talents : spec.talents,
+		foreverTalents: usesForever ? talents || (preset ? preset.foreverTalents : spec.foreverTalents) || '' : '',
 		race: raceName ?? spec.race,
 		note:
 			`Imported level ${exportedLevel} ${RACE_LABEL[raceName ?? spec.race]} ${cls.name}, talents ${trees.join('/')}.` +
+			(usesForever ? '' : ` ${spec.spec} sims don't read Forever talents yet, so the suggested build for your level is used.`) +
 			(exportedLevel < MIN_LEVEL ? ` The sim starts at level ${MIN_LEVEL}, so it runs as level ${MIN_LEVEL}.` : ''),
 	};
 }
@@ -486,6 +498,7 @@ async function buildRequest(forever: boolean, iterations: number): Promise<RaidS
 			? { blessingOfKings: true, blessingOfMight: 'TristateEffectImproved' }
 			: { blessingOfKings: true, blessingOfWisdom: 'TristateEffectImproved' },
 		talentsString: ch.talents,
+		...(ch.foreverTalents ? { foreverTalentsString: ch.foreverTalents } : {}),
 		rotation: spec.rotationJson,
 		distanceFromTarget: spec.distance,
 		reactionTimeMs: 150,

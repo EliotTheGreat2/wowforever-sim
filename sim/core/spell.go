@@ -155,6 +155,8 @@ type Spell struct {
 	CastTimeMultiplier float64
 
 	baseDamageMultiplierAdditivePct     int64   // Stores an integer representation of the Spell's Additive Base Damage Multiplier
+	foreverDirectScale                  float64 // WoW Forever base damage retune for the initial hit (forever_spell_tuning.go)
+	foreverDotScale                     float64 // WoW Forever base damage retune for periodic damage
 	baseDamageMultiplierMultiplicative  float64 // Stores float representation of the Spell's Multiplicative Base Damage Multiplier
 	damageMultiplierAdditivePct         int64   // Stores an integer representation of the Spell's Additive Damage Multiplier before Imapct or Periodic-only bonuses
 	impactDamageMultiplierAdditivePct   int64   // Stores an integer representation of the Spell's Additive Impact Damage Multiplier
@@ -280,6 +282,8 @@ func (unit *Unit) RegisterSpell(config SpellConfig) *Spell {
 
 		CritDamageBonus: 1 + config.CritDamageBonus,
 
+		foreverDirectScale:                  1,
+		foreverDotScale:                     1,
 		baseDamageMultiplierMultiplicative:  config.BaseDamageMultiplier,
 		baseDamageMultiplierAdditivePct:     config.BaseDamageMultiplierAdditivePct,
 		damageMultiplier:                    config.DamageMultiplier,
@@ -371,6 +375,10 @@ func (unit *Unit) RegisterSpell(config SpellConfig) *Spell {
 
 			return (oldExtraCastCondition == nil) || oldExtraCastCondition(sim, target)
 		}
+	}
+
+	if unit.ForeverRankFallback {
+		spell.applyForeverTuning()
 	}
 
 	unit.Spellbook = append(unit.Spellbook, spell)

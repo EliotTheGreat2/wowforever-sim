@@ -345,7 +345,7 @@ func (spell *Spell) calcDamageInternal(sim *Simulation, target *Unit, baseDamage
 func (spell *Spell) CalcDamage(sim *Simulation, target *Unit, baseDamage float64, outcomeApplier OutcomeApplier) *SpellResult {
 	attackerMultiplier := spell.AttackerDamageMultiplier(spell.Unit.AttackTables[target.UnitIndex][spell.CastType], false)
 
-	baseDamage *= spell.baseDamageMultiplier
+	baseDamage *= spell.baseDamageMultiplier * spell.foreverDirectScale
 
 	if spell.BonusCoefficient > 0 {
 		baseDamage += spell.BonusCoefficient * spell.GetBonusDamage()
@@ -354,7 +354,7 @@ func (spell *Spell) CalcDamage(sim *Simulation, target *Unit, baseDamage float64
 	return spell.calcDamageInternal(sim, target, baseDamage, attackerMultiplier, false, outcomeApplier)
 }
 func (spell *Spell) CalcPeriodicDamage(sim *Simulation, target *Unit, baseDamage float64, outcomeApplier OutcomeApplier) *SpellResult {
-	baseDamage *= spell.baseDamageMultiplier
+	baseDamage *= spell.baseDamageMultiplier * spell.foreverDotScale
 
 	attackerMultiplier := spell.AttackerDamageMultiplier(spell.Unit.AttackTables[target.UnitIndex][spell.CastType], true)
 	dot := spell.DotOrAOEDot(target)
@@ -373,7 +373,7 @@ func (dot *Dot) CalcSnapshotDamage(sim *Simulation, target *Unit, outcomeApplier
 func (dot *Dot) Snapshot(target *Unit, baseDamage float64, isRollover bool) {
 	// Rollovers in SoD don't seem to update anything
 	if !isRollover {
-		dot.SnapshotBaseDamage = baseDamage * dot.Spell.baseDamageMultiplier
+		dot.SnapshotBaseDamage = baseDamage * dot.Spell.baseDamageMultiplier * dot.Spell.foreverDotScale
 		if dot.BonusCoefficient > 0 {
 			dot.SnapshotBaseDamage += dot.BonusCoefficient * dot.Spell.GetBonusDamage()
 		}

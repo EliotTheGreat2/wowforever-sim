@@ -1,0 +1,860 @@
+{
+ "class": "rogue",
+ "build": "1.60.1.70170",
+ "source": "https://wow-forever.gg/talents/rogue/",
+ "trees": [
+  {
+   "name": "Assassination",
+   "talents": [
+    {
+     "name": "Improved Gouge",
+     "key": "improved_gouge",
+     "tier": 1,
+     "col": 0,
+     "maxRank": 3,
+     "requires": null,
+     "description": "Increases duration by 0.5/1/1.5 sec",
+     "perRank": [
+      [
+       0.5,
+       1.0,
+       1.5
+      ]
+     ]
+    },
+    {
+     "name": "Remorseless Attacks",
+     "key": "remorseless_attacks",
+     "tier": 1,
+     "col": 1,
+     "maxRank": 2,
+     "requires": null,
+     "description": "20/40% crit chance after kill, lasts 20 sec",
+     "perRank": [
+      [
+       20.0,
+       40.0
+      ]
+     ]
+    },
+    {
+     "name": "Malice",
+     "key": "malice",
+     "tier": 1,
+     "col": 2,
+     "maxRank": 5,
+     "requires": null,
+     "description": "+1/2/3/4/5% crit chance with attacks and Poisons",
+     "perRank": [
+      [
+       1.0,
+       2.0,
+       3.0,
+       4.0,
+       5.0
+      ]
+     ]
+    },
+    {
+     "name": "Ruthlessness",
+     "key": "ruthlessness",
+     "tier": 2,
+     "col": 0,
+     "maxRank": 3,
+     "requires": null,
+     "description": "20/40/60% chance finishing moves add Combo Point",
+     "perRank": [
+      [
+       20.0,
+       40.0,
+       60.0
+      ]
+     ]
+    },
+    {
+     "name": "Murder",
+     "key": "murder",
+     "tier": 2,
+     "col": 1,
+     "maxRank": 2,
+     "requires": null,
+     "description": "+2/4% damage vs Humanoid and Giant targets",
+     "perRank": [
+      [
+       2.0,
+       4.0
+      ]
+     ]
+    },
+    {
+     "name": "Improved Slice and Dice",
+     "key": "improved_slice_and_dice",
+     "tier": 2,
+     "col": 2,
+     "maxRank": 3,
+     "requires": null,
+     "description": "+15/30/45% duration",
+     "perRank": [
+      [
+       15.0,
+       30.0,
+       45.0
+      ]
+     ]
+    },
+    {
+     "name": "Relentless Strikes",
+     "key": "relentless_strikes",
+     "tier": 3,
+     "col": 0,
+     "maxRank": 1,
+     "requires": null,
+     "description": "20% chance finishing moves restore 25 Energy per Combo Point",
+     "perRank": []
+    },
+    {
+     "name": "Improved Expose Armor",
+     "key": "improved_expose_armor",
+     "tier": 3,
+     "col": 1,
+     "maxRank": 2,
+     "requires": null,
+     "description": "Reduces cost by 5/10, refunds 1/2 Combo Points at 5 CP",
+     "perRank": [
+      [
+       5.0,
+       10.0
+      ],
+      [
+       1.0,
+       2.0
+      ]
+     ]
+    },
+    {
+     "name": "Lethality",
+     "key": "lethality",
+     "tier": 3,
+     "col": 2,
+     "maxRank": 5,
+     "requires": "Malice",
+     "description": "+4/8/12/16/20% crit damage bonus",
+     "perRank": [
+      [
+       4.0,
+       8.0,
+       12.0,
+       16.0,
+       20.0
+      ]
+     ]
+    },
+    {
+     "name": "Vile Poisons",
+     "key": "vile_poisons",
+     "tier": 4,
+     "col": 0,
+     "maxRank": 5,
+     "requires": null,
+     "description": "+4/8/12/16/20% poison damage, +8/16/24/32/40% resist dispel",
+     "perRank": [
+      [
+       4.0,
+       8.0,
+       12.0,
+       16.0,
+       20.0
+      ],
+      [
+       8.0,
+       16.0,
+       24.0,
+       32.0,
+       40.0
+      ]
+     ]
+    },
+    {
+     "name": "Cold Blood",
+     "key": "cold_blood",
+     "tier": 4,
+     "col": 1,
+     "maxRank": 1,
+     "requires": null,
+     "description": "Next ability guaranteed crit",
+     "perRank": []
+    },
+    {
+     "name": "Improved Poisons",
+     "key": "improved_poisons",
+     "tier": 4,
+     "col": 2,
+     "maxRank": 5,
+     "requires": null,
+     "description": "+2/4/6/8/10% application chance, 10/20/30/40/50% no consume",
+     "perRank": [
+      [
+       2.0,
+       4.0,
+       6.0,
+       8.0,
+       10.0
+      ],
+      [
+       10.0,
+       20.0,
+       30.0,
+       40.0,
+       50.0
+      ]
+     ]
+    },
+    {
+     "name": "Vigor",
+     "key": "vigor",
+     "tier": 5,
+     "col": 0,
+     "maxRank": 2,
+     "requires": null,
+     "description": "+5/10 maximum Energy",
+     "perRank": [
+      [
+       5.0,
+       10.0
+      ]
+     ]
+    },
+    {
+     "name": "Mutilate",
+     "key": "mutilate",
+     "tier": 5,
+     "col": 1,
+     "maxRank": 1,
+     "requires": null,
+     "description": "Instant dual-wield attack 75% + 17.2 per weapon, +20% vs Poisoned, 2 CP",
+     "perRank": []
+    },
+    {
+     "name": "Improved Kidney Shot",
+     "key": "improved_kidney_shot",
+     "tier": 5,
+     "col": 2,
+     "maxRank": 2,
+     "requires": null,
+     "description": "+5/10% poison and attack damage taken by target",
+     "perRank": [
+      [
+       5.0,
+       10.0
+      ]
+     ]
+    },
+    {
+     "name": "Seal Fate",
+     "key": "seal_fate",
+     "tier": 6,
+     "col": 1,
+     "maxRank": 5,
+     "requires": null,
+     "description": "20/40/60/80/100% chance critical strikes add extra Combo Point",
+     "perRank": [
+      [
+       20.0,
+       40.0,
+       60.0,
+       80.0,
+       100.0
+      ]
+     ]
+    },
+    {
+     "name": "Venom",
+     "key": "venom",
+     "tier": 7,
+     "col": 1,
+     "maxRank": 1,
+     "requires": "Mutilate",
+     "description": "Finishing move: +30% poison damage, +10% application, 9-21 sec duration",
+     "perRank": []
+    }
+   ]
+  },
+  {
+   "name": "Combat",
+   "talents": [
+    {
+     "name": "Improved Eviscerate",
+     "key": "improved_eviscerate",
+     "tier": 1,
+     "col": 0,
+     "maxRank": 3,
+     "requires": null,
+     "description": "+7/13/20% damage",
+     "perRank": [
+      [
+       7.0,
+       13.0,
+       20.0
+      ]
+     ]
+    },
+    {
+     "name": "Improved Sinister Strike",
+     "key": "improved_sinister_strike",
+     "tier": 1,
+     "col": 1,
+     "maxRank": 2,
+     "requires": null,
+     "description": "-3/-5 Energy cost",
+     "perRank": [
+      [
+       -3.0,
+       -5.0
+      ]
+     ]
+    },
+    {
+     "name": "Lightning Reflexes",
+     "key": "lightning_reflexes",
+     "tier": 1,
+     "col": 2,
+     "maxRank": 5,
+     "requires": null,
+     "description": "+1/2/3/4/5% Dodge chance",
+     "perRank": [
+      [
+       1.0,
+       2.0,
+       3.0,
+       4.0,
+       5.0
+      ]
+     ]
+    },
+    {
+     "name": "Puncturing Wounds",
+     "key": "puncturing_wounds",
+     "tier": 2,
+     "col": 0,
+     "maxRank": 3,
+     "requires": null,
+     "description": "+10/20/30% Backstab crit, +5/10/15% Mutilate crit, 15/30/45% extra CP",
+     "perRank": [
+      [
+       10.0,
+       20.0,
+       30.0
+      ],
+      [
+       5.0,
+       10.0,
+       15.0
+      ],
+      [
+       15.0,
+       30.0,
+       45.0
+      ]
+     ]
+    },
+    {
+     "name": "Deflection",
+     "key": "deflection",
+     "tier": 2,
+     "col": 1,
+     "maxRank": 3,
+     "requires": null,
+     "description": "+2/4/6% Parry chance",
+     "perRank": [
+      [
+       2.0,
+       4.0,
+       6.0
+      ]
+     ]
+    },
+    {
+     "name": "Precision",
+     "key": "precision",
+     "tier": 2,
+     "col": 2,
+     "maxRank": 3,
+     "requires": null,
+     "description": "+1/2/3% hit chance",
+     "perRank": [
+      [
+       1.0,
+       2.0,
+       3.0
+      ]
+     ]
+    },
+    {
+     "name": "Endurance",
+     "key": "endurance",
+     "tier": 3,
+     "col": 0,
+     "maxRank": 2,
+     "requires": null,
+     "description": "-30/60% Sprint and Evasion cooldown",
+     "perRank": [
+      [
+       -30.0,
+       60.0
+      ]
+     ]
+    },
+    {
+     "name": "Riposte",
+     "key": "riposte",
+     "tier": 3,
+     "col": 1,
+     "maxRank": 1,
+     "requires": "Deflection",
+     "description": "Strike after parrying opponent's attack",
+     "perRank": []
+    },
+    {
+     "name": "Improved Sprint",
+     "key": "improved_sprint",
+     "tier": 3,
+     "col": 2,
+     "maxRank": 2,
+     "requires": null,
+     "description": "50/100% chance remove movement impairing effects",
+     "perRank": [
+      [
+       50.0,
+       100.0
+      ]
+     ]
+    },
+    {
+     "name": "Improved Kick",
+     "key": "improved_kick",
+     "tier": 4,
+     "col": 0,
+     "maxRank": 2,
+     "requires": null,
+     "description": "50/100% chance Silence target for 2 sec",
+     "perRank": [
+      [
+       50.0,
+       100.0
+      ]
+     ]
+    },
+    {
+     "name": "Flawless Execution",
+     "key": "flawless_execution",
+     "tier": 4,
+     "col": 1,
+     "maxRank": 1,
+     "requires": null,
+     "description": "-10 Energy cost for Eviscerate",
+     "perRank": []
+    },
+    {
+     "name": "Dual Wield Specialization",
+     "key": "dual_wield_specialization",
+     "tier": 4,
+     "col": 2,
+     "maxRank": 5,
+     "requires": "Precision",
+     "description": "+5/10/15/20/25% off-hand weapon damage",
+     "perRank": [
+      [
+       5.0,
+       10.0,
+       15.0,
+       20.0,
+       25.0
+      ]
+     ]
+    },
+    {
+     "name": "Blade Flurry",
+     "key": "blade_flurry",
+     "tier": 5,
+     "col": 1,
+     "maxRank": 1,
+     "requires": null,
+     "description": "+20% attack speed, strikes additional nearby opponent, 15 sec",
+     "perRank": []
+    },
+    {
+     "name": "Hack and Slash",
+     "key": "hack_and_slash",
+     "tier": 5,
+     "col": 2,
+     "maxRank": 5,
+     "requires": null,
+     "description": "Axe/Sword: 1/2/3/4/5% extra attack; Dagger/Fist: +1/2/3/4/5% crit; Mace: ignore 3/6/9/12/15% armor",
+     "perRank": [
+      [
+       1.0,
+       2.0,
+       3.0,
+       4.0,
+       5.0
+      ],
+      [
+       1.0,
+       2.0,
+       3.0,
+       4.0,
+       5.0
+      ],
+      [
+       3.0,
+       6.0,
+       9.0,
+       12.0,
+       15.0
+      ]
+     ]
+    },
+    {
+     "name": "Weapon Expertise",
+     "key": "weapon_expertise",
+     "tier": 6,
+     "col": 1,
+     "maxRank": 2,
+     "requires": "Blade Flurry",
+     "description": "-1/2% Dodge and Parry chance for attacks",
+     "perRank": [
+      [
+       -1.0,
+       2.0
+      ]
+     ]
+    },
+    {
+     "name": "Aggression",
+     "key": "aggression",
+     "tier": 6,
+     "col": 2,
+     "maxRank": 3,
+     "requires": null,
+     "description": "+2/4/6% Sinister Strike, Backstab, Eviscerate damage",
+     "perRank": [
+      [
+       2.0,
+       4.0,
+       6.0
+      ]
+     ]
+    },
+    {
+     "name": "Adrenaline Rush",
+     "key": "adrenaline_rush",
+     "tier": 7,
+     "col": 1,
+     "maxRank": 1,
+     "requires": null,
+     "description": "+100% Energy regen for 15 sec",
+     "perRank": []
+    }
+   ]
+  },
+  {
+   "name": "Subtlety",
+   "talents": [
+    {
+     "name": "Camouflage",
+     "key": "camouflage",
+     "tier": 1,
+     "col": 0,
+     "maxRank": 5,
+     "requires": null,
+     "description": "-3/6/9/12/15% Stealth speed penalty, -2/3/4/5/6 sec cooldown",
+     "perRank": [
+      [
+       -3.0,
+       6.0,
+       9.0,
+       12.0,
+       15.0
+      ],
+      [
+       -2.0,
+       3.0,
+       4.0,
+       5.0,
+       6.0
+      ]
+     ]
+    },
+    {
+     "name": "Master of Deception",
+     "key": "master_of_deception",
+     "tier": 1,
+     "col": 1,
+     "maxRank": 3,
+     "requires": null,
+     "description": "Detect as 1/2/3 levels higher while Stealthed",
+     "perRank": [
+      [
+       1.0,
+       2.0,
+       3.0
+      ]
+     ]
+    },
+    {
+     "name": "Opportunity",
+     "key": "opportunity",
+     "tier": 1,
+     "col": 2,
+     "maxRank": 2,
+     "requires": null,
+     "description": "+5/10% Backstab, Garrote, Ambush, Mutilate damage",
+     "perRank": [
+      [
+       5.0,
+       10.0
+      ]
+     ]
+    },
+    {
+     "name": "Setup",
+     "key": "setup",
+     "tier": 2,
+     "col": 0,
+     "maxRank": 3,
+     "requires": null,
+     "description": "33/67/100% chance add Combo Point after Dodging or resisting",
+     "perRank": [
+      [
+       33.0,
+       67.0,
+       100.0
+      ]
+     ]
+    },
+    {
+     "name": "Elusiveness",
+     "key": "elusiveness",
+     "tier": 2,
+     "col": 1,
+     "maxRank": 2,
+     "requires": null,
+     "description": "-45/90 sec Vanish and Blind cooldown",
+     "perRank": [
+      [
+       -45.0,
+       90.0
+      ]
+     ]
+    },
+    {
+     "name": "Dirty Tricks",
+     "key": "dirty_tricks",
+     "tier": 2,
+     "col": 2,
+     "maxRank": 2,
+     "requires": null,
+     "description": "-25/50% Sap and Blind Energy cost",
+     "perRank": [
+      [
+       -25.0,
+       50.0
+      ]
+     ]
+    },
+    {
+     "name": "Improved Ambush",
+     "key": "improved_ambush",
+     "tier": 2,
+     "col": 3,
+     "maxRank": 3,
+     "requires": null,
+     "description": "+15/30/45% Ambush crit chance",
+     "perRank": [
+      [
+       15.0,
+       30.0,
+       45.0
+      ]
+     ]
+    },
+    {
+     "name": "Initiative",
+     "key": "initiative",
+     "tier": 3,
+     "col": 0,
+     "maxRank": 3,
+     "requires": null,
+     "description": "33/67/100% chance add extra Combo Point with Ambush, Garrote, Cheap Shot",
+     "perRank": [
+      [
+       33.0,
+       67.0,
+       100.0
+      ]
+     ]
+    },
+    {
+     "name": "Ghostly Strike",
+     "key": "ghostly_strike",
+     "tier": 3,
+     "col": 1,
+     "maxRank": 1,
+     "requires": null,
+     "description": "125% (180% dagger) damage, +15% Dodge for 7 sec, 1 CP",
+     "perRank": []
+    },
+    {
+     "name": "Improved Distract",
+     "key": "improved_distract",
+     "tier": 3,
+     "col": 2,
+     "maxRank": 2,
+     "requires": null,
+     "description": "+3/5 yds radius, -1/-2 level Stealth detection",
+     "perRank": [
+      [
+       3.0,
+       5.0
+      ],
+      [
+       -1.0,
+       -2.0
+      ]
+     ]
+    },
+    {
+     "name": "Heightened Senses",
+     "key": "heightened_senses",
+     "tier": 4,
+     "col": 0,
+     "maxRank": 2,
+     "requires": null,
+     "description": "Detect as 1/3 levels higher, -2/4% spell and ranged hit taken",
+     "perRank": [
+      [
+       1.0,
+       3.0
+      ],
+      [
+       -2.0,
+       4.0
+      ]
+     ]
+    },
+    {
+     "name": "Premeditation",
+     "key": "premeditation",
+     "tier": 4,
+     "col": 1,
+     "maxRank": 1,
+     "requires": null,
+     "description": "Add 2 Combo Points, must use within 20 sec",
+     "perRank": []
+    },
+    {
+     "name": "Serrated Blades",
+     "key": "serrated_blades",
+     "tier": 4,
+     "col": 2,
+     "maxRank": 3,
+     "requires": null,
+     "description": "-3/6/9% target armor, +10/20/30% Rupture damage",
+     "perRank": [
+      [
+       -3.0,
+       6.0,
+       9.0
+      ],
+      [
+       10.0,
+       20.0,
+       30.0
+      ]
+     ]
+    },
+    {
+     "name": "Dirty Deeds",
+     "key": "dirty_deeds",
+     "tier": 5,
+     "col": 0,
+     "maxRank": 2,
+     "requires": null,
+     "description": "-10/20 Energy Cheap Shot and Garrote, Garrote no longer requires behind",
+     "perRank": [
+      [
+       -10.0,
+       20.0
+      ]
+     ]
+    },
+    {
+     "name": "Preparation",
+     "key": "preparation",
+     "tier": 5,
+     "col": 1,
+     "maxRank": 1,
+     "requires": null,
+     "description": "Reset cooldowns on other Rogue abilities",
+     "perRank": []
+    },
+    {
+     "name": "Hemorrhage",
+     "key": "hemorrhage",
+     "tier": 5,
+     "col": 2,
+     "maxRank": 1,
+     "requires": "Serrated Blades",
+     "description": "100% (145% dagger) damage, +15% Rupture damage taken, 15 sec, 1 CP",
+     "perRank": []
+    },
+    {
+     "name": "Quietus",
+     "key": "quietus",
+     "tier": 6,
+     "col": 0,
+     "maxRank": 5,
+     "requires": "Dirty Deeds",
+     "description": "+2/4/6/8/10% damage vs targets below 35% health",
+     "perRank": [
+      [
+       2.0,
+       4.0,
+       6.0,
+       8.0,
+       10.0
+      ]
+     ]
+    },
+    {
+     "name": "Cutthroat",
+     "key": "cutthroat",
+     "tier": 6,
+     "col": 1,
+     "maxRank": 5,
+     "requires": null,
+     "description": "3/6/9/12/15% chance next Ambush within 10 sec ignores Stealth requirement",
+     "perRank": [
+      [
+       3.0,
+       6.0,
+       9.0,
+       12.0,
+       15.0
+      ]
+     ]
+    },
+    {
+     "name": "Thousand Cuts",
+     "key": "thousand_cuts",
+     "tier": 7,
+     "col": 1,
+     "maxRank": 1,
+     "requires": "Preparation",
+     "description": "Rupture periodic damage reduces Hemorrhage/Backstab cost by 3, stacks 5x",
+     "perRank": []
+    }
+   ]
+  }
+ ]
+}

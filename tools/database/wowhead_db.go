@@ -40,7 +40,8 @@ func ParseWowheadDB(dbContents string) WowheadDatabase {
 
 		commaIdx := strings.Index(dbPart, ",")
 		dbContents := dbPart[commaIdx+1:]
-		if dbName == "wow.gearPlanner.classic.item" {
+		// Any branch (classic, forever, ...): "wow.gearPlanner.<branch>.item".
+		if strings.HasPrefix(dbName, "wow.gearPlanner.") && strings.HasSuffix(dbName, ".item") {
 			standardized, err := hujson.Standardize([]byte(dbContents)) // Removes invalid JSON, such as trailing commas
 			if err != nil {
 				log.Fatalf("Failed to standardize json %s\n\n%s\n\n%s", err, dbContents[0:30], dbContents[len(dbContents)-30:])
@@ -52,7 +53,7 @@ func ParseWowheadDB(dbContents string) WowheadDatabase {
 			}
 		}
 
-		if dbName == "wow.gearPlanner.classic.randomEnchant" {
+		if strings.HasPrefix(dbName, "wow.gearPlanner.") && strings.HasSuffix(dbName, ".randomEnchant") {
 			standardized, err := hujson.Standardize([]byte(dbContents)) // Removes invalid JSON, such as trailing commas
 			if err != nil {
 				log.Fatalf("Failed to standardize json %s\n\n%s\n\n%s", err, dbContents[0:30], dbContents[len(dbContents)-30:])

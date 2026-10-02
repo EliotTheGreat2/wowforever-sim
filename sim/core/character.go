@@ -59,6 +59,8 @@ type Character struct {
 	Forever bool
 	// WoW Forever combat rule changes (DoT crits, ...). Off when comparing against Classic rules.
 	ForeverCombatRules bool
+	// WoW Forever talents by name, when the player sent a Forever talent string (nil otherwise).
+	ForeverTalents ForeverTalents
 
 	// Base stats for this Character.
 	baseStats stats.Stats
@@ -211,6 +213,21 @@ func NewCharacter(party *Party, partyIndex int, player *proto.Player) Character 
 	character.Forever = player.ForeverRuleset
 	character.ForeverCombatRules = player.ForeverRuleset && !player.ForeverClassicCombatRules
 	character.Unit.ForeverRankFallback = player.ForeverRuleset
+	if player.ForeverRuleset && player.ForeverTalentsString != "" {
+		trees, ok := ForeverTalentTrees[player.Class]
+		if !ok {
+			panic("no WoW Forever talent trees for " + player.Class.String())
+		}
+		ft, err := ParseForeverTalents(trees, player.ForeverTalentsString)
+		if err != nil {
+			panic("WoW Forever talents: " + err.Error())
+		}
+		if max := player.Level - 9; player.Level > 0 && ft.Points() > max {
+			panic(fmt.Sprintf("WoW Forever talents: %d points spent, level %d has %d", ft.Points(), player.Level, max))
+		}
+		character.ForeverTalents = ft
+		character.PrimaryTalentTree = foreverPrimaryTree(player.ForeverTalentsString)
+	}
 
 	if player.EnableItemSwap && player.ItemSwap != nil {
 		character.enableItemSwap(player.ItemSwap)
