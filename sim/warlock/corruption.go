@@ -5,7 +5,6 @@ import (
 	"time"
 
 	"github.com/wowsims/sod/sim/core"
-	"github.com/wowsims/sod/sim/core/proto"
 )
 
 const CorruptionRanks = 7
@@ -19,7 +18,7 @@ func (warlock *Warlock) getCorruptionConfig(rank int) core.SpellConfig {
 	level := [CorruptionRanks + 1]int{0, 4, 14, 24, 34, 44, 54, 60}[rank]
 
 	castTime := time.Millisecond * (2000 - (400 * time.Duration(warlock.Talents.ImprovedCorruption)))
-	hasPandemicRune := warlock.HasRune(proto.WarlockRune_RuneHelmPandemic)
+	dotsCanCrit := warlock.DotsCanCrit()
 
 	return core.SpellConfig{
 		ActionID:       core.ActionID{SpellID: spellId},
@@ -69,7 +68,7 @@ func (warlock *Warlock) getCorruptionConfig(rank int) core.SpellConfig {
 				}
 			},
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-				if hasPandemicRune {
+				if dotsCanCrit {
 					dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeSnapshotCrit)
 				} else {
 					dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)
@@ -87,13 +86,13 @@ func (warlock *Warlock) getCorruptionConfig(rank int) core.SpellConfig {
 		ExpectedTickDamage: func(sim *core.Simulation, target *core.Unit, spell *core.Spell, useSnapshot bool) *core.SpellResult {
 			if useSnapshot {
 				dot := spell.Dot(target)
-				if hasPandemicRune {
+				if dotsCanCrit {
 					return dot.CalcSnapshotDamage(sim, target, dot.Spell.OutcomeExpectedMagicCrit)
 				}
 				return dot.CalcSnapshotDamage(sim, target, dot.Spell.OutcomeExpectedMagicAlwaysHit)
 			} else {
 				baseDamage := baseDamage / float64(ticks)
-				if hasPandemicRune {
+				if dotsCanCrit {
 					return spell.CalcPeriodicDamage(sim, target, baseDamage, spell.OutcomeExpectedMagicCrit)
 				}
 				return spell.CalcPeriodicDamage(sim, target, baseDamage, spell.OutcomeExpectedMagicAlwaysHit)

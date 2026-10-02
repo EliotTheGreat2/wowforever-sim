@@ -55,6 +55,9 @@ type Character struct {
 	// ISB External configuration
 	IsbConfig IsbConfig
 
+	// WoW Forever ruleset (see forever.go).
+	Forever bool
+
 	// Base stats for this Character.
 	baseStats stats.Stats
 
@@ -203,6 +206,7 @@ func NewCharacter(party *Party, partyIndex int, player *proto.Player) Character 
 
 	character.PseudoStats.CanBlock = character.OffHand().WeaponType == proto.WeaponType_WeaponTypeShield
 	character.PseudoStats.InFrontOfTarget = player.InFrontOfTarget
+	character.Forever = player.ForeverRuleset
 
 	if player.EnableItemSwap && player.ItemSwap != nil {
 		character.enableItemSwap(player.ItemSwap)
@@ -294,6 +298,10 @@ func (character *Character) BaseEquipStats() stats.Stats {
 }
 
 func (character *Character) HasRuneById(id int32) bool {
+	// WoW Forever has no Season of Discovery runes.
+	if character.Forever {
+		return false
+	}
 	return character.runesMap[id]
 }
 

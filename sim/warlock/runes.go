@@ -310,7 +310,7 @@ func (warlock *Warlock) applyInvocation() {
 		return
 	}
 
-	hasPandemicRune := warlock.HasRune(proto.WarlockRune_RuneHelmPandemic)
+	dotsCanCrit := warlock.DotsCanCrit()
 
 	copiedSpellConfig := []struct {
 		ClassMask   uint64
@@ -409,7 +409,7 @@ func (warlock *Warlock) applyInvocation() {
 					localDot.ApplyOnGain(func(aura *core.Aura, sim *core.Simulation) {
 						invocationSpell := warlock.InvocationSpellMap[localDot.Spell.ClassSpellMask]
 						invocationDot := invocationSpell.Dot(localDot.Unit)
-						outcome := core.Ternary(hasPandemicRune, invocationDot.OutcomeSnapshotCrit, invocationDot.OutcomeTick)
+						outcome := core.Ternary(dotsCanCrit, invocationDot.OutcomeSnapshotCrit, invocationDot.OutcomeTick)
 
 						invocationDot.SnapshotCritChance = localDot.SnapshotCritChance
 						invocationSpell.Cast(sim, localDot.Unit)
@@ -420,7 +420,7 @@ func (warlock *Warlock) applyInvocation() {
 							invocationDot := invocationSpell.Dot(localDot.Unit)
 
 							for i := int32(0); i < numTicksRemaining; i++ {
-								outcome := core.Ternary(hasPandemicRune, invocationDot.OutcomeSnapshotCrit, invocationDot.OutcomeTick)
+								outcome := core.Ternary(dotsCanCrit, invocationDot.OutcomeSnapshotCrit, invocationDot.OutcomeTick)
 
 								invocationDot.SnapshotCritChance = localDot.SnapshotCritChance
 								invocationSpell.Cast(sim, localDot.Unit)

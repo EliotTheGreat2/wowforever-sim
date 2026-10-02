@@ -20,7 +20,7 @@ func (warlock *Warlock) getImmolateConfig(rank int) core.SpellConfig {
 	manaCost := [ImmolateRanks + 1]float64{0, 25, 45, 90, 155, 220, 295, 370, 380}[rank]
 	level := [ImmolateRanks + 1]int{0, 1, 10, 20, 30, 40, 50, 60, 60}[rank]
 
-	hasPandemicRune := warlock.HasRune(proto.WarlockRune_RuneHelmPandemic)
+	dotsCanCrit := warlock.DotsCanCrit()
 	hasUnstableAffliction := warlock.HasRune(proto.WarlockRune_RuneBracerUnstableAffliction)
 	hasShadowflameRune := warlock.HasRune(proto.WarlockRune_RuneBootsShadowflame)
 
@@ -68,7 +68,7 @@ func (warlock *Warlock) getImmolateConfig(rank int) core.SpellConfig {
 				dot.Snapshot(target, dotDamage, isRollover)
 			},
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-				if hasPandemicRune {
+				if dotsCanCrit {
 					dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeSnapshotCrit)
 				} else {
 					dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)

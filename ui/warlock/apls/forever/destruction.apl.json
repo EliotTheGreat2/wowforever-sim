@@ -1,0 +1,159 @@
+{
+ "type": "TypeAPL",
+ "prepullActions": [
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "spellId": 11661,
+      "rank": 9
+     }
+    }
+   },
+   "doAtValue": {
+    "const": {
+     "val": "-3s"
+    }
+   }
+  }
+ ],
+ "priorityList": [
+  {
+   "action": {
+    "condition": {
+     "and": {
+      "vals": [
+       {
+        "cmp": {
+         "op": "OpGe",
+         "lhs": {
+          "remainingTime": {}
+         },
+         "rhs": {
+          "const": {
+           "val": "15s"
+          }
+         }
+        }
+       },
+       {
+        "cmp": {
+         "op": "OpLe",
+         "lhs": {
+          "currentManaPercent": {}
+         },
+         "rhs": {
+          "const": {
+           "val": "75%"
+          }
+         }
+        }
+       }
+      ]
+     }
+    },
+    "castSpell": {
+     "spellId": {
+      "otherId": "OtherActionPotion"
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "autocastOtherCooldowns": {}
+   }
+  },
+  {
+   "action": {
+    "condition": {
+     "cmp": {
+      "op": "OpGe",
+      "lhs": {
+       "remainingTime": {}
+      },
+      "rhs": {
+       "const": {
+        "val": "6s"
+       }
+      }
+     }
+    },
+    "multidot": {
+     "spellId": {
+      "spellId": 11668,
+      "rank": 7
+     },
+     "maxDots": 1,
+     "maxOverlap": {
+      "const": {
+       "val": "0ms"
+      }
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "condition": {
+     "cmp": {
+      "op": "OpGe",
+      "lhs": {
+       "remainingTime": {}
+      },
+      "rhs": {
+       "const": {
+        "val": "6s"
+       }
+      }
+     }
+    },
+    "multidot": {
+     "spellId": {
+      "spellId": 11672,
+      "rank": 6
+     },
+     "maxDots": 1,
+     "maxOverlap": {
+      "const": {
+       "val": "0ms"
+      }
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "condition": {
+     "cmp": {
+      "op": "OpLt",
+      "lhs": {
+       "currentManaPercent": {}
+      },
+      "rhs": {
+       "const": {
+        "val": "10%"
+       }
+      }
+     }
+    },
+    "castSpell": {
+     "spellId": {
+      "spellId": 11689,
+      "rank": 6
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "spellId": 11661,
+      "rank": 9
+     }
+    }
+   }
+  }
+ ]
+}

@@ -50,7 +50,7 @@ func (warlock *Warlock) applyNaxxramasDamage4PBonus() {
 		return
 	}
 
-	hasPandemicRune := warlock.HasRune(proto.WarlockRune_RuneHelmPandemic)
+	dotsCanCrit := warlock.DotsCanCrit()
 
 	copiedSpellConfig := []struct {
 		ClassMask   uint64
@@ -131,7 +131,7 @@ func (warlock *Warlock) applyNaxxramasDamage4PBonus() {
 					if dot := spell.Dot(result.Target); dot.IsActive() {
 						copiedDoTSpell := dotSpellsMap[spell.ClassSpellMask]
 						copiedDoT := copiedDoTSpell.Dot(result.Target)
-						outcome := core.Ternary(hasPandemicRune, copiedDoTSpell.OutcomeMagicCrit, spell.OutcomeAlwaysHit)
+						outcome := core.Ternary(dotsCanCrit, copiedDoTSpell.OutcomeMagicCrit, spell.OutcomeAlwaysHit)
 
 						copiedDoT.SnapshotCritChance = dot.SnapshotCritChance
 						copiedDoTSpell.Cast(sim, result.Target)

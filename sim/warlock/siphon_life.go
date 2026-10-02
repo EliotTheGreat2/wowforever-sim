@@ -5,7 +5,6 @@ import (
 	"time"
 
 	"github.com/wowsims/sod/sim/core"
-	"github.com/wowsims/sod/sim/core/proto"
 )
 
 const SiphonLifeRanks = 4
@@ -19,7 +18,7 @@ func (warlock *Warlock) getSiphonLifeBaseConfig(rank int) core.SpellConfig {
 	spellCoeff := 0.05
 	actionID := core.ActionID{SpellID: spellId}
 
-	hasPandemicRune := warlock.HasRune(proto.WarlockRune_RuneHelmPandemic)
+	dotsCanCrit := warlock.DotsCanCrit()
 
 	healingSpell := warlock.GetOrRegisterSpell(core.SpellConfig{
 		ActionID:    core.ActionID{SpellID: spellId}.WithTag(1),
@@ -81,7 +80,7 @@ func (warlock *Warlock) getSiphonLifeBaseConfig(rank int) core.SpellConfig {
 				dot.Spell.Flags |= core.SpellFlagIgnoreTargetModifiers
 
 				var result *core.SpellResult
-				if hasPandemicRune {
+				if dotsCanCrit {
 					result = dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeSnapshotCrit)
 				} else {
 					result = dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)

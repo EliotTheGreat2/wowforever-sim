@@ -56,6 +56,9 @@ message Player {
 	int32 isb_warlocks = 43;
 	int32 isb_spriests = 44;
 
+	// WoW Forever: enables Forever combat rules (DoT crits, no SoD runes, etc).
+	bool forever_ruleset = 49;
+
 	// Items/enchants/etc to include in the database.
 	SimDatabase database = 18;
 	HealingModel healing_model = 19;

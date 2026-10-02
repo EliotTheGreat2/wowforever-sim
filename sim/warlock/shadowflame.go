@@ -34,7 +34,7 @@ func (warlock *Warlock) registerShadowflameSpell() {
 
 func (warlock *Warlock) getShadowflameConfig() core.SpellConfig {
 	hasHauntRune := warlock.HasRune(proto.WarlockRune_RuneHandsHaunt)
-	hasPandemicRune := warlock.HasRune(proto.WarlockRune_RuneHelmPandemic)
+	dotsCanCrit := warlock.DotsCanCrit()
 
 	numTicks := int32(5)
 
@@ -82,7 +82,7 @@ func (warlock *Warlock) getShadowflameConfig() core.SpellConfig {
 				dot.Snapshot(target, dotDamage, isRollover)
 			},
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-				if hasPandemicRune {
+				if dotsCanCrit {
 					dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeSnapshotCrit)
 				} else {
 					dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)

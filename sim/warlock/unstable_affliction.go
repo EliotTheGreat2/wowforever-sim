@@ -16,7 +16,7 @@ func (warlock *Warlock) registerUnstableAfflictionSpell() {
 }
 
 func (warlock *Warlock) getUnstableAfflictionConfig() core.SpellConfig {
-	hasPandemicRune := warlock.HasRune(proto.WarlockRune_RuneHelmPandemic)
+	dotsCanCrit := warlock.DotsCanCrit()
 
 	// TODO: Verify numbers after tooltips update
 	// 2024-11-22 +120% damage
@@ -63,7 +63,7 @@ func (warlock *Warlock) getUnstableAfflictionConfig() core.SpellConfig {
 				dot.Snapshot(target, baseDamage, isRollover)
 			},
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-				if hasPandemicRune {
+				if dotsCanCrit {
 					dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeSnapshotCrit)
 				} else {
 					dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)
