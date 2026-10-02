@@ -97,12 +97,30 @@ stat_weights_results: {
  }
 }
 dps_results: {
+ key: "TestSealStacking-Phase8-Lvl60-AllItems-BattlegearofEternalJustice"
+ value: {
+  dps: 4336.57245
+  tps: 3415.75326
+  dtps: 2.68849
+  hps: 76.2439
+ }
+}
+dps_results: {
  key: "TestSealStacking-Phase8-Lvl60-AllItems-EmeraldEncrustedBattleplate"
  value: {
   dps: 2786.84112
   tps: 2233.2659
   dtps: 4.80096
   hps: 35.624
+ }
+}
+dps_results: {
+ key: "TestSealStacking-Phase8-Lvl60-AllItems-Freethinker'sArmor"
+ value: {
+  dps: 4482.03522
+  tps: 3553.16211
+  dtps: 3.48291
+  hps: 46.09567
  }
 }
 dps_results: {
@@ -130,6 +148,15 @@ dps_results: {
   tps: 4589.71127
   dtps: 2.68849
   hps: 58.2916
+ }
+}
+dps_results: {
+ key: "TestSealStacking-Phase8-Lvl60-AllItems-RedemptionArmor"
+ value: {
+  dps: 2476.90836
+  tps: 1983.23034
+  dtps: 4.93249
+  hps: 31.3967
  }
 }
 dps_results: {

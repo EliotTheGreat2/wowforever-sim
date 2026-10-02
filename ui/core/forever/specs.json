@@ -1,0 +1,5987 @@
+[
+ {
+  "key": "balance_druid",
+  "classId": 1,
+  "spec": "Balance",
+  "role": "Caster DPS",
+  "talents": "5000550012551251--5005031",
+  "rotation": "ui/balance_druid/apls/forever/default.apl.json",
+  "gear": "ui/balance_druid/gear_sets/forever/preraid.gear.json",
+  "gearSource": "wowsims/classic pre-raid + auto-filled",
+  "faction": "Horde",
+  "race": "RaceTauren",
+  "specOptions": {
+   "options": {}
+  },
+  "supported": true,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 18727
+    },
+    {
+     "id": 12103
+    },
+    {
+     "id": 18681
+    },
+    {
+     "id": 18350
+    },
+    {
+     "id": 18385
+    },
+    {
+     "id": 18497
+    },
+    {
+     "id": 13253
+    },
+    {
+     "id": 11662
+    },
+    {
+     "id": 13170
+    },
+    {
+     "id": 18322
+    },
+    {
+     "id": 12545
+    },
+    {
+     "id": 13001
+    },
+    {
+     "id": 13968
+    },
+    {
+     "id": 13515
+    },
+    {
+     "id": 18534
+    },
+    {},
+    {}
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAPL",
+   "prepullActions": [],
+   "priorityList": [
+    {
+     "action": {
+      "autocastOtherCooldowns": {}
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLe",
+        "lhs": {
+         "remainingTime": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "1.5"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 9835,
+        "rank": 10
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLe",
+        "lhs": {
+         "remainingTime": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "3.5"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 9912,
+        "rank": 8
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "not": {
+        "val": {
+         "dotIsActive": {
+          "spellId": {
+           "spellId": 9835,
+           "rank": 10
+          }
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 9835,
+        "rank": 10
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 25298,
+        "rank": 7
+       }
+      }
+     }
+    }
+   ]
+  },
+  "distance": 25
+ },
+ {
+  "key": "feral_druid",
+  "classId": 1,
+  "spec": "Feral (Cat)",
+  "role": "Melee DPS",
+  "talents": "500005301-5500021323202151-05",
+  "rotation": "ui/feral_druid/apls/forever/default.apl.json",
+  "gear": "ui/feral_druid/gear_sets/forever/preraid.gear.json",
+  "gearSource": "wowsims/classic pre-raid + auto-filled",
+  "faction": "Horde",
+  "race": "RaceTauren",
+  "specOptions": {
+   "options": {}
+  },
+  "supported": true,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 8345
+    },
+    {
+     "id": 15411
+    },
+    {
+     "id": 12927
+    },
+    {
+     "id": 13340
+    },
+    {
+     "id": 14637
+    },
+    {
+     "id": 13120
+    },
+    {
+     "id": 15063
+    },
+    {
+     "id": 13252
+    },
+    {
+     "id": 15062
+    },
+    {
+     "id": 12553
+    },
+    {
+     "id": 18500
+    },
+    {
+     "id": 18500
+    },
+    {
+     "id": 13965
+    },
+    {
+     "id": 18537
+    },
+    {
+     "id": 9449
+    },
+    {},
+    {}
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAPL",
+   "prepullActions": [
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 17392,
+        "rank": 4
+       }
+      }
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-1.0s"
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 9846,
+        "rank": 4
+       }
+      }
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-3.5s"
+      }
+     }
+    }
+   ],
+   "priorityList": [
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "auraRemainingTime": {
+             "sourceUnit": {
+              "type": "CurrentTarget"
+             },
+             "auraId": {
+              "spellId": 17392,
+              "rank": 4
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1.0"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "auraRemainingTime": {
+             "sourceUnit": {
+              "type": "CurrentTarget"
+             },
+             "auraId": {
+              "spellId": 9907,
+              "rank": 4
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1.0"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 17392,
+        "rank": 4
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "auraIsActive": {
+           "auraId": {
+            "spellId": 768
+           }
+          }
+         },
+         {
+          "spellIsKnown": {
+           "spellId": {
+            "spellId": 13494
+           }
+          }
+         },
+         {
+          "not": {
+           "val": {
+            "auraIsActive": {
+             "auraId": {
+              "spellId": 13494
+             }
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpLt",
+           "lhs": {
+            "currentTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "90.0"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 13494
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "auraIsActive": {
+        "auraId": {
+         "spellId": 768
+        }
+       }
+      },
+      "autocastOtherCooldowns": {}
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "auraIsKnown": {
+           "auraId": {
+            "spellId": 17061,
+            "rank": 5
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "currentMana": {}
+           },
+           "rhs": {
+            "spellCurrentCost": {
+             "spellId": {
+              "spellId": 768
+             }
+            }
+           }
+          }
+         },
+         {
+          "gcdIsReady": {}
+         },
+         {
+          "and": {
+           "vals": [
+            {
+             "auraIsKnown": {
+              "auraId": {
+               "spellId": 16870
+              }
+             }
+            },
+            {
+             "auraIsActive": {
+              "auraId": {
+               "spellId": 16870
+              }
+             }
+            },
+            {
+             "cmp": {
+              "op": "OpLt",
+              "lhs": {
+               "currentEnergy": {}
+              },
+              "rhs": {
+               "const": {
+                "val": "27.8"
+               }
+              }
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      "cancelAura": {
+       "auraId": {
+        "spellId": 768
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpEq",
+           "lhs": {
+            "currentComboPoints": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "5.0"
+            }
+           }
+          }
+         },
+         {
+          "not": {
+           "val": {
+            "auraIsActive": {
+             "auraId": {
+              "spellId": 16870
+             }
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpLt",
+           "lhs": {
+            "math": {
+             "op": "OpAdd",
+             "lhs": {
+              "currentEnergy": {}
+             },
+             "rhs": {
+              "const": {
+               "val": "20.2"
+              }
+             }
+            }
+           },
+           "rhs": {
+            "math": {
+             "op": "OpAdd",
+             "lhs": {
+              "spellCurrentCost": {
+               "spellId": {
+                "spellId": 9830,
+                "rank": 5
+               }
+              }
+             },
+             "rhs": {
+              "spellCurrentCost": {
+               "spellId": {
+                "spellId": 31018,
+                "rank": 4
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 31018,
+        "rank": 4
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 9830,
+        "rank": 5
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "auraIsKnown": {
+           "auraId": {
+            "spellId": 17061,
+            "rank": 5
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "currentMana": {}
+           },
+           "rhs": {
+            "spellCurrentCost": {
+             "spellId": {
+              "spellId": 768
+             }
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "timeToEnergyTick": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "1.02"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 9850,
+        "rank": 5
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "auraIsKnown": {
+           "auraId": {
+            "spellId": 17061,
+            "rank": 5
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "currentMana": {}
+           },
+           "rhs": {
+            "spellCurrentCost": {
+             "spellId": {
+              "spellId": 768
+             }
+            }
+           }
+          }
+         },
+         {
+          "gcdIsReady": {}
+         },
+         {
+          "or": {
+           "vals": [
+            {
+             "and": {
+              "vals": [
+               {
+                "cmp": {
+                 "op": "OpLt",
+                 "lhs": {
+                  "currentComboPoints": {}
+                 },
+                 "rhs": {
+                  "const": {
+                   "val": "5.0"
+                  }
+                 }
+                }
+               },
+               {
+                "cmp": {
+                 "op": "OpLt",
+                 "lhs": {
+                  "math": {
+                   "op": "OpAdd",
+                   "lhs": {
+                    "currentEnergy": {}
+                   },
+                   "rhs": {
+                    "const": {
+                     "val": "20.2"
+                    }
+                   }
+                  }
+                 },
+                 "rhs": {
+                  "spellCurrentCost": {
+                   "spellId": {
+                    "spellId": 9830,
+                    "rank": 5
+                   }
+                  }
+                 }
+                }
+               }
+              ]
+             }
+            },
+            {
+             "and": {
+              "vals": [
+               {
+                "cmp": {
+                 "op": "OpEq",
+                 "lhs": {
+                  "currentComboPoints": {}
+                 },
+                 "rhs": {
+                  "const": {
+                   "val": "5.0"
+                  }
+                 }
+                }
+               },
+               {
+                "cmp": {
+                 "op": "OpLt",
+                 "lhs": {
+                  "math": {
+                   "op": "OpAdd",
+                   "lhs": {
+                    "currentEnergy": {}
+                   },
+                   "rhs": {
+                    "const": {
+                     "val": "20.2"
+                    }
+                   }
+                  }
+                 },
+                 "rhs": {
+                  "spellCurrentCost": {
+                   "spellId": {
+                    "spellId": 31018,
+                    "rank": 4
+                   }
+                  }
+                 }
+                }
+               }
+              ]
+             }
+            },
+            {
+             "and": {
+              "vals": [
+               {
+                "auraIsKnown": {
+                 "auraId": {
+                  "spellId": 16870
+                 }
+                }
+               },
+               {
+                "auraIsActive": {
+                 "auraId": {
+                  "spellId": 16870
+                 }
+                }
+               },
+               {
+                "cmp": {
+                 "op": "OpLt",
+                 "lhs": {
+                  "currentEnergy": {}
+                 },
+                 "rhs": {
+                  "const": {
+                   "val": "27.8"
+                  }
+                 }
+                }
+               }
+              ]
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      "cancelAura": {
+       "auraId": {
+        "spellId": 768
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "auraRemainingTime": {
+             "sourceUnit": {
+              "type": "CurrentTarget"
+             },
+             "auraId": {
+              "spellId": 17392,
+              "rank": 4
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "14.0"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "auraRemainingTime": {
+             "sourceUnit": {
+              "type": "CurrentTarget"
+             },
+             "auraId": {
+              "spellId": 9907,
+              "rank": 4
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "14.0"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 17392,
+        "rank": 4
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "not": {
+        "val": {
+         "auraIsActive": {
+          "auraId": {
+           "spellId": 768
+          }
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "itemId": 10646
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "not": {
+           "val": {
+            "auraIsActive": {
+             "auraId": {
+              "spellId": 768
+             }
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "math": {
+             "op": "OpAdd",
+             "lhs": {
+              "currentMana": {}
+             },
+             "rhs": {
+              "const": {
+               "val": "1500.0"
+              }
+             }
+            }
+           },
+           "rhs": {
+            "math": {
+             "op": "OpDiv",
+             "lhs": {
+              "currentMana": {}
+             },
+             "rhs": {
+              "currentManaPercent": {}
+             }
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "itemId": 12662
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "not": {
+           "val": {
+            "auraIsActive": {
+             "auraId": {
+              "spellId": 768
+             }
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "math": {
+             "op": "OpAdd",
+             "lhs": {
+              "currentMana": {}
+             },
+             "rhs": {
+              "const": {
+               "val": "2250.0"
+              }
+             }
+            }
+           },
+           "rhs": {
+            "math": {
+             "op": "OpDiv",
+             "lhs": {
+              "currentMana": {}
+             },
+             "rhs": {
+              "currentManaPercent": {}
+             }
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "otherId": "OtherActionPotion"
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "not": {
+           "val": {
+            "auraIsActive": {
+             "auraId": {
+              "spellId": 768
+             }
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "currentManaPercent": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "80%"
+            }
+           }
+          }
+         },
+         {
+          "not": {
+           "val": {
+            "or": {
+             "vals": [
+              {
+               "and": {
+                "vals": [
+                 {
+                  "spellIsKnown": {
+                   "spellId": {
+                    "itemId": 12662
+                   }
+                  }
+                 },
+                 {
+                  "spellIsReady": {
+                   "spellId": {
+                    "itemId": 12662
+                   }
+                  }
+                 }
+                ]
+               }
+              },
+              {
+               "and": {
+                "vals": [
+                 {
+                  "spellIsKnown": {
+                   "spellId": {
+                    "otherId": "OtherActionPotion"
+                   }
+                  }
+                 },
+                 {
+                  "spellIsReady": {
+                   "spellId": {
+                    "otherId": "OtherActionPotion"
+                   }
+                  }
+                 }
+                ]
+               }
+              }
+             ]
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 23724
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "not": {
+           "val": {
+            "auraIsActive": {
+             "auraId": {
+              "spellId": 768
+             }
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "currentManaPercent": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "40%"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "20.0"
+            }
+           }
+          }
+         },
+         {
+          "not": {
+           "val": {
+            "or": {
+             "vals": [
+              {
+               "and": {
+                "vals": [
+                 {
+                  "spellIsKnown": {
+                   "spellId": {
+                    "itemId": 12662
+                   }
+                  }
+                 },
+                 {
+                  "spellIsReady": {
+                   "spellId": {
+                    "itemId": 12662
+                   }
+                  }
+                 }
+                ]
+               }
+              },
+              {
+               "and": {
+                "vals": [
+                 {
+                  "spellIsKnown": {
+                   "spellId": {
+                    "otherId": "OtherActionPotion"
+                   }
+                  }
+                 },
+                 {
+                  "spellIsReady": {
+                   "spellId": {
+                    "otherId": "OtherActionPotion"
+                   }
+                  }
+                 }
+                ]
+               }
+              }
+             ]
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 29166
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "not": {
+        "val": {
+         "auraIsActive": {
+          "auraId": {
+           "spellId": 768
+          }
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 768
+       }
+      }
+     }
+    }
+   ]
+  },
+  "distance": 5
+ },
+ {
+  "key": "feral_tank_druid",
+  "classId": 1,
+  "spec": "Guardian (Bear)",
+  "role": "Tank",
+  "talents": "-503232132322010353120300313511-20350001",
+  "rotation": "ui/feral_tank_druid/apls/forever/default.apl.json",
+  "gear": "ui/feral_tank_druid/gear_sets/forever/preraid.gear.json",
+  "gearSource": "auto-picked pre-raid",
+  "faction": "Horde",
+  "race": "RaceTauren",
+  "specOptions": {
+   "options": {
+    "startingRage": 20
+   }
+  },
+  "supported": true,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 16707
+    },
+    {
+     "id": 18381
+    },
+    {
+     "id": 13358
+    },
+    {
+     "id": 18511
+    },
+    {
+     "id": 12757
+    },
+    {
+     "id": 18700
+    },
+    {
+     "id": 18377
+    },
+    {
+     "id": 13118
+    },
+    {
+     "id": 11821
+    },
+    {
+     "id": 18716
+    },
+    {
+     "id": 2246
+    },
+    {
+     "id": 13373
+    },
+    {
+     "id": 18370
+    },
+    {
+     "id": 13966
+    },
+    {
+     "id": 13937
+    },
+    {},
+    {}
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAPL",
+   "prepullActions": [
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 9634
+       }
+      }
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-1s"
+      }
+     }
+    }
+   ],
+   "priorityList": [
+    {
+     "action": {
+      "condition": {
+       "not": {
+        "val": {
+         "auraIsActive": {
+          "auraId": {
+           "spellId": 9634
+          }
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 9634
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "autocastOtherCooldowns": {}
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLt",
+        "lhs": {
+         "currentRage": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "15"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 5229
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "not": {
+        "val": {
+         "auraIsActive": {
+          "sourceUnit": {
+           "type": "CurrentTarget"
+          },
+          "auraId": {
+           "spellId": 17392,
+           "rank": 4
+          }
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 17392,
+        "rank": 4
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpGe",
+        "lhs": {
+         "currentRage": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "45"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 9908,
+        "rank": 5
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpGe",
+        "lhs": {
+         "currentRage": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "15"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 9881,
+        "tag": 1,
+        "rank": 7
+       }
+      }
+     }
+    }
+   ]
+  },
+  "distance": 5
+ },
+ {
+  "key": "restoration_druid",
+  "classId": 1,
+  "spec": "Restoration",
+  "role": "Healer",
+  "talents": "05320031103--230023312131502331050313051",
+  "rotation": null,
+  "gear": "ui/restoration_druid/gear_sets/forever/preraid.gear.json",
+  "gearSource": "auto-picked pre-raid",
+  "faction": "Horde",
+  "race": "RaceTauren",
+  "specOptions": {
+   "options": {}
+  },
+  "supported": false,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 18490
+    },
+    {
+     "id": 18723
+    },
+    {
+     "id": 15061
+    },
+    {
+     "id": 18510
+    },
+    {
+     "id": 13346
+    },
+    {
+     "id": 18525
+    },
+    {
+     "id": 12554
+    },
+    {
+     "id": 14553
+    },
+    {
+     "id": 18386
+    },
+    {
+     "id": 18507
+    },
+    {
+     "id": 13178
+    },
+    {
+     "id": 16058
+    },
+    {
+     "id": 18470
+    },
+    {
+     "id": 12930
+    },
+    {
+     "id": 11923
+    },
+    {
+     "id": 18523
+    },
+    {}
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAuto"
+  },
+  "distance": 25
+ },
+ {
+  "key": "elemental_shaman",
+  "classId": 7,
+  "spec": "Elemental",
+  "role": "Caster DPS",
+  "talents": "050331552000151--50105301005",
+  "rotation": "ui/elemental_shaman/apls/forever/default.apl.json",
+  "gear": "ui/elemental_shaman/gear_sets/forever/preraid.gear.json",
+  "gearSource": "auto-picked pre-raid",
+  "faction": "Horde",
+  "race": "RaceOrc",
+  "specOptions": {
+   "options": {}
+  },
+  "supported": true,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 18727
+    },
+    {
+     "id": 18289
+    },
+    {
+     "id": 18681
+    },
+    {
+     "id": 18350
+    },
+    {
+     "id": 12624
+    },
+    {
+     "id": 18497
+    },
+    {
+     "id": 13253
+    },
+    {
+     "id": 18676
+    },
+    {
+     "id": 13170
+    },
+    {
+     "id": 18322
+    },
+    {
+     "id": 13001
+    },
+    {
+     "id": 12545
+    },
+    {
+     "id": 12930
+    },
+    {
+     "id": 18471
+    },
+    {
+     "id": 13964
+    },
+    {
+     "id": 17718
+    },
+    {}
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAPL",
+   "prepullActions": [
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 15208,
+        "rank": 10
+       }
+      }
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-2s"
+      }
+     }
+    }
+   ],
+   "priorityList": [
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpEq",
+           "lhs": {
+            "numberTargets": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "1"
+            }
+           }
+          }
+         },
+         {
+          "not": {
+           "val": {
+            "dotIsActive": {
+             "spellId": {
+              "spellId": 10438,
+              "rank": 6
+             }
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 10438,
+        "rank": 6
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "numberTargets": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "2"
+            }
+           }
+          }
+         },
+         {
+          "not": {
+           "val": {
+            "dotIsActive": {
+             "spellId": {
+              "spellId": 10587,
+              "rank": 4
+             }
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 10587,
+        "rank": 4
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "autocastOtherCooldowns": {}
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 10605,
+        "rank": 4
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "auraIsActive": {
+        "auraId": {
+         "spellId": 16166
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 10414,
+        "rank": 7
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpGe",
+        "lhs": {
+         "currentManaPercent": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "30%"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 15208,
+        "rank": 10
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 915,
+        "rank": 4
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "const": {
+        "val": "false"
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 20572
+       }
+      }
+     }
+    }
+   ]
+  },
+  "distance": 25
+ },
+ {
+  "key": "enhancement_shaman",
+  "classId": 7,
+  "spec": "Enhancement",
+  "role": "Melee DPS",
+  "talents": "05-5025002105023051-05105301",
+  "rotation": "ui/enhancement_shaman/apls/forever/default.apl.json",
+  "gear": "ui/enhancement_shaman/gear_sets/forever/preraid.gear.json",
+  "gearSource": "auto-picked pre-raid",
+  "faction": "Horde",
+  "race": "RaceOrc",
+  "specOptions": {
+   "options": {}
+  },
+  "supported": true,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 12587
+    },
+    {
+     "id": 15411
+    },
+    {
+     "id": 12927
+    },
+    {
+     "id": 13340
+    },
+    {
+     "id": 11726
+    },
+    {
+     "id": 12966
+    },
+    {
+     "id": 13963
+    },
+    {
+     "id": 11686
+    },
+    {
+     "id": 15062
+    },
+    {
+     "id": 14616
+    },
+    {
+     "id": 17713
+    },
+    {
+     "id": 13098
+    },
+    {
+     "id": 13965
+    },
+    {
+     "id": 18537
+    },
+    {
+     "id": 18538
+    },
+    {},
+    {}
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAPL",
+   "prepullActions": [
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 10442,
+        "rank": 4
+       }
+      }
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-6s"
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 10614,
+        "rank": 3
+       }
+      }
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-4.5s"
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 10627,
+        "rank": 2
+       }
+      }
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-3s"
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 10438,
+        "rank": 6
+       }
+      }
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-1.5s"
+      }
+     }
+    }
+   ],
+   "priorityList": [
+    {
+     "action": {
+      "condition": {
+       "not": {
+        "val": {
+         "auraIsActive": {
+          "auraId": {
+           "spellId": 25361,
+           "rank": 5
+          }
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 10442,
+        "rank": 4
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLe",
+        "lhs": {
+         "auraRemainingTime": {
+          "auraId": {
+           "spellId": 10611
+          }
+         }
+        },
+        "rhs": {
+         "const": {
+          "val": "1.5s"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 10614,
+        "rank": 3
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "not": {
+        "val": {
+         "auraIsActive": {
+          "auraId": {
+           "spellId": 25359,
+           "rank": 3
+          }
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 10627,
+        "rank": 2
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "autocastOtherCooldowns": {}
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 17364,
+        "rank": 1
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "not": {
+           "val": {
+            "dotIsActive": {
+             "spellId": {
+              "spellId": 10438,
+              "rank": 6
+             }
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "20s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 10438,
+        "rank": 6
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpGe",
+        "lhs": {
+         "currentManaPercent": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "50%"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 10414,
+        "rank": 7
+       }
+      }
+     }
+    }
+   ]
+  },
+  "distance": 5
+ },
+ {
+  "key": "restoration_shaman",
+  "classId": 7,
+  "spec": "Restoration",
+  "role": "Healer",
+  "talents": "-30205033-05005331335010501122331251",
+  "rotation": null,
+  "gear": "ui/restoration_shaman/gear_sets/forever/preraid.gear.json",
+  "gearSource": "auto-picked pre-raid",
+  "faction": "Horde",
+  "race": "RaceOrc",
+  "specOptions": {
+   "options": {}
+  },
+  "supported": false,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 18490
+    },
+    {
+     "id": 18723
+    },
+    {
+     "id": 14548
+    },
+    {
+     "id": 18510
+    },
+    {
+     "id": 13346
+    },
+    {
+     "id": 13969
+    },
+    {
+     "id": 18527
+    },
+    {
+     "id": 14553
+    },
+    {
+     "id": 18386
+    },
+    {
+     "id": 18507
+    },
+    {
+     "id": 13178
+    },
+    {
+     "id": 16058
+    },
+    {
+     "id": 12930
+    },
+    {
+     "id": 18371
+    },
+    {
+     "id": 11923
+    },
+    {
+     "id": 17718
+    },
+    {}
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAuto"
+  },
+  "distance": 25
+ },
+ {
+  "key": "hunter",
+  "classId": 2,
+  "spec": "Marksmanship",
+  "role": "Ranged DPS",
+  "talents": "55000000505-05451002503051",
+  "rotation": "ui/hunter/apls/forever/default.apl.json",
+  "gear": "ui/hunter/gear_sets/forever/preraid.gear.json",
+  "gearSource": "wowsims/classic pre-raid + auto-filled",
+  "faction": "Horde",
+  "race": "RaceOrc",
+  "specOptions": {
+   "options": {
+    "ammo": "ThoriumHeadedArrow",
+    "petType": "Cat",
+    "petUptime": 1
+   }
+  },
+  "supported": true,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 13404
+    },
+    {
+     "id": 15411
+    },
+    {
+     "id": 13358
+    },
+    {
+     "id": 13340
+    },
+    {
+     "id": 11726
+    },
+    {
+     "id": 16681
+    },
+    {
+     "id": 13255
+    },
+    {
+     "id": 12634
+    },
+    {
+     "id": 18736
+    },
+    {
+     "id": 13967
+    },
+    {
+     "id": 13098
+    },
+    {
+     "id": 17713
+    },
+    {
+     "id": 13965
+    },
+    {
+     "id": 11815
+    },
+    {
+     "id": 18725
+    },
+    {},
+    {
+     "id": 18738
+    }
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAPL",
+   "prepullActions": [
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 25296,
+        "rank": 6
+       }
+      }
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-10s"
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 20904,
+        "rank": 6
+       }
+      }
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-3.5s"
+      }
+     }
+    }
+   ],
+   "priorityList": [
+    {
+     "action": {
+      "autocastOtherCooldowns": {}
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLt",
+           "lhs": {
+            "autoTimeToNext": {
+             "autoType": "Ranged"
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "0.1"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpLt",
+           "lhs": {
+            "spellTimeToReady": {
+             "spellId": {
+              "spellId": 20904,
+              "rank": 6
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "0.5"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 3045
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpGt",
+        "lhs": {
+         "autoTimeToNext": {
+          "autoType": "Ranged"
+         }
+        },
+        "rhs": {
+         "const": {
+          "val": "1s"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 20904,
+        "rank": 6
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpGt",
+        "lhs": {
+         "autoTimeToNext": {
+          "autoType": "Ranged"
+         }
+        },
+        "rhs": {
+         "const": {
+          "val": "0.5s"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 25294,
+        "rank": 4
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLt",
+           "lhs": {
+            "dotRemainingTime": {
+             "spellId": {
+              "spellId": 25295,
+              "rank": 8
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "5s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "spellTimeToReady": {
+             "spellId": {
+              "spellId": 20904,
+              "rank": 6
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "0.5"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "spellTimeToReady": {
+             "spellId": {
+              "spellId": 25294,
+              "rank": 4
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "0.5"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 25295,
+        "rank": 8
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "autoTimeToNext": {
+             "autoType": "Ranged"
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "spellTimeToReady": {
+             "spellId": {
+              "spellId": 20904,
+              "rank": 6
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "spellTimeToReady": {
+             "spellId": {
+              "spellId": 25294,
+              "rank": 4
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "currentTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "6"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "itemId": 18641
+       }
+      }
+     }
+    }
+   ]
+  },
+  "distance": 25
+ },
+ {
+  "key": "mage",
+  "classId": 3,
+  "spec": "Frost",
+  "role": "Caster DPS",
+  "talents": "230205021002--05353203102351001",
+  "rotation": "ui/mage/apls/forever/default.apl.json",
+  "gear": "ui/mage/gear_sets/forever/preraid.gear.json",
+  "gearSource": "wowsims/classic pre-raid + auto-filled",
+  "faction": "Horde",
+  "race": "RaceUndead",
+  "specOptions": {
+   "options": {
+    "armor": "MageArmor"
+   }
+  },
+  "supported": true,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 18727
+    },
+    {
+     "id": 12103
+    },
+    {
+     "id": 11782
+    },
+    {
+     "id": 18350
+    },
+    {
+     "id": 14152
+    },
+    {
+     "id": 18497
+    },
+    {
+     "id": 13253
+    },
+    {
+     "id": 11662
+    },
+    {
+     "id": 13170
+    },
+    {
+     "id": 11822
+    },
+    {
+     "id": 942
+    },
+    {
+     "id": 942
+    },
+    {
+     "id": 13968
+    },
+    {
+     "id": 12930
+    },
+    {
+     "id": 13964
+    },
+    {
+     "id": 11904
+    },
+    {
+     "id": 13938
+    }
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAPL",
+   "priorityList": [
+    {
+     "action": {
+      "autocastOtherCooldowns": {}
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpEq",
+        "lhs": {
+         "auraNumStacks": {
+          "sourceUnit": {
+           "type": "CurrentTarget"
+          },
+          "auraId": {
+           "spellId": 12873,
+           "rank": 3
+          }
+         }
+        },
+        "rhs": {
+         "const": {
+          "val": "5"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 11129
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "auraIsKnown": {
+           "auraId": {
+            "spellId": 11129
+           }
+          }
+         },
+         {
+          "or": {
+           "vals": [
+            {
+             "cmp": {
+              "op": "OpLt",
+              "lhs": {
+               "auraNumStacks": {
+                "sourceUnit": {
+                 "type": "CurrentTarget"
+                },
+                "auraId": {
+                 "spellId": 12873,
+                 "rank": 3
+                }
+               }
+              },
+              "rhs": {
+               "const": {
+                "val": "5"
+               }
+              }
+             }
+            },
+            {
+             "cmp": {
+              "op": "OpLe",
+              "lhs": {
+               "auraRemainingTime": {
+                "sourceUnit": {
+                 "type": "CurrentTarget"
+                },
+                "auraId": {
+                 "spellId": 12873,
+                 "rank": 3
+                }
+               }
+              },
+              "rhs": {
+               "const": {
+                "val": "5s"
+               }
+              }
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 10207,
+        "rank": 7
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "spellIsKnown": {
+        "spellId": {
+         "spellId": 11129
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 25306,
+        "rank": 12
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLt",
+           "lhs": {
+            "currentManaPercent": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "12%"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "10s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "channelSpell": {
+       "spellId": {
+        "spellId": 12051
+       },
+       "interruptIf": {
+        "cmp": {
+         "op": "OpGt",
+         "lhs": {
+          "currentManaPercent": {}
+         },
+         "rhs": {
+          "const": {
+           "val": "90%"
+          }
+         }
+        }
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 25304,
+        "rank": 10
+       }
+      }
+     }
+    }
+   ]
+  },
+  "distance": 25
+ },
+ {
+  "key": "rogue",
+  "classId": 6,
+  "spec": "Combat",
+  "role": "Melee DPS",
+  "talents": "005323105-0240052020050150231",
+  "rotation": "ui/rogue/apls/forever/default.apl.json",
+  "gear": "ui/rogue/gear_sets/forever/preraid.gear.json",
+  "gearSource": "wowsims/classic pre-raid + auto-filled",
+  "faction": "Horde",
+  "race": "RaceOrc",
+  "specOptions": {
+   "options": {}
+  },
+  "supported": true,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 16707
+    },
+    {
+     "id": 15411
+    },
+    {
+     "id": 12927
+    },
+    {
+     "id": 13340
+    },
+    {
+     "id": 14637
+    },
+    {
+     "id": 16710
+    },
+    {
+     "id": 16712
+    },
+    {
+     "id": 16713
+    },
+    {
+     "id": 16709
+    },
+    {
+     "id": 16711
+    },
+    {
+     "id": 17713
+    },
+    {
+     "id": 18500
+    },
+    {
+     "id": 13965
+    },
+    {
+     "id": 11815
+    },
+    {
+     "id": 12940
+    },
+    {
+     "id": 12939
+    },
+    {
+     "id": 2100
+    }
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAPL",
+   "priorityList": [
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "and": {
+           "vals": [
+            {
+             "cmp": {
+              "op": "OpGe",
+              "lhs": {
+               "currentComboPoints": {}
+              },
+              "rhs": {
+               "const": {
+                "val": "1"
+               }
+              }
+             }
+            },
+            {
+             "not": {
+              "val": {
+               "auraIsActive": {
+                "auraId": {
+                 "spellId": 6774,
+                 "rank": 2
+                }
+               }
+              }
+             }
+            },
+            {
+             "cmp": {
+              "op": "OpGe",
+              "lhs": {
+               "remainingTime": {}
+              },
+              "rhs": {
+               "const": {
+                "val": "6"
+               }
+              }
+             }
+            }
+           ]
+          }
+         },
+         {
+          "and": {
+           "vals": [
+            {
+             "cmp": {
+              "op": "OpGe",
+              "lhs": {
+               "currentComboPoints": {}
+              },
+              "rhs": {
+               "const": {
+                "val": "5"
+               }
+              }
+             }
+            },
+            {
+             "cmp": {
+              "op": "OpLt",
+              "lhs": {
+               "auraRemainingTime": {
+                "auraId": {
+                 "spellId": 6774,
+                 "rank": 2
+                }
+               }
+              },
+              "rhs": {
+               "const": {
+                "val": "3"
+               }
+              }
+             }
+            },
+            {
+             "cmp": {
+              "op": "OpGt",
+              "lhs": {
+               "remainingTime": {}
+              },
+              "rhs": {
+               "const": {
+                "val": "9"
+               }
+              }
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 6774,
+        "rank": 2
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLt",
+           "lhs": {
+            "currentEnergy": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "59"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpLt",
+           "lhs": {
+            "timeToEnergyTick": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "1"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 13750
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "auraIsActive": {
+        "auraId": {
+         "spellId": 6774,
+         "rank": 2
+        }
+       }
+      },
+      "autocastOtherCooldowns": {}
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "currentComboPoints": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "5"
+            }
+           }
+          }
+         },
+         {
+          "or": {
+           "vals": [
+            {
+             "auraIsActive": {
+              "auraId": {
+               "spellId": 6774,
+               "rank": 2
+              }
+             }
+            },
+            {
+             "cmp": {
+              "op": "OpGe",
+              "lhs": {
+               "currentEnergy": {}
+              },
+              "rhs": {
+               "const": {
+                "val": "79"
+               }
+              }
+             }
+            },
+            {
+             "cmp": {
+              "op": "OpLt",
+              "lhs": {
+               "remainingTime": {}
+              },
+              "rhs": {
+               "const": {
+                "val": "6"
+               }
+              }
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 31016
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 11294,
+        "rank": 8
+       }
+      }
+     }
+    }
+   ]
+  },
+  "distance": 5
+ },
+ {
+  "key": "holy_paladin",
+  "classId": 4,
+  "spec": "Holy",
+  "role": "Healer",
+  "talents": "50350151020013053100515221-50023131203",
+  "rotation": null,
+  "gear": "ui/holy_paladin/gear_sets/forever/preraid.gear.json",
+  "gearSource": "auto-picked pre-raid",
+  "faction": "Alliance",
+  "race": "RaceHuman",
+  "specOptions": {
+   "options": {
+    "aura": "ConcentrationAura"
+   }
+  },
+  "supported": false,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 18490
+    },
+    {
+     "id": 18723
+    },
+    {
+     "id": 12625
+    },
+    {
+     "id": 18510
+    },
+    {
+     "id": 13346
+    },
+    {
+     "id": 13969
+    },
+    {
+     "id": 18527
+    },
+    {
+     "id": 14553
+    },
+    {
+     "id": 18386
+    },
+    {
+     "id": 18507
+    },
+    {
+     "id": 13178
+    },
+    {
+     "id": 16058
+    },
+    {
+     "id": 12930
+    },
+    {
+     "id": 18371
+    },
+    {
+     "id": 11923
+    },
+    {
+     "id": 17718
+    },
+    {}
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAuto"
+  },
+  "distance": 25
+ },
+ {
+  "key": "protection_paladin",
+  "classId": 4,
+  "spec": "Protection",
+  "role": "Tank",
+  "talents": "-053020335001551-0500535",
+  "rotation": "ui/protection_paladin/apls/forever/default.apl.json",
+  "gear": "ui/protection_paladin/gear_sets/forever/preraid.gear.json",
+  "gearSource": "auto-picked pre-raid",
+  "faction": "Alliance",
+  "race": "RaceHuman",
+  "specOptions": {
+   "options": {
+    "primarySeal": "Righteousness",
+    "aura": "DevotionAura",
+    "righteousFury": true
+   }
+  },
+  "supported": true,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 12620
+    },
+    {
+     "id": 11755
+    },
+    {
+     "id": 14552
+    },
+    {
+     "id": 18511
+    },
+    {
+     "id": 12618
+    },
+    {
+     "id": 13951
+    },
+    {
+     "id": 13072
+    },
+    {
+     "id": 14620
+    },
+    {
+     "id": 14623
+    },
+    {
+     "id": 14549
+    },
+    {
+     "id": 2246
+    },
+    {
+     "id": 13373
+    },
+    {
+     "id": 18370
+    },
+    {
+     "id": 13966
+    },
+    {
+     "id": 1728
+    },
+    {
+     "id": 12602
+    },
+    {}
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAPL",
+   "prepullActions": [
+    {
+     "action": {
+      "castPaladinPrimarySeal": {}
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-3.5s"
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 20928,
+        "rank": 3
+       }
+      }
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-2s"
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "itemId": 11832
+       }
+      }
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-0.5s"
+      }
+     }
+    }
+   ],
+   "priorityList": [
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLt",
+        "lhs": {
+         "currentSealRemainingTime": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "2s"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 20271
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLe",
+        "lhs": {
+         "currentSealRemainingTime": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "1"
+         }
+        }
+       }
+      },
+      "castPaladinPrimarySeal": {}
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 20924,
+        "rank": 5
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "auraIsActive": {
+        "auraId": {
+         "spellId": 20134
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 20928,
+        "rank": 3
+       }
+      }
+     }
+    }
+   ]
+  },
+  "distance": 5
+ },
+ {
+  "key": "retribution_paladin",
+  "classId": 4,
+  "spec": "Retribution",
+  "role": "Melee DPS",
+  "talents": "500501-503-52230351200315",
+  "rotation": "ui/retribution_paladin/apls/forever/default.apl.json",
+  "gear": "ui/retribution_paladin/gear_sets/forever/preraid.gear.json",
+  "gearSource": "auto-picked pre-raid",
+  "faction": "Alliance",
+  "race": "RaceHuman",
+  "specOptions": {
+   "options": {
+    "primarySeal": "Command",
+    "aura": "SanctityAura"
+   }
+  },
+  "supported": true,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 12640
+    },
+    {
+     "id": 15411
+    },
+    {
+     "id": 12927
+    },
+    {
+     "id": 13340
+    },
+    {
+     "id": 11726
+    },
+    {
+     "id": 12936
+    },
+    {
+     "id": 13963
+    },
+    {
+     "id": 13142
+    },
+    {
+     "id": 15062
+    },
+    {
+     "id": 14616
+    },
+    {
+     "id": 17713
+    },
+    {
+     "id": 13098
+    },
+    {
+     "id": 13965
+    },
+    {
+     "id": 18537
+    },
+    {
+     "id": 18538
+    },
+    {},
+    {}
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAPL",
+   "prepullActions": [
+    {
+     "action": {
+      "castPaladinPrimarySeal": {}
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-1.5s"
+      }
+     }
+    }
+   ],
+   "priorityList": [
+    {
+     "action": {
+      "condition": {
+       "spellCanCast": {
+        "spellId": {
+         "spellId": 20271
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 20271
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLe",
+        "lhs": {
+         "currentSealRemainingTime": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "1"
+         }
+        }
+       }
+      },
+      "castPaladinPrimarySeal": {}
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLt",
+           "lhs": {
+            "autoTimeToNext": {
+             "autoType": "Melee"
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "0.4s"
+            }
+           }
+          }
+         },
+         {
+          "auraIsActive": {
+           "auraId": {
+            "spellId": 20293,
+            "rank": 8
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 20375,
+        "rank": 1
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLt",
+           "lhs": {
+            "autoTimeToNext": {
+             "autoType": "Melee"
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "0.4s"
+            }
+           }
+          }
+         },
+         {
+          "auraIsActive": {
+           "auraId": {
+            "spellId": 20375,
+            "rank": 1
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 20293,
+        "rank": 8
+       }
+      }
+     }
+    }
+   ]
+  },
+  "distance": 5
+ },
+ {
+  "key": "healing_priest",
+  "classId": 5,
+  "spec": "Holy",
+  "role": "Healer",
+  "talents": "05032031103-234051032002152530004311051",
+  "rotation": "ui/healing_priest/apls/forever/default.apl.json",
+  "gear": "ui/healing_priest/gear_sets/forever/preraid.gear.json",
+  "gearSource": "auto-picked pre-raid",
+  "faction": "Horde",
+  "race": "RaceUndead",
+  "specOptions": {
+   "options": {
+    "useInnerFire": true
+   }
+  },
+  "supported": false,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 13102
+    },
+    {
+     "id": 18723
+    },
+    {
+     "id": 18681
+    },
+    {
+     "id": 18510
+    },
+    {
+     "id": 14154
+    },
+    {
+     "id": 18263
+    },
+    {
+     "id": 12554
+    },
+    {
+     "id": 18327
+    },
+    {
+     "id": 18386
+    },
+    {
+     "id": 18507
+    },
+    {
+     "id": 13178
+    },
+    {
+     "id": 16058
+    },
+    {
+     "id": 18469
+    },
+    {
+     "id": 12930
+    },
+    {
+     "id": 11923
+    },
+    {
+     "id": 18523
+    },
+    {
+     "id": 13938
+    }
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAPL",
+   "priorityList": [
+    {
+     "action": {
+      "autocastOtherCooldowns": {}
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLt",
+        "lhs": {
+         "spellCpm": {
+          "spellId": {
+           "spellId": 48063
+          }
+         }
+        },
+        "rhs": {
+         "const": {
+          "val": "10"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 48063
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLt",
+        "lhs": {
+         "spellCpm": {
+          "spellId": {
+           "spellId": 48089
+          }
+         }
+        },
+        "rhs": {
+         "const": {
+          "val": "5"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 48089
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLt",
+        "lhs": {
+         "spellCpm": {
+          "spellId": {
+           "spellId": 48068
+          }
+         }
+        },
+        "rhs": {
+         "const": {
+          "val": "10"
+         }
+        }
+       }
+      },
+      "multidot": {
+       "spellId": {
+        "spellId": 48068
+       },
+       "maxDots": 10,
+       "maxOverlap": {
+        "const": {
+         "val": "0ms"
+        }
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLt",
+        "lhs": {
+         "spellCpm": {
+          "spellId": {
+           "spellId": 48113
+          }
+         }
+        },
+        "rhs": {
+         "const": {
+          "val": "2"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 48113
+       }
+      }
+     }
+    }
+   ]
+  },
+  "distance": 25
+ },
+ {
+  "key": "shadow_priest",
+  "classId": 5,
+  "spec": "Shadow",
+  "role": "Caster DPS",
+  "talents": "0512301302--5002504103501251",
+  "rotation": "ui/shadow_priest/apls/forever/default.apl.json",
+  "gear": "ui/shadow_priest/gear_sets/forever/preraid.gear.json",
+  "gearSource": "wowsims/classic pre-raid + auto-filled",
+  "faction": "Horde",
+  "race": "RaceUndead",
+  "specOptions": {
+   "options": {
+    "armor": "InnerFire"
+   }
+  },
+  "supported": true,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 18727
+    },
+    {
+     "id": 18691
+    },
+    {
+     "id": 14112
+    },
+    {
+     "id": 18350
+    },
+    {
+     "id": 14136
+    },
+    {
+     "id": 18497
+    },
+    {
+     "id": 18407
+    },
+    {
+     "id": 11662
+    },
+    {
+     "id": 13170
+    },
+    {
+     "id": 18735
+    },
+    {
+     "id": 13001
+    },
+    {
+     "id": 13001
+    },
+    {
+     "id": 13968
+    },
+    {
+     "id": 12930
+    },
+    {
+     "id": 13349
+    },
+    {
+     "id": 11904
+    },
+    {
+     "id": 13396
+    }
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAPL",
+   "prepullActions": [
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 15473
+       }
+      }
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-1s"
+      }
+     }
+    }
+   ],
+   "priorityList": [
+    {
+     "action": {
+      "autocastOtherCooldowns": {}
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "not": {
+           "val": {
+            "dotIsActive": {
+             "spellId": {
+              "spellId": 10894,
+              "rank": 8
+             }
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "10"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 10894,
+        "rank": 8
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "strictSequence": {
+       "actions": [
+        {
+         "castSpell": {
+          "spellId": {
+           "spellId": 14751
+          }
+         }
+        },
+        {
+         "castSpell": {
+          "spellId": {
+           "spellId": 19279,
+           "rank": 5
+          }
+         }
+        }
+       ]
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 10947,
+        "rank": 9
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 18807,
+        "rank": 6
+       }
+      }
+     }
+    }
+   ]
+  },
+  "distance": 25
+ },
+ {
+  "key": "warlock",
+  "classId": 8,
+  "spec": "Destruction",
+  "role": "Caster DPS",
+  "talents": "5502203112201105--52500051020001",
+  "rotation": "ui/warlock/apls/forever/default.apl.json",
+  "gear": "ui/warlock/gear_sets/forever/preraid.gear.json",
+  "gearSource": "wowsims/classic pre-raid + auto-filled",
+  "faction": "Horde",
+  "race": "RaceOrc",
+  "specOptions": {
+   "options": {
+    "armor": "DemonArmor",
+    "summon": "Imp"
+   }
+  },
+  "supported": true,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 14111
+    },
+    {
+     "id": 18691
+    },
+    {
+     "id": 14112
+    },
+    {
+     "id": 13007
+    },
+    {
+     "id": 14153
+    },
+    {
+     "id": 13107
+    },
+    {
+     "id": 13253
+    },
+    {
+     "id": 13956
+    },
+    {
+     "id": 13170
+    },
+    {
+     "id": 18735
+    },
+    {
+     "id": 13001
+    },
+    {
+     "id": 12545
+    },
+    {
+     "id": 12930
+    },
+    {
+     "id": 13968
+    },
+    {
+     "id": 13964
+    },
+    {
+     "id": 11904
+    },
+    {
+     "id": 13396
+    }
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAPL",
+   "prepullActions": [
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 18788
+       }
+      }
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-5s"
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 18288
+       }
+      }
+     },
+     "doAtValue": {
+      "const": {
+       "val": "-5s"
+      }
+     }
+    }
+   ],
+   "priorityList": [
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "15s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "currentManaPercent": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "75%"
+            }
+           }
+          }
+         },
+         {
+          "isExecutePhase": {
+           "threshold": "E35"
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "otherId": "OtherActionPotion"
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "15s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "currentManaPercent": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "60%"
+            }
+           }
+          }
+         },
+         {
+          "isExecutePhase": {
+           "threshold": "E35"
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "itemId": 12662
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "autocastOtherCooldowns": {}
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLe",
+        "lhs": {
+         "remainingTime": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "1.5"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 18871,
+        "rank": 6
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLe",
+        "lhs": {
+         "remainingTime": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "3.5"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 17923,
+        "rank": 6
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLt",
+        "lhs": {
+         "currentManaPercent": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "10%"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 11689,
+        "rank": 6
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "not": {
+        "val": {
+         "dotIsActive": {
+          "spellId": {
+           "spellId": 11713,
+           "rank": 6
+          }
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 11713,
+        "rank": 6
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "not": {
+        "val": {
+         "dotIsActive": {
+          "spellId": {
+           "spellId": 25311,
+           "rank": 7
+          }
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 25311,
+        "rank": 7
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "not": {
+        "val": {
+         "dotIsActive": {
+          "spellId": {
+           "spellId": 25309,
+           "rank": 8
+          }
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 25309,
+        "rank": 8
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 25307,
+        "rank": 9
+       }
+      }
+     }
+    }
+   ]
+  },
+  "distance": 25
+ },
+ {
+  "key": "warrior",
+  "classId": 9,
+  "spec": "Fury",
+  "role": "Melee DPS",
+  "talents": "30305001302-05050005525010051",
+  "rotation": "ui/warrior/apls/forever/default.apl.json",
+  "gear": "ui/warrior/gear_sets/forever/preraid.gear.json",
+  "gearSource": "wowsims/classic pre-raid",
+  "faction": "Horde",
+  "race": "RaceOrc",
+  "specOptions": {
+   "options": {}
+  },
+  "supported": true,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 12640
+    },
+    {
+     "id": 15411
+    },
+    {
+     "id": 12927
+    },
+    {
+     "id": 13340
+    },
+    {
+     "id": 11726
+    },
+    {
+     "id": 13400
+    },
+    {
+     "id": 15063
+    },
+    {
+     "id": 13959
+    },
+    {
+     "id": 15062
+    },
+    {
+     "id": 14616
+    },
+    {
+     "id": 17713
+    },
+    {
+     "id": 13098
+    },
+    {
+     "id": 13965
+    },
+    {
+     "id": 11815
+    },
+    {
+     "id": 13286
+    },
+    {
+     "id": 18737
+    },
+    {
+     "id": 12653
+    }
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAPL",
+   "priorityList": [
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLt",
+           "lhs": {
+            "auraNumStacks": {
+             "sourceUnit": {
+              "type": "CurrentTarget"
+             },
+             "auraId": {
+              "spellId": 11597,
+              "rank": 5
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1"
+            }
+           }
+          }
+         },
+         {
+          "not": {
+           "val": {
+            "auraIsActive": {
+             "sourceUnit": {
+              "type": "CurrentTarget"
+             },
+             "auraId": {
+              "spellId": 11198,
+              "rank": 5
+             }
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 11597,
+        "rank": 5
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "itemId": 10646
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "itemId": 18641
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "30s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "211.5s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 12328
+       }
+      }
+     }
+    },
+    {
+     "hide": true,
+     "action": {
+      "condition": {
+       "const": {
+        "val": "false"
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 1719
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLe",
+        "lhs": {
+         "remainingTime": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "15s"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 1719
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "20s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "140s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "otherId": "OtherActionPotion"
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "20s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "141.5s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 20572
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLe",
+        "lhs": {
+         "remainingTime": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "60s"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 24427
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "30s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "130s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "itemId": 21180
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "30s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "130s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 29602
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "30s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "130s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "itemId": 23041
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "30s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "130s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "itemId": 23041
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "30s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "140s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "autocastOtherCooldowns": {}
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpGt",
+        "lhs": {
+         "numberTargets": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "1"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 1680
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "isExecutePhase": {
+        "threshold": "E20"
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 20662,
+        "rank": 5
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 23894,
+        "rank": 4
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpGt",
+        "lhs": {
+         "spellTimeToReady": {
+          "spellId": {
+           "spellId": 23894,
+           "rank": 4
+          }
+         }
+        },
+        "rhs": {
+         "const": {
+          "val": "1.5s"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 1680
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpEq",
+           "lhs": {
+            "numberTargets": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "1"
+            }
+           }
+          }
+         },
+         {
+          "or": {
+           "vals": [
+            {
+             "cmp": {
+              "op": "OpGe",
+              "lhs": {
+               "currentRage": {}
+              },
+              "rhs": {
+               "const": {
+                "val": "40"
+               }
+              }
+             }
+            },
+            {
+             "isExecutePhase": {
+              "threshold": "E20"
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 25286,
+        "tag": 1,
+        "rank": 8
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "numberTargets": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "1"
+            }
+           }
+          }
+         },
+         {
+          "or": {
+           "vals": [
+            {
+             "cmp": {
+              "op": "OpGe",
+              "lhs": {
+               "currentRage": {}
+              },
+              "rhs": {
+               "const": {
+                "val": "40"
+               }
+              }
+             }
+            },
+            {
+             "isExecutePhase": {
+              "threshold": "E20"
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 20569,
+        "tag": 1,
+        "rank": 5
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "spellTimeToReady": {
+             "spellId": {
+              "spellId": 23894,
+              "rank": 4
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1.5s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "spellTimeToReady": {
+             "spellId": {
+              "spellId": 1680
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1.5s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "currentRage": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "80"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 27584,
+        "rank": 3
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLt",
+        "lhs": {
+         "currentRage": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "90"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 2687
+       }
+      }
+     }
+    },
+    {
+     "hide": true,
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "spellTimeToReady": {
+             "spellId": {
+              "spellId": 23894,
+              "rank": 4
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1.5s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "spellTimeToReady": {
+             "spellId": {
+              "spellId": 1680
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1.5s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 18499
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "not": {
+        "val": {
+         "auraIsActive": {
+          "auraId": {
+           "spellId": 25289,
+           "rank": 6
+          }
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 25289,
+        "rank": 6
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "not": {
+        "val": {
+         "auraIsActive": {
+          "auraId": {
+           "spellId": 2458
+          }
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 2458
+       }
+      }
+     }
+    }
+   ]
+  },
+  "distance": 5
+ },
+ {
+  "key": "tank_warrior",
+  "classId": 9,
+  "spec": "Protection",
+  "role": "Tank",
+  "talents": "20304300302-03-55200110530201051",
+  "rotation": "ui/tank_warrior/apls/forever/default.apl.json",
+  "gear": "ui/tank_warrior/gear_sets/forever/preraid.gear.json",
+  "gearSource": "wowsims/classic pre-raid + auto-filled",
+  "faction": "Horde",
+  "race": "RaceOrc",
+  "specOptions": {
+   "options": {}
+  },
+  "supported": true,
+  "gearSpec": {
+   "items": [
+    {
+     "id": 16731
+    },
+    {
+     "id": 11755
+    },
+    {
+     "id": 16733
+    },
+    {
+     "id": 18511
+    },
+    {
+     "id": 16730
+    },
+    {
+     "id": 16735
+    },
+    {
+     "id": 16737
+    },
+    {
+     "id": 16736
+    },
+    {
+     "id": 16732
+    },
+    {
+     "id": 16734
+    },
+    {
+     "id": 2246
+    },
+    {
+     "id": 13373
+    },
+    {
+     "id": 18370
+    },
+    {
+     "id": 13966
+    },
+    {
+     "id": 1728
+    },
+    {
+     "id": 12602
+    },
+    {
+     "id": 13173
+    }
+   ]
+  },
+  "rotationJson": {
+   "type": "TypeAPL",
+   "priorityList": [
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLt",
+           "lhs": {
+            "auraNumStacks": {
+             "sourceUnit": {
+              "type": "CurrentTarget"
+             },
+             "auraId": {
+              "spellId": 11597,
+              "rank": 5
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1"
+            }
+           }
+          }
+         },
+         {
+          "not": {
+           "val": {
+            "auraIsActive": {
+             "sourceUnit": {
+              "type": "CurrentTarget"
+             },
+             "auraId": {
+              "spellId": 11198,
+              "rank": 5
+             }
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 11597,
+        "rank": 5
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "itemId": 10646
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "itemId": 18641
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "30s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "211.5s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 12328
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "const": {
+        "val": "false"
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 1719
+       }
+      }
+     }
+    },
+    {
+     "hide": true,
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLe",
+        "lhs": {
+         "remainingTime": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "15s"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 1719
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "20s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "140s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "otherId": "OtherActionPotion"
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "20s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "141.5s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 20572
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLe",
+        "lhs": {
+         "remainingTime": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "60s"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 24427
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "30s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "130s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "itemId": 21180
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "30s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "130s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 29602
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "30s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "130s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "itemId": 23041
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "30s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "130s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "itemId": 23041
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "or": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpLe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "30s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "140s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "autocastOtherCooldowns": {}
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpGt",
+        "lhs": {
+         "numberTargets": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "1"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 1680
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "isExecutePhase": {
+        "threshold": "E20"
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 20662,
+        "rank": 5
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 23894,
+        "rank": 4
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpGt",
+        "lhs": {
+         "spellTimeToReady": {
+          "spellId": {
+           "spellId": 23894,
+           "rank": 4
+          }
+         }
+        },
+        "rhs": {
+         "const": {
+          "val": "1.5s"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 1680
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpEq",
+           "lhs": {
+            "numberTargets": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "1"
+            }
+           }
+          }
+         },
+         {
+          "or": {
+           "vals": [
+            {
+             "cmp": {
+              "op": "OpGe",
+              "lhs": {
+               "currentRage": {}
+              },
+              "rhs": {
+               "const": {
+                "val": "40"
+               }
+              }
+             }
+            },
+            {
+             "isExecutePhase": {
+              "threshold": "E20"
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 25286,
+        "tag": 1,
+        "rank": 8
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "numberTargets": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "1"
+            }
+           }
+          }
+         },
+         {
+          "or": {
+           "vals": [
+            {
+             "cmp": {
+              "op": "OpGe",
+              "lhs": {
+               "currentRage": {}
+              },
+              "rhs": {
+               "const": {
+                "val": "40"
+               }
+              }
+             }
+            },
+            {
+             "isExecutePhase": {
+              "threshold": "E20"
+             }
+            }
+           ]
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 20569,
+        "tag": 1,
+        "rank": 5
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "spellTimeToReady": {
+             "spellId": {
+              "spellId": 23894,
+              "rank": 4
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1.5s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "spellTimeToReady": {
+             "spellId": {
+              "spellId": 1680
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1.5s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "currentRage": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "80"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 27584,
+        "rank": 3
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "cmp": {
+        "op": "OpLt",
+        "lhs": {
+         "currentRage": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "90"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 2687
+       }
+      }
+     }
+    },
+    {
+     "hide": true,
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "spellTimeToReady": {
+             "spellId": {
+              "spellId": 23894,
+              "rank": 4
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1.5s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "spellTimeToReady": {
+             "spellId": {
+              "spellId": 1680
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1.5s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 18499
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "not": {
+        "val": {
+         "auraIsActive": {
+          "auraId": {
+           "spellId": 25289,
+           "rank": 6
+          }
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 25289,
+        "rank": 6
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "not": {
+        "val": {
+         "auraIsActive": {
+          "auraId": {
+           "spellId": 2458
+          }
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 2458
+       }
+      }
+     }
+    }
+   ]
+  },
+  "distance": 5
+ }
+]

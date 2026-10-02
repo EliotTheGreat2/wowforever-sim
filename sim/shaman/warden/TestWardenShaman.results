@@ -97,6 +97,14 @@ stat_weights_results: {
  }
 }
 dps_results: {
+ key: "TestWardenShaman-Phase4-Lvl60-AllItems-Augur'sRegalia"
+ value: {
+  dps: 1463.8567
+  tps: 2115.42596
+  hps: 18.49317
+ }
+}
+dps_results: {
  key: "TestWardenShaman-Phase4-Lvl60-AllItems-BloodGuard'sInscribedMail"
  value: {
   dps: 947.09547
@@ -118,6 +126,14 @@ dps_results: {
   dps: 972.26915
   tps: 1112.89459
   hps: 18.6965
+ }
+}
+dps_results: {
+ key: "TestWardenShaman-Phase4-Lvl60-AllItems-Champion'sEarthshaker"
+ value: {
+  dps: 1038.42499
+  tps: 1173.85729
+  hps: 18.80833
  }
 }
 dps_results: {
@@ -145,6 +161,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestWardenShaman-Phase4-Lvl60-AllItems-GiftoftheGatheringStorm"
+ value: {
+  dps: 1619.89753
+  tps: 2492.60105
+  hps: 21.23817
+ }
+}
+dps_results: {
  key: "TestWardenShaman-Phase4-Lvl60-AllItems-OstracizedBerserker'sBattlemail"
  value: {
   dps: 1563.98613
@@ -153,11 +177,27 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestWardenShaman-Phase4-Lvl60-AllItems-TheEarthshatterer"
+ value: {
+  dps: 916.38187
+  tps: 1037.84584
+  hps: 17.76117
+ }
+}
+dps_results: {
  key: "TestWardenShaman-Phase4-Lvl60-AllItems-TheFiveThunders"
  value: {
   dps: 911.18988
   tps: 1043.15258
   hps: 18.4525
+ }
+}
+dps_results: {
+ key: "TestWardenShaman-Phase4-Lvl60-AllItems-Warlord'sEarthshaker"
+ value: {
+  dps: 1043.65933
+  tps: 1178.80811
+  hps: 18.788
  }
 }
 dps_results: {

@@ -97,11 +97,28 @@ stat_weights_results: {
  }
 }
 dps_results: {
+ key: "TestRetribution-Phase8-Lvl60-AllItems-BattlegearofEternalJustice"
+ value: {
+  dps: 3703.44673
+  tps: 2918.59772
+  hps: 72.468
+ }
+}
+dps_results: {
  key: "TestRetribution-Phase8-Lvl60-AllItems-EmeraldEncrustedBattleplate"
  value: {
   dps: 3192.54957
   tps: 2530.00184
   hps: 43.45233
+ }
+}
+dps_results: {
+ key: "TestRetribution-Phase8-Lvl60-AllItems-Freethinker'sArmor"
+ value: {
+  dps: 5916.6558
+  tps: 4659.87374
+  dtps: 2.63745
+  hps: 72.28297
  }
 }
 dps_results: {
@@ -127,6 +144,15 @@ dps_results: {
   tps: 5011.81188
   dtps: 2.59245
   hps: 69.33463
+ }
+}
+dps_results: {
+ key: "TestRetribution-Phase8-Lvl60-AllItems-RedemptionArmor"
+ value: {
+  dps: 2856.91874
+  tps: 2260.66625
+  dtps: 2.68321
+  hps: 40.35353
  }
 }
 dps_results: {

@@ -301,6 +301,46 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestTwoHandedWarrior-Phase3-Lvl50-AllItems-BattlegearofUnyieldingStrength"
+ value: {
+  dps: 1468.33381
+  tps: 1261.26085
+  hps: 36.162
+ }
+}
+dps_results: {
+ key: "TestTwoHandedWarrior-Phase3-Lvl50-AllItems-Champion'sBattlegear"
+ value: {
+  dps: 1016.98151
+  tps: 859.24274
+  hps: 19.11817
+ }
+}
+dps_results: {
+ key: "TestTwoHandedWarrior-Phase3-Lvl50-AllItems-Dreadnaught'sBattlegear"
+ value: {
+  dps: 914.96859
+  tps: 784.68977
+  hps: 17.7135
+ }
+}
+dps_results: {
+ key: "TestTwoHandedWarrior-Phase3-Lvl50-AllItems-LieutenantCommander'sBattlegear"
+ value: {
+  dps: 1016.98151
+  tps: 859.24274
+  hps: 19.11817
+ }
+}
+dps_results: {
+ key: "TestTwoHandedWarrior-Phase3-Lvl50-AllItems-Vindicator'sBattlegear"
+ value: {
+  dps: 1030.88532
+  tps: 894.52057
+  hps: 19.061
+ }
+}
+dps_results: {
  key: "TestTwoHandedWarrior-Phase3-Lvl50-Average-Default"
  value: {
   dps: 1247.02641
@@ -423,11 +463,35 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestTwoHandedWarrior-Phase5-Lvl60-AllItems-BattlegearofUnyieldingStrength"
+ value: {
+  dps: 5113.79124
+  tps: 3798.23994
+  hps: 71.42083
+ }
+}
+dps_results: {
  key: "TestTwoHandedWarrior-Phase5-Lvl60-AllItems-BloodGuard'sPlate"
  value: {
   dps: 1961.92354
   tps: 1652.3813
   hps: 23.058
+ }
+}
+dps_results: {
+ key: "TestTwoHandedWarrior-Phase5-Lvl60-AllItems-Champion'sBattlegear"
+ value: {
+  dps: 2020.96623
+  tps: 1700.58704
+  hps: 23.1495
+ }
+}
+dps_results: {
+ key: "TestTwoHandedWarrior-Phase5-Lvl60-AllItems-Dreadnaught'sBattlegear"
+ value: {
+  dps: 1774.60966
+  tps: 1507.06123
+  hps: 22.4175
  }
 }
 dps_results: {
@@ -444,6 +508,22 @@ dps_results: {
   dps: 1961.92354
   tps: 1652.3813
   hps: 23.058
+ }
+}
+dps_results: {
+ key: "TestTwoHandedWarrior-Phase5-Lvl60-AllItems-LieutenantCommander'sBattlegear"
+ value: {
+  dps: 2020.96623
+  tps: 1700.58704
+  hps: 23.1495
+ }
+}
+dps_results: {
+ key: "TestTwoHandedWarrior-Phase5-Lvl60-AllItems-Vindicator'sBattlegear"
+ value: {
+  dps: 3352.46557
+  tps: 2613.80185
+  hps: 38.60283
  }
 }
 dps_results: {
@@ -667,11 +747,35 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestTwoHandedWarrior-Phase6-Lvl60-AllItems-BattlegearofUnyieldingStrength"
+ value: {
+  dps: 6780.91826
+  tps: 5433.97328
+  hps: 79.361
+ }
+}
+dps_results: {
  key: "TestTwoHandedWarrior-Phase6-Lvl60-AllItems-BloodGuard'sPlate"
  value: {
   dps: 1993.00969
   tps: 1650.59364
   hps: 23.302
+ }
+}
+dps_results: {
+ key: "TestTwoHandedWarrior-Phase6-Lvl60-AllItems-Champion'sBattlegear"
+ value: {
+  dps: 2043.07047
+  tps: 1690.57086
+  hps: 23.302
+ }
+}
+dps_results: {
+ key: "TestTwoHandedWarrior-Phase6-Lvl60-AllItems-Dreadnaught'sBattlegear"
+ value: {
+  dps: 1711.65732
+  tps: 1424.20079
+  hps: 21.60417
  }
 }
 dps_results: {
@@ -688,6 +792,22 @@ dps_results: {
   dps: 1993.00969
   tps: 1650.59364
   hps: 23.302
+ }
+}
+dps_results: {
+ key: "TestTwoHandedWarrior-Phase6-Lvl60-AllItems-LieutenantCommander'sBattlegear"
+ value: {
+  dps: 2043.07047
+  tps: 1690.57086
+  hps: 23.302
+ }
+}
+dps_results: {
+ key: "TestTwoHandedWarrior-Phase6-Lvl60-AllItems-Vindicator'sBattlegear"
+ value: {
+  dps: 3882.43451
+  tps: 3089.01096
+  hps: 39.97533
  }
 }
 dps_results: {

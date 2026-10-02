@@ -391,6 +391,48 @@ stat_weights_results: {
  }
 }
 dps_results: {
+ key: "TestArcane-Phase1-Lvl25-AllItems-Champion'sRegalia"
+ value: {}
+}
+dps_results: {
+ key: "TestArcane-Phase1-Lvl25-AllItems-FieldMarshal'sRegalia"
+ value: {}
+}
+dps_results: {
+ key: "TestArcane-Phase1-Lvl25-AllItems-FrostfireRegalia"
+ value: {}
+}
+dps_results: {
+ key: "TestArcane-Phase1-Lvl25-AllItems-Illusionist'sAttire"
+ value: {
+  dps: 118.27946
+  tps: 73.57307
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase1-Lvl25-AllItems-IronweaveBattlesuit"
+ value: {}
+}
+dps_results: {
+ key: "TestArcane-Phase1-Lvl25-AllItems-LieutenantCommander'sRegalia"
+ value: {}
+}
+dps_results: {
+ key: "TestArcane-Phase1-Lvl25-AllItems-Sorcerer'sRegalia"
+ value: {}
+}
+dps_results: {
+ key: "TestArcane-Phase1-Lvl25-AllItems-TrappingsofVaultedSecrets"
+ value: {
+  dps: 159.24022
+  tps: 98.14953
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase1-Lvl25-AllItems-Warlord'sRegalia"
+ value: {}
+}
+dps_results: {
  key: "TestArcane-Phase1-Lvl25-Average-Default"
  value: {
   dps: 131.28439
@@ -486,6 +528,69 @@ dps_results: {
  value: {
   dps: 131.60485
   tps: 81.56831
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase2-Lvl40-AllItems-Champion'sRegalia"
+ value: {
+  dps: 195.42485
+  tps: 127.81646
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase2-Lvl40-AllItems-FieldMarshal'sRegalia"
+ value: {
+  dps: 216.51903
+  tps: 140.75347
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase2-Lvl40-AllItems-FrostfireRegalia"
+ value: {
+  dps: 267.53065
+  tps: 171.71519
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase2-Lvl40-AllItems-Illusionist'sAttire"
+ value: {
+  dps: 354.44731
+  tps: 222.60372
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase2-Lvl40-AllItems-IronweaveBattlesuit"
+ value: {
+  dps: 152.30003
+  tps: 100.86632
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase2-Lvl40-AllItems-LieutenantCommander'sRegalia"
+ value: {
+  dps: 195.42485
+  tps: 127.81646
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase2-Lvl40-AllItems-Sorcerer'sRegalia"
+ value: {
+  dps: 223.7525
+  tps: 155.54664
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase2-Lvl40-AllItems-TrappingsofVaultedSecrets"
+ value: {
+  dps: 477.80632
+  tps: 296.63268
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase2-Lvl40-AllItems-Warlord'sRegalia"
+ value: {
+  dps: 216.51903
+  tps: 140.75347
  }
 }
 dps_results: {
@@ -601,6 +706,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestArcane-Phase4-Lvl60-AllItems-Champion'sRegalia"
+ value: {
+  dps: 741.64087
+  tps: 751.01113
+ }
+}
+dps_results: {
  key: "TestArcane-Phase4-Lvl60-AllItems-EmeraldEnchantedVestments"
  value: {
   dps: 705.17819
@@ -612,6 +724,27 @@ dps_results: {
  value: {
   dps: 649.15917
   tps: 658.20401
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase4-Lvl60-AllItems-FieldMarshal'sRegalia"
+ value: {
+  dps: 761.18297
+  tps: 770.55196
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase4-Lvl60-AllItems-FrostfireRegalia"
+ value: {
+  dps: 789.04514
+  tps: 811.16813
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase4-Lvl60-AllItems-Illusionist'sAttire"
+ value: {
+  dps: 1348.23662
+  tps: 1369.07346
  }
 }
 dps_results: {
@@ -636,6 +769,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestArcane-Phase4-Lvl60-AllItems-LieutenantCommander'sRegalia"
+ value: {
+  dps: 741.64087
+  tps: 751.01113
+ }
+}
+dps_results: {
  key: "TestArcane-Phase4-Lvl60-AllItems-MalevolentProphet'sVestments"
  value: {
   dps: 1556.92645
@@ -647,6 +787,20 @@ dps_results: {
  value: {
   dps: 735.43348
   tps: 768.15048
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase4-Lvl60-AllItems-TrappingsofVaultedSecrets"
+ value: {
+  dps: 1805.0011
+  tps: 1822.87669
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase4-Lvl60-AllItems-Warlord'sRegalia"
+ value: {
+  dps: 761.18297
+  tps: 770.55196
  }
 }
 dps_results: {
@@ -762,6 +916,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestArcane-Phase5-Lvl60-AllItems-Champion'sRegalia"
+ value: {
+  dps: 1386.6421
+  tps: 928.40217
+ }
+}
+dps_results: {
  key: "TestArcane-Phase5-Lvl60-AllItems-EmeraldEnchantedVestments"
  value: {
   dps: 1325.46424
@@ -773,6 +934,27 @@ dps_results: {
  value: {
   dps: 1216.34842
   tps: 817.02377
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase5-Lvl60-AllItems-FieldMarshal'sRegalia"
+ value: {
+  dps: 1429.38636
+  tps: 956.4832
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase5-Lvl60-AllItems-FrostfireRegalia"
+ value: {
+  dps: 1302.16888
+  tps: 1316.5408
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase5-Lvl60-AllItems-Illusionist'sAttire"
+ value: {
+  dps: 2619.00523
+  tps: 1665.88445
  }
 }
 dps_results: {
@@ -797,6 +979,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestArcane-Phase5-Lvl60-AllItems-LieutenantCommander'sRegalia"
+ value: {
+  dps: 1386.6421
+  tps: 928.40217
+ }
+}
+dps_results: {
  key: "TestArcane-Phase5-Lvl60-AllItems-MalevolentProphet'sVestments"
  value: {
   dps: 1423.74637
@@ -808,6 +997,20 @@ dps_results: {
  value: {
   dps: 1000.26304
   tps: 1016.69063
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase5-Lvl60-AllItems-TrappingsofVaultedSecrets"
+ value: {
+  dps: 3181.24442
+  tps: 2038.31194
+ }
+}
+dps_results: {
+ key: "TestArcane-Phase5-Lvl60-AllItems-Warlord'sRegalia"
+ value: {
+  dps: 1429.38636
+  tps: 956.4832
  }
 }
 dps_results: {

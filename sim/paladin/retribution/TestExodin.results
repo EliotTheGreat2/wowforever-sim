@@ -97,12 +97,30 @@ stat_weights_results: {
  }
 }
 dps_results: {
+ key: "TestExodin-Phase8-Lvl60-AllItems-BattlegearofEternalJustice"
+ value: {
+  dps: 4172.59672
+  tps: 3253.62457
+  dtps: 3.1517
+  hps: 54.9488
+ }
+}
+dps_results: {
  key: "TestExodin-Phase8-Lvl60-AllItems-EmeraldEncrustedBattleplate"
  value: {
   dps: 2792.18496
   tps: 2201.19921
   dtps: 4.98152
   hps: 63.9829
+ }
+}
+dps_results: {
+ key: "TestExodin-Phase8-Lvl60-AllItems-Freethinker'sArmor"
+ value: {
+  dps: 4732.38924
+  tps: 3662.39704
+  dtps: 3.91511
+  hps: 71.4371
  }
 }
 dps_results: {
@@ -130,6 +148,15 @@ dps_results: {
   tps: 4043.38008
   dtps: 4.9354
   hps: 75.06457
+ }
+}
+dps_results: {
+ key: "TestExodin-Phase8-Lvl60-AllItems-RedemptionArmor"
+ value: {
+  dps: 2221.92851
+  tps: 1735.9602
+  dtps: 4.87264
+  hps: 57.64297
  }
 }
 dps_results: {

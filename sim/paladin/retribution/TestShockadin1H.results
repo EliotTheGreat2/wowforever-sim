@@ -97,12 +97,30 @@ stat_weights_results: {
  }
 }
 dps_results: {
+ key: "TestShockadin1H-Phase8-Lvl60-AllItems-BattlegearofEternalJustice"
+ value: {
+  dps: 1755.58713
+  tps: 1767.61291
+  dtps: 2.86632
+  hps: 39.13963
+ }
+}
+dps_results: {
  key: "TestShockadin1H-Phase8-Lvl60-AllItems-EmeraldEncrustedBattleplate"
  value: {
   dps: 4571.84421
   tps: 3236.31592
   dtps: 2.70383
   hps: 69.418
+ }
+}
+dps_results: {
+ key: "TestShockadin1H-Phase8-Lvl60-AllItems-Freethinker'sArmor"
+ value: {
+  dps: 3996.09517
+  tps: 2829.97202
+  dtps: 2.90738
+  hps: 84.04987
  }
 }
 dps_results: {
@@ -130,6 +148,15 @@ dps_results: {
   tps: 5309.45407
   dtps: 2.28632
   hps: 80.87787
+ }
+}
+dps_results: {
+ key: "TestShockadin1H-Phase8-Lvl60-AllItems-RedemptionArmor"
+ value: {
+  dps: 1591.19931
+  tps: 1142.64218
+  dtps: 2.66272
+  hps: 66.71367
  }
 }
 dps_results: {

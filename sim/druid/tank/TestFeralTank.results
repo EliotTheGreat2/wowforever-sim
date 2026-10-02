@@ -72,11 +72,35 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFeralTank-Phase5-Lvl60-AllItems-Champion'sRefuge"
+ value: {
+  dps: 1008.86375
+  tps: 3221.65575
+  hps: 34.4955
+ }
+}
+dps_results: {
+ key: "TestFeralTank-Phase5-Lvl60-AllItems-Champion'sSanctuary"
+ value: {
+  dps: 1179.38393
+  tps: 3802.54385
+  hps: 35.2885
+ }
+}
+dps_results: {
  key: "TestFeralTank-Phase5-Lvl60-AllItems-CoagulateBloodguard'sLeathers"
  value: {
   dps: 1947.72015
   tps: 5111.01092
   hps: 37.53533
+ }
+}
+dps_results: {
+ key: "TestFeralTank-Phase5-Lvl60-AllItems-DreamwalkerRaiment"
+ value: {
+  dps: 897.02989
+  tps: 2853.45317
+  hps: 29.2495
  }
 }
 dps_results: {
@@ -120,6 +144,22 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFeralTank-Phase5-Lvl60-AllItems-FieldMarshal'sSanctuary"
+ value: {
+  dps: 1220.34764
+  tps: 3947.27685
+  hps: 35.46133
+ }
+}
+dps_results: {
+ key: "TestFeralTank-Phase5-Lvl60-AllItems-Haruspex'sGarb"
+ value: {
+  dps: 1950.01957
+  tps: 5750.89466
+  hps: 36.905
+ }
+}
+dps_results: {
  key: "TestFeralTank-Phase5-Lvl60-AllItems-Knight-Lieutenant'sCracklingLeather"
  value: {
   dps: 1045.77891
@@ -144,11 +184,43 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFeralTank-Phase5-Lvl60-AllItems-LieutenantCommander'sRefuge"
+ value: {
+  dps: 1008.86375
+  tps: 3221.65575
+  hps: 34.4955
+ }
+}
+dps_results: {
+ key: "TestFeralTank-Phase5-Lvl60-AllItems-LieutenantCommander'sSanctuary"
+ value: {
+  dps: 1179.38393
+  tps: 3802.54385
+  hps: 35.2885
+ }
+}
+dps_results: {
  key: "TestFeralTank-Phase5-Lvl60-AllItems-LostWorshipper'sArmor"
  value: {
   dps: 1865.50944
   tps: 4904.40996
   hps: 37.47433
+ }
+}
+dps_results: {
+ key: "TestFeralTank-Phase5-Lvl60-AllItems-SymbolsofUnendingLife"
+ value: {
+  dps: 2300.98115
+  tps: 6301.22987
+  hps: 38.81633
+ }
+}
+dps_results: {
+ key: "TestFeralTank-Phase5-Lvl60-AllItems-Warlord'sSanctuary"
+ value: {
+  dps: 1220.34764
+  tps: 3947.27685
+  hps: 35.46133
  }
 }
 dps_results: {

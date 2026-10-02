@@ -489,10 +489,73 @@ stat_weights_results: {
  }
 }
 dps_results: {
+ key: "TestFeral-Phase1-Lvl25-AllItems-Champion'sRefuge"
+ value: {
+  dps: 180.61913
+  tps: 130.77043
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase1-Lvl25-AllItems-Champion'sSanctuary"
+ value: {
+  dps: 281.45133
+  tps: 202.36473
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase1-Lvl25-AllItems-DreamwalkerRaiment"
+ value: {
+  dps: 191.55281
+  tps: 138.53435
+ }
+}
+dps_results: {
  key: "TestFeral-Phase1-Lvl25-AllItems-FeralheartRaiment"
  value: {
   dps: 265.55334
   tps: 191.07487
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase1-Lvl25-AllItems-FieldMarshal'sSanctuary"
+ value: {
+  dps: 276.49033
+  tps: 198.83901
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase1-Lvl25-AllItems-Haruspex'sGarb"
+ value: {
+  dps: 253.85734
+  tps: 184.16463
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase1-Lvl25-AllItems-LieutenantCommander'sRefuge"
+ value: {
+  dps: 180.61913
+  tps: 130.77043
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase1-Lvl25-AllItems-LieutenantCommander'sSanctuary"
+ value: {
+  dps: 281.45133
+  tps: 202.36473
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase1-Lvl25-AllItems-SymbolsofUnendingLife"
+ value: {
+  dps: 389.21775
+  tps: 281.06611
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase1-Lvl25-AllItems-Warlord'sSanctuary"
+ value: {
+  dps: 276.49033
+  tps: 198.83901
  }
 }
 dps_results: {
@@ -762,11 +825,83 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFeral-Phase2-Lvl40-AllItems-Champion'sRefuge"
+ value: {
+  dps: 451.61463
+  tps: 330.86523
+  hps: 27.90267
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase2-Lvl40-AllItems-Champion'sSanctuary"
+ value: {
+  dps: 587.51246
+  tps: 427.62279
+  hps: 29.053
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase2-Lvl40-AllItems-DreamwalkerRaiment"
+ value: {
+  dps: 448.69746
+  tps: 329.14083
+  hps: 27.39267
+ }
+}
+dps_results: {
  key: "TestFeral-Phase2-Lvl40-AllItems-FeralheartRaiment"
  value: {
   dps: 549.44909
   tps: 400.66072
   hps: 28.492
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase2-Lvl40-AllItems-FieldMarshal'sSanctuary"
+ value: {
+  dps: 595.34014
+  tps: 433.04433
+  hps: 28.39
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase2-Lvl40-AllItems-Haruspex'sGarb"
+ value: {
+  dps: 728.0869
+  tps: 531.64137
+  hps: 29.39867
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase2-Lvl40-AllItems-LieutenantCommander'sRefuge"
+ value: {
+  dps: 451.61463
+  tps: 330.86523
+  hps: 27.90267
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase2-Lvl40-AllItems-LieutenantCommander'sSanctuary"
+ value: {
+  dps: 587.51246
+  tps: 427.62279
+  hps: 29.053
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase2-Lvl40-AllItems-SymbolsofUnendingLife"
+ value: {
+  dps: 966.14399
+  tps: 701.76434
+  hps: 28.01033
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase2-Lvl40-AllItems-Warlord'sSanctuary"
+ value: {
+  dps: 595.34014
+  tps: 433.04433
+  hps: 28.39
  }
 }
 dps_results: {
@@ -1056,11 +1191,83 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFeral-Phase3-Lvl50-AllItems-Champion'sRefuge"
+ value: {
+  dps: 853.3683
+  tps: 622.89125
+  hps: 47.26066
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase3-Lvl50-AllItems-Champion'sSanctuary"
+ value: {
+  dps: 1045.4256
+  tps: 757.72326
+  hps: 49.16763
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase3-Lvl50-AllItems-DreamwalkerRaiment"
+ value: {
+  dps: 826.20108
+  tps: 603.67729
+  hps: 46.8146
+ }
+}
+dps_results: {
  key: "TestFeral-Phase3-Lvl50-AllItems-FeralheartRaiment"
  value: {
   dps: 926.65791
   tps: 672.19694
   hps: 48.19838
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase3-Lvl50-AllItems-FieldMarshal'sSanctuary"
+ value: {
+  dps: 1065.68619
+  tps: 775.05798
+  hps: 48.34346
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase3-Lvl50-AllItems-Haruspex'sGarb"
+ value: {
+  dps: 1657.68247
+  tps: 1193.46626
+  hps: 44.76967
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase3-Lvl50-AllItems-LieutenantCommander'sRefuge"
+ value: {
+  dps: 853.3683
+  tps: 622.89125
+  hps: 47.26066
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase3-Lvl50-AllItems-LieutenantCommander'sSanctuary"
+ value: {
+  dps: 1045.4256
+  tps: 757.72326
+  hps: 49.16763
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase3-Lvl50-AllItems-SymbolsofUnendingLife"
+ value: {
+  dps: 2270.68571
+  tps: 1623.53199
+  hps: 58.22977
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase3-Lvl50-AllItems-Warlord'sSanctuary"
+ value: {
+  dps: 1065.68619
+  tps: 775.05798
+  hps: 48.34346
  }
 }
 dps_results: {
@@ -1392,11 +1599,35 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFeral-Phase4-Lvl60-AllItems-Champion'sRefuge"
+ value: {
+  dps: 1361.99035
+  tps: 993.77283
+  hps: 49.72517
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase4-Lvl60-AllItems-Champion'sSanctuary"
+ value: {
+  dps: 1595.22637
+  tps: 1157.91402
+  hps: 50.9655
+ }
+}
+dps_results: {
  key: "TestFeral-Phase4-Lvl60-AllItems-CoagulateBloodguard'sLeathers"
  value: {
   dps: 2176.94967
   tps: 1564.81864
   hps: 54.3205
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase4-Lvl60-AllItems-DreamwalkerRaiment"
+ value: {
+  dps: 1284.83947
+  tps: 939.24206
+  hps: 47.07167
  }
 }
 dps_results: {
@@ -1440,6 +1671,22 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFeral-Phase4-Lvl60-AllItems-FieldMarshal'sSanctuary"
+ value: {
+  dps: 1605.6743
+  tps: 1167.3862
+  hps: 50.43683
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase4-Lvl60-AllItems-Haruspex'sGarb"
+ value: {
+  dps: 3187.22588
+  tps: 2285.20462
+  hps: 55.53033
+ }
+}
+dps_results: {
  key: "TestFeral-Phase4-Lvl60-AllItems-Knight-Lieutenant'sCracklingLeather"
  value: {
   dps: 1399.26053
@@ -1464,11 +1711,43 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFeral-Phase4-Lvl60-AllItems-LieutenantCommander'sRefuge"
+ value: {
+  dps: 1361.99035
+  tps: 993.77283
+  hps: 49.72517
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase4-Lvl60-AllItems-LieutenantCommander'sSanctuary"
+ value: {
+  dps: 1595.22637
+  tps: 1157.91402
+  hps: 50.9655
+ }
+}
+dps_results: {
  key: "TestFeral-Phase4-Lvl60-AllItems-LostWorshipper'sArmor"
  value: {
   dps: 2091.10807
   tps: 1512.03027
   hps: 54.34083
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase4-Lvl60-AllItems-SymbolsofUnendingLife"
+ value: {
+  dps: 4086.98155
+  tps: 2925.60731
+  hps: 64.66
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase4-Lvl60-AllItems-Warlord'sSanctuary"
+ value: {
+  dps: 1605.6743
+  tps: 1167.3862
+  hps: 50.43683
  }
 }
 dps_results: {
@@ -1782,11 +2061,35 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFeral-Phase5-Lvl60-AllItems-Champion'sRefuge"
+ value: {
+  dps: 1461.77441
+  tps: 1063.86269
+  hps: 48.8915
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase5-Lvl60-AllItems-Champion'sSanctuary"
+ value: {
+  dps: 1707.271
+  tps: 1235.83973
+  hps: 49.81667
+ }
+}
+dps_results: {
  key: "TestFeral-Phase5-Lvl60-AllItems-CoagulateBloodguard'sLeathers"
  value: {
   dps: 2370.65998
   tps: 1700.95959
   hps: 53.18183
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase5-Lvl60-AllItems-DreamwalkerRaiment"
+ value: {
+  dps: 1424.97559
+  tps: 1037.86483
+  hps: 47.9765
  }
 }
 dps_results: {
@@ -1830,6 +2133,22 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFeral-Phase5-Lvl60-AllItems-FieldMarshal'sSanctuary"
+ value: {
+  dps: 1737.98537
+  tps: 1260.117
+  hps: 49.6235
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase5-Lvl60-AllItems-Haruspex'sGarb"
+ value: {
+  dps: 3318.03652
+  tps: 2378.0992
+  hps: 53.924
+ }
+}
+dps_results: {
  key: "TestFeral-Phase5-Lvl60-AllItems-Knight-Lieutenant'sCracklingLeather"
  value: {
   dps: 1503.66419
@@ -1854,11 +2173,43 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFeral-Phase5-Lvl60-AllItems-LieutenantCommander'sRefuge"
+ value: {
+  dps: 1461.77441
+  tps: 1063.86269
+  hps: 48.8915
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase5-Lvl60-AllItems-LieutenantCommander'sSanctuary"
+ value: {
+  dps: 1707.271
+  tps: 1235.83973
+  hps: 49.81667
+ }
+}
+dps_results: {
  key: "TestFeral-Phase5-Lvl60-AllItems-LostWorshipper'sArmor"
  value: {
   dps: 2259.89815
   tps: 1630.2727
   hps: 52.92767
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase5-Lvl60-AllItems-SymbolsofUnendingLife"
+ value: {
+  dps: 5018.14473
+  tps: 3586.29605
+  hps: 64.42617
+ }
+}
+dps_results: {
+ key: "TestFeral-Phase5-Lvl60-AllItems-Warlord'sSanctuary"
+ value: {
+  dps: 1737.98537
+  tps: 1260.117
+  hps: 49.6235
  }
 }
 dps_results: {

@@ -195,11 +195,67 @@ stat_weights_results: {
  }
 }
 dps_results: {
+ key: "TestDemonology-Phase2-Lvl40-AllItems-Champion'sThreads"
+ value: {
+  dps: 113.00203
+  tps: 121.70295
+  hps: 112.28822
+ }
+}
+dps_results: {
  key: "TestDemonology-Phase2-Lvl40-AllItems-DeathmistRaiment"
  value: {
   dps: 107.5294
   tps: 115.25709
   hps: 107.06221
+ }
+}
+dps_results: {
+ key: "TestDemonology-Phase2-Lvl40-AllItems-Demoniac'sThreads"
+ value: {
+  dps: 105.71792
+  tps: 172.12777
+  hps: 103.40543
+ }
+}
+dps_results: {
+ key: "TestDemonology-Phase2-Lvl40-AllItems-FieldMarshal'sThreads"
+ value: {
+  dps: 120.62791
+  tps: 128.9115
+  hps: 119.98688
+ }
+}
+dps_results: {
+ key: "TestDemonology-Phase2-Lvl40-AllItems-IronweaveBattlesuit"
+ value: {
+  dps: 106.24052
+  tps: 117.1655
+  hps: 105.50193
+ }
+}
+dps_results: {
+ key: "TestDemonology-Phase2-Lvl40-AllItems-LieutenantCommander'sThreads"
+ value: {
+  dps: 113.00203
+  tps: 121.70295
+  hps: 112.28822
+ }
+}
+dps_results: {
+ key: "TestDemonology-Phase2-Lvl40-AllItems-PlagueheartRaiment"
+ value: {
+  dps: 140.70034
+  tps: 149.6747
+  hps: 139.88199
+ }
+}
+dps_results: {
+ key: "TestDemonology-Phase2-Lvl40-AllItems-Warlord'sThreads"
+ value: {
+  dps: 120.62791
+  tps: 128.9115
+  hps: 119.98688
  }
 }
 dps_results: {
@@ -277,6 +333,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDemonology-Phase4-Lvl60-AllItems-Champion'sThreads"
+ value: {
+  dps: 1175.21285
+  tps: 427.59839
+  hps: 242.61297
+ }
+}
+dps_results: {
  key: "TestDemonology-Phase4-Lvl60-AllItems-DeathmistRaiment"
  value: {
   dps: 109.14299
@@ -285,11 +349,27 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDemonology-Phase4-Lvl60-AllItems-Demoniac'sThreads"
+ value: {
+  dps: 169.55648
+  tps: 368.03239
+  hps: 22.60239
+ }
+}
+dps_results: {
  key: "TestDemonology-Phase4-Lvl60-AllItems-EmeraldEnchantedVestments"
  value: {
   dps: 1159.32029
   tps: 420.32789
   hps: 230.28552
+ }
+}
+dps_results: {
+ key: "TestDemonology-Phase4-Lvl60-AllItems-FieldMarshal'sThreads"
+ value: {
+  dps: 1195.25581
+  tps: 442.90222
+  hps: 251.80064
  }
 }
 dps_results: {
@@ -325,6 +405,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDemonology-Phase4-Lvl60-AllItems-LieutenantCommander'sThreads"
+ value: {
+  dps: 1175.21285
+  tps: 427.59839
+  hps: 242.61297
+ }
+}
+dps_results: {
  key: "TestDemonology-Phase4-Lvl60-AllItems-MalevolentProphet'sVestments"
  value: {
   dps: 1356.65621
@@ -338,6 +426,22 @@ dps_results: {
   dps: 1333.1289
   tps: 1286.69744
   hps: 265.04155
+ }
+}
+dps_results: {
+ key: "TestDemonology-Phase4-Lvl60-AllItems-PlagueheartRaiment"
+ value: {
+  dps: 120.72277
+  tps: 133.47972
+  hps: 22.43363
+ }
+}
+dps_results: {
+ key: "TestDemonology-Phase4-Lvl60-AllItems-Warlord'sThreads"
+ value: {
+  dps: 1195.25581
+  tps: 442.90222
+  hps: 251.80064
  }
 }
 dps_results: {

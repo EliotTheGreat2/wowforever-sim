@@ -489,6 +489,69 @@ stat_weights_results: {
  }
 }
 dps_results: {
+ key: "TestFrost-Phase3-Lvl50-AllItems-Champion'sRegalia"
+ value: {
+  dps: 755.00341
+  tps: 584.63333
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase3-Lvl50-AllItems-FieldMarshal'sRegalia"
+ value: {
+  dps: 793.84577
+  tps: 613.69021
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase3-Lvl50-AllItems-FrostfireRegalia"
+ value: {
+  dps: 562.90917
+  tps: 407.22526
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase3-Lvl50-AllItems-Illusionist'sAttire"
+ value: {
+  dps: 747.41419
+  tps: 579.17969
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase3-Lvl50-AllItems-IronweaveBattlesuit"
+ value: {
+  dps: 313.4174
+  tps: 231.68019
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase3-Lvl50-AllItems-LieutenantCommander'sRegalia"
+ value: {
+  dps: 755.00341
+  tps: 584.63333
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase3-Lvl50-AllItems-Sorcerer'sRegalia"
+ value: {
+  dps: 367.47334
+  tps: 270.84806
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase3-Lvl50-AllItems-TrappingsofVaultedSecrets"
+ value: {
+  dps: 1303.54885
+  tps: 1022.40463
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase3-Lvl50-AllItems-Warlord'sRegalia"
+ value: {
+  dps: 793.84577
+  tps: 613.69021
+ }
+}
+dps_results: {
  key: "TestFrost-Phase3-Lvl50-Average-Default"
  value: {
   dps: 1115.2914
@@ -601,6 +664,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFrost-Phase4-Lvl60-AllItems-Champion'sRegalia"
+ value: {
+  dps: 1703.20404
+  tps: 1393.75991
+ }
+}
+dps_results: {
  key: "TestFrost-Phase4-Lvl60-AllItems-EmeraldEnchantedVestments"
  value: {
   dps: 1593.88223
@@ -612,6 +682,27 @@ dps_results: {
  value: {
   dps: 1471.03261
   tps: 1204.3545
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase4-Lvl60-AllItems-FieldMarshal'sRegalia"
+ value: {
+  dps: 1773.53538
+  tps: 1448.64103
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase4-Lvl60-AllItems-FrostfireRegalia"
+ value: {
+  dps: 1055.80114
+  tps: 824.18135
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase4-Lvl60-AllItems-Illusionist'sAttire"
+ value: {
+  dps: 1952.97635
+  tps: 1600.14335
  }
 }
 dps_results: {
@@ -636,6 +727,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFrost-Phase4-Lvl60-AllItems-LieutenantCommander'sRegalia"
+ value: {
+  dps: 1703.20404
+  tps: 1393.75991
+ }
+}
+dps_results: {
  key: "TestFrost-Phase4-Lvl60-AllItems-MalevolentProphet'sVestments"
  value: {
   dps: 1764.23909
@@ -647,6 +745,20 @@ dps_results: {
  value: {
   dps: 838.13673
   tps: 667.01734
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase4-Lvl60-AllItems-TrappingsofVaultedSecrets"
+ value: {
+  dps: 2956.37616
+  tps: 2372.87694
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase4-Lvl60-AllItems-Warlord'sRegalia"
+ value: {
+  dps: 1773.53538
+  tps: 1448.64103
  }
 }
 dps_results: {
@@ -762,6 +874,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFrost-Phase5-Lvl60-AllItems-Champion'sRegalia"
+ value: {
+  dps: 1285.53867
+  tps: 912.04053
+ }
+}
+dps_results: {
  key: "TestFrost-Phase5-Lvl60-AllItems-EmeraldEnchantedVestments"
  value: {
   dps: 1236.2199
@@ -773,6 +892,27 @@ dps_results: {
  value: {
   dps: 1128.50315
   tps: 801.93286
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase5-Lvl60-AllItems-FieldMarshal'sRegalia"
+ value: {
+  dps: 1344.51199
+  tps: 953.89634
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase5-Lvl60-AllItems-FrostfireRegalia"
+ value: {
+  dps: 1212.53103
+  tps: 862.93715
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase5-Lvl60-AllItems-Illusionist'sAttire"
+ value: {
+  dps: 2518.37669
+  tps: 1776.12468
  }
 }
 dps_results: {
@@ -797,6 +937,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFrost-Phase5-Lvl60-AllItems-LieutenantCommander'sRegalia"
+ value: {
+  dps: 1285.53867
+  tps: 912.04053
+ }
+}
+dps_results: {
  key: "TestFrost-Phase5-Lvl60-AllItems-MalevolentProphet'sVestments"
  value: {
   dps: 1331.17126
@@ -808,6 +955,20 @@ dps_results: {
  value: {
   dps: 935.48406
   tps: 670.82118
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase5-Lvl60-AllItems-TrappingsofVaultedSecrets"
+ value: {
+  dps: 2893.85998
+  tps: 2040.96383
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase5-Lvl60-AllItems-Warlord'sRegalia"
+ value: {
+  dps: 1344.51199
+  tps: 953.89634
  }
 }
 dps_results: {
@@ -923,6 +1084,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFrost-Phase6-Lvl60-AllItems-Champion'sRegalia"
+ value: {
+  dps: 1910.00872
+  tps: 1362.05666
+ }
+}
+dps_results: {
  key: "TestFrost-Phase6-Lvl60-AllItems-EmeraldEnchantedVestments"
  value: {
   dps: 1858.69626
@@ -934,6 +1102,27 @@ dps_results: {
  value: {
   dps: 1708.64978
   tps: 1221.10039
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase6-Lvl60-AllItems-FieldMarshal'sRegalia"
+ value: {
+  dps: 1977.30865
+  tps: 1409.15722
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase6-Lvl60-AllItems-FrostfireRegalia"
+ value: {
+  dps: 1465.95734
+  tps: 1064.77167
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase6-Lvl60-AllItems-Illusionist'sAttire"
+ value: {
+  dps: 3171.06634
+  tps: 2245.38155
  }
 }
 dps_results: {
@@ -958,6 +1147,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFrost-Phase6-Lvl60-AllItems-LieutenantCommander'sRegalia"
+ value: {
+  dps: 1910.00872
+  tps: 1362.05666
+ }
+}
+dps_results: {
  key: "TestFrost-Phase6-Lvl60-AllItems-MalevolentProphet'sVestments"
  value: {
   dps: 1969.64962
@@ -969,6 +1165,20 @@ dps_results: {
  value: {
   dps: 1163.5311
   tps: 848.04407
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase6-Lvl60-AllItems-TrappingsofVaultedSecrets"
+ value: {
+  dps: 4614.66615
+  tps: 3253.4847
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase6-Lvl60-AllItems-Warlord'sRegalia"
+ value: {
+  dps: 1977.30865
+  tps: 1409.15722
  }
 }
 dps_results: {
@@ -1042,6 +1252,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFrost-Phase7-Lvl60-AllItems-Champion'sRegalia"
+ value: {
+  dps: 2653.96739
+  tps: 1521.64057
+ }
+}
+dps_results: {
  key: "TestFrost-Phase7-Lvl60-AllItems-EmeraldEnchantedVestments"
  value: {
   dps: 2572.77159
@@ -1053,6 +1270,27 @@ dps_results: {
  value: {
   dps: 2339.76599
   tps: 1340.15391
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase7-Lvl60-AllItems-FieldMarshal'sRegalia"
+ value: {
+  dps: 2738.84582
+  tps: 1567.90087
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase7-Lvl60-AllItems-FrostfireRegalia"
+ value: {
+  dps: 1597.01957
+  tps: 1155.17726
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase7-Lvl60-AllItems-Illusionist'sAttire"
+ value: {
+  dps: 2901.76124
+  tps: 1728.61749
  }
 }
 dps_results: {
@@ -1077,6 +1315,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestFrost-Phase7-Lvl60-AllItems-LieutenantCommander'sRegalia"
+ value: {
+  dps: 2653.96739
+  tps: 1521.64057
+ }
+}
+dps_results: {
  key: "TestFrost-Phase7-Lvl60-AllItems-MalevolentProphet'sVestments"
  value: {
   dps: 2674.91033
@@ -1088,6 +1333,20 @@ dps_results: {
  value: {
   dps: 1323.69025
   tps: 966.20233
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase7-Lvl60-AllItems-TrappingsofVaultedSecrets"
+ value: {
+  dps: 4864.46503
+  tps: 3051.90847
+ }
+}
+dps_results: {
+ key: "TestFrost-Phase7-Lvl60-AllItems-Warlord'sRegalia"
+ value: {
+  dps: 2738.84582
+  tps: 1567.90087
  }
 }
 dps_results: {

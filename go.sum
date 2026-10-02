@@ -5,6 +5,7 @@ github.com/go-yaml/yaml/v3 v3.0.1/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviU
 github.com/golang/exp v0.0.0-20240318143956-a85f2c67cd81 h1:8tO9WA8XcYQqcgYfj7x8FtgecykbP3Q0poFMFsq1fNQ=
 github.com/golang/exp v0.0.0-20240318143956-a85f2c67cd81/go.mod h1:CQ1k9gNrJ50XIzaKCRR2hssIjF07kZFEiieALBM/ARQ=
 github.com/golang/protobuf v1.5.0/go.mod h1:FsONVRAS9T7sI+LIUmWTfcYkHO4aIWwzhcaSAoJOfIk=
+github.com/golang/sys v0.18.0 h1:kuM3dZyaFSTjh5R08OjBMMX1KXS8P+O5q5xqWuR0USg=
 github.com/golang/sys v0.18.0/go.mod h1:/VUhepiaJMQUp4+oa/7Zr1D23ma6VTLIYjOOTFZPUcA=
 github.com/google/go-cmp v0.5.5/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-cmp v0.5.8 h1:e6P7q2lk1O+qJJb4BtCQXlK8vWEO8V1ZeuEdJNOqZyg=

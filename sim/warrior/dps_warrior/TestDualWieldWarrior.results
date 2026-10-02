@@ -399,6 +399,46 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDualWieldWarrior-Phase2-Lvl40-AllItems-BattlegearofUnyieldingStrength"
+ value: {
+  dps: 647.65605
+  tps: 572.77988
+  hps: 31.32533
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase2-Lvl40-AllItems-Champion'sBattlegear"
+ value: {
+  dps: 578.31163
+  tps: 506.46381
+  hps: 25.64733
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase2-Lvl40-AllItems-Dreadnaught'sBattlegear"
+ value: {
+  dps: 556.80781
+  tps: 491.66112
+  hps: 26.98467
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase2-Lvl40-AllItems-LieutenantCommander'sBattlegear"
+ value: {
+  dps: 578.31163
+  tps: 506.46381
+  hps: 25.64733
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase2-Lvl40-AllItems-Vindicator'sBattlegear"
+ value: {
+  dps: 598.74483
+  tps: 535.85498
+  hps: 29.98233
+ }
+}
+dps_results: {
  key: "TestDualWieldWarrior-Phase2-Lvl40-Average-Default"
  value: {
   dps: 638.31974
@@ -521,11 +561,35 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDualWieldWarrior-Phase4-Lvl60-AllItems-BattlegearofUnyieldingStrength"
+ value: {
+  dps: 3578.49486
+  tps: 2800.41975
+  hps: 73.79983
+ }
+}
+dps_results: {
  key: "TestDualWieldWarrior-Phase4-Lvl60-AllItems-BloodGuard'sPlate"
  value: {
   dps: 2558.1341
   tps: 2209.06765
   hps: 61.25417
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase4-Lvl60-AllItems-Champion'sBattlegear"
+ value: {
+  dps: 2603.16953
+  tps: 2245.78062
+  hps: 61.01017
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase4-Lvl60-AllItems-Dreadnaught'sBattlegear"
+ value: {
+  dps: 2166.03458
+  tps: 1907.93257
+  hps: 59.8105
  }
 }
 dps_results: {
@@ -542,6 +606,22 @@ dps_results: {
   dps: 2558.1341
   tps: 2209.06765
   hps: 61.25417
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase4-Lvl60-AllItems-LieutenantCommander'sBattlegear"
+ value: {
+  dps: 2603.16953
+  tps: 2245.78062
+  hps: 61.01017
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase4-Lvl60-AllItems-Vindicator'sBattlegear"
+ value: {
+  dps: 2704.13277
+  tps: 2177.87756
+  hps: 66.56117
  }
 }
 dps_results: {
@@ -675,11 +755,35 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDualWieldWarrior-Phase5-Lvl60-AllItems-BattlegearofUnyieldingStrength"
+ value: {
+  dps: 4289.22022
+  tps: 3346.65778
+  hps: 70.74983
+ }
+}
+dps_results: {
  key: "TestDualWieldWarrior-Phase5-Lvl60-AllItems-BloodGuard'sPlate"
  value: {
   dps: 2790.52983
   tps: 2392.54513
   hps: 59.30217
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase5-Lvl60-AllItems-Champion'sBattlegear"
+ value: {
+  dps: 2861.54433
+  tps: 2452.00786
+  hps: 59.2005
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase5-Lvl60-AllItems-Dreadnaught'sBattlegear"
+ value: {
+  dps: 2381.93322
+  tps: 2079.84627
+  hps: 59.63767
  }
 }
 dps_results: {
@@ -696,6 +800,22 @@ dps_results: {
   dps: 2790.52983
   tps: 2392.54513
   hps: 59.30217
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase5-Lvl60-AllItems-LieutenantCommander'sBattlegear"
+ value: {
+  dps: 2861.54433
+  tps: 2452.00786
+  hps: 59.2005
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase5-Lvl60-AllItems-Vindicator'sBattlegear"
+ value: {
+  dps: 3058.79971
+  tps: 2483.15607
+  hps: 64.94467
  }
 }
 dps_results: {
@@ -919,11 +1039,35 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDualWieldWarrior-Phase6-Lvl60-AllItems-BattlegearofUnyieldingStrength"
+ value: {
+  dps: 5556.27991
+  tps: 4549.2481
+  hps: 67.832
+ }
+}
+dps_results: {
  key: "TestDualWieldWarrior-Phase6-Lvl60-AllItems-BloodGuard'sPlate"
  value: {
   dps: 2970.88806
   tps: 2500.6854
   hps: 51.46367
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase6-Lvl60-AllItems-Champion'sBattlegear"
+ value: {
+  dps: 3068.69589
+  tps: 2578.95609
+  hps: 51.62633
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase6-Lvl60-AllItems-Dreadnaught'sBattlegear"
+ value: {
+  dps: 2404.13929
+  tps: 2042.64949
+  hps: 44.9875
  }
 }
 dps_results: {
@@ -940,6 +1084,22 @@ dps_results: {
   dps: 2970.88806
   tps: 2500.6854
   hps: 51.46367
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase6-Lvl60-AllItems-LieutenantCommander'sBattlegear"
+ value: {
+  dps: 3068.69589
+  tps: 2578.95609
+  hps: 51.62633
+ }
+}
+dps_results: {
+ key: "TestDualWieldWarrior-Phase6-Lvl60-AllItems-Vindicator'sBattlegear"
+ value: {
+  dps: 3132.08288
+  tps: 2655.23518
+  hps: 51.28067
  }
 }
 dps_results: {

@@ -293,10 +293,45 @@ stat_weights_results: {
  }
 }
 dps_results: {
+ key: "TestCombat-Phase1-Lvl25-AllItems-BonescytheArmor"
+ value: {
+  dps: 377.46036
+  tps: 267.99685
+ }
+}
+dps_results: {
+ key: "TestCombat-Phase1-Lvl25-AllItems-Champion'sVestments"
+ value: {
+  dps: 206.66797
+  tps: 146.73426
+ }
+}
+dps_results: {
  key: "TestCombat-Phase1-Lvl25-AllItems-DarkmantleArmor"
  value: {
   dps: 258.17768
   tps: 183.30616
+ }
+}
+dps_results: {
+ key: "TestCombat-Phase1-Lvl25-AllItems-EmblemsofVeiledShadows"
+ value: {
+  dps: 238.82384
+  tps: 169.56493
+ }
+}
+dps_results: {
+ key: "TestCombat-Phase1-Lvl25-AllItems-LieutenantCommander'sVestments"
+ value: {
+  dps: 206.66797
+  tps: 146.73426
+ }
+}
+dps_results: {
+ key: "TestCombat-Phase1-Lvl25-AllItems-Madcap'sOutfit"
+ value: {
+  dps: 215.5153
+  tps: 153.01586
  }
 }
 dps_results: {
@@ -398,11 +433,51 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestCombat-Phase2-Lvl40-AllItems-BonescytheArmor"
+ value: {
+  dps: 388.87536
+  tps: 276.10151
+  hps: 25.54533
+ }
+}
+dps_results: {
+ key: "TestCombat-Phase2-Lvl40-AllItems-Champion'sVestments"
+ value: {
+  dps: 249.80661
+  tps: 177.36269
+  hps: 20.689
+ }
+}
+dps_results: {
  key: "TestCombat-Phase2-Lvl40-AllItems-DarkmantleArmor"
  value: {
   dps: 264.57647
   tps: 187.8493
   hps: 19.771
+ }
+}
+dps_results: {
+ key: "TestCombat-Phase2-Lvl40-AllItems-EmblemsofVeiledShadows"
+ value: {
+  dps: 593.86561
+  tps: 421.64458
+  hps: 34.75933
+ }
+}
+dps_results: {
+ key: "TestCombat-Phase2-Lvl40-AllItems-LieutenantCommander'sVestments"
+ value: {
+  dps: 249.80661
+  tps: 177.36269
+  hps: 20.689
+ }
+}
+dps_results: {
+ key: "TestCombat-Phase2-Lvl40-AllItems-Madcap'sOutfit"
+ value: {
+  dps: 495.24293
+  tps: 351.62248
+  hps: 37.81367
  }
 }
 dps_results: {
@@ -520,11 +595,51 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestCombat-Phase5-Lvl60-AllItems-BonescytheArmor"
+ value: {
+  dps: 1244.73097
+  tps: 883.75899
+  hps: 61.90483
+ }
+}
+dps_results: {
+ key: "TestCombat-Phase5-Lvl60-AllItems-Champion'sVestments"
+ value: {
+  dps: 939.41747
+  tps: 666.9864
+  hps: 52.59217
+ }
+}
+dps_results: {
  key: "TestCombat-Phase5-Lvl60-AllItems-DarkmantleArmor"
  value: {
   dps: 962.18015
   tps: 683.1479
   hps: 50.6605
+ }
+}
+dps_results: {
+ key: "TestCombat-Phase5-Lvl60-AllItems-EmblemsofVeiledShadows"
+ value: {
+  dps: 4740.54738
+  tps: 3365.78864
+  hps: 69.10283
+ }
+}
+dps_results: {
+ key: "TestCombat-Phase5-Lvl60-AllItems-LieutenantCommander'sVestments"
+ value: {
+  dps: 939.41747
+  tps: 666.9864
+  hps: 52.59217
+ }
+}
+dps_results: {
+ key: "TestCombat-Phase5-Lvl60-AllItems-Madcap'sOutfit"
+ value: {
+  dps: 1235.49045
+  tps: 877.19822
+  hps: 52.765
  }
 }
 dps_results: {

@@ -293,10 +293,45 @@ stat_weights_results: {
  }
 }
 dps_results: {
+ key: "TestAssassination-Phase1-Lvl25-AllItems-BonescytheArmor"
+ value: {
+  dps: 234.08907
+  tps: 166.20324
+ }
+}
+dps_results: {
+ key: "TestAssassination-Phase1-Lvl25-AllItems-Champion'sVestments"
+ value: {
+  dps: 118.50966
+  tps: 84.14186
+ }
+}
+dps_results: {
  key: "TestAssassination-Phase1-Lvl25-AllItems-DarkmantleArmor"
  value: {
   dps: 144.79724
   tps: 102.80604
+ }
+}
+dps_results: {
+ key: "TestAssassination-Phase1-Lvl25-AllItems-EmblemsofVeiledShadows"
+ value: {
+  dps: 324.24724
+  tps: 230.21554
+ }
+}
+dps_results: {
+ key: "TestAssassination-Phase1-Lvl25-AllItems-LieutenantCommander'sVestments"
+ value: {
+  dps: 118.50966
+  tps: 84.14186
+ }
+}
+dps_results: {
+ key: "TestAssassination-Phase1-Lvl25-AllItems-Madcap'sOutfit"
+ value: {
+  dps: 257.91422
+  tps: 183.1191
  }
 }
 dps_results: {
@@ -398,11 +433,51 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestAssassination-Phase2-Lvl40-AllItems-BonescytheArmor"
+ value: {
+  dps: 307.81903
+  tps: 218.55151
+  hps: 23.239
+ }
+}
+dps_results: {
+ key: "TestAssassination-Phase2-Lvl40-AllItems-Champion'sVestments"
+ value: {
+  dps: 191.89841
+  tps: 136.24787
+  hps: 18.53
+ }
+}
+dps_results: {
  key: "TestAssassination-Phase2-Lvl40-AllItems-DarkmantleArmor"
  value: {
   dps: 207.17383
   tps: 147.09342
   hps: 17.70833
+ }
+}
+dps_results: {
+ key: "TestAssassination-Phase2-Lvl40-AllItems-EmblemsofVeiledShadows"
+ value: {
+  dps: 656.46098
+  tps: 466.0873
+  hps: 34.89533
+ }
+}
+dps_results: {
+ key: "TestAssassination-Phase2-Lvl40-AllItems-LieutenantCommander'sVestments"
+ value: {
+  dps: 191.89841
+  tps: 136.24787
+  hps: 18.53
+ }
+}
+dps_results: {
+ key: "TestAssassination-Phase2-Lvl40-AllItems-Madcap'sOutfit"
+ value: {
+  dps: 411.53375
+  tps: 292.18896
+  hps: 36.09667
  }
 }
 dps_results: {
@@ -520,11 +595,51 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestAssassination-Phase5-Lvl60-AllItems-BonescytheArmor"
+ value: {
+  dps: 765.18469
+  tps: 543.28113
+  hps: 44.57067
+ }
+}
+dps_results: {
+ key: "TestAssassination-Phase5-Lvl60-AllItems-Champion'sVestments"
+ value: {
+  dps: 788.33862
+  tps: 559.72042
+  hps: 49.54217
+ }
+}
+dps_results: {
  key: "TestAssassination-Phase5-Lvl60-AllItems-DarkmantleArmor"
  value: {
   dps: 562.93903
   tps: 399.68671
   hps: 35.03433
+ }
+}
+dps_results: {
+ key: "TestAssassination-Phase5-Lvl60-AllItems-EmblemsofVeiledShadows"
+ value: {
+  dps: 924.41859
+  tps: 656.3372
+  hps: 51.12817
+ }
+}
+dps_results: {
+ key: "TestAssassination-Phase5-Lvl60-AllItems-LieutenantCommander'sVestments"
+ value: {
+  dps: 788.33862
+  tps: 559.72042
+  hps: 49.54217
+ }
+}
+dps_results: {
+ key: "TestAssassination-Phase5-Lvl60-AllItems-Madcap'sOutfit"
+ value: {
+  dps: 836.65723
+  tps: 594.02663
+  hps: 49.8675
  }
 }
 dps_results: {

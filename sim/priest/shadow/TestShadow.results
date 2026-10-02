@@ -783,10 +783,80 @@ stat_weights_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase1-Lvl25-AllItems-Champion'sInvestiture"
+ value: {
+  dps: 66.86232
+  tps: 67.12991
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase1-Lvl25-AllItems-Champion'sRaiment"
+ value: {
+  dps: 111.84682
+  tps: 109.93699
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase1-Lvl25-AllItems-Confessor'sRaiment"
+ value: {
+  dps: 143.95827
+  tps: 125.0042
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase1-Lvl25-AllItems-FieldMarshal'sRaiment"
+ value: {
+  dps: 134.41332
+  tps: 131.95098
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase1-Lvl25-AllItems-FineryofInfiniteWisdom"
+ value: {
+  dps: 154.99578
+  tps: 126.53156
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase1-Lvl25-AllItems-IronweaveBattlesuit"
+ value: {
+  dps: 78.5969
+  tps: 75.8963
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase1-Lvl25-AllItems-LieutenantCommander'sInvestiture"
+ value: {
+  dps: 66.86232
+  tps: 67.12991
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase1-Lvl25-AllItems-LieutenantCommander'sRaiment"
+ value: {
+  dps: 111.84682
+  tps: 109.93699
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase1-Lvl25-AllItems-VestmentsofFaith"
+ value: {
+  dps: 139.77826
+  tps: 135.70123
+ }
+}
+dps_results: {
  key: "TestShadow-Phase1-Lvl25-AllItems-VestmentsoftheVirtuous"
  value: {
   dps: 139.49678
   tps: 142.61317
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase1-Lvl25-AllItems-Warlord'sRaiment"
+ value: {
+  dps: 134.41332
+  tps: 131.95098
  }
 }
 dps_results: {
@@ -888,10 +958,80 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase2-Lvl40-AllItems-Champion'sInvestiture"
+ value: {
+  dps: 402.27714
+  tps: 342.92397
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase2-Lvl40-AllItems-Champion'sRaiment"
+ value: {
+  dps: 502.90015
+  tps: 425.4113
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase2-Lvl40-AllItems-Confessor'sRaiment"
+ value: {
+  dps: 404.02513
+  tps: 311.81402
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase2-Lvl40-AllItems-FieldMarshal'sRaiment"
+ value: {
+  dps: 541.90594
+  tps: 457.7825
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase2-Lvl40-AllItems-FineryofInfiniteWisdom"
+ value: {
+  dps: 698.12027
+  tps: 547.3102
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase2-Lvl40-AllItems-IronweaveBattlesuit"
+ value: {
+  dps: 181.1728
+  tps: 156.37655
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase2-Lvl40-AllItems-LieutenantCommander'sInvestiture"
+ value: {
+  dps: 402.27714
+  tps: 342.92397
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase2-Lvl40-AllItems-LieutenantCommander'sRaiment"
+ value: {
+  dps: 502.90015
+  tps: 425.4113
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase2-Lvl40-AllItems-VestmentsofFaith"
+ value: {
+  dps: 204.90538
+  tps: 175.04437
+ }
+}
+dps_results: {
  key: "TestShadow-Phase2-Lvl40-AllItems-VestmentsoftheVirtuous"
  value: {
   dps: 179.51888
   tps: 153.3209
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase2-Lvl40-AllItems-Warlord'sRaiment"
+ value: {
+  dps: 541.90594
+  tps: 457.7825
  }
 }
 dps_results: {
@@ -993,11 +1133,91 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase3-Lvl50-AllItems-Champion'sInvestiture"
+ value: {
+  dps: 793.66757
+  tps: 674.90226
+  hps: 11.79397
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase3-Lvl50-AllItems-Champion'sRaiment"
+ value: {
+  dps: 930.74387
+  tps: 787.48912
+  hps: 12.09226
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase3-Lvl50-AllItems-Confessor'sRaiment"
+ value: {
+  dps: 669.92819
+  tps: 506.69383
+  hps: 5.45153
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase3-Lvl50-AllItems-FieldMarshal'sRaiment"
+ value: {
+  dps: 984.63153
+  tps: 832.14263
+  hps: 12.09909
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase3-Lvl50-AllItems-FineryofInfiniteWisdom"
+ value: {
+  dps: 1449.30723
+  tps: 1164.36498
+  hps: 11.72299
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase3-Lvl50-AllItems-IronweaveBattlesuit"
+ value: {
+  dps: 309.1332
+  tps: 252.40225
+  hps: 4.66161
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase3-Lvl50-AllItems-LieutenantCommander'sInvestiture"
+ value: {
+  dps: 793.66757
+  tps: 674.90226
+  hps: 11.79397
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase3-Lvl50-AllItems-LieutenantCommander'sRaiment"
+ value: {
+  dps: 930.74387
+  tps: 787.48912
+  hps: 12.09226
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase3-Lvl50-AllItems-VestmentsofFaith"
+ value: {
+  dps: 340.7844
+  tps: 273.79918
+  hps: 4.66161
+ }
+}
+dps_results: {
  key: "TestShadow-Phase3-Lvl50-AllItems-VestmentsoftheVirtuous"
  value: {
   dps: 308.73473
   tps: 248.72745
   hps: 4.66161
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase3-Lvl50-AllItems-Warlord'sRaiment"
+ value: {
+  dps: 984.63153
+  tps: 832.14263
+  hps: 12.09909
  }
 }
 dps_results: {
@@ -1134,6 +1354,27 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase4-Lvl60-AllItems-Champion'sInvestiture"
+ value: {
+  dps: 1562.20793
+  tps: 1489.19977
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase4-Lvl60-AllItems-Champion'sRaiment"
+ value: {
+  dps: 1720.83383
+  tps: 1637.97083
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase4-Lvl60-AllItems-Confessor'sRaiment"
+ value: {
+  dps: 1435.39147
+  tps: 1264.51904
+ }
+}
+dps_results: {
  key: "TestShadow-Phase4-Lvl60-AllItems-EmeraldEnchantedVestments"
  value: {
   dps: 1680.39558
@@ -1145,6 +1386,20 @@ dps_results: {
  value: {
   dps: 1558.03405
   tps: 1485.24268
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase4-Lvl60-AllItems-FieldMarshal'sRaiment"
+ value: {
+  dps: 1790.70956
+  tps: 1704.07605
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase4-Lvl60-AllItems-FineryofInfiniteWisdom"
+ value: {
+  dps: 3181.59566
+  tps: 2934.55698
  }
 }
 dps_results: {
@@ -1169,6 +1424,20 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase4-Lvl60-AllItems-LieutenantCommander'sInvestiture"
+ value: {
+  dps: 1562.20793
+  tps: 1489.19977
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase4-Lvl60-AllItems-LieutenantCommander'sRaiment"
+ value: {
+  dps: 1720.83383
+  tps: 1637.97083
+ }
+}
+dps_results: {
  key: "TestShadow-Phase4-Lvl60-AllItems-MalevolentProphet'sVestments"
  value: {
   dps: 2253.97762
@@ -1176,10 +1445,24 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase4-Lvl60-AllItems-VestmentsofFaith"
+ value: {
+  dps: 693.46196
+  tps: 632.13523
+ }
+}
+dps_results: {
  key: "TestShadow-Phase4-Lvl60-AllItems-VestmentsoftheVirtuous"
  value: {
   dps: 644.65687
   tps: 590.79422
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase4-Lvl60-AllItems-Warlord'sRaiment"
+ value: {
+  dps: 1790.70956
+  tps: 1704.07605
  }
 }
 dps_results: {
@@ -1302,6 +1585,27 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase5-Lvl60-AllItems-Champion'sInvestiture"
+ value: {
+  dps: 1693.14238
+  tps: 1611.62126
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase5-Lvl60-AllItems-Champion'sRaiment"
+ value: {
+  dps: 1852.75954
+  tps: 1761.46597
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase5-Lvl60-AllItems-Confessor'sRaiment"
+ value: {
+  dps: 1520.88376
+  tps: 1327.65765
+ }
+}
+dps_results: {
  key: "TestShadow-Phase5-Lvl60-AllItems-EmeraldEnchantedVestments"
  value: {
   dps: 1816.04743
@@ -1313,6 +1617,20 @@ dps_results: {
  value: {
   dps: 1688.94615
   tps: 1607.83539
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase5-Lvl60-AllItems-FieldMarshal'sRaiment"
+ value: {
+  dps: 1927.58015
+  tps: 1832.25466
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase5-Lvl60-AllItems-FineryofInfiniteWisdom"
+ value: {
+  dps: 3533.8733
+  tps: 3244.61642
  }
 }
 dps_results: {
@@ -1337,6 +1655,20 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase5-Lvl60-AllItems-LieutenantCommander'sInvestiture"
+ value: {
+  dps: 1693.14238
+  tps: 1611.62126
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase5-Lvl60-AllItems-LieutenantCommander'sRaiment"
+ value: {
+  dps: 1852.75954
+  tps: 1761.46597
+ }
+}
+dps_results: {
  key: "TestShadow-Phase5-Lvl60-AllItems-MalevolentProphet'sVestments"
  value: {
   dps: 2464.95254
@@ -1344,10 +1676,24 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase5-Lvl60-AllItems-VestmentsofFaith"
+ value: {
+  dps: 725.13342
+  tps: 660.46974
+ }
+}
+dps_results: {
  key: "TestShadow-Phase5-Lvl60-AllItems-VestmentsoftheVirtuous"
  value: {
   dps: 676.28836
   tps: 619.14989
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase5-Lvl60-AllItems-Warlord'sRaiment"
+ value: {
+  dps: 1927.58015
+  tps: 1832.25466
  }
 }
 dps_results: {
@@ -1554,6 +1900,27 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase6-Lvl60-AllItems-Champion'sInvestiture"
+ value: {
+  dps: 1486.95185
+  tps: 1402.16832
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase6-Lvl60-AllItems-Champion'sRaiment"
+ value: {
+  dps: 1607.1357
+  tps: 1514.205
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase6-Lvl60-AllItems-Confessor'sRaiment"
+ value: {
+  dps: 2505.96024
+  tps: 2254.16498
+ }
+}
+dps_results: {
  key: "TestShadow-Phase6-Lvl60-AllItems-EmeraldEnchantedVestments"
  value: {
   dps: 1593.72022
@@ -1565,6 +1932,20 @@ dps_results: {
  value: {
   dps: 1483.23093
   tps: 1398.7429
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase6-Lvl60-AllItems-FieldMarshal'sRaiment"
+ value: {
+  dps: 1665.9004
+  tps: 1569.1835
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase6-Lvl60-AllItems-FineryofInfiniteWisdom"
+ value: {
+  dps: 4779.80905
+  tps: 4419.78343
  }
 }
 dps_results: {
@@ -1589,6 +1970,20 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase6-Lvl60-AllItems-LieutenantCommander'sInvestiture"
+ value: {
+  dps: 1486.95185
+  tps: 1402.16832
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase6-Lvl60-AllItems-LieutenantCommander'sRaiment"
+ value: {
+  dps: 1607.1357
+  tps: 1514.205
+ }
+}
+dps_results: {
  key: "TestShadow-Phase6-Lvl60-AllItems-MalevolentProphet'sVestments"
  value: {
   dps: 3079.29724
@@ -1596,10 +1991,24 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase6-Lvl60-AllItems-VestmentsofFaith"
+ value: {
+  dps: 1182.88798
+  tps: 1102.62388
+ }
+}
+dps_results: {
  key: "TestShadow-Phase6-Lvl60-AllItems-VestmentsoftheVirtuous"
  value: {
   dps: 1122.22118
   tps: 1051.76683
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase6-Lvl60-AllItems-Warlord'sRaiment"
+ value: {
+  dps: 1665.9004
+  tps: 1569.1835
  }
 }
 dps_results: {
@@ -1722,6 +2131,27 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase7-Lvl60-AllItems-Champion'sInvestiture"
+ value: {
+  dps: 1804.80778
+  tps: 1099.90517
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase7-Lvl60-AllItems-Champion'sRaiment"
+ value: {
+  dps: 1915.19784
+  tps: 1163.93161
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase7-Lvl60-AllItems-Confessor'sRaiment"
+ value: {
+  dps: 2678.40438
+  tps: 1528.24392
+ }
+}
+dps_results: {
  key: "TestShadow-Phase7-Lvl60-AllItems-EmeraldEnchantedVestments"
  value: {
   dps: 1909.12144
@@ -1733,6 +2163,20 @@ dps_results: {
  value: {
   dps: 1798.21169
   tps: 1095.98497
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase7-Lvl60-AllItems-FieldMarshal'sRaiment"
+ value: {
+  dps: 1972.44483
+  tps: 1197.49223
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase7-Lvl60-AllItems-FineryofInfiniteWisdom"
+ value: {
+  dps: 5484.21951
+  tps: 3196.22874
  }
 }
 dps_results: {
@@ -1757,6 +2201,20 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase7-Lvl60-AllItems-LieutenantCommander'sInvestiture"
+ value: {
+  dps: 1804.80778
+  tps: 1099.90517
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase7-Lvl60-AllItems-LieutenantCommander'sRaiment"
+ value: {
+  dps: 1915.19784
+  tps: 1163.93161
+ }
+}
+dps_results: {
  key: "TestShadow-Phase7-Lvl60-AllItems-MalevolentProphet'sVestments"
  value: {
   dps: 2856.97655
@@ -1764,10 +2222,24 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase7-Lvl60-AllItems-VestmentsofFaith"
+ value: {
+  dps: 1411.14983
+  tps: 859.59706
+ }
+}
+dps_results: {
  key: "TestShadow-Phase7-Lvl60-AllItems-VestmentsoftheVirtuous"
  value: {
   dps: 1347.34429
   tps: 827.04834
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase7-Lvl60-AllItems-Warlord'sRaiment"
+ value: {
+  dps: 1972.44483
+  tps: 1197.49223
  }
 }
 dps_results: {
@@ -1848,6 +2320,27 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase8-Lvl60-AllItems-Champion'sInvestiture"
+ value: {
+  dps: 2102.94237
+  tps: 1279.20698
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase8-Lvl60-AllItems-Champion'sRaiment"
+ value: {
+  dps: 2229.56874
+  tps: 1353.07348
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase8-Lvl60-AllItems-Confessor'sRaiment"
+ value: {
+  dps: 3308.97603
+  tps: 1886.07327
+ }
+}
+dps_results: {
  key: "TestShadow-Phase8-Lvl60-AllItems-EmeraldEnchantedVestments"
  value: {
   dps: 2222.98115
@@ -1859,6 +2352,20 @@ dps_results: {
  value: {
   dps: 2096.71872
   tps: 1275.47279
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase8-Lvl60-AllItems-FieldMarshal'sRaiment"
+ value: {
+  dps: 2295.27682
+  tps: 1393.81816
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase8-Lvl60-AllItems-FineryofInfiniteWisdom"
+ value: {
+  dps: 8783.98696
+  tps: 3510.48496
  }
 }
 dps_results: {
@@ -1883,6 +2390,20 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase8-Lvl60-AllItems-LieutenantCommander'sInvestiture"
+ value: {
+  dps: 2102.94237
+  tps: 1279.20698
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase8-Lvl60-AllItems-LieutenantCommander'sRaiment"
+ value: {
+  dps: 2229.56874
+  tps: 1353.07348
+ }
+}
+dps_results: {
  key: "TestShadow-Phase8-Lvl60-AllItems-MalevolentProphet'sVestments"
  value: {
   dps: 3222.907
@@ -1890,10 +2411,24 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadow-Phase8-Lvl60-AllItems-VestmentsofFaith"
+ value: {
+  dps: 1496.46307
+  tps: 915.41755
+ }
+}
+dps_results: {
  key: "TestShadow-Phase8-Lvl60-AllItems-VestmentsoftheVirtuous"
  value: {
   dps: 1440.74561
   tps: 880.30316
+ }
+}
+dps_results: {
+ key: "TestShadow-Phase8-Lvl60-AllItems-Warlord'sRaiment"
+ value: {
+  dps: 2295.27682
+  tps: 1393.81816
  }
 }
 dps_results: {

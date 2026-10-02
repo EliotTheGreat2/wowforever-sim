@@ -113,11 +113,35 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestTankWarrior-Phase4-Lvl60-AllItems-BattlegearofUnyieldingStrength"
+ value: {
+  dps: 1602.77499
+  tps: 4676.91514
+  hps: 40.7175
+ }
+}
+dps_results: {
  key: "TestTankWarrior-Phase4-Lvl60-AllItems-BloodGuard'sPlate"
  value: {
   dps: 936.23705
   tps: 1945.6267
   hps: 21.55333
+ }
+}
+dps_results: {
+ key: "TestTankWarrior-Phase4-Lvl60-AllItems-Champion'sBattlegear"
+ value: {
+  dps: 956.84462
+  tps: 1987.12571
+  hps: 21.55333
+ }
+}
+dps_results: {
+ key: "TestTankWarrior-Phase4-Lvl60-AllItems-Dreadnaught'sBattlegear"
+ value: {
+  dps: 1134.01697
+  tps: 2253.21264
+  hps: 24.14583
  }
 }
 dps_results: {
@@ -134,6 +158,22 @@ dps_results: {
   dps: 936.23705
   tps: 1945.6267
   hps: 21.55333
+ }
+}
+dps_results: {
+ key: "TestTankWarrior-Phase4-Lvl60-AllItems-LieutenantCommander'sBattlegear"
+ value: {
+  dps: 956.84462
+  tps: 1987.12571
+  hps: 21.55333
+ }
+}
+dps_results: {
+ key: "TestTankWarrior-Phase4-Lvl60-AllItems-Vindicator'sBattlegear"
+ value: {
+  dps: 1695.49619
+  tps: 4490.62345
+  hps: 34.74967
  }
 }
 dps_results: {

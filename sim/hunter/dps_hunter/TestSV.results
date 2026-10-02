@@ -398,6 +398,55 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestSV-Phase1-Lvl25-AllItems-Champion'sPursuit"
+ value: {
+  dps: 228.67242
+  tps: 142.52655
+ }
+}
+dps_results: {
+ key: "TestSV-Phase1-Lvl25-AllItems-CryptstalkerArmor"
+ value: {
+  dps: 353.58128
+  tps: 229.6644
+ }
+}
+dps_results: {
+ key: "TestSV-Phase1-Lvl25-AllItems-FieldMarshal'sPursuit"
+ value: {
+  dps: 275.59823
+  tps: 181.62404
+ }
+}
+dps_results: {
+ key: "TestSV-Phase1-Lvl25-AllItems-LieutenantCommander'sPursuit"
+ value: {
+  dps: 228.67242
+  tps: 142.52655
+ }
+}
+dps_results: {
+ key: "TestSV-Phase1-Lvl25-AllItems-Predator'sArmor"
+ value: {
+  dps: 298.93376
+  tps: 151.83256
+ }
+}
+dps_results: {
+ key: "TestSV-Phase1-Lvl25-AllItems-TrappingsoftheUnseenPath"
+ value: {
+  dps: 293.74223
+  tps: 145.61847
+ }
+}
+dps_results: {
+ key: "TestSV-Phase1-Lvl25-AllItems-Warlord'sPursuit"
+ value: {
+  dps: 275.59823
+  tps: 181.62404
+ }
+}
+dps_results: {
  key: "TestSV-Phase1-Lvl25-Average-Default"
  value: {
   dps: 226.23744
@@ -504,11 +553,67 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestSV-Phase2-Lvl40-AllItems-Champion'sPursuit"
+ value: {
+  dps: 530.75363
+  tps: 249.81074
+  hps: 21.78833
+ }
+}
+dps_results: {
+ key: "TestSV-Phase2-Lvl40-AllItems-CryptstalkerArmor"
+ value: {
+  dps: 533.49509
+  tps: 322.76583
+  hps: 22.37767
+ }
+}
+dps_results: {
+ key: "TestSV-Phase2-Lvl40-AllItems-FieldMarshal'sPursuit"
+ value: {
+  dps: 574.9338
+  tps: 271.50758
+  hps: 22.423
+ }
+}
+dps_results: {
+ key: "TestSV-Phase2-Lvl40-AllItems-LieutenantCommander'sPursuit"
+ value: {
+  dps: 530.75363
+  tps: 249.81074
+  hps: 21.78833
+ }
+}
+dps_results: {
+ key: "TestSV-Phase2-Lvl40-AllItems-Predator'sArmor"
+ value: {
+  dps: 700.28238
+  tps: 441.61904
+  hps: 25.01267
+ }
+}
+dps_results: {
  key: "TestSV-Phase2-Lvl40-AllItems-SignetofBeasts-209823"
  value: {
   dps: 834.62227
   tps: 397.91422
   hps: 28.70167
+ }
+}
+dps_results: {
+ key: "TestSV-Phase2-Lvl40-AllItems-TrappingsoftheUnseenPath"
+ value: {
+  dps: 882.34765
+  tps: 423.99598
+  hps: 28.70167
+ }
+}
+dps_results: {
+ key: "TestSV-Phase2-Lvl40-AllItems-Warlord'sPursuit"
+ value: {
+  dps: 574.9338
+  tps: 271.50758
+  hps: 22.423
  }
 }
 dps_results: {
@@ -650,6 +755,22 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestSV-Phase4-Lvl60-AllItems-Champion'sPursuit"
+ value: {
+  dps: 1273.86272
+  tps: 1013.72716
+  hps: 28.85035
+ }
+}
+dps_results: {
+ key: "TestSV-Phase4-Lvl60-AllItems-CryptstalkerArmor"
+ value: {
+  dps: 1318.61437
+  tps: 1056.37265
+  hps: 29.75873
+ }
+}
+dps_results: {
  key: "TestSV-Phase4-Lvl60-AllItems-DevilsaurEye-19991"
  value: {
   dps: 3157.49571
@@ -682,6 +803,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestSV-Phase4-Lvl60-AllItems-FieldMarshal'sPursuit"
+ value: {
+  dps: 1321.59003
+  tps: 1053.19538
+  hps: 29.18657
+ }
+}
+dps_results: {
  key: "TestSV-Phase4-Lvl60-AllItems-GurubashiPitFighter'sBow-221450"
  value: {
   dps: 1579.10708
@@ -698,6 +827,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestSV-Phase4-Lvl60-AllItems-LieutenantCommander'sPursuit"
+ value: {
+  dps: 1273.86272
+  tps: 1013.72716
+  hps: 28.85035
+ }
+}
+dps_results: {
  key: "TestSV-Phase4-Lvl60-AllItems-Maelstrom'sWrath-231320"
  value: {
   dps: 3180.28758
@@ -706,11 +843,35 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestSV-Phase4-Lvl60-AllItems-Predator'sArmor"
+ value: {
+  dps: 2743.75178
+  tps: 2410.90726
+  hps: 31.75906
+ }
+}
+dps_results: {
  key: "TestSV-Phase4-Lvl60-AllItems-SignetofBeasts-209823"
  value: {
   dps: 3094.50452
   tps: 2725.30841
   hps: 32.56821
+ }
+}
+dps_results: {
+ key: "TestSV-Phase4-Lvl60-AllItems-TrappingsoftheUnseenPath"
+ value: {
+  dps: 3230.04774
+  tps: 2847.91171
+  hps: 39.17267
+ }
+}
+dps_results: {
+ key: "TestSV-Phase4-Lvl60-AllItems-Warlord'sPursuit"
+ value: {
+  dps: 1321.59003
+  tps: 1053.19538
+  hps: 29.18657
  }
 }
 dps_results: {
@@ -882,6 +1043,22 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestSV-Phase5-Lvl60-AllItems-Champion'sPursuit"
+ value: {
+  dps: 1413.08
+  tps: 1079.06718
+  hps: 15.17883
+ }
+}
+dps_results: {
+ key: "TestSV-Phase5-Lvl60-AllItems-CryptstalkerArmor"
+ value: {
+  dps: 1423.26838
+  tps: 1191.5325
+  hps: 14.762
+ }
+}
+dps_results: {
  key: "TestSV-Phase5-Lvl60-AllItems-DevilsaurEye-19991"
  value: {
   dps: 4123.32676
@@ -914,6 +1091,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestSV-Phase5-Lvl60-AllItems-FieldMarshal'sPursuit"
+ value: {
+  dps: 1474.6165
+  tps: 1123.01441
+  hps: 15.20933
+ }
+}
+dps_results: {
  key: "TestSV-Phase5-Lvl60-AllItems-GurubashiPitFighter'sBow-221450"
  value: {
   dps: 3667.3535
@@ -930,6 +1115,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestSV-Phase5-Lvl60-AllItems-LieutenantCommander'sPursuit"
+ value: {
+  dps: 1413.08
+  tps: 1079.06718
+  hps: 15.17883
+ }
+}
+dps_results: {
  key: "TestSV-Phase5-Lvl60-AllItems-Maelstrom'sWrath-231320"
  value: {
   dps: 4109.61935
@@ -938,11 +1131,35 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestSV-Phase5-Lvl60-AllItems-Predator'sArmor"
+ value: {
+  dps: 2985.55026
+  tps: 2666.76373
+  hps: 13.71483
+ }
+}
+dps_results: {
  key: "TestSV-Phase5-Lvl60-AllItems-SignetofBeasts-209823"
  value: {
   dps: 4058.56341
   tps: 3438.2863
   hps: 15.81933
+ }
+}
+dps_results: {
+ key: "TestSV-Phase5-Lvl60-AllItems-TrappingsoftheUnseenPath"
+ value: {
+  dps: 4143.73705
+  tps: 3499.69389
+  hps: 19.41833
+ }
+}
+dps_results: {
+ key: "TestSV-Phase5-Lvl60-AllItems-Warlord'sPursuit"
+ value: {
+  dps: 1474.6165
+  tps: 1123.01441
+  hps: 15.20933
  }
 }
 dps_results: {

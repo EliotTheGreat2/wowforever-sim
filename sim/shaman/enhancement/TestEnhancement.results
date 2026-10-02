@@ -587,6 +587,48 @@ stat_weights_results: {
  }
 }
 dps_results: {
+ key: "TestEnhancement-Phase1-Lvl25-AllItems-Augur'sRegalia"
+ value: {
+  dps: 129.83914
+  tps: 216.08726
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase1-Lvl25-AllItems-Champion'sEarthshaker"
+ value: {
+  dps: 145.83624
+  tps: 226.15833
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase1-Lvl25-AllItems-GiftoftheGatheringStorm"
+ value: {
+  dps: 203.33182
+  tps: 288.62519
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase1-Lvl25-AllItems-TheEarthshatterer"
+ value: {
+  dps: 139.72361
+  tps: 207.90188
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase1-Lvl25-AllItems-TheFiveThunders"
+ value: {
+  dps: 136.20513
+  tps: 203.25356
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase1-Lvl25-AllItems-Warlord'sEarthshaker"
+ value: {
+  dps: 148.51268
+  tps: 229.32456
+ }
+}
+dps_results: {
  key: "TestEnhancement-Phase1-Lvl25-Average-Default"
  value: {
   dps: 167.2876
@@ -766,6 +808,54 @@ dps_results: {
  value: {
   dps: 158.1436
   tps: 241.71706
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase2-Lvl40-AllItems-Augur'sRegalia"
+ value: {
+  dps: 283.9502
+  tps: 312.38556
+  hps: 10.29633
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase2-Lvl40-AllItems-Champion'sEarthshaker"
+ value: {
+  dps: 654.40818
+  tps: 689.60398
+  hps: 23.32967
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase2-Lvl40-AllItems-GiftoftheGatheringStorm"
+ value: {
+  dps: 860.59454
+  tps: 915.7582
+  hps: 32.83267
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase2-Lvl40-AllItems-TheEarthshatterer"
+ value: {
+  dps: 316.2965
+  tps: 334.12756
+  hps: 5.05467
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase2-Lvl40-AllItems-TheFiveThunders"
+ value: {
+  dps: 234.74588
+  tps: 261.90281
+  hps: 3.36033
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase2-Lvl40-AllItems-Warlord'sEarthshaker"
+ value: {
+  dps: 662.78122
+  tps: 697.76048
+  hps: 23.32967
  }
 }
 dps_results: {
@@ -965,6 +1055,54 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestEnhancement-Phase3-Lvl50-AllItems-Augur'sRegalia"
+ value: {
+  dps: 741.79173
+  tps: 529.03947
+  hps: 19.85317
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase3-Lvl50-AllItems-Champion'sEarthshaker"
+ value: {
+  dps: 964.15167
+  tps: 1013.11766
+  hps: 33.467
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase3-Lvl50-AllItems-GiftoftheGatheringStorm"
+ value: {
+  dps: 1874.84762
+  tps: 1373.07788
+  hps: 45.48017
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase3-Lvl50-AllItems-TheEarthshatterer"
+ value: {
+  dps: 404.48499
+  tps: 434.80405
+  hps: 5.43083
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase3-Lvl50-AllItems-TheFiveThunders"
+ value: {
+  dps: 324.18392
+  tps: 350.07742
+  hps: 4.704
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase3-Lvl50-AllItems-Warlord'sEarthshaker"
+ value: {
+  dps: 974.57115
+  tps: 1023.47046
+  hps: 33.45067
+ }
+}
+dps_results: {
  key: "TestEnhancement-Phase3-Lvl50-Average-Default"
  value: {
   dps: 1840.37586
@@ -1161,6 +1299,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestEnhancement-Phase4-Lvl60-AllItems-Augur'sRegalia"
+ value: {
+  dps: 2305.3406
+  tps: 1599.70343
+  hps: 52.50067
+ }
+}
+dps_results: {
  key: "TestEnhancement-Phase4-Lvl60-AllItems-BloodGuard'sInscribedMail"
  value: {
   dps: 1925.54102
@@ -1182,6 +1328,14 @@ dps_results: {
   dps: 2034.39087
   tps: 2007.9491
   hps: 46.10583
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase4-Lvl60-AllItems-Champion'sEarthshaker"
+ value: {
+  dps: 2142.69073
+  tps: 2107.75975
+  hps: 46.9395
  }
 }
 dps_results: {
@@ -1209,6 +1363,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestEnhancement-Phase4-Lvl60-AllItems-GiftoftheGatheringStorm"
+ value: {
+  dps: 3565.30325
+  tps: 2580.14687
+  hps: 61.84383
+ }
+}
+dps_results: {
  key: "TestEnhancement-Phase4-Lvl60-AllItems-OstracizedBerserker'sBattlemail"
  value: {
   dps: 3009.85344
@@ -1225,11 +1387,27 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestEnhancement-Phase4-Lvl60-AllItems-TheEarthshatterer"
+ value: {
+  dps: 1568.14307
+  tps: 1539.09428
+  hps: 43.5235
+ }
+}
+dps_results: {
  key: "TestEnhancement-Phase4-Lvl60-AllItems-TheFiveThunders"
  value: {
   dps: 1592.14723
   tps: 1576.20471
   hps: 44.32667
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase4-Lvl60-AllItems-Warlord'sEarthshaker"
+ value: {
+  dps: 2155.75491
+  tps: 2120.51796
+  hps: 46.9395
  }
 }
 dps_results: {
@@ -1609,6 +1787,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestEnhancement-Phase5-Lvl60-AllItems-Augur'sRegalia"
+ value: {
+  dps: 2667.19485
+  tps: 1840.01101
+  hps: 54.168
+ }
+}
+dps_results: {
  key: "TestEnhancement-Phase5-Lvl60-AllItems-BloodGuard'sInscribedMail"
  value: {
   dps: 2068.67316
@@ -1630,6 +1816,14 @@ dps_results: {
   dps: 2167.13676
   tps: 2128.30713
   hps: 48.86507
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase5-Lvl60-AllItems-Champion'sEarthshaker"
+ value: {
+  dps: 2296.03613
+  tps: 2251.47476
+  hps: 50.05457
  }
 }
 dps_results: {
@@ -1657,6 +1851,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestEnhancement-Phase5-Lvl60-AllItems-GiftoftheGatheringStorm"
+ value: {
+  dps: 4233.76424
+  tps: 3061.49925
+  hps: 67.82793
+ }
+}
+dps_results: {
  key: "TestEnhancement-Phase5-Lvl60-AllItems-OstracizedBerserker'sBattlemail"
  value: {
   dps: 3475.07619
@@ -1673,11 +1875,27 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestEnhancement-Phase5-Lvl60-AllItems-TheEarthshatterer"
+ value: {
+  dps: 1562.91135
+  tps: 1536.34395
+  hps: 44.56253
+ }
+}
+dps_results: {
  key: "TestEnhancement-Phase5-Lvl60-AllItems-TheFiveThunders"
  value: {
   dps: 1685.24297
   tps: 1666.09879
   hps: 46.82563
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase5-Lvl60-AllItems-Warlord'sEarthshaker"
+ value: {
+  dps: 2315.94898
+  tps: 2271.49173
+  hps: 50.03423
  }
 }
 dps_results: {
@@ -2057,6 +2275,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestEnhancement-Phase6-Lvl60-AllItems-Augur'sRegalia"
+ value: {
+  dps: 3118.82961
+  tps: 2163.50038
+  hps: 38.979
+ }
+}
+dps_results: {
  key: "TestEnhancement-Phase6-Lvl60-AllItems-BloodGuard'sInscribedMail"
  value: {
   dps: 1680.98229
@@ -2078,6 +2304,14 @@ dps_results: {
   dps: 1833.10178
   tps: 1810.42271
   hps: 34.15187
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase6-Lvl60-AllItems-Champion'sEarthshaker"
+ value: {
+  dps: 1960.27633
+  tps: 1933.32424
+  hps: 34.9835
  }
 }
 dps_results: {
@@ -2105,6 +2339,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestEnhancement-Phase6-Lvl60-AllItems-GiftoftheGatheringStorm"
+ value: {
+  dps: 5865.04657
+  tps: 4172.68679
+  hps: 53.1249
+ }
+}
+dps_results: {
  key: "TestEnhancement-Phase6-Lvl60-AllItems-OstracizedBerserker'sBattlemail"
  value: {
   dps: 3768.65873
@@ -2121,11 +2363,27 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestEnhancement-Phase6-Lvl60-AllItems-TheEarthshatterer"
+ value: {
+  dps: 1392.01509
+  tps: 1381.10602
+  hps: 32.16937
+ }
+}
+dps_results: {
  key: "TestEnhancement-Phase6-Lvl60-AllItems-TheFiveThunders"
  value: {
   dps: 1443.99979
   tps: 1432.15488
   hps: 32.4703
+ }
+}
+dps_results: {
+ key: "TestEnhancement-Phase6-Lvl60-AllItems-Warlord'sEarthshaker"
+ value: {
+  dps: 1972.75679
+  tps: 1945.19706
+  hps: 34.9835
  }
 }
 dps_results: {

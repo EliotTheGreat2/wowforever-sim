@@ -587,10 +587,73 @@ stat_weights_results: {
  }
 }
 dps_results: {
+ key: "TestBalance-Phase1-Lvl25-AllItems-Champion'sRefuge"
+ value: {
+  dps: 69.29871
+  tps: 71.9041
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase1-Lvl25-AllItems-Champion'sSanctuary"
+ value: {
+  dps: 61.07281
+  tps: 63.67821
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase1-Lvl25-AllItems-DreamwalkerRaiment"
+ value: {
+  dps: 145.24628
+  tps: 147.85167
+ }
+}
+dps_results: {
  key: "TestBalance-Phase1-Lvl25-AllItems-FeralheartRaiment"
  value: {
   dps: 108.00344
   tps: 111.70675
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase1-Lvl25-AllItems-FieldMarshal'sSanctuary"
+ value: {
+  dps: 61.903
+  tps: 64.50839
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase1-Lvl25-AllItems-Haruspex'sGarb"
+ value: {
+  dps: 134.76688
+  tps: 137.37227
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase1-Lvl25-AllItems-LieutenantCommander'sRefuge"
+ value: {
+  dps: 69.29871
+  tps: 71.9041
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase1-Lvl25-AllItems-LieutenantCommander'sSanctuary"
+ value: {
+  dps: 61.07281
+  tps: 63.67821
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase1-Lvl25-AllItems-SymbolsofUnendingLife"
+ value: {
+  dps: 129.06001
+  tps: 131.6654
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase1-Lvl25-AllItems-Warlord'sSanctuary"
+ value: {
+  dps: 61.903
+  tps: 64.50839
  }
 }
 dps_results: {
@@ -692,10 +755,73 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBalance-Phase2-Lvl40-AllItems-Champion'sRefuge"
+ value: {
+  dps: 195.62843
+  tps: 201.69923
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase2-Lvl40-AllItems-Champion'sSanctuary"
+ value: {
+  dps: 199.43385
+  tps: 205.42215
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase2-Lvl40-AllItems-DreamwalkerRaiment"
+ value: {
+  dps: 288.33534
+  tps: 294.44739
+ }
+}
+dps_results: {
  key: "TestBalance-Phase2-Lvl40-AllItems-FeralheartRaiment"
  value: {
   dps: 228.13946
   tps: 234.99239
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase2-Lvl40-AllItems-FieldMarshal'sSanctuary"
+ value: {
+  dps: 200.27595
+  tps: 206.24774
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase2-Lvl40-AllItems-Haruspex'sGarb"
+ value: {
+  dps: 752.14725
+  tps: 760.64354
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase2-Lvl40-AllItems-LieutenantCommander'sRefuge"
+ value: {
+  dps: 195.62843
+  tps: 201.69923
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase2-Lvl40-AllItems-LieutenantCommander'sSanctuary"
+ value: {
+  dps: 199.43385
+  tps: 205.42215
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase2-Lvl40-AllItems-SymbolsofUnendingLife"
+ value: {
+  dps: 806.90136
+  tps: 816.17018
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase2-Lvl40-AllItems-Warlord'sSanctuary"
+ value: {
+  dps: 200.27595
+  tps: 206.24774
  }
 }
 dps_results: {
@@ -797,10 +923,73 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBalance-Phase3-Lvl50-AllItems-Champion'sRefuge"
+ value: {
+  dps: 529.42778
+  tps: 541.71962
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase3-Lvl50-AllItems-Champion'sSanctuary"
+ value: {
+  dps: 530.08782
+  tps: 542.33749
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase3-Lvl50-AllItems-DreamwalkerRaiment"
+ value: {
+  dps: 665.2308
+  tps: 677.86381
+ }
+}
+dps_results: {
  key: "TestBalance-Phase3-Lvl50-AllItems-FeralheartRaiment"
  value: {
   dps: 548.93826
   tps: 562.32226
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase3-Lvl50-AllItems-FieldMarshal'sSanctuary"
+ value: {
+  dps: 530.44192
+  tps: 542.65326
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase3-Lvl50-AllItems-Haruspex'sGarb"
+ value: {
+  dps: 1359.37102
+  tps: 1375.1742
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase3-Lvl50-AllItems-LieutenantCommander'sRefuge"
+ value: {
+  dps: 529.42778
+  tps: 541.71962
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase3-Lvl50-AllItems-LieutenantCommander'sSanctuary"
+ value: {
+  dps: 530.08782
+  tps: 542.33749
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase3-Lvl50-AllItems-SymbolsofUnendingLife"
+ value: {
+  dps: 1628.42835
+  tps: 1642.17806
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase3-Lvl50-AllItems-Warlord'sSanctuary"
+ value: {
+  dps: 530.44192
+  tps: 542.65326
  }
 }
 dps_results: {
@@ -923,10 +1112,31 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBalance-Phase4-Lvl60-AllItems-Champion'sRefuge"
+ value: {
+  dps: 1085.56545
+  tps: 1100.04062
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase4-Lvl60-AllItems-Champion'sSanctuary"
+ value: {
+  dps: 1093.37953
+  tps: 1107.79571
+ }
+}
+dps_results: {
  key: "TestBalance-Phase4-Lvl60-AllItems-CoagulateBloodguard'sLeathers"
  value: {
   dps: 1469.17969
   tps: 1484.29403
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase4-Lvl60-AllItems-DreamwalkerRaiment"
+ value: {
+  dps: 1175.67058
+  tps: 1190.07693
  }
 }
 dps_results: {
@@ -965,6 +1175,20 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBalance-Phase4-Lvl60-AllItems-FieldMarshal'sSanctuary"
+ value: {
+  dps: 1088.03105
+  tps: 1102.39314
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase4-Lvl60-AllItems-Haruspex'sGarb"
+ value: {
+  dps: 2517.401
+  tps: 2536.14384
+ }
+}
+dps_results: {
  key: "TestBalance-Phase4-Lvl60-AllItems-Knight-Lieutenant'sCracklingLeather"
  value: {
   dps: 1171.78451
@@ -986,10 +1210,38 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBalance-Phase4-Lvl60-AllItems-LieutenantCommander'sRefuge"
+ value: {
+  dps: 1085.56545
+  tps: 1100.04062
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase4-Lvl60-AllItems-LieutenantCommander'sSanctuary"
+ value: {
+  dps: 1093.37953
+  tps: 1107.79571
+ }
+}
+dps_results: {
  key: "TestBalance-Phase4-Lvl60-AllItems-LostWorshipper'sArmor"
  value: {
   dps: 1588.06011
   tps: 1603.24821
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase4-Lvl60-AllItems-SymbolsofUnendingLife"
+ value: {
+  dps: 2946.32596
+  tps: 2962.42324
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase4-Lvl60-AllItems-Warlord'sSanctuary"
+ value: {
+  dps: 1088.03105
+  tps: 1102.39314
  }
 }
 dps_results: {
@@ -1112,10 +1364,31 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBalance-Phase5-Lvl60-AllItems-Champion'sRefuge"
+ value: {
+  dps: 1405.50629
+  tps: 1421.48596
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase5-Lvl60-AllItems-Champion'sSanctuary"
+ value: {
+  dps: 1401.50855
+  tps: 1417.35548
+ }
+}
+dps_results: {
  key: "TestBalance-Phase5-Lvl60-AllItems-CoagulateBloodguard'sLeathers"
  value: {
   dps: 2046.80429
   tps: 1975.82035
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase5-Lvl60-AllItems-DreamwalkerRaiment"
+ value: {
+  dps: 1421.85519
+  tps: 1436.95478
  }
 }
 dps_results: {
@@ -1154,6 +1427,20 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBalance-Phase5-Lvl60-AllItems-FieldMarshal'sSanctuary"
+ value: {
+  dps: 1396.61152
+  tps: 1412.39944
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase5-Lvl60-AllItems-Haruspex'sGarb"
+ value: {
+  dps: 3369.42152
+  tps: 3260.02223
+ }
+}
+dps_results: {
  key: "TestBalance-Phase5-Lvl60-AllItems-Knight-Lieutenant'sCracklingLeather"
  value: {
   dps: 1508.50714
@@ -1175,10 +1462,38 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBalance-Phase5-Lvl60-AllItems-LieutenantCommander'sRefuge"
+ value: {
+  dps: 1405.50629
+  tps: 1421.48596
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase5-Lvl60-AllItems-LieutenantCommander'sSanctuary"
+ value: {
+  dps: 1401.50855
+  tps: 1417.35548
+ }
+}
+dps_results: {
  key: "TestBalance-Phase5-Lvl60-AllItems-LostWorshipper'sArmor"
  value: {
   dps: 2219.36669
   tps: 2150.98624
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase5-Lvl60-AllItems-SymbolsofUnendingLife"
+ value: {
+  dps: 3856.20161
+  tps: 3690.89638
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase5-Lvl60-AllItems-Warlord'sSanctuary"
+ value: {
+  dps: 1396.61152
+  tps: 1412.39944
  }
 }
 dps_results: {
@@ -1301,10 +1616,31 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBalance-Phase6-Lvl60-AllItems-Champion'sRefuge"
+ value: {
+  dps: 1385.5338
+  tps: 1401.45447
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase6-Lvl60-AllItems-Champion'sSanctuary"
+ value: {
+  dps: 1397.71042
+  tps: 1413.48851
+ }
+}
+dps_results: {
  key: "TestBalance-Phase6-Lvl60-AllItems-CoagulateBloodguard'sLeathers"
  value: {
   dps: 2029.80881
   tps: 2045.8524
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase6-Lvl60-AllItems-DreamwalkerRaiment"
+ value: {
+  dps: 1338.07383
+  tps: 1352.65225
  }
 }
 dps_results: {
@@ -1343,6 +1679,20 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBalance-Phase6-Lvl60-AllItems-FieldMarshal'sSanctuary"
+ value: {
+  dps: 1401.97962
+  tps: 1417.70854
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase6-Lvl60-AllItems-Haruspex'sGarb"
+ value: {
+  dps: 3356.70029
+  tps: 3376.19104
+ }
+}
+dps_results: {
  key: "TestBalance-Phase6-Lvl60-AllItems-Knight-Lieutenant'sCracklingLeather"
  value: {
   dps: 1492.42168
@@ -1364,10 +1714,38 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBalance-Phase6-Lvl60-AllItems-LieutenantCommander'sRefuge"
+ value: {
+  dps: 1385.5338
+  tps: 1401.45447
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase6-Lvl60-AllItems-LieutenantCommander'sSanctuary"
+ value: {
+  dps: 1397.71042
+  tps: 1413.48851
+ }
+}
+dps_results: {
  key: "TestBalance-Phase6-Lvl60-AllItems-LostWorshipper'sArmor"
  value: {
   dps: 2170.30234
   tps: 2186.41476
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase6-Lvl60-AllItems-SymbolsofUnendingLife"
+ value: {
+  dps: 4804.73525
+  tps: 4826.14751
+ }
+}
+dps_results: {
+ key: "TestBalance-Phase6-Lvl60-AllItems-Warlord'sSanctuary"
+ value: {
+  dps: 1401.97962
+  tps: 1417.70854
  }
 }
 dps_results: {

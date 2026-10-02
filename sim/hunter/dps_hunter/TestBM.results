@@ -202,6 +202,55 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBM-Phase1-Lvl25-AllItems-Champion'sPursuit"
+ value: {
+  dps: 246.24069
+  tps: 142.80668
+ }
+}
+dps_results: {
+ key: "TestBM-Phase1-Lvl25-AllItems-CryptstalkerArmor"
+ value: {
+  dps: 384.13234
+  tps: 234.0894
+ }
+}
+dps_results: {
+ key: "TestBM-Phase1-Lvl25-AllItems-FieldMarshal'sPursuit"
+ value: {
+  dps: 293.98423
+  tps: 182.02564
+ }
+}
+dps_results: {
+ key: "TestBM-Phase1-Lvl25-AllItems-LieutenantCommander'sPursuit"
+ value: {
+  dps: 246.24069
+  tps: 142.80668
+ }
+}
+dps_results: {
+ key: "TestBM-Phase1-Lvl25-AllItems-Predator'sArmor"
+ value: {
+  dps: 317.88926
+  tps: 151.46526
+ }
+}
+dps_results: {
+ key: "TestBM-Phase1-Lvl25-AllItems-TrappingsoftheUnseenPath"
+ value: {
+  dps: 313.0179
+  tps: 144.32294
+ }
+}
+dps_results: {
+ key: "TestBM-Phase1-Lvl25-AllItems-Warlord'sPursuit"
+ value: {
+  dps: 293.98423
+  tps: 182.02564
+ }
+}
+dps_results: {
  key: "TestBM-Phase1-Lvl25-Average-Default"
  value: {
   dps: 242.94531
@@ -308,11 +357,67 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBM-Phase2-Lvl40-AllItems-Champion'sPursuit"
+ value: {
+  dps: 586.0562
+  tps: 223.18801
+  hps: 20.76267
+ }
+}
+dps_results: {
+ key: "TestBM-Phase2-Lvl40-AllItems-CryptstalkerArmor"
+ value: {
+  dps: 636.70546
+  tps: 288.46058
+  hps: 21.49367
+ }
+}
+dps_results: {
+ key: "TestBM-Phase2-Lvl40-AllItems-FieldMarshal'sPursuit"
+ value: {
+  dps: 628.07617
+  tps: 243.37075
+  hps: 21.59567
+ }
+}
+dps_results: {
+ key: "TestBM-Phase2-Lvl40-AllItems-LieutenantCommander'sPursuit"
+ value: {
+  dps: 586.0562
+  tps: 223.18801
+  hps: 20.76267
+ }
+}
+dps_results: {
+ key: "TestBM-Phase2-Lvl40-AllItems-Predator'sArmor"
+ value: {
+  dps: 782.16411
+  tps: 385.38848
+  hps: 24.03233
+ }
+}
+dps_results: {
  key: "TestBM-Phase2-Lvl40-AllItems-SignetofBeasts-209823"
  value: {
   dps: 855.43982
   tps: 361.03279
   hps: 27.93667
+ }
+}
+dps_results: {
+ key: "TestBM-Phase2-Lvl40-AllItems-TrappingsoftheUnseenPath"
+ value: {
+  dps: 898.73007
+  tps: 383.05798
+  hps: 28.03867
+ }
+}
+dps_results: {
+ key: "TestBM-Phase2-Lvl40-AllItems-Warlord'sPursuit"
+ value: {
+  dps: 628.07617
+  tps: 243.37075
+  hps: 21.59567
  }
 }
 dps_results: {
