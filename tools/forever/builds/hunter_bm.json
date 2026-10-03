@@ -1,0 +1,85 @@
+{
+ "base": "hunter",
+ "label": "Beast Mastery",
+ "rotation": "ui/hunter/apls/forever/forever_beast_mastery.apl.json",
+ "options": {
+  "petType": "Cat"
+ },
+ "order": [
+  [
+   0,
+   "Deadly Aspects",
+   5
+  ],
+  [
+   0,
+   "Focused Fire",
+   2
+  ],
+  [
+   0,
+   "Endurance Training",
+   3
+  ],
+  [
+   0,
+   "Unleashed Fury",
+   5
+  ],
+  [
+   0,
+   "Ferocity",
+   5
+  ],
+  [
+   0,
+   "Bestial Swiftness",
+   1
+  ],
+  [
+   0,
+   "Intimidation",
+   1
+  ],
+  [
+   0,
+   "Bestial Discipline",
+   2
+  ],
+  [
+   0,
+   "Spirit Bond",
+   1
+  ],
+  [
+   0,
+   "Frenzy",
+   5
+  ],
+  [
+   0,
+   "Bestial Wrath",
+   1
+  ],
+  [
+   1,
+   "Lethal Attacks",
+   5
+  ],
+  [
+   1,
+   "Careful Aim",
+   5
+  ],
+  [
+   1,
+   "Efficiency",
+   5
+  ],
+  [
+   1,
+   "Mortal Shots",
+   5
+  ]
+ ]
+}

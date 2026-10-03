@@ -35,6 +35,8 @@ const (
 	ClassSpellMask_HunterRaptorStrike
 	ClassSpellMask_HunterRaptorStrikeHit
 	ClassSpellMask_HunterWyvernStrike
+	ClassSpellMask_HunterStriderKick // WoW Forever
+	ClassSpellMask_HunterLacerate    // WoW Forever
 
 	// Stings
 	ClassSpellMask_HunterSerpentSting
@@ -70,8 +72,9 @@ const (
 
 	ClassSpellMask_HunterTraps   = ClassSpellMask_HunterExplosiveTrap | ClassSpellMask_HunterFreezingTrap | ClassSpellMask_HunterImmolationTrap
 	ClassSpellMask_HunterShots   = ClassSpellMask_HunterAimedShot | ClassSpellMask_HunterArcaneShot | ClassSpellMask_HunterChimeraShot | ClassSpellMask_HunterExplosiveShot | ClassSpellMask_HunterKillShot | ClassSpellMask_HunterMultiShot | ClassSpellMask_HunterSteadyShot | ClassSpellMask_HunterSniperShot
-	ClassSpellMask_HunterStrikes = ClassSpellMask_HunterFlankingStrike | ClassSpellMask_HunterRaptorStrike | ClassSpellMask_HunterRaptorStrikeHit | ClassSpellMask_HunterWyvernStrike | ClassSpellMask_HunterCarve | ClassSpellMask_HunterCarveHit
-	ClassSpellMask_HunterStings  = ClassSpellMask_HunterSerpentSting | ClassSpellMask_HunterSoFSerpentSting
+	ClassSpellMask_HunterStrikes = ClassSpellMask_HunterFlankingStrike | ClassSpellMask_HunterRaptorStrike | ClassSpellMask_HunterRaptorStrikeHit | ClassSpellMask_HunterWyvernStrike | ClassSpellMask_HunterCarve | ClassSpellMask_HunterCarveHit |
+		ClassSpellMask_HunterStriderKick | ClassSpellMask_HunterLacerate
+	ClassSpellMask_HunterStings = ClassSpellMask_HunterSerpentSting | ClassSpellMask_HunterSoFSerpentSting
 )
 
 type Hunter struct {
@@ -148,6 +151,8 @@ type Hunter struct {
 
 	// WoW Forever talents (forever_talents.go)
 	SniperShot                  *core.Spell
+	StriderKick                 *core.Spell
+	Lacerate                    *core.Spell
 	foreverRapidFireCDReduction time.Duration
 }
 
@@ -223,6 +228,13 @@ func (hunter *Hunter) Initialize() {
 	hunter.registerKillShotSpell()
 	if hunter.ForeverTalents != nil && hunter.ForeverTalents.Has("Sniper Shot") {
 		hunter.registerForeverSniperShot()
+	}
+	if hunter.ForeverTalents != nil && hunter.ForeverTalents.Has("Strider Kick") {
+		hunter.registerForeverStriderKick()
+	}
+	if hunter.foreverSpellbook() {
+		hunter.registerForeverLacerate()
+		hunter.registerForeverAspectOfTheBeast()
 	}
 
 	hunter.registerRaptorStrikeSpell()

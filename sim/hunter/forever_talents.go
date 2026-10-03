@@ -2,6 +2,7 @@ package hunter
 
 import (
 	"slices"
+	"strconv"
 	"time"
 
 	"github.com/wowsims/sod/sim/core"
@@ -27,22 +28,25 @@ import (
 //   - Rapid Fire also increases melee attack speed.
 //   - No Aspect of the Lion (a SoD ability the engine gives every hunter).
 //   - Arcane Shot 217 and Volley 112/s come from spell_tuning.csv.
+//   - Mongoose Bite: melee weapon damage plus 57 at rank 4 (Classic 115 flat; lower ranks scaled).
+//   - Hunter's Mark: 71 ranged attack power at rank 4 (Classic 110; lower ranks scaled).
+//   - Aspect of the Beast (level 30): +50 melee attack power; Deadly Aspects' melee clause.
+//   - Lacerate (new): 406 bleed damage over 21 sec, rank 4 at level 60 only (lower ranks,
+//     mana cost and cooldown unpublished; estimates in registerForeverLacerate).
+//   - Strider Kick (Survival talent): 100% melee weapon damage, 8 sec cooldown (estimated cost).
 //
 // Not modeled (no effect on a single-target DPS sim, or not enough data); utility talents
 // are still mapped to their Classic fields where one exists:
 // Endurance Training's armor clause, Improved Aspect of the Monkey, Pathfinding,
 // Improved Revive Pet, Bestial Swiftness, Improved Mend Pet, Spirit Bond, Intimidation's stun
-// (the talent still unlocks Bestial Wrath), Deadly Aspects' Aspect of the Beast clause (no
-// Aspect of the Beast in the engine), Summon Hawk (no hawk damage/AP data published, so
+// (the talent still unlocks Bestial Wrath), Summon Hawk (no hawk damage/AP data published, so
 // Unleashed Fury/Ferocity apply to the pet only), Hawk Eye, Improved Concussive Shot,
 // Improved Stings' Viper/Scorpid clauses, Rapid Killing's on-kill buff and Rapid
 // Recuperation's Rapid Killing clause (no kills in a single-target sim; the Rapid Fire
 // cooldown reduction and Rapid Recuperation's Serpent Sting clause are modeled), Scatter Shot,
 // Sniper Shot's range clause, Deflection, Entrapment, Improved Wing Clip, Deterrence,
 // Survival Tactics' Feign Death clause, Counterattack (needs parries taken),
-// Survivalist's Discipline, Strider Kick (no cost/cooldown data),
-// Hunter's Mark 71 RAP (Classic 110; the debuff aura is shared core code and the
-// rotation does not cast it), Lacerate (new Survival spell; not used by a simmed spec).
+// Survivalist's Discipline, Strider Kick's movement speed clause.
 
 const (
 	foreverSniperShotSpellID         = 1290201 // no public spell ID yet
@@ -50,9 +54,21 @@ const (
 	foreverLoneWolfSpellID           = 1290203
 	foreverFocusedFireSpellID        = 1290204
 	foreverRapidRecuperationSpellID  = 1290205
+	foreverStriderKickSpellID        = 1290206
+	foreverLacerateSpellID           = 1290207
+	foreverAspectOfTheBeastSpellID   = 13161 // Classic Aspect of the Beast
+	foreverDeadlyAspectsBeastSpellID = 1290208
 	foreverAimedShotScale            = 166.0 / 600.0
 	foreverAspectOfTheHawkScale      = 55.0 / 110.0
 	foreverRaptorStrikeScale         = 70.0 / 140.0
+	foreverMongooseBiteScale         = 57.0 / 115.0
+	foreverHuntersMarkScale          = 71.0 / 110.0
+	foreverAspectOfTheBeastAP        = 50.0
+	foreverStriderKickCooldown       = time.Second * 8
+	foreverStriderKickBaseManaPct    = 0.05 // not published; estimate near Raptor Strike's cost
+	foreverLacerateTotalDamage       = 406.0
+	foreverLacerateLevel             = 60   // rank 4 is the only published rank
+	foreverLacerateBaseManaPct       = 0.05 // not published; estimate
 	foreverAimedShotCastTime         = time.Millisecond * 2000
 	foreverAimedShotCooldown         = time.Second * 6
 	foreverSniperShotBonusDamage     = 160.0
@@ -420,6 +436,173 @@ func (hunter *Hunter) registerForeverSniperShot() {
 			spell.WaitTravelTime(sim, func(s *core.Simulation) {
 				spell.DealDamage(sim, result)
 			})
+		},
+	})
+}
+
+// foreverHuntersMarkAura: Forever's Hunter's Mark grants 71 ranged attack power at rank 4
+// (Classic 110); lower ranks are scaled by the same ratio. Same tag and exclusive effect as
+// core.HuntersMarkAura so the strongest mark wins.
+func (hunter *Hunter) foreverHuntersMarkAura(target *core.Unit) *core.Aura {
+	spellID := core.AtLevel(hunter.Level, map[int32]int32{25: 14323, 40: 14324, 50: 14324, 60: 14325})
+	bonus := core.AtLevel(hunter.Level, map[int32]float64{25: 45, 40: 75, 50: 75, 60: 110}) * foreverHuntersMarkScale
+
+	aura := target.GetOrRegisterAura(core.Aura{
+		Label:    "HuntersMark-Forever-" + strconv.Itoa(int(bonus)),
+		Tag:      core.HuntersMarkAuraTag,
+		ActionID: core.ActionID{SpellID: spellID},
+		Duration: time.Minute * 2,
+	})
+	aura.NewExclusiveEffect("HuntersMark", true, core.ExclusiveEffect{
+		Priority: bonus,
+		OnGain: func(ee *core.ExclusiveEffect, sim *core.Simulation) {
+			ee.Aura.Unit.PseudoStats.BonusRangedAttackPowerTaken += bonus
+		},
+		OnExpire: func(ee *core.ExclusiveEffect, sim *core.Simulation) {
+			ee.Aura.Unit.PseudoStats.BonusRangedAttackPowerTaken -= bonus
+		},
+	})
+	return aura
+}
+
+// registerForeverAspectOfTheBeast: Forever's Aspect of the Beast (level 30) increases melee
+// attack power by 50. With Deadly Aspects, melee auto attacks have a 2% per rank chance to
+// increase melee attack speed by 30% for 12 sec. Shares the "Aspect" exclusivity with Hawk.
+func (hunter *Hunter) registerForeverAspectOfTheBeast() {
+	if hunter.Level < 30 {
+		return
+	}
+	var procAura *core.Aura
+	procChance := 0.01 * float64(hunter.Talents.ImprovedAspectOfTheHawk) // 2 per Deadly Aspects rank
+	if procChance > 0 {
+		procAura = hunter.createImprovedHawkAura("Deadly Aspects (Beast)", core.ActionID{SpellID: foreverDeadlyAspectsBeastSpellID}, true)
+	}
+
+	actionID := core.ActionID{SpellID: foreverAspectOfTheBeastSpellID}
+	aspectAura := hunter.NewTemporaryStatsAuraWrapped(
+		"Aspect of the Beast (Forever)",
+		actionID,
+		stats.Stats{stats.AttackPower: foreverAspectOfTheBeastAP},
+		core.NeverExpires,
+		func(aura *core.Aura) {
+			aura.OnSpellHitDealt = func(aura *core.Aura, sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
+				if procAura != nil && spell.ProcMask.Matches(core.ProcMaskMeleeWhiteHit) && sim.Proc(procChance, "Deadly Aspects (Beast)") {
+					procAura.Activate(sim)
+				}
+			}
+		})
+	aspectAura.NewExclusiveEffect("Aspect", true, core.ExclusiveEffect{})
+
+	hunter.RegisterSpell(core.SpellConfig{
+		ActionID:      actionID,
+		Flags:         core.SpellFlagAPL,
+		RequiredLevel: 30,
+		Cast: core.CastConfig{
+			DefaultCast: core.Cast{
+				GCD: core.GCDDefault,
+			},
+		},
+		ExtraCastCondition: func(sim *core.Simulation, target *core.Unit) bool {
+			return !aspectAura.IsActive()
+		},
+		ApplyEffects: func(sim *core.Simulation, _ *core.Unit, _ *core.Spell) {
+			aspectAura.Activate(sim)
+		},
+	})
+}
+
+// registerForeverStriderKick: Survival talent. "A powerful kick that deals 100% melee weapon
+// damage and increases movement speed by 30% for 3 sec." 8 sec cooldown (wow.gg Forever
+// Survival overview, which calls it Runner's Strike). Mana cost not published (estimate). The
+// movement speed clause does nothing in a sim.
+func (hunter *Hunter) registerForeverStriderKick() {
+	hunter.StriderKick = hunter.RegisterSpell(core.SpellConfig{
+		ClassSpellMask: ClassSpellMask_HunterStriderKick,
+		ActionID:       core.ActionID{SpellID: foreverStriderKickSpellID},
+		SpellSchool:    core.SpellSchoolPhysical,
+		CastType:       proto.CastType_CastTypeMainHand,
+		DefenseType:    core.DefenseTypeMelee,
+		ProcMask:       core.ProcMaskMeleeMHSpecial,
+		Flags:          core.SpellFlagMeleeMetrics | core.SpellFlagAPL,
+		MaxRange:       core.MaxMeleeAttackRange,
+
+		ManaCost: core.ManaCostOptions{
+			BaseCost: foreverStriderKickBaseManaPct,
+		},
+		Cast: core.CastConfig{
+			DefaultCast: core.Cast{
+				GCD: core.GCDDefault,
+			},
+			IgnoreHaste: true, // Hunter GCD is locked at 1.5s
+			CD: core.Cooldown{
+				Timer:    hunter.NewTimer(),
+				Duration: foreverStriderKickCooldown,
+			},
+		},
+
+		DamageMultiplier: 1,
+		ThreatMultiplier: 1,
+		BonusCoefficient: 1,
+
+		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
+			damage := hunter.MHWeaponDamage(sim, spell.MeleeAttackPower())
+			spell.CalcAndDealDamage(sim, target, damage, spell.OutcomeMeleeWeaponSpecialHitAndCrit)
+		},
+	})
+}
+
+// registerForeverLacerate: new Forever Survival ability. "Wounds the target causing them to
+// bleed for 406 damage over 21 sec." (rank 4, level 60, requires a melee weapon). Only rank 4
+// is published, so it is registered at level 60 only. Mana cost and cooldown are not
+// published (estimate: 5% of base mana, no cooldown). No attack power scaling in the tooltip.
+func (hunter *Hunter) registerForeverLacerate() {
+	if hunter.Level < foreverLacerateLevel || !hunter.HasMHWeapon() {
+		return
+	}
+	const ticks = 7
+	hunter.Lacerate = hunter.RegisterSpell(core.SpellConfig{
+		ClassSpellMask: ClassSpellMask_HunterLacerate,
+		ActionID:       core.ActionID{SpellID: foreverLacerateSpellID},
+		SpellSchool:    core.SpellSchoolPhysical,
+		DefenseType:    core.DefenseTypeMelee,
+		ProcMask:       core.ProcMaskMeleeMHSpecial,
+		Flags:          core.SpellFlagAPL | core.SpellFlagMeleeMetrics,
+		MaxRange:       core.MaxMeleeAttackRange,
+		RequiredLevel:  foreverLacerateLevel,
+
+		ManaCost: core.ManaCostOptions{
+			BaseCost: foreverLacerateBaseManaPct,
+		},
+		Cast: core.CastConfig{
+			DefaultCast: core.Cast{
+				GCD: core.GCDDefault,
+			},
+			IgnoreHaste: true, // Hunter GCD is locked at 1.5s
+		},
+
+		DamageMultiplier: 1,
+		ThreatMultiplier: 1,
+
+		Dot: core.DotConfig{
+			Aura: core.Aura{
+				Label: "Lacerate (Forever)",
+			},
+			NumberOfTicks: ticks,
+			TickLength:    time.Second * 3,
+			OnSnapshot: func(sim *core.Simulation, target *core.Unit, dot *core.Dot, isRollover bool) {
+				dot.Snapshot(target, foreverLacerateTotalDamage/ticks, isRollover)
+			},
+			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
+				dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)
+			},
+		},
+
+		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
+			result := spell.CalcOutcome(sim, target, spell.OutcomeMeleeSpecialHitNoHitCounter)
+			if result.Landed() {
+				spell.Dot(target).Apply(sim)
+			}
+			spell.DealOutcome(sim, result)
 		},
 	})
 }

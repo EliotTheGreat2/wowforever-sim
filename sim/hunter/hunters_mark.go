@@ -49,6 +49,9 @@ func (hunter *Hunter) getHuntersMark(rank int) core.SpellConfig {
 }
 
 func (hunter *Hunter) myHuntersMarkAura(target *core.Unit, playerLevel int32) *core.Aura {
+	if hunter.foreverSpellbook() {
+		return hunter.foreverHuntersMarkAura(target)
+	}
 	return core.HuntersMarkAura(target, hunter.Talents.ImprovedHuntersMark, hunter.Level)
 }
 
@@ -62,5 +65,4 @@ func (hunter *Hunter) registerHuntersMark() {
 			return
 		}
 	}
-	
 }

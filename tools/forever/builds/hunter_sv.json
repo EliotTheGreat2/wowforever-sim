@@ -1,0 +1,112 @@
+{
+ "base": "hunter",
+ "label": "Survival",
+ "role": "Melee DPS",
+ "distance": 5,
+ "rotation": "ui/hunter/apls/forever/forever_survival.apl.json",
+ "options": {
+  "petType": "Cat"
+ },
+ "weapons": {
+  "mainHand": [
+   "Axe",
+   "Sword",
+   "Fist",
+   "Dagger"
+  ],
+  "offHand": [
+   "Axe",
+   "Sword",
+   "Fist",
+   "Dagger"
+  ],
+  "excludeRaid": true,
+  "level60": {
+   "mainHand": 12940,
+   "offHand": 12939
+  },
+  "dualWieldLevel": 20
+ },
+ "order": [
+  [
+   2,
+   "Improved Tracking",
+   5
+  ],
+  [
+   2,
+   "Savage Strikes",
+   2
+  ],
+  [
+   2,
+   "Survivalist",
+   3
+  ],
+  [
+   2,
+   "Surefooted",
+   3
+  ],
+  [
+   2,
+   "Survivalist",
+   2
+  ],
+  [
+   2,
+   "Predator's Edge",
+   5
+  ],
+  [
+   2,
+   "Strider Kick",
+   1
+  ],
+  [
+   2,
+   "Expose Prey",
+   2
+  ],
+  [
+   2,
+   "Resourcefulness",
+   2
+  ],
+  [
+   2,
+   "Lightning Reflexes",
+   5
+  ],
+  [
+   2,
+   "Lacerating Strikes",
+   1
+  ],
+  [
+   0,
+   "Deadly Aspects",
+   5
+  ],
+  [
+   0,
+   "Focused Fire",
+   2
+  ],
+  [
+   0,
+   "Endurance Training",
+   3
+  ],
+  [
+   0,
+   "Unleashed Fury",
+   5
+  ],
+  [
+   1,
+   "Lethal Attacks",
+   5
+  ]
+ ]
+}

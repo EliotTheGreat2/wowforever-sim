@@ -15,6 +15,11 @@ func (hunter *Hunter) getMongooseBiteConfig(rank int) core.SpellConfig {
 
 	hasCobraSlayer := hunter.HasRune(proto.HunterRune_RuneHandsCobraSlayer)
 	hasMeleeSpecialist := hunter.HasRune(proto.HunterRune_RuneBeltMeleeSpecialist)
+	forever := hunter.foreverSpellbook()
+	if forever {
+		// WoW Forever: "melee weapon damage plus 57" at rank 4 (Classic: 115 flat).
+		baseDamage *= foreverMongooseBiteScale
+	}
 
 	spellConfig := core.SpellConfig{
 		ClassSpellMask: ClassSpellMask_HunterMongooseBite,
@@ -58,6 +63,9 @@ func (hunter *Hunter) getMongooseBiteConfig(rank int) core.SpellConfig {
 			}
 
 			damage := baseDamage
+			if forever {
+				damage += hunter.MHWeaponDamage(sim, spell.MeleeAttackPower())
+			}
 			if hasCobraSlayer {
 				damage += spell.MeleeAttackPower() * 0.45
 			}
