@@ -57,11 +57,11 @@ and fails if DoT crits ever appear without the Forever flag (or vanish with it).
 - `ui/warlock/gear_sets/forever/` - placeholder gear
 - `sim/warlock/dps/forever_test.go` - comparison harness
 
-## Local build notes
+## Website
 
-The `replace` block at the bottom of `go.mod` points Go modules at their GitHub
-mirrors because the sandbox this was built in blocks golang.org / gopkg.in.
-Delete it on a normal machine.
+Every push to `master` runs `.github/workflows/forever_pages.yml`: the Forever checks, then a
+static build where the sim runs in the visitor's browser (WebAssembly), published to
+`https://<owner>.github.io/<repo>/` (it opens the Quick Sim page).
 
 ## Regenerating spec presets
 
