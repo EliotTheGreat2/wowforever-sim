@@ -66,7 +66,8 @@ func (warrior *Warrior) registerOverpowerSpell(cdTimer *core.Timer) {
 			},
 		},
 		ExtraCastCondition: func(sim *core.Simulation, target *core.Unit) bool {
-			return warrior.OverpowerAura.IsActive() || (hasTasteForBloodRune && warrior.TasteForBloodAura.IsActive())
+			return warrior.OverpowerAura.IsActive() || (hasTasteForBloodRune && warrior.TasteForBloodAura.IsActive()) ||
+				(warrior.foreverBloodthrillAura != nil && warrior.foreverBloodthrillAura.IsActive())
 		},
 
 		BonusCritRating: 25 * core.CritRatingPerCritChance * float64(warrior.Talents.ImprovedOverpower),
@@ -82,6 +83,9 @@ func (warrior *Warrior) registerOverpowerSpell(cdTimer *core.Timer) {
 			result := spell.CalcAndDealDamage(sim, target, baseDamage, spell.OutcomeMeleeSpecialNoBlockDodgeParry)
 
 			warrior.OverpowerAura.Deactivate(sim)
+			if warrior.foreverBloodthrillAura != nil {
+				warrior.foreverBloodthrillAura.Deactivate(sim)
+			}
 			if !result.Landed() {
 				spell.IssueRefund(sim)
 			}

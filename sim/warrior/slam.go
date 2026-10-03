@@ -24,6 +24,14 @@ func (warrior *Warrior) registerSlamSpell() {
 		}
 	} else {
 		castTime = time.Millisecond*1500 - time.Millisecond*100*time.Duration(warrior.Talents.ImprovedSlam)
+		if warrior.ForeverTalents != nil {
+			// WoW Forever's Improved Slam reduces "Slam's cooldown", so Forever's Slam has one.
+			// Its length isn't published; 6 sec is an estimate (forever_talents.go).
+			cooldown = core.Cooldown{
+				Timer:    warrior.NewTimer(),
+				Duration: foreverSlamCooldown,
+			}
+		}
 	}
 
 	requiredLevel := core.AtLevel(warrior.Level, map[int32]int{
@@ -65,7 +73,7 @@ func (warrior *Warrior) registerSlamSpell() {
 			},
 			CD: cooldown,
 			ModifyCast: func(sim *core.Simulation, spell *core.Spell, cast *core.Cast) {
-				if spell.CastTime() > 0 {
+				if spell.CastTime() > 0 && !warrior.foreverSlamKeepsSwing {
 					warrior.AutoAttacks.StopMeleeUntil(sim, sim.CurrentTime+cast.CastTime, true)
 				}
 			},
@@ -98,6 +106,10 @@ func (warrior *Warrior) newSlamHitSpell(isMH bool) *WarriorSpell {
 		50: 68,
 		60: 87,
 	})
+	if warrior.Forever && warrior.Level >= 54 {
+		// WoW Forever's max-rank Slam deals weapon damage + 68 (Classic: + 87).
+		flatDamageBonus = 68
+	}
 
 	flags := core.SpellFlagMeleeMetrics | core.SpellFlagNoOnCastComplete
 	damageFunc := warrior.MHWeaponDamage

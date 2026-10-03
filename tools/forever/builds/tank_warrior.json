@@ -1,0 +1,88 @@
+{
+ "rotation": "ui/tank_warrior/apls/forever/forever_protection.apl.json",
+ "options": {
+  "stance": "WarriorStanceDefensive"
+ },
+ "order": [
+  [
+   2,
+   "Shield Specialization",
+   5
+  ],
+  [
+   2,
+   "Toughness",
+   5
+  ],
+  [
+   2,
+   "Defiance",
+   3
+  ],
+  [
+   2,
+   "Improved Revenge",
+   3
+  ],
+  [
+   2,
+   "Master of Defense",
+   2
+  ],
+  [
+   2,
+   "Improved Sunder Armor",
+   2
+  ],
+  [
+   2,
+   "Bastion",
+   5
+  ],
+  [
+   2,
+   "Concussion Blow",
+   1
+  ],
+  [
+   2,
+   "Focused Rage",
+   3
+  ],
+  [
+   2,
+   "Improved Sunder Armor",
+   1
+  ],
+  [
+   2,
+   "Shield Slam",
+   1
+  ],
+  [
+   1,
+   "Cruelty",
+   5
+  ],
+  [
+   1,
+   "Unbridled Wrath",
+   5
+  ],
+  [
+   1,
+   "Boundless Rage",
+   3
+  ],
+  [
+   1,
+   "Improved Cleave",
+   2
+  ],
+  [
+   1,
+   "Enrage",
+   5
+  ]
+ ]
+}

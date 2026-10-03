@@ -15,7 +15,8 @@ func (warrior *Warrior) registerWhirlwindSpell() {
 	hasConsumedByRageRune := warrior.HasRune(proto.WarriorRune_RuneConsumedByRage)
 
 	warrior.WhirlwindMH = warrior.newWhirlwindHitSpell(true)
-	canHitOffhand := hasConsumedByRageRune && warrior.AutoAttacks.IsDualWielding
+	// WoW Forever's Raging Blows: Whirlwind always strikes with the off-hand too.
+	canHitOffhand := (hasConsumedByRageRune || warrior.foreverRagingBlows) && warrior.AutoAttacks.IsDualWielding
 	if canHitOffhand {
 		warrior.WhirlwindOH = warrior.newWhirlwindHitSpell(false)
 	}
@@ -45,7 +46,7 @@ func (warrior *Warrior) registerWhirlwindSpell() {
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, _ *core.Spell) {
 			for _, aoeTarget := range sim.Encounter.TargetUnits {
 				warrior.WhirlwindMH.Cast(sim, aoeTarget)
-				if canHitOffhand && warrior.IsEnraged() {
+				if canHitOffhand && (warrior.foreverRagingBlows || warrior.IsEnraged()) {
 					warrior.WhirlwindOH.Cast(sim, aoeTarget)
 				}
 			}

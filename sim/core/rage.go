@@ -24,6 +24,7 @@ type rageBar struct {
 
 	startingRage float64
 	currentRage  float64
+	maxRageBonus float64 // Raises the rage cap above MaxRage (WoW Forever's Boundless Rage)
 
 	RageRefundMetrics *ResourceMetrics
 }
@@ -151,6 +152,11 @@ func (unit *Unit) AddDamageTakenRageBonus(bonus float64) {
 	unit.rageBar.flatDamageTakenBonusRage += bonus
 }
 
+// AddMaxRage raises the unit's rage cap (call after EnableRageBar).
+func (unit *Unit) AddMaxRage(bonus float64) {
+	unit.rageBar.maxRageBonus += bonus
+}
+
 func (rb *rageBar) CurrentRage() float64 {
 	return rb.currentRage
 }
@@ -160,7 +166,7 @@ func (rb *rageBar) AddRage(sim *Simulation, amount float64, metrics *ResourceMet
 		panic("Trying to add negative rage!")
 	}
 
-	newRage := min(rb.currentRage+amount, MaxRage)
+	newRage := min(rb.currentRage+amount, MaxRage+rb.maxRageBonus)
 	metrics.AddEvent(amount, newRage-rb.currentRage)
 
 	if sim.Log != nil {

@@ -48,6 +48,9 @@ func (warrior *Warrior) registerBattleShout() {
 	actionId := core.BattleShoutSpellId[rank]
 
 	warrior.BattleShout = warrior.newShoutSpellConfig(core.ActionID{SpellID: actionId}, rank, warrior.NewPartyAuraArray(func(unit *core.Unit) *core.Aura {
+		if warrior.Forever {
+			return foreverBattleShoutAura(unit, warrior.Talents.ImprovedBattleShout)
+		}
 		return core.BattleShoutAura(unit, warrior.Talents.ImprovedBattleShout, warrior.Talents.BoomingVoice)
 	}))
 }

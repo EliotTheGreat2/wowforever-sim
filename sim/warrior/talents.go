@@ -32,6 +32,9 @@ func (warrior *Warrior) ApplyTalents() {
 	warrior.registerDeathWishCD()
 	warrior.registerSweepingStrikesCD()
 	warrior.registerLastStandCD()
+
+	// WoW Forever talent trees
+	warrior.applyForeverTalents()
 }
 
 func (warrior *Warrior) applyAngerManagement() {

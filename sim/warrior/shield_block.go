@@ -11,11 +11,19 @@ func (warrior *Warrior) RegisterShieldBlockCD() {
 	actionID := core.ActionID{SpellID: 2565}
 	cooldownDur := time.Second * 5
 
+	duration := time.Second * time.Duration(5+[]float64{0, 0.5, 1, 2}[warrior.Talents.ImprovedShieldBlock])
+	maxStacks := 1 + []int32{0, 1, 1, 1}[warrior.Talents.ImprovedShieldBlock]
+	if warrior.Forever {
+		// WoW Forever: 75% block chance for 7 sec, blocking up to 2 attacks (Classic: 5 sec, 1 attack).
+		duration += 2 * time.Second
+		maxStacks = max(maxStacks, 2)
+	}
+
 	warrior.ShieldBlockAura = warrior.RegisterAura(core.Aura{
 		Label:     "Shield Block",
 		ActionID:  actionID,
-		Duration:  time.Second * time.Duration(5+[]float64{0, 0.5, 1, 2}[warrior.Talents.ImprovedShieldBlock]),
-		MaxStacks: 1 + []int32{0, 1, 1, 1}[warrior.Talents.ImprovedShieldBlock],
+		Duration:  duration,
+		MaxStacks: maxStacks,
 		OnGain: func(aura *core.Aura, sim *core.Simulation) {
 			aura.SetStacks(sim, aura.MaxStacks)
 		},

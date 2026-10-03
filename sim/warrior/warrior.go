@@ -48,6 +48,7 @@ const (
 	ClassSpellMask_WarriorWhirlwind
 	ClassSpellMask_WarriorWhirlwindMH
 	ClassSpellMask_WarriorWhirlwindOH
+	ClassSpellMask_WarriorSpearingStrike
 )
 
 var TalentTreeSizes = [3]int{18, 17, 17}
@@ -162,6 +163,14 @@ type Warrior struct {
 	DemoralizingShoutAuras core.AuraArray
 	SunderArmorAuras       core.AuraArray
 	ThunderClapAuras       core.AuraArray
+
+	// WoW Forever talents (forever_talents.go)
+	SpearingStrike           *WarriorSpell
+	foreverBloodthrillAura   *core.Aura
+	foreverRagingBlows       bool
+	foreverSlamKeepsSwing    bool
+	foreverDefianceBonus     float64
+	foreverExtraRetainedRage float64
 }
 
 func (warrior *Warrior) GetCharacter() *core.Character {
@@ -330,6 +339,7 @@ func NewWarrior(character *core.Character, talents string, inputs WarriorInputs)
 		WarriorInputs: inputs,
 	}
 	core.FillTalentsProto(warrior.Talents.ProtoReflect(), talents, TalentTreeSizes)
+	warrior.useForeverTalentLayout()
 
 	warrior.PseudoStats.CanParry = true
 

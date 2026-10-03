@@ -20,7 +20,7 @@ func (warrior *Warrior) registerThunderClapSpell() {
 		40: {spellID: 8205, baseDamage: 55, duration: time.Second * 22},
 		50: {spellID: 11580, baseDamage: 82, duration: time.Second * 26},
 		60: {spellID: 11581, baseDamage: 103, duration: time.Second * 30},
-	}[warrior.Level]
+	}[foreverBracket(warrior.Level, 25, 40, 50, 60)]
 
 	damageMultiplier := 1.0
 	threatMultiplier := 2.5

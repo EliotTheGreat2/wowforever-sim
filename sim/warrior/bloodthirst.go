@@ -11,6 +11,12 @@ func (warrior *Warrior) registerBloodthirstSpell(cdTimer *core.Timer) {
 		return
 	}
 
+	// WoW Forever: 35% of attack power plus 30 (Classic: 45% of attack power).
+	apCoef, flatDamage := 0.45, 0.0
+	if warrior.ForeverTalents != nil {
+		apCoef, flatDamage = 0.35, 30
+	}
+
 	warrior.Bloodthirst = warrior.RegisterSpell(AnyStance, core.SpellConfig{
 		ClassSpellMask: ClassSpellMask_WarriorBloodthirst,
 		ActionID:       core.ActionID{SpellID: 23894},
@@ -41,7 +47,7 @@ func (warrior *Warrior) registerBloodthirstSpell(cdTimer *core.Timer) {
 		BonusCoefficient: 1,
 
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-			baseDamage := 0.45 * spell.MeleeAttackPower()
+			baseDamage := flatDamage + apCoef*spell.MeleeAttackPower()
 			result := spell.CalcAndDealDamage(sim, target, baseDamage, spell.OutcomeMeleeSpecialHitAndCrit)
 			if !result.Landed() {
 				spell.IssueRefund(sim)

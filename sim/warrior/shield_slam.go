@@ -21,9 +21,17 @@ func (warrior *Warrior) registerShieldSlamSpell() {
 		40: {spellID: 23922, damageLow: 225, damageHigh: 235, threat: 178},
 		50: {spellID: 23923, damageLow: 264, damageHigh: 276, threat: 203},
 		60: {spellID: 23925, damageLow: 342, damageHigh: 358, threat: 254},
-	}[warrior.Level]
+	}[foreverBracket(warrior.Level, 40, 50, 60)]
 
 	apCoef := 0.15
+	blockValueCoef := 2.0
+	if warrior.Forever {
+		// WoW Forever: rank 1 (talent tooltip) 421-439, rank 4 (spellbook) 640-670, "increased by
+		// your Block Value". Rank 2 is scaled like the others (~1.87x Classic), an estimate.
+		forever := map[int32][2]float64{40: {421, 439}, 50: {494, 516}, 60: {640, 670}}[foreverBracket(warrior.Level, 40, 50, 60)]
+		rank.damageLow, rank.damageHigh = forever[0], forever[1]
+		apCoef, blockValueCoef = 0, 1
+	}
 
 	defendersResolveAura := core.DefendersResolveAttackPower(warrior.GetCharacter())
 
@@ -61,7 +69,7 @@ func (warrior *Warrior) registerShieldSlamSpell() {
 		BonusCoefficient: 1,
 
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-			damage := sim.Roll(rank.damageLow, rank.damageHigh) + warrior.BlockValue()*2 + apCoef*spell.MeleeAttackPower()
+			damage := sim.Roll(rank.damageLow, rank.damageHigh) + warrior.BlockValue()*blockValueCoef + apCoef*spell.MeleeAttackPower()
 			result := spell.CalcAndDealDamage(sim, target, damage, spell.OutcomeMeleeSpecialHitAndCrit)
 
 			if result.Landed() {

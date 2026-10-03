@@ -39,7 +39,7 @@ func (warrior *Warrior) makeStanceSpell(stance Stance, aura *core.Aura, stanceCD
 		GladiatorStance: ClassSpellMask_WarriorStanceGladiator,
 	}[stance]
 	actionID := aura.ActionID
-	maxRetainedRage := 5 * float64(warrior.Talents.TacticalMastery)
+	maxRetainedRage := 5*float64(warrior.Talents.TacticalMastery) + warrior.foreverExtraRetainedRage
 	rageMetrics := warrior.NewRageMetrics(actionID)
 
 	stanceSpell := warrior.RegisterSpell(AnyStance, core.SpellConfig{
@@ -101,6 +101,7 @@ func (warrior *Warrior) registerBattleStanceAura() {
 
 func (warrior *Warrior) registerDefensiveStanceAura() {
 	warrior.defensiveStanceThreatMultiplier = 1.3 * []float64{1, 1.03, 1.06, 1.09, 1.12, 1.15}[warrior.Talents.Defiance]
+	warrior.defensiveStanceThreatMultiplier *= 1 + warrior.foreverDefianceBonus
 
 	warrior.DefensiveStanceAura = warrior.RegisterAura(core.Aura{
 		Label:    "Defensive Stance",

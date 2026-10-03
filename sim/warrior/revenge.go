@@ -19,11 +19,25 @@ func (warrior *Warrior) registerRevengeSpell(cdTimer *core.Timer) {
 		50: 4,
 		60: core.TernaryInt(core.IncludeAQ, 6, 5),
 	}[warrior.Level]
+	if warrior.Forever && rank == 0 {
+		// WoW Forever levels between the Classic brackets: the highest rank learned.
+		for r := RevengeRanks; r >= 1; r-- {
+			if int32(RevengeLevel[r]) <= warrior.Level {
+				rank = r
+				break
+			}
+		}
+	}
 	actionID := core.ActionID{SpellID: RevengeSpellId[rank]}
 	basedamageLow := RevengeBaseDamage[rank][0]
 	basedamageHigh := RevengeBaseDamage[rank][1]
 	// Added in SoD phase 5
 	apCoeff := 0.25
+	if warrior.Forever {
+		// WoW Forever's Revenge has no attack power scaling (138-168 at max rank;
+		// forever_spell_tuning.csv scales the base damage).
+		apCoeff = 0
+	}
 	cooldown := time.Second * 5
 
 	warrior.revengeProcAura = warrior.RegisterAura(core.Aura{

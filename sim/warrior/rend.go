@@ -23,7 +23,7 @@ func (warrior *Warrior) registerRendSpell() {
 		40: {spellID: 11572, damage: 14, ticks: 7},
 		50: {spellID: 11573, damage: 18, ticks: 7},
 		60: {spellID: 11574, damage: 21, ticks: 7},
-	}[warrior.Level]
+	}[foreverBracket(warrior.Level, 25, 40, 50, 60)]
 
 	baseDamage := rend.damage
 	if hasBloodFrenzyRune {

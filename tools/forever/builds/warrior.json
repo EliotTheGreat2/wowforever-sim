@@ -1,0 +1,86 @@
+{
+ "rotation": "ui/warrior/apls/forever/forever_fury.apl.json",
+ "options": {},
+ "order": [
+  [
+   1,
+   "Cruelty",
+   5
+  ],
+  [
+   1,
+   "Unbridled Wrath",
+   5
+  ],
+  [
+   1,
+   "Boundless Rage",
+   3
+  ],
+  [
+   1,
+   "Improved Cleave",
+   2
+  ],
+  [
+   1,
+   "Dual Wield Specialization",
+   5
+  ],
+  [
+   1,
+   "Raging Blows",
+   1
+  ],
+  [
+   1,
+   "Enrage",
+   5
+  ],
+  [
+   1,
+   "Precision",
+   3
+  ],
+  [
+   1,
+   "Death Wish",
+   1
+  ],
+  [
+   1,
+   "Flurry",
+   5
+  ],
+  [
+   1,
+   "Bloodthirst",
+   1
+  ],
+  [
+   1,
+   "Improved Execute",
+   2
+  ],
+  [
+   0,
+   "Improved Heroic Strike",
+   3
+  ],
+  [
+   0,
+   "Improved Rend",
+   3
+  ],
+  [
+   0,
+   "Deflection",
+   4
+  ],
+  [
+   0,
+   "Deep Wounds",
+   3
+  ]
+ ]
+}
