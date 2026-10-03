@@ -1,0 +1,115 @@
+{
+ "base": "mage",
+ "label": "Arcane",
+ "rotation": "ui/mage/apls/forever/forever_arcane.apl.json",
+ "options": {
+  "armor": "MageArmor"
+ },
+ "order": [
+  [
+   0,
+   "Arcane Focus",
+   5
+  ],
+  [
+   0,
+   "Arcane Concentration",
+   5
+  ],
+  [
+   0,
+   "Arcane Blast",
+   1
+  ],
+  [
+   0,
+   "Arcane Impact",
+   3
+  ],
+  [
+   0,
+   "Arcane Subtlety",
+   2
+  ],
+  [
+   0,
+   "Missile Barrage",
+   1
+  ],
+  [
+   0,
+   "Arcane Meditation",
+   3
+  ],
+  [
+   0,
+   "Presence of Mind",
+   1
+  ],
+  [
+   0,
+   "Arcane Mind",
+   5
+  ],
+  [
+   0,
+   "Arcane Instability",
+   3
+  ],
+  [
+   0,
+   "Improved Channeling",
+   1
+  ],
+  [
+   0,
+   "Arcane Power",
+   1
+  ],
+  [
+   1,
+   "Incineration",
+   3
+  ],
+  [
+   0,
+   "Improved Channeling",
+   4
+  ],
+  [
+   0,
+   "Magic Absorption",
+   2
+  ],
+  [
+   0,
+   "Arcane Resilience",
+   2
+  ],
+  [
+   0,
+   "Improved Counterspell",
+   2
+  ],
+  [
+   0,
+   "Arcane Geometry",
+   2
+  ],
+  [
+   0,
+   "Arcane Shielding",
+   2
+  ],
+  [
+   1,
+   "Wake of Fire",
+   2
+  ],
+  [
+   1,
+   "Improved Fireball",
+   1
+  ]
+ ]
+}
