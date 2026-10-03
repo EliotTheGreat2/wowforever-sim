@@ -11,7 +11,7 @@ import (
 )
 
 func (paladin *Paladin) registerConsecration() {
-	if !paladin.Talents.Consecration {
+	if !paladin.Talents.Consecration && paladin.ForeverTalents == nil { // baseline in WoW Forever
 		return
 	}
 
@@ -41,6 +41,11 @@ func (paladin *Paladin) registerConsecration() {
 		rank := rank
 		if paladin.Level < rank.level {
 			break
+		}
+		if paladin.ForeverTalents != nil {
+			// WoW Forever: max rank deals 96 over 8 sec plus 216 to the first 4 enemies to enter
+			// it (312 single target vs Classic 384); other ranks are assumed to scale the same.
+			rank.damage *= 312.0 / 384.0
 		}
 
 		paladin.RegisterSpell(core.SpellConfig{

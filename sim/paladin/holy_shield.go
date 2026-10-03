@@ -27,7 +27,7 @@ func (paladin *Paladin) registerHolyShield() {
 
 	numCharges := int32(4)
 	defendersResolveSPAura := core.DefendersResolveSpellDamage(paladin.GetCharacter(), 2)
-	blockBonus := 30.0 * core.BlockRatingPerBlockChance
+	blockBonus := core.TernaryFloat64(paladin.ForeverTalents != nil, 20.0, 30.0) * core.BlockRatingPerBlockChance // WoW Forever: 20%
 
 	for i, values := range HolyShieldValues {
 		i := i // per-iteration copy: closures below must not see a later index (go 1.21 loop semantics)

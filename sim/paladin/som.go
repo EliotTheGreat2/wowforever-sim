@@ -88,7 +88,7 @@ func (paladin *Paladin) registerSealOfMartyrdom() {
 
 		ManaCost: core.ManaCostOptions{
 			FlatCost:   paladin.BaseMana*0.04 - paladin.getLibramSealCostReduction(),
-			Multiplier: paladin.benediction(),
+			Multiplier: paladin.sealCostMultiplier(),
 		},
 		Cast: core.CastConfig{
 			DefaultCast: core.Cast{

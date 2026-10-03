@@ -44,6 +44,9 @@ func (paladin *Paladin) ApplyTalents() {
 	paladin.applyImprovedLayOnHands()
 
 	paladin.applyHealingLight()
+
+	// WoW Forever talent trees
+	paladin.applyForeverTalents()
 }
 
 func (paladin *Paladin) improvedSoR() float64 {
@@ -51,6 +54,9 @@ func (paladin *Paladin) improvedSoR() float64 {
 }
 
 func (paladin *Paladin) benediction() int32 {
+	if paladin.ForeverTalents != nil {
+		return 100 - 2*paladin.ForeverTalents.Rank("Benediction")
+	}
 	return []int32{100, 97, 94, 91, 88, 85}[paladin.Talents.Benediction]
 }
 
@@ -111,6 +117,9 @@ func (paladin *Paladin) applyReckoning() {
 }
 
 func (paladin *Paladin) getWeaponSpecializationModifier() float64 {
+	if paladin.ForeverTalents != nil {
+		return paladin.foreverWeaponSpecializationModifier()
+	}
 	handType := paladin.MainHand().HandType
 	if handType == proto.HandType_HandTypeMainHand || handType == proto.HandType_HandTypeOneHand {
 		return 1. + 0.02*float64(paladin.Talents.OneHandedWeaponSpecialization)
