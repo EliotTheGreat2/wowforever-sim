@@ -149,7 +149,7 @@ function render() {
 		renderCharacterStep(),
 		renderSimStep(),
 		h(`<div id="fs-results"></div>`),
-		h(`<p class="fs-foot">Preview: Forever spell numbers are from the beta (Sept 2026). Warlocks use Forever's talent trees; other classes use Classic talents until theirs are added. Forever's new items aren't in the game data yet, so builds use typical gear for your level. Healer sims are coming later.
+		h(`<p class="fs-foot">Preview: Forever spell numbers are from the beta (Sept 2026). Every class uses Forever's talent trees (beta build 1.60.1.70170). Forever's new items aren't in the game data yet, so builds use typical gear for your level. Healer sims are coming later.
 			Built on <a href="https://github.com/wowsims/sod" target="_blank" rel="noopener">WoWSims</a> (MIT).</p>`),
 	);
 }
