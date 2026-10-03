@@ -48,12 +48,19 @@ jobs:
             - name: WoW Forever checks
               run: go test --tags=with_db ./sim -run TestForever -count=1
 
+            - name: Stamp the build so visitors never see a stale cached page
+              run: |
+                  sed -i "s/__FOREVER_BUILD__/${GITHUB_SHA}/" dist/sod/forever/index.html
+                  grep -q "${GITHUB_SHA}" dist/sod/forever/index.html
+                  echo "{\"build\":\"${GITHUB_SHA}\"}" > dist/sod/version.json
+
             - name: Open the Quick Sim page from the site root
               run: |
                   cat > dist/sod/index.html <<HTML
                   <!doctype html>
                   <meta charset="utf-8">
                   <title>WoW Forever Sim</title>
+                  <script>location.replace('forever/?t=' + Date.now());</script>
                   <meta http-equiv="refresh" content="0; url=forever/">
                   <a href="forever/">Open the WoW Forever Sim</a>
                   HTML

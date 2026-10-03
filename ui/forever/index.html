@@ -9,6 +9,35 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet" />
+		<script>
+			// Always show the newest version without a manual refresh. The website build stamps
+			// BUILD and publishes version.json; if the browser served an older cached copy of this
+			// page, load the current one. If the page still hasn't drawn after a while (a stale or
+			// broken cached copy), reload once with a cache-busting address.
+			(function () {
+				var BUILD = '__FOREVER_BUILD__';
+				var params = new URLSearchParams(location.search);
+				function reload(tag) {
+					params.set('v', tag);
+					location.replace(location.pathname + '?' + params.toString() + location.hash);
+				}
+				if (BUILD.indexOf('__') !== 0) {
+					fetch('../version.json?t=' + Date.now(), { cache: 'no-store' })
+						.then(function (r) { return r.ok ? r.json() : null; })
+						.then(function (v) {
+							if (v && v.build && v.build !== BUILD && params.get('v') !== v.build) reload(v.build);
+						})
+						.catch(function () {});
+				}
+				setTimeout(function () {
+					var app = document.getElementById('app');
+					if (app && !app.children.length && !params.has('r')) {
+						params.set('r', String(Date.now()));
+						location.replace(location.pathname + '?' + params.toString() + location.hash);
+					}
+				}, 10000);
+			})();
+		</script>
 	</head>
 	<body>
 		<main id="app" class="fs"></main>
