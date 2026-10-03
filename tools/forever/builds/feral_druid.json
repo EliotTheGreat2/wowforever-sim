@@ -1,0 +1,91 @@
+{
+ "rotation": "ui/feral_druid/apls/forever/forever_cat.apl.json",
+ "options": {},
+ "order": [
+  [
+   1,
+   "Ferocity",
+   5
+  ],
+  [
+   1,
+   "Heart of the Wild",
+   5
+  ],
+  [
+   1,
+   "Shredding Attacks",
+   3
+  ],
+  [
+   1,
+   "Sharpened Claws",
+   2
+  ],
+  [
+   1,
+   "Savage Fury",
+   2
+  ],
+  [
+   1,
+   "Predatory Strikes",
+   3
+  ],
+  [
+   1,
+   "Blood Frenzy",
+   2
+  ],
+  [
+   1,
+   "Shifting Power",
+   1
+  ],
+  [
+   1,
+   "Leader of the Pack",
+   1
+  ],
+  [
+   1,
+   "Predatory Instincts",
+   2
+  ],
+  [
+   1,
+   "Improved Shifting Power",
+   2
+  ],
+  [
+   1,
+   "Rend and Tear",
+   5
+  ],
+  [
+   1,
+   "Berserk",
+   1
+  ],
+  [
+   2,
+   "Furor",
+   5
+  ],
+  [
+   2,
+   "Naturalist",
+   5
+  ],
+  [
+   0,
+   "Genesis",
+   5
+  ],
+  [
+   0,
+   "Nature's Majesty",
+   2
+  ]
+ ]
+}

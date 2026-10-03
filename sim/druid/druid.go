@@ -168,6 +168,19 @@ type Druid struct {
 
 	t26pcTreants *T2Treants
 
+	// WoW Forever talents (forever_talents.go); zero unless the player sent Forever talents.
+	foreverFormCrit          float64 // Sharpened Claws: melee crit % in Bear/Cat Form
+	foreverHotwCatStr        float64 // Heart of the Wild: Strength bonus in Cat Form
+	foreverHotwBearStam      float64 // Heart of the Wild: Stamina bonus in Bear Form
+	foreverLacerateTick      float64 // Lacerate bleed per tick per stack
+	foreverLacerateWeaponPct float64 // Lacerate hit: weapon damage per existing stack
+	foreverCatLeftEnergy     float64 // Furor: Energy when Cat Form was last left
+	foreverCatLeftAt         time.Duration
+	ForeverBerserkAura       *core.Aura
+	ForeverShiftingPower     *DruidSpell
+	ForeverPrimalBite        *DruidSpell
+	ForeverEclipseAura       *core.Aura
+
 	form         DruidForm
 	disabledMCDs []*core.MajorCooldown
 }
@@ -287,6 +300,7 @@ func (druid *Druid) Reset(_ *core.Simulation) {
 
 	druid.form = druid.StartingForm
 	druid.disabledMCDs = []*core.MajorCooldown{}
+	druid.foreverCatLeftEnergy, druid.foreverCatLeftAt = 0, 0
 }
 
 func New(character *core.Character, form DruidForm, selfBuffs SelfBuffs, talents string) *Druid {
@@ -298,6 +312,7 @@ func New(character *core.Character, form DruidForm, selfBuffs SelfBuffs, talents
 		form:         form,
 	}
 	core.FillTalentsProto(druid.Talents.ProtoReflect(), talents, TalentTreeSizes)
+	druid.useForeverTalentLayout()
 	druid.EnableManaBar()
 
 	druid.AddStatDependency(stats.Strength, stats.AttackPower, core.APPerStrength[character.Class])

@@ -52,7 +52,12 @@ func (druid *Druid) registerLacerateSpell() {
 			for idx := range results {
 				activeStacks := druid.LacerateBleed.Dot(target).GetStacks() + 1
 				activeStacks = core.TernaryInt32(activeStacks > LacerateDotMaxStacks, LacerateDotMaxStacks, activeStacks)
-				baseDamage := spell.Unit.MHWeaponDamage(sim, spell.MeleeAttackPower()) * (.2*float64(activeStacks) + initialDamageMul)
+				stackDamage := .2 * float64(activeStacks)
+				if druid.foreverLacerateWeaponPct > 0 {
+					// WoW Forever: 10% weapon damage per existing application.
+					stackDamage = druid.foreverLacerateWeaponPct * float64(activeStacks-1)
+				}
+				baseDamage := spell.Unit.MHWeaponDamage(sim, spell.MeleeAttackPower()) * (stackDamage + initialDamageMul)
 
 				results[idx] = spell.CalcAndDealDamage(sim, target, baseDamage, spell.OutcomeMeleeSpecialHitAndCrit)
 
@@ -73,6 +78,9 @@ func (druid *Druid) registerLacerateBleedSpell() {
 		return
 	}
 	tickDamage := 29.8312
+	if druid.foreverLacerateTick > 0 {
+		tickDamage = druid.foreverLacerateTick
+	}
 
 	switch druid.Ranged().ID {
 	case IdolOfCruelty:

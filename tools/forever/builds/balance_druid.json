@@ -1,0 +1,86 @@
+{
+ "rotation": "ui/balance_druid/apls/forever/forever_balance.apl.json",
+ "options": {},
+ "order": [
+  [
+   0,
+   "Improved Wrath",
+   5
+  ],
+  [
+   0,
+   "Nature's Majesty",
+   2
+  ],
+  [
+   0,
+   "Improved Moonfire",
+   2
+  ],
+  [
+   0,
+   "Moonglow",
+   3
+  ],
+  [
+   0,
+   "Nature's Reach",
+   2
+  ],
+  [
+   0,
+   "Nature's Splendor",
+   1
+  ],
+  [
+   0,
+   "Vengeance",
+   5
+  ],
+  [
+   0,
+   "Insect Swarm",
+   1
+  ],
+  [
+   0,
+   "Improved Starfire",
+   5
+  ],
+  [
+   0,
+   "Nature's Grace",
+   1
+  ],
+  [
+   0,
+   "Eclipse",
+   3
+  ],
+  [
+   0,
+   "Moonfury",
+   5
+  ],
+  [
+   0,
+   "Moonkin Form",
+   1
+  ],
+  [
+   0,
+   "Genesis",
+   5
+  ],
+  [
+   2,
+   "Nature's Focus",
+   5
+  ],
+  [
+   2,
+   "Naturalist",
+   5
+  ]
+ ]
+}

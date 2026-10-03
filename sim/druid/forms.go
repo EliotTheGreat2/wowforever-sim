@@ -85,7 +85,7 @@ func (druid *Druid) GetBearWeapon() core.Weapon {
 func (druid *Druid) GetFormShiftStats() stats.Stats {
 	s := stats.Stats{
 		stats.AttackPower: float64(druid.Talents.PredatoryStrikes) * 0.5 * float64(druid.Level),
-		stats.MeleeCrit:   float64(druid.Talents.SharpenedClaws) * 2 * core.CritRatingPerCritChance,
+		stats.MeleeCrit:   (float64(druid.Talents.SharpenedClaws)*2 + druid.foreverFormCrit) * core.CritRatingPerCritChance,
 	}
 	/*
 		if weapon := druid.GetMHWeapon(); weapon != nil {
@@ -132,6 +132,8 @@ func (druid *Druid) registerCatFormSpell() {
 	var hotwDep *stats.StatDependency
 	if druid.Talents.HeartOfTheWild > 0 {
 		hotwDep = druid.NewDynamicMultiplyStat(stats.Strength, 1.0+0.04*float64(druid.Talents.HeartOfTheWild))
+	} else if druid.foreverHotwCatStr > 0 {
+		hotwDep = druid.NewDynamicMultiplyStat(stats.Strength, 1.0+druid.foreverHotwCatStr)
 	}
 
 	clawWeapon := druid.GetCatWeapon(druid.Level)
@@ -183,6 +185,7 @@ func (druid *Druid) registerCatFormSpell() {
 			}
 		},
 		OnExpire: func(aura *core.Aura, sim *core.Simulation) {
+			druid.foreverCatLeftEnergy, druid.foreverCatLeftAt = druid.CurrentEnergy(), sim.CurrentTime
 			druid.form = Humanoid
 			druid.SetCurrentPowerBar(core.ManaBar)
 
@@ -258,6 +261,9 @@ func (druid *Druid) registerCatFormSpell() {
 			}
 
 			maxShiftEnergy := core.TernaryFloat64(sim.RandomFloat("Furor") < furorProcChance, 40, 0)
+			if druid.ForeverTalents != nil {
+				maxShiftEnergy = druid.foreverFurorCatEnergy(sim)
+			}
 			maxShiftEnergy = core.TernaryFloat64(hasWolfheadBonus, maxShiftEnergy+20, maxShiftEnergy)
 			energyDelta := maxShiftEnergy - druid.CurrentEnergy()
 
@@ -291,6 +297,8 @@ func (druid *Druid) registerBearFormSpell() {
 	var hotwDep *stats.StatDependency
 	if druid.Talents.HeartOfTheWild > 0 {
 		hotwDep = druid.NewDynamicMultiplyStat(stats.Stamina, 1.0+0.04*float64(druid.Talents.HeartOfTheWild))
+	} else if druid.foreverHotwBearStam > 0 {
+		hotwDep = druid.NewDynamicMultiplyStat(stats.Stamina, 1.0+druid.foreverHotwBearStam)
 	}
 
 	sotfdtm := 1.0
@@ -453,6 +461,12 @@ func (druid *Druid) registerMoonkinFormSpell() {
 			}
 			druid.form = Moonkin
 
+			if druid.ForeverTalents != nil {
+				// WoW Forever's Moonkin Form has no spell damage or Moonfire bonus.
+				druid.ApplyDynamicEquipScaling(sim, stats.Armor, 4.6)
+				return
+			}
+
 			druid.AddStatDynamic(sim, stats.SpellDamage, float64(3*druid.Level))
 
 			druid.MoonfireDotMultiplier *= 2.0
@@ -469,6 +483,11 @@ func (druid *Druid) registerMoonkinFormSpell() {
 		},
 		OnExpire: func(aura *core.Aura, sim *core.Simulation) {
 			druid.form = Humanoid
+
+			if druid.ForeverTalents != nil {
+				druid.RemoveDynamicEquipScaling(sim, stats.Armor, 4.6)
+				return
+			}
 
 			druid.AddStatDynamic(sim, stats.SpellDamage, float64(-3*druid.Level))
 
