@@ -19,6 +19,11 @@ func (mage *Mage) registerFrostfireBoltSpell() {
 	spellCoeff := 1.0
 	castTime := time.Second * 3
 	manaCost := .14
+	if mage.Forever {
+		// WoW Forever's trained Frostfire Bolt (forever_talents.go)
+		baseDamageLow, baseDamageHigh, baseDotDamage = mage.foreverFrostfireBoltDamage()
+		spellCoeff = foreverFrostfireBoltCoeff
+	}
 
 	numTicks := int32(3) + mage.Talents.Permafrost/3
 	tickLength := time.Second * 3
