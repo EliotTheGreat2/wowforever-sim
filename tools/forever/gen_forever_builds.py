@@ -20,7 +20,10 @@ import json
 # engine sim, e.g. tools/forever/builds/mage_fire.json:
 #    "base": "mage", "label": "Fire", "role": "Caster DPS" (optional, default: base's),
 #    "weapons": {"mainHand": ["Dagger"], "offHand": ["Dagger"]}  (optional: weapon types to
-#    re-pick at every level from db.json, for specs that need e.g. daggers)
+#    re-pick at every level from db.json, for specs that need e.g. daggers). For a two-hander:
+#    "weapons": {"twoHand": ["Axe", "Sword"], "excludeRaid": true, "level60": {"mainHand": 12784}}
+#    picks the best two-handed weapon of those types for the main hand and empties the off hand;
+#    "excludeRaid" skips raid drops (the level 60 set is pre-raid), "level60" pins item IDs at 60.
 import copy
 import glob
 import os
@@ -37,23 +40,32 @@ CLASS_FILE = {1: 'druid', 2: 'hunter', 3: 'mage', 4: 'paladin', 5: 'priest', 6: 
 
 
 SLOT = {'mainHand': 14, 'offHand': 15}
+RAID_ZONES = {2717, 2677, 3428, 3456, 1977, 3429, 2159}  # MC, BWL, AQ40, Naxx, ZG, AQ20, Onyxia
 WEAPON_TYPE = {'Axe': 1, 'Dagger': 2, 'Fist': 3, 'Mace': 4, 'OffHand': 5, 'Polearm': 6, 'Shield': 7, 'Staff': 8, 'Sword': 9}
 _ITEMS = None
 
 
 def repick_weapons(spec, weapons):
-    """Re-pick main/off hand at every level from db.json among the given weapon types (one-handers),
-    by weapon DPS, for vanilla items the character can use at that level."""
+    """Re-pick main/off hand at every level from db.json among the given weapon types (one-handers,
+    or "twoHand": a two-hander in the main hand and nothing in the off hand), by weapon DPS, for
+    vanilla items the character can use at that level."""
     global _ITEMS
     if _ITEMS is None:
         _ITEMS = [i for i in json.load(open('assets/database/db.json'))['items'] if i['id'] < 25000]
+    weapons = dict(weapons)
+    exclude_raid = weapons.pop('excludeRaid', False)
+    level60 = weapons.pop('level60', {})
 
-    def best(slot, types, level, exclude=None):
-        hand_ok = {14: (0, 1, 2), 15: (0, 3, 4)}[slot]  # HandType: unknown/one/main or one/off
+    def is_raid_drop(i):
+        return any((s.get('drop') or {}).get('zoneId') in RAID_ZONES for s in i.get('sources') or [])
+
+    def best(slot, types, level, exclude=None, two_hand=False):
+        # HandType: unknown/one/main or one/off (one-handers), or two-hand.
+        hand_ok = (4,) if two_hand else {14: (0, 1, 2), 15: (0, 3, 4)}[slot]
         pool = [i for i in _ITEMS if i.get('weaponType') in types and i.get('handType', 0) in hand_ok
                 and i.get('requiresLevel', 0) <= level and (i.get('requiresLevel', 0) or i.get('ilvl', 0) - 10 <= level)
                 and i.get('quality', 0) <= (4 if level >= 60 else 3) and i['id'] != exclude
-                and not i.get('classAllowlist')]
+                and not i.get('classAllowlist') and not (exclude_raid and is_raid_drop(i))]
         if not pool:
             return None
         dps = lambda i: (i.get('weaponDamageMin', 0) + i.get('weaponDamageMax', 0)) / 2 / max(i.get('weaponSpeed', 1), 0.1)
@@ -63,7 +75,15 @@ def repick_weapons(spec, weapons):
         mh = None
         for name, types in weapons.items():
             ids = [WEAPON_TYPE[t] for t in types]
-            choice = best(SLOT[name], ids, level, exclude=mh if name == 'offHand' else None)
+            if name == 'twoHand':
+                choice = level60.get('mainHand') if level >= 60 else None
+                choice = choice or best(SLOT['mainHand'], ids, level, two_hand=True)
+                if choice:
+                    gear[SLOT['mainHand']] = choice
+                    gear[SLOT['offHand']] = 0
+                continue
+            choice = level60.get(name) if level >= 60 else None
+            choice = choice or best(SLOT[name], ids, level, exclude=mh if name == 'offHand' else None)
             if choice:
                 gear[SLOT[name]] = choice
                 if name == 'mainHand':
