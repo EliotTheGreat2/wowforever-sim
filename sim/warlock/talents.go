@@ -195,11 +195,16 @@ func (warlock *Warlock) applyNightfall() {
 	warlock.nightfallProcChance = 0.02 * float64(warlock.Talents.Nightfall)
 
 	hasSoulSiphonRune := warlock.HasRune(proto.WarlockRune_RuneCloakSoulSiphon)
+	procMask := ClassSpellMask_WarlockCorruption | ClassSpellMask_WarlockDrainLife
+	if hasSoulSiphonRune {
+		procMask |= ClassSpellMask_WarlockDrainSoul
+	}
+	procMask |= warlock.foreverNightfallProcMask()
 
 	core.MakePermanent(warlock.RegisterAura(core.Aura{
 		Label: "Nightfall Hidden Aura",
 		OnPeriodicDamageDealt: func(aura *core.Aura, sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
-			if (spell.Matches(ClassSpellMask_WarlockCorruption|ClassSpellMask_WarlockDrainLife) || (hasSoulSiphonRune && spell.Matches(ClassSpellMask_WarlockDrainSoul))) && sim.Proc(warlock.nightfallProcChance, "Nightfall") {
+			if spell.Matches(procMask) && sim.Proc(warlock.nightfallProcChance, "Nightfall") {
 				warlock.ShadowTranceAura.Activate(sim)
 			}
 		},

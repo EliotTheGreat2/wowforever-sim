@@ -1,0 +1,90 @@
+{
+ "base": "warlock",
+ "label": "Affliction",
+ "rotation": "ui/warlock/apls/forever/forever_affliction.apl.json",
+ "options": {
+  "summon": "Imp"
+ },
+ "order": [
+  [
+   0,
+   "Improved Corruption",
+   5
+  ],
+  [
+   0,
+   "Malediction",
+   5
+  ],
+  [
+   0,
+   "Improved Bane of Agony",
+   2
+  ],
+  [
+   0,
+   "Pandemic",
+   3
+  ],
+  [
+   0,
+   "Malevolence",
+   5
+  ],
+  [
+   0,
+   "Nightfall",
+   2
+  ],
+  [
+   0,
+   "Siphon Life",
+   1
+  ],
+  [
+   0,
+   "Soul Siphon",
+   3
+  ],
+  [
+   0,
+   "Shadow Mastery",
+   5
+  ],
+  [
+   0,
+   "Wrack",
+   1
+  ],
+  [
+   1,
+   "Demonic Embrace",
+   5
+  ],
+  [
+   1,
+   "Fel Vitality",
+   3
+  ],
+  [
+   1,
+   "Improved Health Funnel",
+   2
+  ],
+  [
+   1,
+   "Demonic Sacrifice",
+   1
+  ],
+  [
+   0,
+   "Suppression",
+   5
+  ],
+  [
+   0,
+   "Improved Drains",
+   3
+  ]
+ ]
+}
