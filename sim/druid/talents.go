@@ -36,6 +36,8 @@ func (druid *Druid) ApplyTalents() {
 	druid.applyFuror()
 
 	druid.PseudoStats.SpiritRegenRateCasting += .05 * float64(druid.Talents.Reflection)
+
+	druid.applyForeverTalents()
 }
 
 func (druid *Druid) applyNaturesGrace() {

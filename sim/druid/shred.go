@@ -25,6 +25,15 @@ func (druid *Druid) registerShredSpell() {
 	// Shred mod, and to the flat damage bonus, but that the .75x SoD buff happens additively after Idol
 	damageMultiplier += ShredWeaponMultiplierBuff
 
+	// WoW Forever: Classic Shred numbers retuned to 155% weapon damage (rank 5: +180), and no
+	// Season of Discovery bonus against bleeding targets.
+	bleedBonus := 1.3
+	if druid.ForeverTalents != nil {
+		damageMultiplier = 1.55
+		flatDamageBonus = foreverShredFlatDamage(druid.Level)
+		bleedBonus = 1
+	}
+
 	druid.Shred = druid.RegisterSpell(Cat, core.SpellConfig{
 		ClassSpellMask: ClassSpellMask_DruidShred,
 		ActionID: core.ActionID{SpellID: core.AtLevel(druid.Level, map[int32]int32{
@@ -61,7 +70,7 @@ func (druid *Druid) registerShredSpell() {
 
 			oldMultiplier := spell.GetDamageMultiplier()
 			if druid.BleedCategories.Get(target).AnyActive() {
-				spell.ApplyMultiplicativeDamageBonus(1.3)
+				spell.ApplyMultiplicativeDamageBonus(bleedBonus)
 			}
 
 			result := spell.CalcAndDealDamage(sim, target, baseDamage, spell.OutcomeMeleeSpecialHitAndCrit)
@@ -78,7 +87,7 @@ func (druid *Druid) registerShredSpell() {
 
 			oldMultiplier := spell.GetDamageMultiplier()
 			if druid.BleedCategories.Get(target).AnyActive() {
-				spell.ApplyMultiplicativeDamageBonus(1.3)
+				spell.ApplyMultiplicativeDamageBonus(bleedBonus)
 			}
 
 			baseres := spell.CalcDamage(sim, target, baseDamage, spell.OutcomeExpectedMagicAlwaysHit)

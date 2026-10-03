@@ -1,0 +1,106 @@
+{
+ "rotation": "ui/feral_tank_druid/apls/forever/forever_bear.apl.json",
+ "options": {},
+ "order": [
+  [
+   1,
+   "Ferocity",
+   5
+  ],
+  [
+   1,
+   "Thick Hide",
+   3
+  ],
+  [
+   1,
+   "Feral Instinct",
+   2
+  ],
+  [
+   1,
+   "Sharpened Claws",
+   2
+  ],
+  [
+   1,
+   "Savage Fury",
+   2
+  ],
+  [
+   1,
+   "Shredding Attacks",
+   1
+  ],
+  [
+   1,
+   "Primal Bite",
+   1
+  ],
+  [
+   1,
+   "Predatory Strikes",
+   3
+  ],
+  [
+   1,
+   "Blood Frenzy",
+   2
+  ],
+  [
+   1,
+   "Leader of the Pack",
+   1
+  ],
+  [
+   1,
+   "Predatory Instincts",
+   2
+  ],
+  [
+   1,
+   "Heart of the Wild",
+   5
+  ],
+  [
+   1,
+   "Natural Reaction",
+   5
+  ],
+  [
+   1,
+   "Rend and Tear",
+   5
+  ],
+  [
+   1,
+   "Berserk",
+   1
+  ],
+  [
+   1,
+   "Feral Instinct",
+   1
+  ],
+  [
+   1,
+   "Shredding Attacks",
+   2
+  ],
+  [
+   0,
+   "Genesis",
+   5
+  ],
+  [
+   0,
+   "Nature's Majesty",
+   2
+  ],
+  [
+   0,
+   "Nature's Reach",
+   1
+  ]
+ ]
+}
