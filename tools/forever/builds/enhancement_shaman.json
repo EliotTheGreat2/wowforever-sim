@@ -1,0 +1,81 @@
+{
+ "rotation": "ui/enhancement_shaman/apls/forever/forever_enhancement.apl.json",
+ "options": {},
+ "order": [
+  [
+   1,
+   "Thundering Strikes",
+   5
+  ],
+  [
+   1,
+   "Mental Dexterity",
+   3
+  ],
+  [
+   1,
+   "Ancestral Knowledge",
+   5
+  ],
+  [
+   1,
+   "Elemental Weapons",
+   3
+  ],
+  [
+   1,
+   "Shamanistic Focus",
+   1
+  ],
+  [
+   1,
+   "Flurry",
+   5
+  ],
+  [
+   1,
+   "Stormstrike",
+   1
+  ],
+  [
+   1,
+   "Mental Quickness",
+   2
+  ],
+  [
+   1,
+   "Maelstrom Weapon",
+   5
+  ],
+  [
+   1,
+   "Rage of the Farseer",
+   1
+  ],
+  [
+   2,
+   "Totemic Focus",
+   5
+  ],
+  [
+   2,
+   "Tidal Focus",
+   5
+  ],
+  [
+   0,
+   "Convection",
+   5
+  ],
+  [
+   0,
+   "Elemental Devastation",
+   3
+  ],
+  [
+   0,
+   "Concussion",
+   2
+  ]
+ ]
+}

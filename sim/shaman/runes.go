@@ -1,6 +1,7 @@
 package shaman
 
 import (
+	"math"
 	"time"
 
 	"github.com/wowsims/sod/sim/core"
@@ -404,6 +405,14 @@ func (shaman *Shaman) applyMaelstromWeapon() {
 	}
 
 	shaman.MaelstromWeaponClassMask = ClassSpellMask_ShamanLightningBolt | ClassSpellMask_ShamanChainLightning | ClassSpellMask_ShamanLesserHealingWave | ClassSpellMask_ShamanLavaBurst
+	perStack := 0.20
+	if shaman.ForeverTalents != nil {
+		// WoW Forever's Maelstrom Weapon talent: Lightning Bolt only, 4% per rank per stack.
+		// The proc rate isn't published; SoD's base 10 PPM is used, without its imbue/2H bonuses.
+		ppm = 10
+		shaman.MaelstromWeaponClassMask = ClassSpellMask_ShamanLightningBolt
+		perStack = shaman.foreverMaelstromPerStack
+	}
 
 	castTimeMod := shaman.AddDynamicMod(core.SpellModConfig{
 		Kind:      core.SpellMod_CastTime_Pct,
@@ -435,8 +444,8 @@ func (shaman *Shaman) applyMaelstromWeapon() {
 				return
 			}
 
-			castTimeMod.UpdateFloatValue(-0.20 * float64(newStacks))
-			costMod.UpdateIntValue(-20 * int64(newStacks))
+			castTimeMod.UpdateFloatValue(-perStack * float64(newStacks))
+			costMod.UpdateIntValue(-int64(math.Round(100 * perStack * float64(newStacks))))
 		},
 		OnCastComplete: func(aura *core.Aura, sim *core.Simulation, spell *core.Spell) {
 			if spell.Matches(shaman.MaelstromWeaponClassMask) && !spell.ProcMask.Matches(core.ProcMaskSpellProc) {

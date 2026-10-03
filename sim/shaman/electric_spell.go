@@ -47,7 +47,7 @@ func (shaman *Shaman) newElectricSpellConfig(actionID core.ActionID, baseCost fl
 			},
 			ModifyCast: func(sim *core.Simulation, spell *core.Spell, cast *core.Cast) {
 				castTime := shaman.ApplyCastSpeedForSpell(cast.CastTime, spell)
-				if hasMaelstromWeaponRune {
+				if hasMaelstromWeaponRune && spell.Matches(shaman.MaelstromWeaponClassMask) {
 					stacks := shaman.MaelstromWeaponAura.GetStacks()
 					spell.SetMetricsSplit(stacks)
 					if stacks > 0 {

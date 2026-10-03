@@ -14,6 +14,10 @@ func (shaman *Shaman) applyOverload() {
 		return
 	}
 
+	if shaman.ForeverTalents != nil {
+		// WoW Forever's Lightning Overload talent sets the chance (forever_talents.go).
+		return
+	}
 	shaman.overloadProcChance += 0.60
 }
 

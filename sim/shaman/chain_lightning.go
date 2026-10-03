@@ -82,6 +82,10 @@ func (shaman *Shaman) newChainLightningSpellConfig(rank int, cdTimer *core.Timer
 
 	numTargets := int(min(targetCount, shaman.Env.GetNumTargets()))
 	overloadProcChance := 1.0 / float64(targetCount)
+	if shaman.ForeverTalents != nil {
+		// WoW Forever's Lightning Overload: the full chance on each Chain Lightning hit.
+		overloadProcChance = 1
+	}
 
 	spell.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
 		origMult := spell.GetDamageMultiplier()

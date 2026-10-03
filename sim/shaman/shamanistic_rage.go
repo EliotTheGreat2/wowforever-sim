@@ -37,6 +37,11 @@ func (shaman *Shaman) registerShamanisticRageCD() {
 		},
 	})
 
+	if shaman.ForeverTalents != nil {
+		// WoW Forever has no Shamanistic Rage (SoD made it baseline).
+		return
+	}
+
 	srSpell := shaman.RegisterSpell(core.SpellConfig{
 		ActionID:       actionID,
 		ClassSpellMask: ClassSpellMask_ShamanShamanisticRage,
