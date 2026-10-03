@@ -604,6 +604,10 @@ function weaponImbue(spec: ForeverSpec, level: number, weaponType: number | unde
 		// Windfury Weapon is learned at 30; it doesn't stack with itself, so the off hand gets Rockbiter.
 		return level >= 30 && !offHand ? 'WindfuryWeapon' : 'RockbiterWeapon';
 	}
+	if (spec.classId === 6 && level >= 20) {
+		// Rogue poisons: Instant Poison from 20, Deadly Poison in the off hand from 30.
+		return offHand && level >= 30 ? 'DeadlyPoison' : 'InstantPoison';
+	}
 	if (spec.role === 'Ranged DPS') return undefined;
 	const blunt = BLUNT.has(weaponType);
 	if (level >= 35) return blunt ? 'DenseWeightstone' : 'DenseSharpeningStone';

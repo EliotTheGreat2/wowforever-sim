@@ -1,0 +1,131 @@
+{
+ "base": "rogue",
+ "label": "Subtlety",
+ "rotation": "ui/rogue/apls/forever/forever_subtlety.apl.json",
+ "options": {},
+ "weapons": {
+  "mainHand": [
+   "Sword"
+  ],
+  "offHand": [
+   "Sword"
+  ]
+ },
+ "order": [
+  [
+   2,
+   "Opportunity",
+   2
+  ],
+  [
+   2,
+   "Camouflage",
+   3
+  ],
+  [
+   2,
+   "Elusiveness",
+   2
+  ],
+  [
+   2,
+   "Improved Ambush",
+   3
+  ],
+  [
+   2,
+   "Ghostly Strike",
+   1
+  ],
+  [
+   2,
+   "Initiative",
+   3
+  ],
+  [
+   2,
+   "Setup",
+   1
+  ],
+  [
+   2,
+   "Serrated Blades",
+   3
+  ],
+  [
+   2,
+   "Premeditation",
+   1
+  ],
+  [
+   2,
+   "Heightened Senses",
+   1
+  ],
+  [
+   2,
+   "Hemorrhage",
+   1
+  ],
+  [
+   2,
+   "Dirty Deeds",
+   2
+  ],
+  [
+   2,
+   "Preparation",
+   1
+  ],
+  [
+   2,
+   "Heightened Senses",
+   1
+  ],
+  [
+   2,
+   "Quietus",
+   5
+  ],
+  [
+   2,
+   "Thousand Cuts",
+   1
+  ],
+  [
+   0,
+   "Malice",
+   5
+  ],
+  [
+   0,
+   "Improved Slice and Dice",
+   3
+  ],
+  [
+   0,
+   "Ruthlessness",
+   2
+  ],
+  [
+   0,
+   "Lethality",
+   5
+  ],
+  [
+   0,
+   "Relentless Strikes",
+   1
+  ],
+  [
+   0,
+   "Cold Blood",
+   1
+  ],
+  [
+   0,
+   "Vile Poisons",
+   3
+  ]
+ ]
+}

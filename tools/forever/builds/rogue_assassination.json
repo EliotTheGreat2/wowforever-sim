@@ -1,0 +1,116 @@
+{
+ "base": "rogue",
+ "label": "Assassination",
+ "rotation": "ui/rogue/apls/forever/forever_assassination.apl.json",
+ "options": {},
+ "weapons": {
+  "mainHand": [
+   "Dagger"
+  ],
+  "offHand": [
+   "Dagger"
+  ]
+ },
+ "order": [
+  [
+   0,
+   "Malice",
+   5
+  ],
+  [
+   0,
+   "Ruthlessness",
+   3
+  ],
+  [
+   0,
+   "Improved Slice and Dice",
+   2
+  ],
+  [
+   0,
+   "Lethality",
+   5
+  ],
+  [
+   0,
+   "Relentless Strikes",
+   1
+  ],
+  [
+   0,
+   "Improved Slice and Dice",
+   1
+  ],
+  [
+   0,
+   "Cold Blood",
+   1
+  ],
+  [
+   0,
+   "Improved Poisons",
+   2
+  ],
+  [
+   0,
+   "Mutilate",
+   1
+  ],
+  [
+   0,
+   "Vigor",
+   2
+  ],
+  [
+   0,
+   "Improved Poisons",
+   3
+  ],
+  [
+   0,
+   "Seal Fate",
+   5
+  ],
+  [
+   0,
+   "Venom",
+   1
+  ],
+  [
+   0,
+   "Vile Poisons",
+   5
+  ],
+  [
+   1,
+   "Improved Eviscerate",
+   3
+  ],
+  [
+   1,
+   "Lightning Reflexes",
+   2
+  ],
+  [
+   1,
+   "Precision",
+   3
+  ],
+  [
+   1,
+   "Puncturing Wounds",
+   3
+  ],
+  [
+   2,
+   "Opportunity",
+   2
+  ],
+  [
+   2,
+   "Camouflage",
+   1
+  ]
+ ]
+}
