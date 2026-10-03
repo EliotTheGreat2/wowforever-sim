@@ -19,6 +19,9 @@ func (priest *Priest) RegisterPenanceSpell() {
 // https://www.wowhead.com/classic/news/patch-1-15-build-52124-ptr-datamining-season-of-discovery-runes-336044
 func (priest *Priest) makePenanceSpell(isHeal bool) *core.Spell {
 	baseDamage := priest.baseRuneAbilityDamage() * 1.28
+	if priest.ForeverTalents != nil {
+		baseDamage = priest.foreverPenanceDamage()
+	}
 	baseHealing := priest.baseRuneAbilityHealing() * .85
 	spellCoeff := 0.285
 	manaCost := .16
@@ -72,7 +75,12 @@ func (priest *Priest) makePenanceSpell(isHeal bool) *core.Spell {
 			BonusCoefficient:    spellCoeff,
 
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-				dot.Spell.CalcAndDealPeriodicDamage(sim, target, baseDamage, dot.OutcomeTick)
+				if priest.ForeverCombatRules {
+					// Forever: Penance bolts can crit.
+					dot.Spell.CalcAndDealPeriodicDamage(sim, target, baseDamage, dot.Spell.OutcomeMagicCritNoHitCounter)
+				} else {
+					dot.Spell.CalcAndDealPeriodicDamage(sim, target, baseDamage, dot.OutcomeTick)
+				}
 			},
 		}, core.DotConfig{}),
 		Hot: core.Ternary(isHeal, core.DotConfig{

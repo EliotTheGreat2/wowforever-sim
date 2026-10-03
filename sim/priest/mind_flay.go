@@ -5,7 +5,6 @@ import (
 	"time"
 
 	"github.com/wowsims/sod/sim/core"
-	"github.com/wowsims/sod/sim/core/proto"
 )
 
 const MindFlayRanks = 6
@@ -55,7 +54,7 @@ func (priest *Priest) newMindFlaySpellConfig(rank int, tickIdx int32) core.Spell
 
 	tickLength := time.Second
 
-	hasDespairRune := priest.HasRune(proto.PriestRune_RuneBracersDespair)
+	dotsCanCrit := priest.dotsCanCrit()
 
 	return core.SpellConfig{
 		ClassSpellMask: ClassSpellMask_PriestMindFlay,
@@ -93,7 +92,7 @@ func (priest *Priest) newMindFlaySpellConfig(rank int, tickIdx int32) core.Spell
 				dot.Snapshot(target, baseDamage, isRollover)
 			},
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-				if hasDespairRune {
+				if dotsCanCrit {
 					dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeSnapshotCrit)
 				} else {
 					dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)

@@ -5,7 +5,6 @@ import (
 	"time"
 
 	"github.com/wowsims/sod/sim/core"
-	"github.com/wowsims/sod/sim/core/proto"
 )
 
 const DevouringPlagueRanks = 6
@@ -29,7 +28,7 @@ func (priest *Priest) registerDevouringPlagueSpell() {
 }
 
 func (priest *Priest) getDevouringPlagueConfig(rank int, cdTimer *core.Timer) core.SpellConfig {
-	hasDespairRune := priest.HasRune(proto.PriestRune_RuneBracersDespair)
+	dotsCanCrit := priest.dotsCanCrit()
 
 	var ticks int32 = 8
 
@@ -80,7 +79,7 @@ func (priest *Priest) getDevouringPlagueConfig(rank int, cdTimer *core.Timer) co
 				dot.Snapshot(target, baseDotDamage, isRollover)
 			},
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-				if hasDespairRune {
+				if dotsCanCrit {
 					dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeSnapshotCrit)
 				} else {
 					dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)

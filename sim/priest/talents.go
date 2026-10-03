@@ -46,6 +46,8 @@ func (priest *Priest) ApplyTalents() {
 	priest.applyShadowFocus()
 	priest.applyShadowWeaving()
 	priest.applyDarkness()
+
+	priest.applyForeverTalents()
 }
 
 func (priest *Priest) applyMentalAgility() {

@@ -114,6 +114,8 @@ type Priest struct {
 	PainAndSufferingDoTSpells []*core.Spell
 
 	ProcPrayerOfMending core.ApplySpellResults
+
+	foreverEarlyDemiseCrit float64
 }
 
 func (priest *Priest) GetCharacter() *core.Character {
@@ -170,6 +172,7 @@ func New(character *core.Character, talents string) *Priest {
 		Talents:   &proto.PriestTalents{},
 	}
 	core.FillTalentsProto(priest.Talents.ProtoReflect(), talents, TalentTreeSizes)
+	priest.useForeverTalentLayout()
 
 	priest.EnableManaBar()
 
