@@ -49,6 +49,11 @@ const (
 	ClassSpellMask_PaladinHolyLight
 	ClassSpellMask_PaladinSunlight
 
+	// WoW Forever spells (forever_talents.go)
+	ClassSpellMask_PaladinHolyStrike
+	ClassSpellMask_PaladinSealOfFury
+	ClassSpellMask_PaladinJudgementOfFury
+
 	ClassSpellMask_PaladinAll = 1<<iota - 1
 
 	// Judgements
@@ -134,6 +139,17 @@ type Paladin struct {
 	consumeSealsOnJudge bool
 	artOfWarDelayAura   *core.Aura
 	bypassMacroOptions  bool
+
+	// WoW Forever talents (forever_talents.go)
+	foreverEchoAura          *core.Aura // Twist of Light
+	foreverEchoSeal          *core.Aura
+	foreverSanctifiedChance  float64
+	foreverSanctifiedReturn  float64
+	foreverSanctifiedMetrics *core.ResourceMetrics
+	foreverSacredArbiter     bool
+	holyStrike               *core.Spell
+	sealOfFury               *core.Spell
+	aurasSoF                 []*core.Aura
 }
 
 // Implemented by each Paladin spec.
@@ -219,10 +235,12 @@ func (paladin *Paladin) Initialize() {
 	paladin.registerSealOfCommand()
 	paladin.registerSealOfMartyrdom()
 	paladin.registerSealOfTheCrusader()
+	paladin.registerForeverSpells()
 
 	paladin.damagingSealAuras = append(paladin.damagingSealAuras, paladin.aurasSoM...)
 	paladin.damagingSealAuras = append(paladin.damagingSealAuras, paladin.aurasSoR...)
 	paladin.damagingSealAuras = append(paladin.damagingSealAuras, paladin.aurasSoC...)
+	paladin.damagingSealAuras = append(paladin.damagingSealAuras, paladin.aurasSoF...)
 
 	// Active abilities
 	paladin.registerForbearance()
@@ -243,7 +261,7 @@ func (paladin *Paladin) Initialize() {
 
 	paladin.enableMultiJudge = false // Was previously true in Phase 4 but disabled in Phase 5
 	paladin.lingerDuration = time.Millisecond * 400
-	paladin.consumeSealsOnJudge = true
+	paladin.consumeSealsOnJudge = paladin.ForeverTalents == nil // WoW Forever: Judgement does not consume the Seal
 	if (paladin.Options.Aura == proto.PaladinAura_SanctityAura || paladin.HasAura("Sanctity Aura")) && paladin.Talents.SanctityAura {
 		paladin.sanctityAura = core.SanctityAuraAura(paladin.GetCharacter())
 	}
@@ -265,6 +283,7 @@ func NewPaladin(character *core.Character, options *proto.Player, paladinOptions
 		Options:   paladinOptions,
 	}
 	core.FillTalentsProto(paladin.Talents.ProtoReflect(), options.TalentsString, TalentTreeSizes)
+	paladin.useForeverTalentLayout()
 
 	if paladin.Options.Aura == proto.PaladinAura_SanctityAura {
 		paladin.primaryPaladinAura = paladin.Options.Aura
@@ -381,7 +400,9 @@ func (paladin *Paladin) applySeal(newSeal *core.Aura, judgement *core.Spell, sim
 
 	if !isSameSealType {
 		currentSealActive := paladin.currentSeal.IsActive()
-		if currentSealActive && paladin.isSealbearerSeal(paladin.currentSeal) {
+		if currentSealActive && paladin.foreverEcho(sim, paladin.currentSeal) {
+			// WoW Forever Twist of Light: the replaced Seal stays until the next melee swing.
+		} else if currentSealActive && paladin.isSealbearerSeal(paladin.currentSeal) {
 			paladin.currentSeal.UpdateExpires(sim, sim.CurrentTime+paladin.lingerDuration) // always update, even if it extends duration
 		} else if currentSealActive {
 			paladin.currentSeal.Deactivate(sim)

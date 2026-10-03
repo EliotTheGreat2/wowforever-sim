@@ -35,6 +35,10 @@ func (paladin *Paladin) registerJudgement() {
 			return paladin.currentSeal.IsActive()
 		},
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, _ *core.Spell) {
+			if paladin.ForeverTalents != nil {
+				paladin.foreverJudge(sim, target)
+				return
+			}
 
 			// Phase 1-3
 			//if paladin.currentJudgement.SpellClassMask == ClassSpellMask_PaladinJudgementOfCommand {

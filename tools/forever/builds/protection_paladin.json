@@ -1,0 +1,94 @@
+{
+ "rotation": "ui/protection_paladin/apls/forever/forever_fury.apl.json",
+ "options": {
+  "primarySeal": "Righteousness",
+  "righteousFury": true
+ },
+ "order": [
+  [
+   1,
+   "Redoubt",
+   5
+  ],
+  [
+   1,
+   "Precision",
+   3
+  ],
+  [
+   1,
+   "Anticipation",
+   2
+  ],
+  [
+   1,
+   "Shield Specialization",
+   3
+  ],
+  [
+   1,
+   "Improved Righteous Fury",
+   2
+  ],
+  [
+   1,
+   "One-Handed Weapon Specialization",
+   3
+  ],
+  [
+   1,
+   "Anticipation",
+   3
+  ],
+  [
+   1,
+   "Reckoning",
+   5
+  ],
+  [
+   1,
+   "Iron Creed",
+   5
+  ],
+  [
+   1,
+   "Templar's Bulwark",
+   1
+  ],
+  [
+   1,
+   "Holy Shield",
+   1
+  ],
+  [
+   1,
+   "Improved Righteous Fury",
+   1
+  ],
+  [
+   1,
+   "Sacred Duty",
+   2
+  ],
+  [
+   1,
+   "Toughness",
+   5
+  ],
+  [
+   0,
+   "Divine Strength",
+   5
+  ],
+  [
+   0,
+   "Improved Seals",
+   3
+  ],
+  [
+   0,
+   "Divine Intellect",
+   2
+  ]
+ ]
+}

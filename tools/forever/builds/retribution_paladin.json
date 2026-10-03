@@ -1,0 +1,98 @@
+{
+ "rotation": "ui/retribution_paladin/apls/forever/forever_twist.apl.json",
+ "options": {
+  "primarySeal": "Command"
+ },
+ "order": [
+  [
+   2,
+   "Benediction",
+   5
+  ],
+  [
+   2,
+   "Conviction",
+   5
+  ],
+  [
+   2,
+   "Seal of Command",
+   1
+  ],
+  [
+   2,
+   "Vindication",
+   3
+  ],
+  [
+   2,
+   "Improved Judgement",
+   2
+  ],
+  [
+   2,
+   "Sanctified Judgement",
+   3
+  ],
+  [
+   2,
+   "Sacred Arbiter",
+   1
+  ],
+  [
+   2,
+   "Two-Handed Weapon Specialization",
+   3
+  ],
+  [
+   2,
+   "Vengeance",
+   3
+  ],
+  [
+   2,
+   "Champion of the Light",
+   3
+  ],
+  [
+   2,
+   "Holy Conduit",
+   2
+  ],
+  [
+   2,
+   "Twist of Light",
+   1
+  ],
+  [
+   0,
+   "Divine Strength",
+   5
+  ],
+  [
+   0,
+   "Improved Seals",
+   3
+  ],
+  [
+   0,
+   "Divine Intellect",
+   5
+  ],
+  [
+   0,
+   "Reverence",
+   3
+  ],
+  [
+   2,
+   "Instrument of Law",
+   2
+  ],
+  [
+   2,
+   "Eye for an Eye",
+   1
+  ]
+ ]
+}
