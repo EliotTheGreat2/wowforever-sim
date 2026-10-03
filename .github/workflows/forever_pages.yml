@@ -1,0 +1,72 @@
+name: WoW Forever site
+# Builds the sim as a static site (the sim runs in each visitor's browser via WebAssembly)
+# and publishes it to GitHub Pages at https://<owner>.github.io/<repo>/
+on:
+    push:
+        branches:
+            - master
+    workflow_dispatch:
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+concurrency:
+    group: pages
+    cancel-in-progress: true
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-go@v5
+              with:
+                  go-version: 1.24.x
+
+            - uses: arduino/setup-protoc@v3
+              with:
+                  version: '25.x'
+                  repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Install protoc Go plugin
+              run: go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.33.0
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+
+            - name: WoW Forever checks
+              run: go test --tags=with_db ./sim -run TestForever -count=1
+
+            - name: Point the UI at this repository's Pages path
+              run: sh tools/forever/pages_rebase.sh "${{ github.event.repository.name }}"
+
+            - name: Build site
+              run: make dist/sod/.dirstamp
+
+            - name: Open the Quick Sim page from the site root
+              run: |
+                  cat > dist/sod/index.html <<HTML
+                  <!doctype html>
+                  <meta charset="utf-8">
+                  <title>WoW Forever Sim</title>
+                  <meta http-equiv="refresh" content="0; url=forever/">
+                  <a href="forever/">Open the WoW Forever Sim</a>
+                  HTML
+
+            - uses: actions/upload-pages-artifact@v3
+              with:
+                  path: dist/sod
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}forever/
+        steps:
+            - id: deployment
+              uses: actions/deploy-pages@v4
