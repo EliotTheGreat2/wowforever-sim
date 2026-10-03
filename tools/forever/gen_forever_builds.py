@@ -16,16 +16,66 @@ import json
 #   {"rotation": "ui/<spec>/apls/forever/<file>.apl.json",
 #    "options": {spec option overrides},
 #    "order": [[tree index, "Talent Name", points], ...]}   # 51 points, in leveling order
+# A file for a key that isn't in specs.json adds a spec VARIANT that runs on an existing
+# engine sim, e.g. tools/forever/builds/mage_fire.json:
+#    "base": "mage", "label": "Fire", "role": "Caster DPS" (optional, default: base's),
+#    "weapons": {"mainHand": ["Dagger"], "offHand": ["Dagger"]}  (optional: weapon types to
+#    re-pick at every level from db.json, for specs that need e.g. daggers)
+import copy
 import glob
 import os
 
 BUILDS = {}
+BUILD_FILES = {}
 for path in sorted(glob.glob('tools/forever/builds/*.json')):
     b = json.load(open(path))
     BUILDS[os.path.basename(path)[:-5]] = (b['rotation'], [tuple(x) for x in b['order']], b.get('options', {}))
+    BUILD_FILES[os.path.basename(path)[:-5]] = b
 
 # proto Class enum (classId in specs.json) -> talents.json class key
 CLASS_FILE = {1: 'druid', 2: 'hunter', 3: 'mage', 4: 'paladin', 5: 'priest', 6: 'rogue', 7: 'shaman', 8: 'warlock', 9: 'warrior'}
+
+
+SLOT = {'mainHand': 14, 'offHand': 15}
+WEAPON_TYPE = {'Axe': 1, 'Dagger': 2, 'Fist': 3, 'Mace': 4, 'OffHand': 5, 'Polearm': 6, 'Shield': 7, 'Staff': 8, 'Sword': 9}
+_ITEMS = None
+
+
+def repick_weapons(spec, weapons):
+    """Re-pick main/off hand at every level from db.json among the given weapon types (one-handers),
+    by weapon DPS, for vanilla items the character can use at that level."""
+    global _ITEMS
+    if _ITEMS is None:
+        _ITEMS = [i for i in json.load(open('assets/database/db.json'))['items'] if i['id'] < 25000]
+
+    def best(slot, types, level, exclude=None):
+        hand_ok = {14: (0, 1, 2), 15: (0, 3, 4)}[slot]  # HandType: unknown/one/main or one/off
+        pool = [i for i in _ITEMS if i.get('weaponType') in types and i.get('handType', 0) in hand_ok
+                and i.get('requiresLevel', 0) <= level and (i.get('requiresLevel', 0) or i.get('ilvl', 0) - 10 <= level)
+                and i.get('quality', 0) <= (4 if level >= 60 else 3) and i['id'] != exclude
+                and not i.get('classAllowlist')]
+        if not pool:
+            return None
+        dps = lambda i: (i.get('weaponDamageMin', 0) + i.get('weaponDamageMax', 0)) / 2 / max(i.get('weaponSpeed', 1), 0.1)
+        return max(pool, key=lambda i: (dps(i), i.get('ilvl', 0)))['id']
+
+    def pick(level, gear):
+        mh = None
+        for name, types in weapons.items():
+            ids = [WEAPON_TYPE[t] for t in types]
+            choice = best(SLOT[name], ids, level, exclude=mh if name == 'offHand' else None)
+            if choice:
+                gear[SLOT[name]] = choice
+                if name == 'mainHand':
+                    mh = choice
+        return gear
+
+    items = [it.get('id', 0) for it in spec['gearSpec']['items']]
+    items += [0] * (17 - len(items))
+    items = pick(60, items)
+    spec['gearSpec'] = {'items': [{'id': x} if x else {} for x in items]}
+    for level, lv in spec['levels'].items():
+        lv['gear'] = pick(int(level), list(lv['gear']) + [0] * (17 - len(lv['gear'])))
 
 
 def build_string(trees, order, points):
@@ -54,6 +104,21 @@ def build_string(trees, order, points):
 def main():
     specs = json.load(open('ui/core/forever/specs.json'))
     talents = json.load(open('ui/core/forever/talents.json'))
+    specs = [s for s in specs if not s.get('sim')]  # variants are regenerated below
+    by_key = {s['key']: s for s in specs}
+    variants = []
+    for key, b in BUILD_FILES.items():
+        if key in by_key or 'base' not in b:
+            continue
+        v = copy.deepcopy(by_key[b['base']])
+        v.update(key=key, sim=b['base'], spec=b['label'], role=b.get('role', v['role']))
+        if 'weapons' in b:
+            repick_weapons(v, b['weapons'])
+        variants.append(v)
+    # Keep each class's specs together, base spec first.
+    for v in variants:
+        i = max(i for i, s in enumerate(specs) if s['classId'] == v['classId'])
+        specs.insert(i + 1, v)
     for spec in specs:
         if spec['key'] not in BUILDS:
             spec.pop('foreverTalents', None)

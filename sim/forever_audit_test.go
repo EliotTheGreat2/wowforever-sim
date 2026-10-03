@@ -20,6 +20,7 @@ import (
 
 type foreverSpec struct {
 	Key     string `json:"key"`
+	Sim     string `json:"sim"` // engine sim when it differs from Key (spec variants)
 	Spec    string `json:"spec"`
 	Role    string `json:"role"`
 	Talents string `json:"talents"`
@@ -27,6 +28,7 @@ type foreverSpec struct {
 	ForeverTalents string          `json:"foreverTalents"`
 	Rotation       *string         `json:"rotation"`
 	Gear           string          `json:"gear"`
+	GearSpec       json.RawMessage `json:"gearSpec"`
 	Race           string          `json:"race"`
 	ClassID        int32           `json:"classId"`
 	SpecOptions    json.RawMessage `json:"specOptions"`
@@ -57,9 +59,12 @@ func foreverPlayer(t *testing.T, s foreverSpec, forever bool) *proto.Player {
 
 // foreverPlayerAt builds a Forever player at any level 10-60 from the per-level presets.
 func foreverPlayerAt(t *testing.T, s foreverSpec, forever bool, level int32) *proto.Player {
-	gear, err := os.ReadFile("../" + s.Gear)
-	if err != nil {
-		t.Fatal(err)
+	gear := []byte(s.GearSpec)
+	if len(gear) == 0 {
+		var err error
+		if gear, err = os.ReadFile("../" + s.Gear); err != nil {
+			t.Fatal(err)
+		}
 	}
 	talents, foreverTalents := s.Talents, s.ForeverTalents
 	if level < 60 {
@@ -91,7 +96,7 @@ func foreverPlayerAt(t *testing.T, s foreverSpec, forever bool, level int32) *pr
 		"talentsString": %q, "equipment": %s, "rotation": %s,
 		"distanceFromTarget": %v, "reactionTimeMs": 150, "channelClipDelayMs": 50,
 		"foreverRuleset": %v, "foreverTalentsString": %q, %q: %s
-	}`, level, s.ClassID, s.Race, talents, gear, rotation, s.Distance, forever, core.Ternary(forever, foreverTalents, ""), toCamel(s.Key), s.SpecOptions)
+	}`, level, s.ClassID, s.Race, talents, gear, rotation, s.Distance, forever, core.Ternary(forever, foreverTalents, ""), toCamel(core.Ternary(s.Sim != "", s.Sim, s.Key)), s.SpecOptions)
 
 	player := &proto.Player{}
 	if err := protojson.Unmarshal([]byte(playerJSON), player); err != nil {

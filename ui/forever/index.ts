@@ -17,6 +17,8 @@ import { WorkerPool } from '../core/worker_pool';
 
 type ForeverSpec = {
 	key: string;
+	// Engine sim this spec runs on (several Forever specs share one, e.g. Fire/Frost/Arcane Mage).
+	sim?: string;
 	classId: number;
 	spec: string;
 	role: 'Caster DPS' | 'Melee DPS' | 'Ranged DPS' | 'Tank' | 'Healer';
@@ -145,7 +147,7 @@ function render() {
 	app.append(
 		h(`<header class="fs-top">
 			<div class="fs-brand">Forever Sim <span>for World of Warcraft: Forever</span></div>
-			<a class="fs-advanced" href="${state.spec ? `../${state.spec.key}/` : '../warlock/'}">Advanced sim</a>
+			<a class="fs-advanced" href="${state.spec ? `../${state.spec.sim ?? state.spec.key}/` : '../warlock/'}">Advanced sim</a>
 		</header>`),
 		h(`<section>
 			<h1>How hard do you hit?</h1>
@@ -706,7 +708,7 @@ async function buildRequest(forever: boolean, iterations: number): Promise<RaidS
 		// Forever's combat rule changes off.
 		foreverRuleset: true,
 		foreverClassicCombatRules: !forever,
-		[toCamel(spec.key)]: spec.specOptions,
+		[toCamel(spec.sim ?? spec.key)]: spec.specOptions,
 		database: SimDatabase.toJson(gear.toDatabase()),
 	};
 	return RaidSimRequest.fromJson({
