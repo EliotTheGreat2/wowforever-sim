@@ -49,7 +49,7 @@ def repick_weapons(spec, weapons):
         _ITEMS = [i for i in json.load(open('assets/database/db.json'))['items'] if i['id'] < 25000]
 
     def best(slot, types, level, exclude=None):
-        hand_ok = {14: (0, 1, 2), 15: (0, 3, 4)}[slot]  # HandType: unknown/one/main or one/off
+        hand_ok = {14: (0, 1, 2), 15: (0, 2, 3)}[slot]  # HandType: unknown/main/one-hand or unknown/one-hand/off
         pool = [i for i in _ITEMS if i.get('weaponType') in types and i.get('handType', 0) in hand_ok
                 and i.get('requiresLevel', 0) <= level and (i.get('requiresLevel', 0) or i.get('ilvl', 0) - 10 <= level)
                 and i.get('quality', 0) <= (4 if level >= 60 else 3) and i['id'] != exclude
