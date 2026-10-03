@@ -1,0 +1,105 @@
+{
+ "base": "warlock",
+ "label": "Demonology",
+ "rotation": "ui/warlock/apls/forever/forever_demonology.apl.json",
+ "options": {
+  "summon": "Imp"
+ },
+ "order": [
+  [
+   1,
+   "Unholy Power",
+   5
+  ],
+  [
+   1,
+   "Fel Vitality",
+   3
+  ],
+  [
+   1,
+   "Improved Imp",
+   2
+  ],
+  [
+   1,
+   "Improved Sayaad",
+   3
+  ],
+  [
+   1,
+   "Demonic Sacrifice",
+   1
+  ],
+  [
+   1,
+   "Master Summoner",
+   2
+  ],
+  [
+   1,
+   "Decimation",
+   2
+  ],
+  [
+   1,
+   "Fel Domination",
+   1
+  ],
+  [
+   1,
+   "Improved Imp",
+   1
+  ],
+  [
+   1,
+   "Demonic Knowledge",
+   3
+  ],
+  [
+   1,
+   "Soul Link",
+   1
+  ],
+  [
+   1,
+   "Demonic Embrace",
+   1
+  ],
+  [
+   1,
+   "Master Demonologist",
+   5
+  ],
+  [
+   1,
+   "Demonic Pact",
+   1
+  ],
+  [
+   2,
+   "Improved Shadow Bolt",
+   5
+  ],
+  [
+   2,
+   "Bane",
+   5
+  ],
+  [
+   2,
+   "Ruin",
+   5
+  ],
+  [
+   2,
+   "Agonizing Flames",
+   3
+  ],
+  [
+   2,
+   "Cataclysm",
+   2
+  ]
+ ]
+}

@@ -1,0 +1,274 @@
+{
+ "type": "TypeAPL",
+ "prepullActions": [
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "spellId": 18788
+     }
+    }
+   },
+   "doAtValue": {
+    "const": {
+     "val": "-8s"
+    }
+   }
+  },
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "spellId": 712
+     }
+    }
+   },
+   "doAtValue": {
+    "const": {
+     "val": "-7.9s"
+    }
+   }
+  }
+ ],
+ "priorityList": [
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "otherId": "OtherActionPotion"
+     }
+    },
+    "condition": {
+     "and": {
+      "vals": [
+       {
+        "cmp": {
+         "op": "OpGe",
+         "lhs": {
+          "remainingTime": {}
+         },
+         "rhs": {
+          "const": {
+           "val": "15s"
+          }
+         }
+        }
+       },
+       {
+        "cmp": {
+         "op": "OpLe",
+         "lhs": {
+          "currentManaPercent": {}
+         },
+         "rhs": {
+          "const": {
+           "val": "75%"
+          }
+         }
+        }
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "itemId": 12662
+     }
+    },
+    "condition": {
+     "and": {
+      "vals": [
+       {
+        "cmp": {
+         "op": "OpGe",
+         "lhs": {
+          "remainingTime": {}
+         },
+         "rhs": {
+          "const": {
+           "val": "15s"
+          }
+         }
+        }
+       },
+       {
+        "cmp": {
+         "op": "OpLe",
+         "lhs": {
+          "currentManaPercent": {}
+         },
+         "rhs": {
+          "const": {
+           "val": "60%"
+          }
+         }
+        }
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "autocastOtherCooldowns": {}
+   }
+  },
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "spellId": 19028
+     }
+    },
+    "condition": {
+     "not": {
+      "val": {
+       "auraIsActive": {
+        "auraId": {
+         "spellId": 19028
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "spellId": 11689,
+      "rank": 6
+     }
+    },
+    "condition": {
+     "cmp": {
+      "op": "OpLt",
+      "lhs": {
+       "currentManaPercent": {}
+      },
+      "rhs": {
+       "const": {
+        "val": "10%"
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "spellId": 25311,
+      "rank": 7
+     }
+    },
+    "condition": {
+     "and": {
+      "vals": [
+       {
+        "not": {
+         "val": {
+          "dotIsActive": {
+           "spellId": {
+            "spellId": 25311,
+            "rank": 7
+           }
+          }
+         }
+        }
+       },
+       {
+        "cmp": {
+         "op": "OpGe",
+         "lhs": {
+          "remainingTime": {}
+         },
+         "rhs": {
+          "const": {
+           "val": "12s"
+          }
+         }
+        }
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "spellId": 11713,
+      "rank": 6
+     }
+    },
+    "condition": {
+     "and": {
+      "vals": [
+       {
+        "not": {
+         "val": {
+          "dotIsActive": {
+           "spellId": {
+            "spellId": 11713,
+            "rank": 6
+           }
+          }
+         }
+        }
+       },
+       {
+        "cmp": {
+         "op": "OpGe",
+         "lhs": {
+          "remainingTime": {}
+         },
+         "rhs": {
+          "const": {
+           "val": "15s"
+          }
+         }
+        }
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "spellId": 17924,
+      "rank": 2
+     }
+    },
+    "condition": {
+     "auraIsActive": {
+      "auraId": {
+       "spellId": 440873
+      }
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "spellId": 25307,
+      "rank": 10
+     }
+    }
+   }
+  }
+ ]
+}

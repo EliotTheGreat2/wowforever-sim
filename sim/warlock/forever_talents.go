@@ -18,7 +18,7 @@ import (
 // Fel Concentration, Intensity, Pyroclasm, Destructive Reach, Molten Skin, Demonic Aegis,
 // Improved Health Funnel, Improved Voidwalker, Improved Sayaad, Improved Felhunter,
 // Demonic Energies, Demonic Brand, Soul Harvest, Curse of Exhaustion, Amplify Curse,
-// Bane of Havoc (needs a second target), Demonic Pact (only matters when re-summoning),
+// Bane of Havoc (needs a second target),
 // Decimation's "3/6% increased damage" clause (tooltip is ambiguous), Shadow and Flame's
 // Soul Shard refund (shards aren't modeled).
 
@@ -144,6 +144,12 @@ func (warlock *Warlock) applyForeverTalents() {
 	if v := byRank("Demonic Knowledge", 1.0/3, 2.0/3, 1); v > 0 {
 		warlock.applyForeverDemonicKnowledge(v * float64(warlock.Level))
 	}
+	if ft.Has("Demonic Pact") {
+		// Summoning a different demon no longer cancels the Demonic Sacrifice effect
+		// (re-summoning the sacrificed demon still does). Forever's Master Demonologist is
+		// implemented in applyForeverMasterDemonologist, so this flag only affects Demonic Sacrifice.
+		warlock.maintainBuffsOnSacrifice = true
+	}
 	if r := rank("Decimation"); r > 0 {
 		warlock.applyForeverDecimation(r)
 	}
@@ -174,6 +180,14 @@ func (warlock *Warlock) applyForeverTalents() {
 // (Imp: Shadow damage, Succubus/Incubus: Fire damage, Voidwalker: Mana, Felhunter: Health).
 func (warlock *Warlock) foreverDemonicSacrificeSwap() bool {
 	return warlock.ForeverTalents != nil
+}
+
+// foreverNightfallProcMask: Forever's Nightfall also procs from Drain Soul and Wrack.
+func (warlock *Warlock) foreverNightfallProcMask() uint64 {
+	if warlock.ForeverTalents == nil {
+		return 0
+	}
+	return ClassSpellMask_WarlockDrainSoul | ClassSpellMask_WarlockWrack
 }
 
 // calcForeverSoulSiphon: Drain Life, Drain Soul and Wrack deal more damage per other
