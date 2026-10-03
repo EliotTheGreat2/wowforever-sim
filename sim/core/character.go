@@ -61,6 +61,7 @@ type Character struct {
 	ForeverCombatRules bool
 	// WoW Forever talents by name, when the player sent a Forever talent string (nil otherwise).
 	ForeverTalents ForeverTalents
+	foreverRunes   map[int32]bool
 
 	// Base stats for this Character.
 	baseStats stats.Stats
@@ -318,10 +319,21 @@ func (character *Character) BaseEquipStats() stats.Stats {
 	return character.cachedEquipBaseStats.ApplyMultipliers(character.itemStatMultipliers)
 }
 
+// GrantForeverRune turns on a SoD rune's engine implementation for a WoW Forever talent or
+// spell that works the same way (call from the class constructor, before spells register).
+// Adjust any numbers that differ in Forever in the class's forever_talents.go.
+func (character *Character) GrantForeverRune(id int32) {
+	if character.foreverRunes == nil {
+		character.foreverRunes = map[int32]bool{}
+	}
+	character.foreverRunes[id] = true
+}
+
 func (character *Character) HasRuneById(id int32) bool {
-	// WoW Forever has no Season of Discovery runes.
+	// WoW Forever has no Season of Discovery runes, but some Forever talents and spells work
+	// like a SoD rune; class code grants those with GrantForeverRune.
 	if character.Forever {
-		return false
+		return character.foreverRunes[id]
 	}
 	return character.runesMap[id]
 }
