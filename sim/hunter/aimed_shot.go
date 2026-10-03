@@ -12,6 +12,13 @@ func (hunter *Hunter) getAimedShotConfig(rank int, timer *core.Timer) core.Spell
 	baseDamage := [7]float64{0, 70, 125, 200, 330, 460, 600}[rank]
 	manaCost := [7]float64{0, 75, 115, 160, 210, 260, 310}[rank]
 	level := [7]int{0, 0, 28, 36, 44, 52, 60}[rank]
+	castTime := time.Millisecond * 3500
+	cooldown := time.Second * 6
+	if hunter.foreverSpellbook() {
+		baseDamage *= foreverAimedShotScale
+		castTime = foreverAimedShotCastTime
+		cooldown = foreverAimedShotCooldown
+	}
 
 	return core.SpellConfig{
 		ClassSpellMask: ClassSpellMask_HunterAimedShot,
@@ -34,11 +41,11 @@ func (hunter *Hunter) getAimedShotConfig(rank int, timer *core.Timer) core.Spell
 		Cast: core.CastConfig{
 			DefaultCast: core.Cast{
 				GCD:      core.GCDDefault,
-				CastTime: time.Millisecond * 3500,
+				CastTime: castTime,
 			},
 			CD: core.Cooldown{
 				Timer:    timer,
-				Duration: time.Second * 6,
+				Duration: cooldown,
 			},
 			ModifyCast: func(sim *core.Simulation, spell *core.Spell, cast *core.Cast) {
 				cast.CastTime = spell.CastTime()

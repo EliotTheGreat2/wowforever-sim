@@ -17,6 +17,9 @@ func (hunter *Hunter) registerRapidFire() {
 
 	actionID := core.ActionID{SpellID: 3045}
 	cooldown := core.TernaryDuration(hasRapidKilling, time.Minute*1, time.Minute*5)
+	cooldown -= hunter.foreverRapidFireCDReduction
+	// WoW Forever: Rapid Fire increases ranged and melee attack speed.
+	meleeSpeed := hasRapidKilling || hunter.foreverSpellbook()
 
 	hunter.RapidFireAura = hunter.RegisterAura(core.Aura{
 		Label:    "Rapid Fire",
@@ -28,7 +31,7 @@ func (hunter *Hunter) registerRapidFire() {
 			if hasDreadhunter3Pc {
 				aura.Unit.MultiplyMeleeSpeed(sim, 1.1)
 			}
-			if hasRapidKilling {
+			if meleeSpeed {
 				aura.Unit.MultiplyMeleeSpeed(sim, 1.4)
 			}
 		},
@@ -37,7 +40,7 @@ func (hunter *Hunter) registerRapidFire() {
 			if hasDreadhunter3Pc {
 				aura.Unit.MultiplyMeleeSpeed(sim, 1/1.1)
 			}
-			if hasRapidKilling {
+			if meleeSpeed {
 				aura.Unit.MultiplyMeleeSpeed(sim, 1/1.4)
 			}
 		},
