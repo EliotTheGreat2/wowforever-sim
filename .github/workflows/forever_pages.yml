@@ -38,14 +38,15 @@ jobs:
               with:
                   node-version: 20
 
-            - name: WoW Forever checks
-              run: go test --tags=with_db ./sim -run TestForever -count=1
-
             - name: Point the UI at this repository's Pages path
               run: sh tools/forever/pages_rebase.sh "${{ github.event.repository.name }}"
 
             - name: Build site
               run: make dist/sod/.dirstamp
+
+            # After the build: it generates the Go protobuf code the tests need.
+            - name: WoW Forever checks
+              run: go test --tags=with_db ./sim -run TestForever -count=1
 
             - name: Open the Quick Sim page from the site root
               run: |
