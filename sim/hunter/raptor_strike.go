@@ -102,6 +102,9 @@ func (hunter *Hunter) newRaptorStrikeHitSpell(rank int, isMH bool) *core.Spell {
 
 	spellID := core.Ternary(hasMeleeSpecialist, RaptorStrikeSpellIdMeleeSpecialist, RaptorStrikeSpellId)[rank]
 	baseDamage := RaptorStrikeBaseDamage[rank]
+	if hunter.foreverSpellbook() {
+		baseDamage *= foreverRaptorStrikeScale
+	}
 
 	castType := proto.CastType_CastTypeMainHand
 	procMask := core.ProcMaskMeleeMHSpecial

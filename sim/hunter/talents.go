@@ -38,6 +38,9 @@ func (hunter *Hunter) ApplyTalents() {
 	hunter.applyKillerInstinct()
 	hunter.applyLightningReflexes()
 
+	// WoW Forever talent trees
+	hunter.applyForeverTalents()
+
 	// Draught was confirmed to Stack with Monster and Humanoid Slaying talents
 	if hunter.Consumes.MiscConsumes != nil && hunter.Consumes.MiscConsumes.DraughtOfTheSands {
 		hunter.Env.RegisterPostFinalizeEffect(func() {

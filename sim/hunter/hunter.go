@@ -28,6 +28,7 @@ const (
 	ClassSpellMask_HunterKillShot
 	ClassSpellMask_HunterMultiShot
 	ClassSpellMask_HunterSteadyShot
+	ClassSpellMask_HunterSniperShot // WoW Forever
 
 	// Strikes
 	ClassSpellMask_HunterFlankingStrike
@@ -68,7 +69,7 @@ const (
 	ClassSpellMask_HunterAll = 1<<iota - 1
 
 	ClassSpellMask_HunterTraps   = ClassSpellMask_HunterExplosiveTrap | ClassSpellMask_HunterFreezingTrap | ClassSpellMask_HunterImmolationTrap
-	ClassSpellMask_HunterShots   = ClassSpellMask_HunterAimedShot | ClassSpellMask_HunterArcaneShot | ClassSpellMask_HunterChimeraShot | ClassSpellMask_HunterExplosiveShot | ClassSpellMask_HunterKillShot | ClassSpellMask_HunterMultiShot | ClassSpellMask_HunterSteadyShot
+	ClassSpellMask_HunterShots   = ClassSpellMask_HunterAimedShot | ClassSpellMask_HunterArcaneShot | ClassSpellMask_HunterChimeraShot | ClassSpellMask_HunterExplosiveShot | ClassSpellMask_HunterKillShot | ClassSpellMask_HunterMultiShot | ClassSpellMask_HunterSteadyShot | ClassSpellMask_HunterSniperShot
 	ClassSpellMask_HunterStrikes = ClassSpellMask_HunterFlankingStrike | ClassSpellMask_HunterRaptorStrike | ClassSpellMask_HunterRaptorStrikeHit | ClassSpellMask_HunterWyvernStrike | ClassSpellMask_HunterCarve | ClassSpellMask_HunterCarveHit
 	ClassSpellMask_HunterStings  = ClassSpellMask_HunterSerpentSting | ClassSpellMask_HunterSoFSerpentSting
 )
@@ -144,6 +145,10 @@ type Hunter struct {
 	FocusFireAura          *core.Aura
 
 	HuntersMarkAuras core.AuraArray
+
+	// WoW Forever talents (forever_talents.go)
+	SniperShot                  *core.Spell
+	foreverRapidFireCDReduction time.Duration
 }
 
 func (hunter *Hunter) GetCharacter() *core.Character {
@@ -155,6 +160,10 @@ func (hunter *Hunter) GetHunter() *Hunter {
 }
 
 func (hunter *Hunter) AddRaidBuffs(raidBuffs *proto.RaidBuffs) {
+	if hunter.foreverSpellbook() {
+		// WoW Forever has no Aspect of the Lion; Trueshot Aura is applied in applyForeverTalents.
+		return
+	}
 	if raidBuffs.TrueshotAura && hunter.Talents.TrueshotAura {
 		hunter.AddStat(stats.RangedAttackPower, core.AtLevel(hunter.Level, map[int32]float64{
 			25: 0,
@@ -205,12 +214,16 @@ func (hunter *Hunter) Initialize() {
 	hunter.registerSoFSerpentStingSpells()
 
 	hunter.registerArcaneShotSpell(arcaneShotTimer)
-	hunter.registerAimedShotSpell(arcaneShotTimer)
+	// WoW Forever: Aimed Shot shares its cooldown with Multi-Shot instead of Arcane Shot.
+	hunter.registerAimedShotSpell(core.Ternary(hunter.foreverSpellbook(), multiShotTimer, arcaneShotTimer))
 	hunter.registerMultiShotSpell(multiShotTimer)
 	hunter.registerExplosiveShotSpell()
 	hunter.registerChimeraShotSpell()
 	hunter.registerSteadyShotSpell()
 	hunter.registerKillShotSpell()
+	if hunter.ForeverTalents != nil && hunter.ForeverTalents.Has("Sniper Shot") {
+		hunter.registerForeverSniperShot()
+	}
 
 	hunter.registerRaptorStrikeSpell()
 	hunter.registerFlankingStrikeSpell()
@@ -253,6 +266,7 @@ func NewHunter(character *core.Character, options *proto.Player) *Hunter {
 		Options:   hunterOptions.Options,
 	}
 	core.FillTalentsProto(hunter.Talents.ProtoReflect(), options.TalentsString, TalentTreeSizes)
+	hunter.useForeverTalentLayout()
 	hunter.EnableManaBar()
 
 	hunter.PseudoStats.CanParry = true

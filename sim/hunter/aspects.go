@@ -74,6 +74,9 @@ func (hunter *Hunter) getAspectOfTheHawkSpellConfig(rank int) core.SpellConfig {
 	}
 	// Use utility function to get the attack power based on rank
 	rap := hunter.getMaxAspectOfTheHawkAttackPower(rank)
+	if hunter.foreverSpellbook() {
+		rap = min(rap, 110) * foreverAspectOfTheHawkScale
+	}
 
 	actionID := core.ActionID{SpellID: spellId}
 	aspectOfTheHawkAura := hunter.NewTemporaryStatsAuraWrapped(
