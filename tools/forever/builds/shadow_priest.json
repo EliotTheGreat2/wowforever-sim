@@ -1,0 +1,113 @@
+{
+ "rotation": "ui/shadow_priest/apls/forever/forever_shadow.apl.json",
+ "options": {
+  "armor": "InnerFire"
+ },
+ "order": [
+  [
+   2,
+   "Shadow Focus",
+   5
+  ],
+  [
+   2,
+   "Improved Shadow Word: Pain",
+   2
+  ],
+  [
+   2,
+   "Spirit Tap",
+   3
+  ],
+  [
+   2,
+   "Mind Flay",
+   1
+  ],
+  [
+   2,
+   "Improved Mind Flay",
+   2
+  ],
+  [
+   2,
+   "Improved Mind Blast",
+   2
+  ],
+  [
+   2,
+   "Shadow Weaving",
+   3
+  ],
+  [
+   2,
+   "Improved Mind Blast",
+   3
+  ],
+  [
+   2,
+   "Vampiric Embrace",
+   1
+  ],
+  [
+   2,
+   "Devouring Contagion",
+   2
+  ],
+  [
+   2,
+   "Spirit Tap",
+   1
+  ],
+  [
+   2,
+   "Darkness",
+   5
+  ],
+  [
+   2,
+   "Shadowform",
+   1
+  ],
+  [
+   2,
+   "Early Demise",
+   2
+  ],
+  [
+   0,
+   "Twin Disciplines",
+   5
+  ],
+  [
+   0,
+   "Wand Specialization",
+   2
+  ],
+  [
+   0,
+   "Silent Resolve",
+   3
+  ],
+  [
+   0,
+   "Inner Focus",
+   1
+  ],
+  [
+   0,
+   "Mental Agility",
+   3
+  ],
+  [
+   0,
+   "Meditation",
+   3
+  ],
+  [
+   0,
+   "Mental Strength",
+   1
+  ]
+ ]
+}

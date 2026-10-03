@@ -39,7 +39,7 @@ func (priest *Priest) getShadowWordPainConfig(rank int) core.SpellConfig {
 
 	results := make([]*core.SpellResult, min(core.TernaryInt32(priest.HasRune(proto.PriestRune_RuneLegsSharedPain), 3, 1), priest.Env.GetNumTargets()))
 
-	hasDespairRune := priest.HasRune(proto.PriestRune_RuneBracersDespair)
+	dotsCanCrit := priest.dotsCanCrit()
 
 	return core.SpellConfig{
 		ClassSpellMask: ClassSpellMask_PriestShadowWordPain,
@@ -77,7 +77,7 @@ func (priest *Priest) getShadowWordPainConfig(rank int) core.SpellConfig {
 				dot.Snapshot(target, baseDotDamage, isRollover)
 			},
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-				if hasDespairRune {
+				if dotsCanCrit {
 					dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeSnapshotCrit)
 				} else {
 					dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)

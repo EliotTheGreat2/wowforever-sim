@@ -31,6 +31,10 @@ func (priest *Priest) ApplyRunes() {
 	priest.registerMindSearSpell()
 	priest.RegisterPenanceSpell()
 	priest.registerShadowWordDeathSpell()
+	if priest.Forever {
+		// Forever spellbook spell, not a rune.
+		priest.registerForeverShadowWordDeath()
+	}
 
 	// Belt
 	priest.registerMindSpikeSpell()
