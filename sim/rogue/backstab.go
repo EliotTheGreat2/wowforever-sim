@@ -22,6 +22,12 @@ func (rogue *Rogue) registerBackstabSpell() {
 		60: core.TernaryInt32(core.IncludeAQ, 25300, 11281),
 	})
 
+	if rogue.Forever {
+		// WoW Forever spellbook: max rank deals 150% weapon damage plus 150 (Classic: plus 225).
+		// Lower ranks are scaled by the same 2/3 (only the max rank is published).
+		flatDamageBonus = core.TernaryFloat64(rogue.Level >= 60, 100, flatDamageBonus*2/3)
+	}
+
 	// waylay := rogue.HasRune(proto.RogueRune_RuneWaylay)
 	hasCutthroatRune := rogue.HasRune(proto.RogueRune_RuneCutthroat)
 

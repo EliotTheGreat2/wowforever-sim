@@ -42,6 +42,9 @@ func (rogue *Rogue) ApplyTalents() {
 	rogue.registerPremeditation()
 	rogue.registerGhostlyStrikeSpell()
 	rogue.applyRiposte()
+
+	// WoW Forever talent trees
+	rogue.applyForeverTalents()
 }
 
 func (rogue *Rogue) applyImprovedEviscerate() {
@@ -115,6 +118,10 @@ func (rogue *Rogue) applySerratedBlades() {
 
 // dwsMultiplier returns the offhand damage multiplier
 func (rogue *Rogue) dwsMultiplier() float64 {
+	if rogue.ForeverTalents != nil {
+		// WoW Forever: 5% per rank
+		return 1 + 0.05*float64(rogue.ForeverTalents.Rank("Dual Wield Specialization"))
+	}
 	return 1 + 0.1*float64(rogue.Talents.DualWieldSpecialization)
 }
 
@@ -548,5 +555,9 @@ func (rogue *Rogue) registerAdrenalineRushCD() {
 }
 
 func (rogue *Rogue) lethality() float64 {
+	if rogue.ForeverTalents != nil {
+		// WoW Forever: 4% per rank
+		return 0.04 * float64(rogue.ForeverTalents.Rank("Lethality"))
+	}
 	return 0.06 * float64(rogue.Talents.Lethality)
 }

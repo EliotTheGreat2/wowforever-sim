@@ -167,6 +167,11 @@ type Rogue struct {
 	// p8 DPS tier bonus tracking
 	BleedsActive  map[int32]int32
 	PoisonsActive map[int32]int32
+
+	// WoW Forever talents (forever_talents.go)
+	foreverVenom             *core.Spell
+	foreverVenomAura         *core.Aura
+	foreverHemorrhageDebuffs core.AuraArray
 }
 
 func (rogue *Rogue) GetCharacter() *core.Character {
@@ -239,6 +244,7 @@ func NewRogue(character *core.Character, options *proto.Player, rogueOptions *pr
 		Options:   rogueOptions,
 	}
 	core.FillTalentsProto(rogue.Talents.ProtoReflect(), options.TalentsString, TalentTreeSizes)
+	rogue.useForeverTalentLayout()
 
 	// Passive rogue threat reduction: https://wotlk.wowhead.com/spell=21184/rogue-passive-dnd
 	rogue.PseudoStats.ThreatMultiplier *= 0.71
@@ -248,6 +254,7 @@ func NewRogue(character *core.Character, options *proto.Player, rogueOptions *pr
 	if rogue.Talents.Vigor {
 		maxEnergy += 10
 	}
+	maxEnergy += rogue.foreverVigorEnergy()
 	rogue.EnableEnergyBar(maxEnergy)
 
 	rogue.EnableAutoAttacks(rogue, core.AutoAttackOptions{

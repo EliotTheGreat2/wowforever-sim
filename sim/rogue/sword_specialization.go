@@ -12,14 +12,19 @@ func (rogue *Rogue) registerSwordSpecialization(mask core.ProcMask) {
 		return
 	}
 
+	rogue.registerExtraAttackProc("Sword Specialization", mask, 0.01*float64(rogue.Talents.SwordSpecialization))
+}
+
+// registerExtraAttackProc: a chance on hit with the masked weapons to gain an extra main-hand
+// attack (Sword Specialization; WoW Forever's Hack and Slash with Swords and Axes).
+func (rogue *Rogue) registerExtraAttackProc(label string, mask core.ProcMask, procChance float64) {
 	icd := core.Cooldown{
 		Timer:    rogue.NewTimer(),
 		Duration: time.Millisecond * 200,
 	}
-	procChance := 0.01 * float64(rogue.Talents.SwordSpecialization)
 
 	rogue.RegisterAura(core.Aura{
-		Label:    "Sword Specialization",
+		Label:    label,
 		Duration: core.NeverExpires,
 		OnReset: func(aura *core.Aura, sim *core.Simulation) {
 			aura.Activate(sim)
@@ -34,7 +39,7 @@ func (rogue *Rogue) registerSwordSpecialization(mask core.ProcMask) {
 			if !icd.IsReady(sim) {
 				return
 			}
-			if sim.RandomFloat("Sword Specialization") < procChance {
+			if sim.RandomFloat(label) < procChance {
 				icd.Use(sim)
 				rogue.AutoAttacks.ExtraMHAttack(sim, 1, core.ActionID{SpellID: 13964}, spell.ActionID)
 			}

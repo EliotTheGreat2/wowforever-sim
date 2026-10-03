@@ -17,6 +17,11 @@ func (rogue *Rogue) newMutilateHitSpell(isMH bool) *core.Spell {
 	}
 
 	flatDamageBonus := rogue.baseRuneAbilityDamage()
+	weaponMultiplier := 0.95
+	if rogue.ForeverTalents != nil {
+		// WoW Forever's Mutilate talent: 75% weapon damage plus a flat amount per weapon.
+		weaponMultiplier, flatDamageBonus = 0.75, rogue.foreverMutilateFlatDamage()
+	}
 
 	return rogue.RegisterSpell(core.SpellConfig{
 		ClassSpellMask: ClassSpellMask_RogueMutilateHit,
@@ -34,7 +39,11 @@ func (rogue *Rogue) newMutilateHitSpell(isMH bool) *core.Spell {
 		BonusCoefficient: 1,
 
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-			baseDamage := 0.95 * (flatDamageBonus + core.TernaryFloat64(isMH, spell.Unit.MHNormalizedWeaponDamage(sim, spell.MeleeAttackPower()), spell.Unit.OHNormalizedWeaponDamage(sim, spell.MeleeAttackPower())))
+			weaponDamage := core.TernaryFloat64(isMH, spell.Unit.MHNormalizedWeaponDamage(sim, spell.MeleeAttackPower()), spell.Unit.OHNormalizedWeaponDamage(sim, spell.MeleeAttackPower()))
+			baseDamage := 0.95 * (flatDamageBonus + weaponDamage)
+			if rogue.ForeverTalents != nil {
+				baseDamage = weaponMultiplier*weaponDamage + flatDamageBonus
+			}
 
 			// TODO: Add support for all poison effects (such as chipped bite proc), if they apply ;)
 			oldMultiplier := spell.GetDamageMultiplier()
