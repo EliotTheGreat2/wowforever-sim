@@ -66,14 +66,14 @@ const RACE_LABEL: Record<string, string> = {
 // Which talent tree points to which spec page, for addon imports.
 const TREE_TO_SPEC: Record<number, string[]> = {
 	1: ['balance_druid', 'feral_druid', 'restoration_druid'],
-	2: ['hunter', 'hunter', 'hunter'],
-	3: ['mage', 'mage', 'mage'],
+	2: ['hunter_bm', 'hunter', 'hunter_sv'],
+	3: ['mage_arcane', 'mage_fire', 'mage'],
 	4: ['holy_paladin', 'protection_paladin', 'retribution_paladin'],
 	5: ['healing_priest', 'healing_priest', 'shadow_priest'],
-	6: ['rogue', 'rogue', 'rogue'],
+	6: ['rogue_assassination', 'rogue', 'rogue_subtlety'],
 	7: ['elemental_shaman', 'enhancement_shaman', 'restoration_shaman'],
-	8: ['warlock', 'warlock', 'warlock'],
-	9: ['warrior', 'warrior', 'tank_warrior'],
+	8: ['warlock_affliction', 'warlock_demonology', 'warlock'],
+	9: ['warrior_arms', 'warrior', 'tank_warrior'],
 };
 
 const SLOT_NAMES = ['Head', 'Neck', 'Shoulder', 'Back', 'Chest', 'Wrist', 'Hands', 'Waist', 'Legs', 'Feet', 'Ring', 'Ring', 'Trinket', 'Trinket', 'Main hand', 'Off hand', 'Ranged'];
