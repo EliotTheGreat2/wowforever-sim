@@ -38,6 +38,9 @@ enum Race {
 	RaceTauren = 6;
 	RaceTroll = 7;
 	RaceUndead = 8;
+	// WoW Forever
+	RaceHighOrderSkyborne = 9;
+	RaceWindshaperSkyborne = 10;
 }
 
 enum Faction {

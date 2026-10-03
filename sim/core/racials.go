@@ -12,6 +12,11 @@ import (
 func applyRaceEffects(agent Agent) {
 	character := agent.GetCharacter()
 
+	if character.Forever {
+		applyForeverRaceEffects(character)
+		return
+	}
+
 	switch character.Race {
 	case proto.Race_RaceDwarf:
 		character.AddStat(stats.FrostResistance, 10)

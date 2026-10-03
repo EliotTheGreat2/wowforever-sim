@@ -588,6 +588,15 @@ func applyBuffEffects(agent Agent, playerFaction proto.Faction, raidBuffs *proto
 	isHorde := playerFaction == proto.Faction_Horde
 	bonusResist := float64(0)
 
+	// WoW Forever has Paladins and Shamans on both factions (Undead Paladins, Dwarf Shamans),
+	// so their buffs aren't limited by faction there.
+	forever := character.Forever
+	if petAgent, ok := agent.(PetAgent); ok && petAgent.GetPet().Owner != nil {
+		forever = petAgent.GetPet().Owner.Forever
+	}
+	paladinBuffs := isAlliance || forever
+	shamanBuffs := isHorde || forever
+
 	if raidBuffs.ArcaneBrilliance {
 		character.AddStats(BuffSpellByLevel[ArcaneIntellect][level])
 	} else if raidBuffs.ScrollOfIntellect {
@@ -695,11 +704,11 @@ func applyBuffEffects(agent Agent, playerFaction proto.Faction, raidBuffs *proto
 	// Heart of the Lion grants bonus Melee AP as well so give it priority over kings
 	if raidBuffs.AspectOfTheLion {
 		HeartOfTheLionAura(character)
-	} else if individualBuffs.BlessingOfKings && isAlliance {
+	} else if individualBuffs.BlessingOfKings && paladinBuffs {
 		BlessingOfKingsAura(character)
 	}
 
-	if raidBuffs.SanctityAura && isAlliance {
+	if raidBuffs.SanctityAura && paladinBuffs {
 		SanctityAuraAura(character)
 	}
 
@@ -710,20 +719,20 @@ func applyBuffEffects(agent Agent, playerFaction proto.Faction, raidBuffs *proto
 		}
 	*/
 
-	if raidBuffs.DevotionAura != proto.TristateEffect_TristateEffectMissing && isAlliance {
+	if raidBuffs.DevotionAura != proto.TristateEffect_TristateEffectMissing && paladinBuffs {
 		MakePermanent(DevotionAuraAura(&character.Unit, GetTristateValueInt32(raidBuffs.DevotionAura, 0, 2)))
 	}
 
-	if raidBuffs.StoneskinTotem != proto.TristateEffect_TristateEffectMissing && isHorde {
+	if raidBuffs.StoneskinTotem != proto.TristateEffect_TristateEffectMissing && shamanBuffs {
 		MakePermanent(StoneskinTotemAura(&character.Unit, GetTristateValueInt32(raidBuffs.StoneskinTotem, 0, 2)))
 	}
 
-	if raidBuffs.ImprovedStoneskinWindwall && isHorde {
+	if raidBuffs.ImprovedStoneskinWindwall && shamanBuffs {
 		MakePermanent(ImprovedStoneskinTotemAura(&character.Unit))
 		MakePermanent(ImprovedWindwallTotemAura(&character.Unit))
 	}
 
-	if raidBuffs.RetributionAura != proto.TristateEffect_TristateEffectMissing && isAlliance {
+	if raidBuffs.RetributionAura != proto.TristateEffect_TristateEffectMissing && paladinBuffs {
 		RetributionAura(character, GetTristateValueInt32(raidBuffs.RetributionAura, 0, 2))
 	}
 
@@ -731,9 +740,9 @@ func applyBuffEffects(agent Agent, playerFaction proto.Faction, raidBuffs *proto
 		MakePermanent(BattleShoutAura(&character.Unit, GetTristateValueInt32(raidBuffs.BattleShout, 0, 5), 0))
 	}
 
-	if raidBuffs.HornOfLordaeron && isAlliance {
+	if raidBuffs.HornOfLordaeron && paladinBuffs {
 		HornOfLordaeronAura(&character.Unit, level)
-	} else if individualBuffs.BlessingOfMight != proto.TristateEffect_TristateEffectMissing && isAlliance {
+	} else if individualBuffs.BlessingOfMight != proto.TristateEffect_TristateEffectMissing && paladinBuffs {
 		BlessingOfMightAura(&character.Unit, GetTristateValueInt32(individualBuffs.BlessingOfMight, 0, 5), level)
 	}
 
@@ -748,23 +757,23 @@ func applyBuffEffects(agent Agent, playerFaction proto.Faction, raidBuffs *proto
 		MakePermanent(dpAura)
 	}
 
-	if raidBuffs.StrengthOfEarthTotem != proto.TristateEffect_TristateEffectMissing && isHorde {
+	if raidBuffs.StrengthOfEarthTotem != proto.TristateEffect_TristateEffectMissing && shamanBuffs {
 		multiplier := GetTristateValueFloat(raidBuffs.StrengthOfEarthTotem, 1, 1.15)
 		MakePermanent(StrengthOfEarthTotemAura(&character.Unit, level, multiplier, CharacterBuildPhaseBuffs))
 	}
 
-	if raidBuffs.GraceOfAirTotem > 0 && isHorde {
+	if raidBuffs.GraceOfAirTotem > 0 && shamanBuffs {
 		multiplier := GetTristateValueFloat(raidBuffs.GraceOfAirTotem, 1, 1.15)
 		MakePermanent(GraceOfAirTotemAura(&character.Unit, level, multiplier, CharacterBuildPhaseBuffs))
 	}
 
-	if individualBuffs.BlessingOfWisdom > 0 && isAlliance {
+	if individualBuffs.BlessingOfWisdom > 0 && paladinBuffs {
 		updateStats := BuffSpellByLevel[BlessingOfWisdom][level]
 		if individualBuffs.BlessingOfWisdom == proto.TristateEffect_TristateEffectImproved {
 			updateStats = updateStats.Multiply(1.2)
 		}
 		character.AddStats(updateStats)
-	} else if raidBuffs.ManaSpringTotem > 0 && isHorde {
+	} else if raidBuffs.ManaSpringTotem > 0 && shamanBuffs {
 		updateStats := BuffSpellByLevel[ManaSpring][level]
 		if raidBuffs.ManaSpringTotem == proto.TristateEffect_TristateEffectImproved {
 			updateStats = updateStats.Multiply(1.25)

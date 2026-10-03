@@ -46,6 +46,8 @@ export const raceNames: Map<Race, string> = new Map([
 	[Race.RaceTauren, 'Tauren'],
 	[Race.RaceTroll, 'Troll'],
 	[Race.RaceUndead, 'Undead'],
+	[Race.RaceHighOrderSkyborne, 'High Order Skyborne'],
+	[Race.RaceWindshaperSkyborne, 'Windshaper Skyborne'],
 ]);
 
 export function nameToRace(name: string): Race {

@@ -295,3 +295,43 @@ func TestForeverAllLevels(t *testing.T) {
 		})
 	}
 }
+
+// TestForeverRaces sims every supported spec with every race Forever allows for its class
+// (including the Skyborne races) and fails on errors or no output.
+func TestForeverRaces(t *testing.T) {
+	RegisterAll()
+	combos := map[int32][]string{ // proto Class -> Forever races (Blizzard, Sept 22 2026)
+		9: {"RaceOrc", "RaceTauren", "RaceTroll", "RaceUndead", "RaceWindshaperSkyborne", "RaceHuman", "RaceDwarf", "RaceNightElf", "RaceGnome", "RaceHighOrderSkyborne"}, // Warrior
+		4: {"RaceHuman", "RaceDwarf", "RaceUndead"},                                                                                                                       // Paladin
+		2: {"RaceOrc", "RaceTroll", "RaceTauren", "RaceWindshaperSkyborne", "RaceHuman", "RaceDwarf", "RaceNightElf", "RaceHighOrderSkyborne"},                            // Hunter
+		6: {"RaceOrc", "RaceUndead", "RaceTroll", "RaceWindshaperSkyborne", "RaceHuman", "RaceDwarf", "RaceNightElf", "RaceGnome", "RaceHighOrderSkyborne"},               // Rogue
+		5: {"RaceUndead", "RaceTroll", "RaceHuman", "RaceDwarf", "RaceNightElf", "RaceGnome"},                                                                             // Priest
+		7: {"RaceOrc", "RaceTroll", "RaceTauren", "RaceWindshaperSkyborne", "RaceDwarf"},                                                                                  // Shaman
+		3: {"RaceUndead", "RaceTroll", "RaceOrc", "RaceHuman", "RaceGnome", "RaceHighOrderSkyborne"},                                                                      // Mage
+		8: {"RaceOrc", "RaceUndead", "RaceTroll", "RaceHuman", "RaceGnome"},                                                                                               // Warlock
+		1: {"RaceTauren", "RaceWindshaperSkyborne", "RaceNightElf", "RaceHighOrderSkyborne"},                                                                              // Druid
+	}
+	for _, s := range loadForeverSpecs(t) {
+		if s.Role == "Healer" {
+			continue
+		}
+		s := s
+		t.Run(s.Key, func(t *testing.T) {
+			var line []string
+			for _, race := range combos[s.ClassID] {
+				s.Race = race
+				res := core.RunRaidSim(foreverRaidRequest(foreverPlayer(t, s, true), s.Role, 100))
+				if res.Error != nil {
+					t.Fatalf("%s: %s", race, res.Error.Message)
+				}
+				p := res.RaidMetrics.Parties[0].Players[0]
+				v := core.Ternary(s.Role == "Tank", p.Threat.Avg, p.Dps.Avg)
+				if v <= 0 {
+					t.Errorf("%s: no output", race)
+				}
+				line = append(line, fmt.Sprintf("%s %.0f", strings.TrimPrefix(race, "Race"), v))
+			}
+			t.Logf("%-20s %s", s.Key, strings.Join(line, ", "))
+		})
+	}
+}

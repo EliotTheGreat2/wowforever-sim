@@ -30,6 +30,9 @@ var BaseStats = map[BaseStatsKey]stats.Stats{}
 var RaceOffsets = map[proto.Race]stats.Stats{
 	proto.Race_RaceUnknown: {},
 	proto.Race_RaceHuman:   {},
+	// WoW Forever's Skyborne: base attributes not published yet; Human (no offsets) until they are.
+	proto.Race_RaceHighOrderSkyborne:  {},
+	proto.Race_RaceWindshaperSkyborne: {},
 	proto.Race_RaceOrc: {
 		stats.Agility:   -3,
 		stats.Strength:  3,

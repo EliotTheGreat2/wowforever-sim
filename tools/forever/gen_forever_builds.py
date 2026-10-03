@@ -35,8 +35,8 @@ BUILDS = {
     ], {'summon': 'Succubus'}),  # Forever's Demonic Sacrifice: Succubus -> +15% Fire
 }
 
-CLASS_FILE = {1: 'warrior', 2: 'paladin', 3: 'hunter', 4: 'rogue', 5: 'priest', 7: 'shaman', 8: 'mage', 9: 'warlock', 11: 'druid'}
-PROTO_CLASS_TO_GAME = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 7, 7: 8, 8: 9, 9: 11}  # proto Class enum -> game class id
+# proto Class enum (classId in specs.json) -> talents.json class key
+CLASS_FILE = {1: 'druid', 2: 'hunter', 3: 'mage', 4: 'paladin', 5: 'priest', 6: 'rogue', 7: 'shaman', 8: 'warlock', 9: 'warrior'}
 
 
 def build_string(trees, order, points):
@@ -73,7 +73,7 @@ def main():
             continue
         rotation, order, options = BUILDS[spec['key']]
         spec['specOptions']['options'].update(options)
-        trees = talents[CLASS_FILE[PROTO_CLASS_TO_GAME[spec['classId']]]]['trees']
+        trees = talents[CLASS_FILE[spec['classId']]]['trees']
         spec['foreverTalents'] = build_string(trees, order, 51)
         spec['rotation'] = rotation
         spec['rotationJson'] = json.load(open(rotation))

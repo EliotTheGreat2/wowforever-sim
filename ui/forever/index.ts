@@ -41,20 +41,21 @@ type ClassInfo = { id: number; name: string; enumName: string; color: string; in
 
 // Class colors are the game's own. Races are vanilla combos plus Forever's Troll warlocks.
 const CLASSES: ClassInfo[] = [
-	{ id: 9, name: 'Warrior', enumName: 'ClassWarrior', color: '#C69B6D', ink: '#141a2e', icon: 'classicon_warrior', races: ['RaceOrc', 'RaceTauren', 'RaceTroll', 'RaceUndead', 'RaceHuman', 'RaceDwarf', 'RaceNightElf', 'RaceGnome'] },
-	{ id: 4, name: 'Paladin', enumName: 'ClassPaladin', color: '#F48CBA', ink: '#141a2e', icon: 'classicon_paladin', races: ['RaceHuman', 'RaceDwarf'] },
-	{ id: 2, name: 'Hunter', enumName: 'ClassHunter', color: '#AAD372', ink: '#141a2e', icon: 'classicon_hunter', races: ['RaceOrc', 'RaceTroll', 'RaceTauren', 'RaceDwarf', 'RaceNightElf'] },
-	{ id: 6, name: 'Rogue', enumName: 'ClassRogue', color: '#FFF468', ink: '#141a2e', icon: 'classicon_rogue', races: ['RaceOrc', 'RaceUndead', 'RaceTroll', 'RaceHuman', 'RaceDwarf', 'RaceNightElf', 'RaceGnome'] },
-	{ id: 5, name: 'Priest', enumName: 'ClassPriest', color: '#F2F2F2', ink: '#141a2e', icon: 'classicon_priest', races: ['RaceUndead', 'RaceTroll', 'RaceHuman', 'RaceDwarf', 'RaceNightElf'] },
-	{ id: 7, name: 'Shaman', enumName: 'ClassShaman', color: '#3D95F0', ink: '#141a2e', icon: 'classicon_shaman', races: ['RaceOrc', 'RaceTroll', 'RaceTauren'] },
-	{ id: 3, name: 'Mage', enumName: 'ClassMage', color: '#3FC7EB', ink: '#141a2e', icon: 'classicon_mage', races: ['RaceUndead', 'RaceTroll', 'RaceHuman', 'RaceGnome'] },
+	{ id: 9, name: 'Warrior', enumName: 'ClassWarrior', color: '#C69B6D', ink: '#141a2e', icon: 'classicon_warrior', races: ['RaceOrc', 'RaceTauren', 'RaceTroll', 'RaceUndead', 'RaceWindshaperSkyborne', 'RaceHuman', 'RaceDwarf', 'RaceNightElf', 'RaceGnome', 'RaceHighOrderSkyborne'] },
+	{ id: 4, name: 'Paladin', enumName: 'ClassPaladin', color: '#F48CBA', ink: '#141a2e', icon: 'classicon_paladin', races: ['RaceHuman', 'RaceDwarf', 'RaceUndead'] },
+	{ id: 2, name: 'Hunter', enumName: 'ClassHunter', color: '#AAD372', ink: '#141a2e', icon: 'classicon_hunter', races: ['RaceOrc', 'RaceTroll', 'RaceTauren', 'RaceWindshaperSkyborne', 'RaceHuman', 'RaceDwarf', 'RaceNightElf', 'RaceHighOrderSkyborne'] },
+	{ id: 6, name: 'Rogue', enumName: 'ClassRogue', color: '#FFF468', ink: '#141a2e', icon: 'classicon_rogue', races: ['RaceOrc', 'RaceUndead', 'RaceTroll', 'RaceWindshaperSkyborne', 'RaceHuman', 'RaceDwarf', 'RaceNightElf', 'RaceGnome', 'RaceHighOrderSkyborne'] },
+	{ id: 5, name: 'Priest', enumName: 'ClassPriest', color: '#F2F2F2', ink: '#141a2e', icon: 'classicon_priest', races: ['RaceUndead', 'RaceTroll', 'RaceHuman', 'RaceDwarf', 'RaceNightElf', 'RaceGnome'] },
+	{ id: 7, name: 'Shaman', enumName: 'ClassShaman', color: '#3D95F0', ink: '#141a2e', icon: 'classicon_shaman', races: ['RaceOrc', 'RaceTroll', 'RaceTauren', 'RaceWindshaperSkyborne', 'RaceDwarf'] },
+	{ id: 3, name: 'Mage', enumName: 'ClassMage', color: '#3FC7EB', ink: '#141a2e', icon: 'classicon_mage', races: ['RaceUndead', 'RaceTroll', 'RaceOrc', 'RaceHuman', 'RaceGnome', 'RaceHighOrderSkyborne'] },
 	{ id: 8, name: 'Warlock', enumName: 'ClassWarlock', color: '#9B9CF2', ink: '#141a2e', icon: 'classicon_warlock', races: ['RaceOrc', 'RaceUndead', 'RaceTroll', 'RaceHuman', 'RaceGnome'] },
-	{ id: 1, name: 'Druid', enumName: 'ClassDruid', color: '#FF7C0A', ink: '#141a2e', icon: 'classicon_druid', races: ['RaceTauren', 'RaceNightElf'] },
+	{ id: 1, name: 'Druid', enumName: 'ClassDruid', color: '#FF7C0A', ink: '#141a2e', icon: 'classicon_druid', races: ['RaceTauren', 'RaceWindshaperSkyborne', 'RaceNightElf', 'RaceHighOrderSkyborne'] },
 ];
 
 const RACE_LABEL: Record<string, string> = {
 	RaceOrc: 'Orc', RaceUndead: 'Undead', RaceTroll: 'Troll', RaceTauren: 'Tauren',
 	RaceHuman: 'Human', RaceDwarf: 'Dwarf', RaceNightElf: 'Night Elf', RaceGnome: 'Gnome',
+	RaceHighOrderSkyborne: 'Skyborne (High Order)', RaceWindshaperSkyborne: 'Skyborne (Windshaper)',
 };
 
 // Which talent tree points to which spec page, for addon imports.
