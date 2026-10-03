@@ -458,3 +458,94 @@ details.fs-gear summary {
 		transition: none !important;
 	}
 }
+
+/* Gear editor */
+.fs-slots {
+	list-style: none;
+	padding: 0;
+	margin: 8px 0 12px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
+	gap: 6px 16px;
+}
+.fs-slot.is-open {
+	grid-column: 1 / -1;
+}
+.fs-slot-btn {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 76px 1fr;
+	gap: 0 10px;
+	text-align: left;
+	background: var(--panel);
+	border: 1px solid var(--panel-edge);
+	border-radius: var(--radius-field);
+	color: var(--ink);
+	font: inherit;
+	font-size: 0.92rem;
+	padding: 8px 10px;
+	cursor: pointer;
+}
+.fs-slot-btn:hover,
+.fs-slot.is-open .fs-slot-btn {
+	border-color: var(--cls);
+}
+.fs-slot-name {
+	color: var(--muted);
+	grid-row: span 2;
+}
+.fs-slot-item {
+	font-weight: 600;
+	overflow-wrap: anywhere;
+}
+.fs-slot-meta,
+.fs-pick-meta {
+	color: var(--muted);
+	font-size: 0.82rem;
+}
+.fs-picker {
+	margin-top: 6px;
+	background: var(--panel);
+	border: 1px solid var(--cls);
+	border-radius: var(--radius-field);
+	padding: 10px;
+}
+.fs-picker input {
+	width: 100%;
+	padding: 10px 12px;
+	background: var(--sky);
+	color: var(--ink);
+	border: 1px solid var(--panel-edge);
+	border-radius: var(--radius-field);
+	font: inherit;
+}
+.fs-picker ul {
+	list-style: none;
+	margin: 8px 0 0;
+	padding: 0;
+	max-height: 340px;
+	overflow-y: auto;
+}
+.fs-picker li button {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	background: none;
+	border: 0;
+	border-radius: var(--radius-field);
+	padding: 7px 8px;
+	color: var(--ink);
+	font: inherit;
+	cursor: pointer;
+}
+.fs-picker li button:hover,
+.fs-picker li button:focus-visible {
+	background: color-mix(in srgb, var(--cls) 14%, transparent);
+}
+.fs-pick-name {
+	font-weight: 600;
+}
+.fs-reset {
+	margin-bottom: 8px;
+}

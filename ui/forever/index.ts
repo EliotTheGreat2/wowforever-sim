@@ -3,12 +3,15 @@
 import './forever.css';
 
 import specsJson from '../core/forever/specs.json';
+import foreverItemIdsJson from '../core/forever/forever_item_ids.json';
 import spellNamesJson from '../core/forever/spell_names.json';
 import { RaidSimRequest, RaidSimResult, StatWeightsRequest } from '../core/proto/api';
-import { EquipmentSpec, Race, SimDatabase, Stat } from '../core/proto/common';
+import { ArmorType, EquipmentSpec, HandType, ItemSlot, ItemType, Race, SimDatabase, Stat, WeaponType } from '../core/proto/common';
+import { UIItem as Item } from '../core/proto/ui';
 import { ActionId } from '../core/proto_utils/action_id';
 import { Database } from '../core/proto_utils/database';
 import { nameToClass, nameToRace } from '../core/proto_utils/names';
+import { classToEligibleRangedWeaponTypes, classToEligibleWeaponTypes, classToMaxArmorType, getEligibleItemSlots } from '../core/proto_utils/utils';
 import { SimSignals } from '../core/sim_signal_manager';
 import { WorkerPool } from '../core/worker_pool';
 
@@ -101,6 +104,8 @@ type Character = {
 	foreverTalents: string;
 	race: string;
 	note?: string;
+	// The player changed at least one item from the suggested set.
+	customGear?: boolean;
 };
 
 const state: {
@@ -112,7 +117,8 @@ const state: {
 
 const pool = new WorkerPool(1);
 let dbPromise: Promise<Database> | null = null;
-const db = () => (dbPromise ??= Database.get());
+let dbCache: Database | undefined;
+const db = () => (dbPromise ??= Database.get().then(d => (dbCache = d)));
 
 // ---------------------------------------------------------------------------
 // Rendering helpers
@@ -267,30 +273,215 @@ function renderCharacterStep(): HTMLElement {
 	return step;
 }
 
-function renderGearList(): HTMLElement {
+// ---------------------------------------------------------------------------
+// Gear editor
+
+const QUALITY_COLOR = ['#9d9d9d', '#e8e4d8', '#1eff00', '#3d8bff', '#b45cff', '#ff8000', '#e6cc80', '#00ccff'];
+const STAT_SHORT: Partial<Record<Stat, string>> = {
+	[Stat.StatStrength]: 'Str',
+	[Stat.StatAgility]: 'Agi',
+	[Stat.StatStamina]: 'Sta',
+	[Stat.StatIntellect]: 'Int',
+	[Stat.StatSpirit]: 'Spi',
+	[Stat.StatSpellPower]: 'Spell power',
+	[Stat.StatFirePower]: 'Fire power',
+	[Stat.StatFrostPower]: 'Frost power',
+	[Stat.StatShadowPower]: 'Shadow power',
+	[Stat.StatArcanePower]: 'Arcane power',
+	[Stat.StatNaturePower]: 'Nature power',
+	[Stat.StatHolyPower]: 'Holy power',
+	[Stat.StatMP5]: 'MP5',
+	[Stat.StatSpellHit]: '% spell hit',
+	[Stat.StatSpellCrit]: '% spell crit',
+	[Stat.StatAttackPower]: 'AP',
+	[Stat.StatRangedAttackPower]: 'Ranged AP',
+	[Stat.StatMeleeHit]: '% hit',
+	[Stat.StatMeleeCrit]: '% crit',
+	[Stat.StatDefense]: 'Defense',
+	[Stat.StatDodge]: '% dodge',
+	[Stat.StatParry]: '% parry',
+	[Stat.StatBlockValue]: 'Block value',
+};
+// Classes that can put a weapon in the off hand (Forever has no dual-wield talent for others).
+const DUAL_WIELD = new Set(['ClassWarrior', 'ClassRogue', 'ClassHunter']);
+// Hunters and Shamans learn Mail, Warriors and Paladins learn Plate, at level 40.
+const ARMOR_AT_40: Record<string, ArmorType> = {
+	ClassHunter: ArmorType.ArmorTypeLeather,
+	ClassShaman: ArmorType.ArmorTypeLeather,
+	ClassWarrior: ArmorType.ArmorTypeMail,
+	ClassPaladin: ArmorType.ArmorTypeMail,
+};
+
+function itemStatsText(item: Item): string {
+	const parts: string[] = [];
+	item.stats.forEach((v: number, stat: number) => {
+		const label = STAT_SHORT[stat as Stat];
+		// Items with attack power also list it as ranged attack power; show it once.
+		if (stat === Stat.StatRangedAttackPower && v === item.stats[Stat.StatAttackPower]) return;
+		if (v && label) parts.push(label.startsWith('%') ? `${v}${label}` : `+${v} ${label}`);
+	});
+	if (item.weaponSpeed) parts.unshift(`${item.weaponDamageMin}-${item.weaponDamageMax} dmg, ${item.weaponSpeed.toFixed(1)} speed`);
+	return parts.slice(0, 6).join(', ');
+}
+
+// The database also holds Season of Discovery items, which don't exist in Forever. Vanilla items
+// have IDs below 25000; Forever's own new items are listed by tools/forever_items after launch.
+const FOREVER_NEW_ITEMS = new Set<number>(foreverItemIdsJson as number[]);
+const inForever = (item: Item) => item.id < 25000 || FOREVER_NEW_ITEMS.has(item.id);
+
+function canWear(item: Item, slot: ItemSlot, level: number, cls: ClassInfo): boolean {
+	if (!inForever(item)) return false;
+	const classEnum = cls.id as unknown as keyof typeof classToMaxArmorType;
+	if (!getEligibleItemSlots(item).includes(slot)) return false;
+	if (item.classAllowlist.length && !item.classAllowlist.includes(cls.id)) return false;
+	if (item.requiresLevel > level || (item.requiresLevel === 0 && level < MAX_LEVEL && item.ilvl - 10 > level)) return false;
+	if (item.type === ItemType.ItemTypeFinger || item.type === ItemType.ItemTypeTrinket) return true;
+	if (item.type === ItemType.ItemTypeWeapon) {
+		const wt = classToEligibleWeaponTypes[classEnum].find(w => w.weaponType === item.weaponType);
+		if (!wt) return false;
+		if (item.handType === HandType.HandTypeTwoHand && (!wt.canUseTwoHand || slot === ItemSlot.ItemSlotOffHand)) return false;
+		if (slot === ItemSlot.ItemSlotMainHand && item.handType === HandType.HandTypeOffHand) return false;
+		if (slot === ItemSlot.ItemSlotOffHand) {
+			if (item.handType === HandType.HandTypeMainHand) return false;
+			const offhandOnly = item.weaponType === WeaponType.WeaponTypeShield || item.weaponType === WeaponType.WeaponTypeOffHand;
+			if (!offhandOnly && !DUAL_WIELD.has(cls.enumName)) return false;
+		}
+		return true;
+	}
+	if (item.type === ItemType.ItemTypeRanged) return classToEligibleRangedWeaponTypes[classEnum].includes(item.rangedWeaponType);
+	const maxArmor = level < 40 && ARMOR_AT_40[cls.enumName] !== undefined ? ARMOR_AT_40[cls.enumName] : classToMaxArmorType[classEnum];
+	return item.armorType <= maxArmor;
+}
+
+const SAVED_GEAR_KEY = (spec: ForeverSpec, level: number) => `forever-gear:${spec.key}:${level}`;
+
+function saveGear() {
 	const ch = state.character;
+	if (!ch || !state.spec || ch.source === 'import') return;
+	try {
+		localStorage.setItem(SAVED_GEAR_KEY(state.spec, ch.level), JSON.stringify(ch.gear));
+	} catch {
+		// Private windows and blocked storage: gear still works for this visit.
+	}
+}
+
+function loadSavedGear(spec: ForeverSpec, level: number): ForeverSpec['gearSpec'] | undefined {
+	try {
+		const raw = localStorage.getItem(SAVED_GEAR_KEY(spec, level));
+		return raw ? JSON.parse(raw) : undefined;
+	} catch {
+		return undefined;
+	}
+}
+
+function forgetSavedGear(spec: ForeverSpec, level: number) {
+	try {
+		localStorage.removeItem(SAVED_GEAR_KEY(spec, level));
+	} catch {
+		// nothing to forget
+	}
+}
+
+let openGearSlot: number | undefined;
+let gearPanelOpen = false;
+
+function renderGearList(): HTMLElement {
+	const ch = state.character!;
 	const what =
-		ch?.source === 'import'
+		ch.source === 'import'
 			? 'from your addon export'
-			: ch && ch.level < MAX_LEVEL
-				? `typical gear for level ${ch.level}`
-				: 'pre-raid dungeon and crafted gear';
-	const details = h(`<details class="fs-gear"><summary>See the gear (${esc(what)})</summary><ul></ul></details>`);
-	const ul = details.querySelector('ul')!;
-	details.addEventListener(
-		'toggle',
-		async () => {
-			if (ul.childElementCount) return;
-			const database = await db();
-			state.character!.gear.items.forEach((it, i) => {
-				if (!it.id) return;
-				const item = database.getItemById(it.id);
-				ul.append(h(`<li><span>${SLOT_NAMES[i] ?? ''}</span>${esc(item?.name ?? `Item ${it.id}`)}</li>`));
+			: ch.customGear
+				? 'your picks'
+				: ch.level < MAX_LEVEL
+					? `typical gear for level ${ch.level}`
+					: 'pre-raid dungeon and crafted gear';
+	const details = h(`<details class="fs-gear" ${gearPanelOpen ? 'open' : ''}>
+		<summary>Your gear (${esc(what)}) — click to change</summary>
+		<p class="fs-help">Click any slot to pick a different item. Forever's new items are added at launch.</p>
+		<ol class="fs-slots"></ol>
+		${ch.customGear && ch.source !== 'import' ? '<button type="button" class="fs-ghost fs-reset">Back to suggested gear</button>' : ''}
+	</details>`);
+	details.addEventListener('toggle', () => (gearPanelOpen = (details as HTMLDetailsElement).open));
+	details.querySelector('.fs-reset')?.addEventListener('click', () => {
+		forgetSavedGear(state.spec!, ch.level);
+		const race = ch.race;
+		usePreset(ch.level);
+		state.character!.race = race;
+		openGearSlot = undefined;
+		render();
+	});
+	const list = details.querySelector('ol')!;
+	const fill = (database: Database) => {
+		SLOT_NAMES.forEach((slotName, slot) => {
+			const id = ch.gear.items[slot]?.id;
+			const item = id ? database.getItemById(id) : undefined;
+			const li = h(`<li class="fs-slot ${openGearSlot === slot ? 'is-open' : ''}">
+				<button type="button" class="fs-slot-btn" aria-expanded="${openGearSlot === slot}">
+					<span class="fs-slot-name">${slotName}</span>
+					<span class="fs-slot-item" style="color:${item ? QUALITY_COLOR[item.quality] ?? 'inherit' : 'var(--muted)'}">${esc(item?.name ?? (id ? `Item ${id}` : 'Empty'))}</span>
+					${item ? `<span class="fs-slot-meta">${esc(itemStatsText(item))}</span>` : ''}
+				</button>
+			</li>`);
+			li.querySelector('button')!.addEventListener('click', () => {
+				openGearSlot = openGearSlot === slot ? undefined : slot;
+				render();
 			});
-		},
-		{ once: false },
-	);
+			if (openGearSlot === slot) li.append(renderItemPicker(database, slot));
+			list.append(li);
+		});
+	};
+	// Fill synchronously once the database is loaded so re-renders don't make the page jump.
+	if (dbCache) fill(dbCache);
+	else db().then(fill);
 	return details;
+}
+
+function renderItemPicker(database: Database, slot: number): HTMLElement {
+	const ch = state.character!;
+	const cls = state.cls!;
+	const box = h(`<div class="fs-picker">
+		<input type="search" placeholder="Search ${esc(SLOT_NAMES[slot].toLowerCase())} items" aria-label="Search items" />
+		<ul role="listbox"></ul>
+	</div>`);
+	const input = box.querySelector('input')!;
+	const ul = box.querySelector('ul')!;
+	const all = database
+		.getItems(slot as ItemSlot)
+		.filter(item => canWear(item, slot as ItemSlot, ch.level, cls))
+		.sort((a, b) => b.ilvl - a.ilvl || a.name.localeCompare(b.name));
+
+	const choose = (id: number | undefined) => {
+		ch.gear.items[slot] = id ? { id } : {};
+		// A two-handed weapon leaves no room for an off-hand.
+		const picked = id ? database.getItemById(id) : undefined;
+		if (slot === ItemSlot.ItemSlotMainHand && picked?.handType === HandType.HandTypeTwoHand) ch.gear.items[ItemSlot.ItemSlotOffHand] = {};
+		ch.customGear = true;
+		saveGear();
+		openGearSlot = undefined;
+		render();
+	};
+
+	const show = () => {
+		const q = input.value.trim().toLowerCase();
+		const matches = (q ? all.filter(i => i.name.toLowerCase().includes(q)) : all).slice(0, 60);
+		ul.replaceChildren();
+		const empty = h(`<li role="option"><button type="button"><span class="fs-pick-name" style="color:var(--muted)">Nothing in this slot</span></button></li>`);
+		empty.querySelector('button')!.addEventListener('click', () => choose(undefined));
+		ul.append(empty);
+		for (const item of matches) {
+			const li = h(`<li role="option"><button type="button">
+				<span class="fs-pick-name" style="color:${QUALITY_COLOR[item.quality] ?? 'inherit'}">${esc(item.name)}</span>
+				<span class="fs-pick-meta">ilvl ${item.ilvl}${item.requiresLevel ? ` · req ${item.requiresLevel}` : ''}${itemStatsText(item) ? ' · ' + esc(itemStatsText(item)) : ''}</span>
+			</button></li>`);
+			li.querySelector('button')!.addEventListener('click', () => choose(item.id));
+			ul.append(li);
+		}
+		if (!matches.length) ul.append(h(`<li class="fs-help">No ${esc(SLOT_NAMES[slot].toLowerCase())} items match.</li>`));
+	};
+	input.addEventListener('input', show);
+	show();
+	requestAnimationFrame(() => input.focus());
+	return box;
 }
 
 function renderSimStep(): HTMLElement {
@@ -326,14 +517,21 @@ function pickSpec(spec: ForeverSpec) {
 	render();
 }
 
+// Copy so editing a slot never changes the preset itself.
+function structuredCloneGear(g: ForeverSpec['gearSpec']): ForeverSpec['gearSpec'] {
+	return { items: g.items.map(it => ({ ...it })) };
+}
+
 function usePreset(level = state.character?.level ?? MAX_LEVEL) {
 	const spec = state.spec!;
 	const race = state.cls!.races.includes(spec.race) ? spec.race : state.cls!.races[0];
 	const leveling = level < MAX_LEVEL ? spec.levels[String(level)] : undefined;
+	const saved = loadSavedGear(spec, level);
 	state.character = {
 		source: 'preset',
 		level,
-		gear: leveling ? { items: leveling.gear.map(id => (id ? { id } : {})) } : spec.gearSpec,
+		gear: saved ?? (leveling ? { items: leveling.gear.map(id => (id ? { id } : {})) } : structuredCloneGear(spec.gearSpec)),
+		customGear: !!saved,
 		talents: leveling ? leveling.talents : spec.talents,
 		foreverTalents: (leveling ? leveling.foreverTalents : spec.foreverTalents) ?? '',
 		race,

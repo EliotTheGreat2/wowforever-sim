@@ -17,6 +17,7 @@
 package main
 
 import (
+	"encoding/json"
 	"flag"
 	"fmt"
 	"os"
@@ -127,6 +128,19 @@ func main() {
 	}
 	if err := os.WriteFile("assets/database/db.bin", bin, 0644); err != nil {
 		fail("writing db.bin: %v", err)
+	}
+
+	// The Quick Sim gear picker shows vanilla items (ID < 25000) plus these Forever items.
+	var ids []int32
+	for _, whItem := range wh.Items {
+		if whItem.ID >= 25000 {
+			ids = append(ids, whItem.ID)
+		}
+	}
+	sort.Slice(ids, func(i, j int) bool { return ids[i] < ids[j] })
+	idsJSON, _ := json.Marshal(ids)
+	if err := os.WriteFile("ui/core/forever/forever_item_ids.json", idsJSON, 0644); err != nil {
+		fail("writing forever_item_ids.json: %v", err)
 	}
 }
 
