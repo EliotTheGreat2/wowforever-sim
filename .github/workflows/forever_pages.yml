@@ -65,6 +65,15 @@ jobs:
                   <a href="forever/">Open the WoW Forever Sim</a>
                   HTML
 
+            - name: Check the site in Chrome, Firefox, Safari and on phones
+              run: |
+                  npm install --no-save playwright@1.48.2
+                  npx playwright install --with-deps chromium firefox webkit
+                  mkdir -p /tmp/site && ln -s "$PWD/dist/sod" "/tmp/site/${{ github.event.repository.name }}"
+                  (cd /tmp/site && nohup python3 -m http.server 8000 > /tmp/http.log 2>&1 &)
+                  sleep 2
+                  node tools/forever/browser_check.cjs "http://localhost:8000/${{ github.event.repository.name }}/forever/"
+
             - uses: actions/upload-pages-artifact@v3
               with:
                   path: dist/sod
