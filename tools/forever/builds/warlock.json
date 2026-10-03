@@ -1,0 +1,93 @@
+{
+ "rotation": "ui/warlock/apls/forever/forever_destruction.apl.json",
+ "options": {
+  "summon": "Succubus"
+ },
+ "order": [
+  [
+   2,
+   "Bane",
+   5
+  ],
+  [
+   2,
+   "Improved Shadow Bolt",
+   5
+  ],
+  [
+   2,
+   "Ruin",
+   5
+  ],
+  [
+   2,
+   "Agonizing Flames",
+   3
+  ],
+  [
+   2,
+   "Conflagrate",
+   1
+  ],
+  [
+   2,
+   "Cataclysm",
+   3
+  ],
+  [
+   2,
+   "Bane of Havoc",
+   1
+  ],
+  [
+   2,
+   "Fire and Brimstone",
+   3
+  ],
+  [
+   2,
+   "Aftermath",
+   3
+  ],
+  [
+   2,
+   "Shadow and Flame",
+   5
+  ],
+  [
+   2,
+   "Incinerate",
+   1
+  ],
+  [
+   2,
+   "Aftermath",
+   2
+  ],
+  [
+   1,
+   "Demonic Embrace",
+   5
+  ],
+  [
+   1,
+   "Unholy Power",
+   5
+  ],
+  [
+   1,
+   "Demonic Sacrifice",
+   1
+  ],
+  [
+   1,
+   "Master Summoner",
+   2
+  ],
+  [
+   1,
+   "Fel Vitality",
+   1
+  ]
+ ]
+}

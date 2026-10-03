@@ -12,28 +12,17 @@ Run from the repo root after tools/forever/gen_specs.py and tools/forever/gen_ta
 """
 import json
 
-# spec key -> (rotation file, pick order [(tree index, talent name, points)], spec option overrides)
-BUILDS = {
-    'warlock': ('ui/warlock/apls/forever/forever_destruction.apl.json', [
-        (2, 'Bane', 5),
-        (2, 'Improved Shadow Bolt', 5),
-        (2, 'Ruin', 5),
-        (2, 'Agonizing Flames', 3),
-        (2, 'Conflagrate', 1),
-        (2, 'Cataclysm', 3),
-        (2, 'Bane of Havoc', 1),
-        (2, 'Fire and Brimstone', 3),
-        (2, 'Aftermath', 3),
-        (2, 'Shadow and Flame', 5),
-        (2, 'Incinerate', 1),
-        (2, 'Aftermath', 2),
-        (1, 'Demonic Embrace', 5),
-        (1, 'Unholy Power', 5),
-        (1, 'Demonic Sacrifice', 1),
-        (1, 'Master Summoner', 2),
-        (1, 'Fel Vitality', 1),
-    ], {'summon': 'Succubus'}),  # Forever's Demonic Sacrifice: Succubus -> +15% Fire
-}
+# One file per spec in tools/forever/builds/<spec key>.json:
+#   {"rotation": "ui/<spec>/apls/forever/<file>.apl.json",
+#    "options": {spec option overrides},
+#    "order": [[tree index, "Talent Name", points], ...]}   # 51 points, in leveling order
+import glob
+import os
+
+BUILDS = {}
+for path in sorted(glob.glob('tools/forever/builds/*.json')):
+    b = json.load(open(path))
+    BUILDS[os.path.basename(path)[:-5]] = (b['rotation'], [tuple(x) for x in b['order']], b.get('options', {}))
 
 # proto Class enum (classId in specs.json) -> talents.json class key
 CLASS_FILE = {1: 'druid', 2: 'hunter', 3: 'mage', 4: 'paladin', 5: 'priest', 6: 'rogue', 7: 'shaman', 8: 'warlock', 9: 'warrior'}
