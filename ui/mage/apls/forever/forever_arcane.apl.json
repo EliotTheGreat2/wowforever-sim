@@ -1,0 +1,238 @@
+{
+ "type": "TypeAPL",
+ "priorityList": [
+  {
+   "action": {
+    "autocastOtherCooldowns": {}
+   }
+  },
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "itemId": 8008
+     }
+    },
+    "condition": {
+     "cmp": {
+      "op": "OpLt",
+      "lhs": {
+       "currentManaPercent": {}
+      },
+      "rhs": {
+       "const": {
+        "val": "85%"
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "itemId": 8007
+     }
+    },
+    "condition": {
+     "cmp": {
+      "op": "OpLt",
+      "lhs": {
+       "currentManaPercent": {}
+      },
+      "rhs": {
+       "const": {
+        "val": "85%"
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "itemId": 5513
+     }
+    },
+    "condition": {
+     "cmp": {
+      "op": "OpLt",
+      "lhs": {
+       "currentManaPercent": {}
+      },
+      "rhs": {
+       "const": {
+        "val": "85%"
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "itemId": 5514
+     }
+    },
+    "condition": {
+     "cmp": {
+      "op": "OpLt",
+      "lhs": {
+       "currentManaPercent": {}
+      },
+      "rhs": {
+       "const": {
+        "val": "85%"
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "channelSpell": {
+     "spellId": {
+      "spellId": 12051
+     },
+     "interruptIf": {
+      "cmp": {
+       "op": "OpGt",
+       "lhs": {
+        "currentManaPercent": {}
+       },
+       "rhs": {
+        "const": {
+         "val": "90%"
+        }
+       }
+      }
+     }
+    },
+    "condition": {
+     "and": {
+      "vals": [
+       {
+        "cmp": {
+         "op": "OpLt",
+         "lhs": {
+          "currentManaPercent": {}
+         },
+         "rhs": {
+          "const": {
+           "val": "10%"
+          }
+         }
+        }
+       },
+       {
+        "cmp": {
+         "op": "OpGt",
+         "lhs": {
+          "remainingTime": {}
+         },
+         "rhs": {
+          "const": {
+           "val": "10s"
+          }
+         }
+        }
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "channelSpell": {
+     "spellId": {
+      "spellId": 25345
+     }
+    },
+    "condition": {
+     "and": {
+      "vals": [
+       {
+        "auraIsKnown": {
+         "auraId": {
+          "spellId": 400589
+         }
+        }
+       },
+       {
+        "auraIsActive": {
+         "auraId": {
+          "spellId": 400589
+         }
+        }
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "channelSpell": {
+     "spellId": {
+      "spellId": 25345
+     }
+    },
+    "condition": {
+     "and": {
+      "vals": [
+       {
+        "auraIsKnown": {
+         "auraId": {
+          "spellId": 400573
+         }
+        }
+       },
+       {
+        "cmp": {
+         "op": "OpGe",
+         "lhs": {
+          "auraNumStacks": {
+           "auraId": {
+            "spellId": 400573
+           }
+          }
+         },
+         "rhs": {
+          "const": {
+           "val": "4"
+          }
+         }
+        }
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "castSpell": {
+     "spellId": {
+      "spellId": 400574
+     }
+    }
+   }
+  },
+  {
+   "action": {
+    "channelSpell": {
+     "spellId": {
+      "spellId": 25345
+     }
+    }
+   }
+  }
+ ]
+}
