@@ -1,0 +1,24 @@
+{
+ "rotation": "ui/rogue/apls/forever/forever_combat.apl.json",
+ "options": {},
+ "order": [
+  [1, "Improved Sinister Strike", 2],
+  [1, "Improved Eviscerate", 3],
+  [1, "Precision", 3],
+  [1, "Lightning Reflexes", 5],
+  [1, "Deflection", 2],
+  [1, "Dual Wield Specialization", 5],
+  [1, "Blade Flurry", 1],
+  [1, "Hack and Slash", 5],
+  [1, "Flawless Execution", 1],
+  [1, "Aggression", 3],
+  [1, "Adrenaline Rush", 1],
+  [1, "Weapon Expertise", 2],
+  [0, "Malice", 5],
+  [0, "Improved Slice and Dice", 3],
+  [0, "Ruthlessness", 3],
+  [0, "Relentless Strikes", 1],
+  [0, "Lethality", 5],
+  [0, "Murder", 1]
+ ]
+}

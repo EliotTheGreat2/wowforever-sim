@@ -62,6 +62,12 @@ func (rogue *Rogue) registerRupture() {
 				dot.Snapshot(target, rogue.RuptureDamage(rogue.ComboPoints()), isRollover)
 			},
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
+				if mult := rogue.foreverRuptureTakenMultiplier(target); mult != 1 {
+					dot.SnapshotAttackerMultiplier *= mult
+					dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)
+					dot.SnapshotAttackerMultiplier /= mult
+					return
+				}
 				dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)
 			},
 		},

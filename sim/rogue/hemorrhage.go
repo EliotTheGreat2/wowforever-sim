@@ -28,7 +28,7 @@ func (rogue *Rogue) registerHemorrhageSpell() {
 
 	var hemoAuras core.AuraArray
 
-	if numPlayers >= 2 {
+	if numPlayers >= 2 && rogue.ForeverTalents == nil {
 		hemoAuras = rogue.NewEnemyAuraArray(func(target *core.Unit, level int32) *core.Aura {
 			return core.HemorrhageAura(target, rogue.Level)
 		})
@@ -56,7 +56,7 @@ func (rogue *Rogue) registerHemorrhageSpell() {
 
 		CritDamageBonus: rogue.lethality(),
 
-		DamageMultiplier: 1,
+		DamageMultiplier: rogue.foreverHemorrhageMultiplier(),
 		ThreatMultiplier: 1,
 		BonusCoefficient: 1,
 
@@ -73,6 +73,7 @@ func (rogue *Rogue) registerHemorrhageSpell() {
 					hemoAura.Activate(sim)
 					hemoAura.SetStacks(sim, 30)
 				}
+				rogue.applyForeverHemorrhageDebuff(sim, target)
 			} else {
 				spell.IssueRefund(sim)
 			}
