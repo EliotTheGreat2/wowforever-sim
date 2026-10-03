@@ -23,6 +23,15 @@ type ForeverTalentTree struct {
 	Talents []ForeverTalent
 }
 
+func (tree ForeverTalentTree) maxRank(name string) int32 {
+	for _, t := range tree.Talents {
+		if t.Name == name {
+			return t.MaxRank
+		}
+	}
+	return 0
+}
+
 // ForeverTalents holds a parsed Forever talent string: talent name -> rank.
 type ForeverTalents map[string]int32
 
@@ -71,8 +80,8 @@ func ParseForeverTalents(trees [3]ForeverTalentTree, talents string) (ForeverTal
 			if rank > 0 && spent < (t.Tier-1)*5 {
 				return nil, fmt.Errorf("%s: %s needs %d points in the tree first", tree.Name, t.Name, (t.Tier-1)*5)
 			}
-			if rank > 0 && t.Requires != "" && ft[t.Requires] == 0 {
-				return nil, fmt.Errorf("%s: %s requires %s", tree.Name, t.Name, t.Requires)
+			if rank > 0 && t.Requires != "" && ft[t.Requires] < tree.maxRank(t.Requires) {
+				return nil, fmt.Errorf("%s: %s requires all points in %s", tree.Name, t.Name, t.Requires)
 			}
 			ft[t.Name] = rank
 			spent += rank

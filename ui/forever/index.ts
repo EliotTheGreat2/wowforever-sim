@@ -5,6 +5,7 @@ import './forever.css';
 import specsJson from '../core/forever/specs.json';
 import foreverItemIdsJson from '../core/forever/forever_item_ids.json';
 import spellNamesJson from '../core/forever/spell_names.json';
+import talentsJson from '../core/forever/talents.json';
 import { RaidSimRequest, RaidSimResult, StatWeightsRequest } from '../core/proto/api';
 import { ArmorType, EquipmentSpec, HandType, ItemSlot, ItemType, Race, SimDatabase, Stat, WeaponType } from '../core/proto/common';
 import { UIItem as Item } from '../core/proto/ui';
@@ -108,6 +109,8 @@ type Character = {
 	note?: string;
 	// The player changed at least one item from the suggested set.
 	customGear?: boolean;
+	// The player changed the suggested talent build.
+	customTalents?: boolean;
 };
 
 const state: {
@@ -225,7 +228,7 @@ function renderCharacterStep(): HTMLElement {
 			state.character = { ...state.character!, imported: false };
 			render();
 		});
-		body.append(summary, renderGearList());
+		body.append(summary, renderGearList(), renderTalentPicker());
 		return step;
 	}
 	if (state.character?.source === 'import') {
@@ -271,7 +274,7 @@ function renderCharacterStep(): HTMLElement {
 	sel.addEventListener('change', () => (state.character!.race = sel.value));
 	body.append(row);
 	if (state.character?.note) body.append(h(`<p class="fs-help">${esc(state.character.note)}</p>`));
-	body.append(renderGearList());
+	body.append(renderGearList(), renderTalentPicker());
 	return step;
 }
 
@@ -486,6 +489,177 @@ function renderItemPicker(database: Database, slot: number): HTMLElement {
 	return box;
 }
 
+// ---------------------------------------------------------------------------
+// Talent picker (WoW Forever trees)
+
+type ForeverTalentInfo = { name: string; key: string; tier: number; maxRank: number; requires: string | null; description: string };
+type ForeverTree = { name: string; talents: ForeverTalentInfo[] };
+const TALENT_TREES = talentsJson as unknown as Record<string, { build: string; trees: ForeverTree[] }>;
+
+let talentPanelOpen = false;
+let talentTreeTab = 0;
+
+function parseTalents(str: string, trees: ForeverTree[]): number[][] {
+	const parts = (str || '').split('-');
+	return trees.map((t, i) => t.talents.map((_, j) => Number((parts[i] ?? '')[j] ?? 0) || 0));
+}
+
+function talentString(alloc: number[][]): string {
+	return alloc.map(a => a.join('').replace(/0+$/, '')).join('-').replace(/-+$/, '');
+}
+
+// Is this allocation legal? (tier gating: 5 points per tier, prerequisites, max ranks)
+function talentsValid(alloc: number[][], trees: ForeverTree[]): boolean {
+	return trees.every((tree, t) =>
+		tree.talents.every((tal, j) => {
+			const r = alloc[t][j];
+			if (!r) return true;
+			if (r > tal.maxRank) return false;
+			const below = tree.talents.reduce((sum, x, k) => sum + (x.tier < tal.tier ? alloc[t][k] : 0), 0);
+			if (below < (tal.tier - 1) * 5) return false;
+			if (tal.requires) {
+				const req = tree.talents.findIndex(x => x.name === tal.requires);
+				if (req >= 0 && alloc[t][req] < tree.talents[req].maxRank) return false;
+			}
+			return true;
+		}),
+	);
+}
+
+function setTalents(str: string) {
+	const ch = state.character!;
+	ch.foreverTalents = str;
+	ch.customTalents = true;
+	try {
+		localStorage.setItem(`forever-talents:${state.spec!.key}:${ch.level}`, str);
+	} catch {
+		// storage blocked: still works for this visit
+	}
+}
+
+function loadSavedTalents(spec: ForeverSpec, level: number): string | undefined {
+	try {
+		return localStorage.getItem(`forever-talents:${spec.key}:${level}`) ?? undefined;
+	} catch {
+		return undefined;
+	}
+}
+
+function renderTalentPicker(): HTMLElement {
+	const ch = state.character!;
+	const classData = TALENT_TREES[state.cls!.name.toLowerCase()];
+	const wrap = h(`<details class="fs-gear fs-talents" ${talentPanelOpen ? 'open' : ''}><summary></summary></details>`);
+	wrap.addEventListener('toggle', () => (talentPanelOpen = (wrap as HTMLDetailsElement).open));
+	if (!classData) return wrap;
+	const trees = classData.trees;
+	const alloc = parseTalents(ch.foreverTalents, trees);
+	const spent = alloc.flat().reduce((a, b) => a + b, 0);
+	const available = Math.max(0, ch.level - 9);
+	const perTree = alloc.map(a => a.reduce((x, y) => x + y, 0));
+	wrap.querySelector('summary')!.textContent =
+		`Your talents (${perTree.join('/')}${ch.customTalents ? ', your picks' : ', suggested build'}) — click to change`;
+
+	const body = h(`<div>
+		<p class="fs-help">Click a talent to add a point, right-click (or switch to "Remove") to take one back. ${spent} of ${available} points spent. Forever talent trees, beta build ${esc(classData.build)}.</p>
+		<div class="fs-tal-bar">
+			<div class="fs-tal-tabs" role="tablist"></div>
+			<div class="fs-tal-actions">
+				<button type="button" class="fs-ghost fs-tal-mode" aria-pressed="false">Remove mode</button>
+				<button type="button" class="fs-ghost fs-tal-reset">Suggested build</button>
+				<button type="button" class="fs-ghost fs-tal-clear">Clear</button>
+			</div>
+		</div>
+		<div class="fs-tal-trees"></div>
+		<label class="fs-field fs-tal-code">Talent code (copy to share, paste to load)<input type="text" spellcheck="false" value="${esc(ch.foreverTalents)}" /></label>
+	</div>`);
+	wrap.append(body);
+
+	let removeMode = false;
+	const modeBtn = body.querySelector<HTMLButtonElement>('.fs-tal-mode')!;
+	modeBtn.addEventListener('click', () => {
+		removeMode = !removeMode;
+		modeBtn.setAttribute('aria-pressed', String(removeMode));
+		modeBtn.textContent = removeMode ? 'Removing points' : 'Remove mode';
+	});
+	body.querySelector('.fs-tal-reset')!.addEventListener('click', () => {
+		try {
+			localStorage.removeItem(`forever-talents:${state.spec!.key}:${ch.level}`);
+		} catch {
+			// nothing saved
+		}
+		const preset = ch.level < MAX_LEVEL ? state.spec!.levels[String(ch.level)]?.foreverTalents : state.spec!.foreverTalents;
+		ch.foreverTalents = preset ?? '';
+		ch.customTalents = false;
+		render();
+	});
+	body.querySelector('.fs-tal-clear')!.addEventListener('click', () => {
+		setTalents('');
+		render();
+	});
+	const code = body.querySelector<HTMLInputElement>('.fs-tal-code input')!;
+	code.addEventListener('change', () => {
+		const v = code.value.trim();
+		const a = parseTalents(v, trees);
+		if (!/^[0-9-]*$/.test(v) || !talentsValid(a, trees) || a.flat().reduce((x, y) => x + y, 0) > available) {
+			code.setCustomValidity(`That code isn't a valid ${state.cls!.name} build for level ${ch.level}.`);
+			code.reportValidity();
+			return;
+		}
+		setTalents(talentString(a));
+		render();
+	});
+
+	const tabs = body.querySelector('.fs-tal-tabs')!;
+	const treeBox = body.querySelector('.fs-tal-trees')!;
+	trees.forEach((tree, t) => {
+		const tab = h(`<button type="button" role="tab" class="fs-tal-tab" aria-selected="${talentTreeTab === t}">${esc(tree.name)} <span>${perTree[t]}</span></button>`);
+		tab.addEventListener('click', () => {
+			talentTreeTab = t;
+			render();
+		});
+		tabs.append(tab);
+
+		const col = h(`<section class="fs-tal-tree ${talentTreeTab === t ? 'is-current' : ''}"><h3>${esc(tree.name)} <span>${perTree[t]}</span></h3></section>`);
+		const maxTier = Math.max(...tree.talents.map(x => x.tier));
+		for (let tier = 1; tier <= maxTier; tier++) {
+			const row = h(`<div class="fs-tal-row"><span class="fs-tal-tier">${(tier - 1) * 5}</span></div>`);
+			tree.talents.forEach((tal, j) => {
+				if (tal.tier !== tier) return;
+				const r = alloc[t][j];
+				const tryChange = (delta: number) => {
+					const next = alloc.map(a => [...a]);
+					next[t][j] = r + delta;
+					if (next[t][j] < 0 || next[t][j] > tal.maxRank) return;
+					if (delta > 0 && spent + 1 > available) return;
+					if (!talentsValid(next, trees)) return;
+					setTalents(talentString(next));
+					render();
+				};
+				const canAdd = (() => {
+					if (r >= tal.maxRank || spent >= available) return false;
+					const next = alloc.map(a => [...a]);
+					next[t][j] = r + 1;
+					return talentsValid(next, trees);
+				})();
+				const tile = h(`<button type="button" class="fs-tal ${r ? 'has-points' : ''} ${r >= tal.maxRank ? 'is-max' : ''} ${canAdd || r ? '' : 'is-locked'}"
+					title="${esc(tal.name)} (${r}/${tal.maxRank})\n${esc(tal.description)}${tal.requires ? `\nRequires ${esc(tal.requires)}` : ''}">
+					<span class="fs-tal-name">${esc(tal.name)}</span>
+					<span class="fs-tal-rank">${r}/${tal.maxRank}</span>
+				</button>`);
+				tile.addEventListener('click', () => tryChange(removeMode ? -1 : 1));
+				tile.addEventListener('contextmenu', e => {
+					e.preventDefault();
+					tryChange(-1);
+				});
+				row.append(tile);
+			});
+			col.append(row);
+		}
+		treeBox.append(col);
+	});
+	return wrap;
+}
+
 function renderSimStep(): HTMLElement {
 	const ready = !!state.spec && !!state.character && !(state.character.source === 'import' && !state.character.imported);
 	const step = h(`<section class="fs-step ${ready ? '' : 'is-locked'}" aria-labelledby="s3">
@@ -529,13 +703,15 @@ function usePreset(level = state.character?.level ?? MAX_LEVEL) {
 	const race = state.cls!.races.includes(spec.race) ? spec.race : state.cls!.races[0];
 	const leveling = level < MAX_LEVEL ? spec.levels[String(level)] : undefined;
 	const saved = loadSavedGear(spec, level);
+	const savedTalents = loadSavedTalents(spec, level);
 	state.character = {
 		source: 'preset',
 		level,
 		gear: saved ?? (leveling ? { items: leveling.gear.map(id => (id ? { id } : {})) } : structuredCloneGear(spec.gearSpec)),
 		customGear: !!saved,
 		talents: leveling ? leveling.talents : spec.talents,
-		foreverTalents: (leveling ? leveling.foreverTalents : spec.foreverTalents) ?? '',
+		foreverTalents: savedTalents ?? (leveling ? leveling.foreverTalents : spec.foreverTalents) ?? '',
+		customTalents: savedTalents !== undefined,
 		race,
 		note: undefined,
 	};

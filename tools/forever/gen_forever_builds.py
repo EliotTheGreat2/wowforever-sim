@@ -115,8 +115,10 @@ def build_string(trees, order, points):
                 break
             if sum(alloc[tree]) < (tal['tier'] - 1) * 5:
                 raise SystemExit(f'{name}: needs {(tal["tier"] - 1) * 5} points in {trees[tree]["name"]} first')
-            if tal['requires'] and alloc[tree][index[tree][tal['requires']]] == 0:
-                raise SystemExit(f'{name}: requires {tal["requires"]}')
+            if tal['requires']:
+                req = index[tree][tal['requires']]
+                if alloc[tree][req] < trees[tree]['talents'][req]['maxRank']:
+                    raise SystemExit(f'{name}: requires all points in {tal["requires"]} first')
             alloc[tree][j] += 1
             spent += 1
         if alloc[tree][j] > tal['maxRank']:

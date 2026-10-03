@@ -6,29 +6,107 @@
   "stance": "WarriorStanceBattle"
  },
  "weapons": {
-  "twoHand": ["Axe", "Sword", "Polearm", "Mace"],
+  "twoHand": [
+   "Axe",
+   "Sword",
+   "Polearm",
+   "Mace"
+  ],
   "excludeRaid": true,
-  "level60": {"mainHand": 12784}
+  "level60": {
+   "mainHand": 12784
+  }
  },
  "order": [
-  [0, "Improved Rend", 3],
-  [0, "Improved Heroic Strike", 3],
-  [0, "Improved Overpower", 2],
-  [0, "Improved Tactical Mastery", 3],
-  [0, "Deep Wounds", 3],
-  [0, "Anger Management", 1],
-  [0, "Two-Handed Weapon Specialization", 3],
-  [0, "Impale", 2],
-  [0, "Spearing Strike", 1],
-  [0, "Weaponmaster", 5],
-  [0, "Sweeping Strikes", 1],
-  [0, "Bloodthrill", 5],
-  [0, "Improved Slam", 2],
-  [0, "Mortal Strike", 1],
-  [1, "Cruelty", 5],
-  [1, "Unbridled Wrath", 5],
-  [1, "Boundless Rage", 3],
-  [1, "Improved Cleave", 2],
-  [1, "Improved Execute", 1]
+  [
+   0,
+   "Improved Rend",
+   3
+  ],
+  [
+   0,
+   "Improved Heroic Strike",
+   2
+  ],
+  [
+   0,
+   "Improved Overpower",
+   2
+  ],
+  [
+   0,
+   "Improved Tactical Mastery",
+   5
+  ],
+  [
+   0,
+   "Deep Wounds",
+   3
+  ],
+  [
+   0,
+   "Anger Management",
+   1
+  ],
+  [
+   0,
+   "Two-Handed Weapon Specialization",
+   3
+  ],
+  [
+   0,
+   "Impale",
+   2
+  ],
+  [
+   0,
+   "Spearing Strike",
+   1
+  ],
+  [
+   0,
+   "Weaponmaster",
+   5
+  ],
+  [
+   0,
+   "Sweeping Strikes",
+   1
+  ],
+  [
+   0,
+   "Bloodthrill",
+   5
+  ],
+  [
+   0,
+   "Improved Slam",
+   2
+  ],
+  [
+   0,
+   "Mortal Strike",
+   1
+  ],
+  [
+   1,
+   "Cruelty",
+   5
+  ],
+  [
+   1,
+   "Unbridled Wrath",
+   5
+  ],
+  [
+   1,
+   "Boundless Rage",
+   3
+  ],
+  [
+   1,
+   "Improved Cleave",
+   2
+  ]
  ]
 }

@@ -549,3 +549,144 @@ details.fs-gear summary {
 .fs-reset {
 	margin-bottom: 8px;
 }
+
+/* Talent picker */
+.fs-talents {
+	margin-top: 10px;
+}
+.fs-tal-bar {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 8px;
+	margin: 8px 0;
+}
+.fs-tal-tabs {
+	display: none;
+	gap: 6px;
+}
+.fs-tal-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+.fs-tal-actions .fs-ghost {
+	padding: 6px 12px;
+	font-size: 0.85rem;
+}
+.fs-tal-mode[aria-pressed='true'] {
+	border-color: var(--danger);
+	color: var(--danger);
+}
+.fs-tal-trees {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 12px;
+}
+.fs-tal-tree {
+	background: var(--panel);
+	border: 1px solid var(--panel-edge);
+	border-radius: var(--radius-tile);
+	padding: 10px;
+}
+.fs-tal-tree h3 {
+	margin: 0 0 8px;
+	font-family: var(--display);
+	font-weight: 400;
+	font-size: 1.05rem;
+	display: flex;
+	justify-content: space-between;
+}
+.fs-tal-tree h3 span,
+.fs-tal-tab span {
+	color: var(--cls);
+}
+.fs-tal-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	align-items: stretch;
+	padding: 3px 0;
+	border-top: 1px dashed color-mix(in srgb, var(--panel-edge) 70%, transparent);
+}
+.fs-tal-tier {
+	width: 100%;
+	font-size: 0.68rem;
+	color: var(--muted);
+}
+.fs-tal {
+	flex: 1 1 90px;
+	min-height: 44px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: left;
+	background: var(--sky);
+	border: 1px solid var(--panel-edge);
+	border-radius: var(--radius-field);
+	color: var(--ink);
+	font: inherit;
+	font-size: 0.78rem;
+	line-height: 1.2;
+	padding: 5px 6px;
+	cursor: pointer;
+}
+.fs-tal:hover {
+	border-color: var(--cls);
+}
+.fs-tal.has-points {
+	border-color: color-mix(in srgb, var(--cls) 70%, transparent);
+	background: color-mix(in srgb, var(--cls) 12%, var(--sky));
+}
+.fs-tal.is-max {
+	border-color: var(--cls);
+}
+.fs-tal.is-locked {
+	opacity: 0.45;
+}
+.fs-tal-rank {
+	color: var(--muted);
+	font-size: 0.72rem;
+	margin-top: 2px;
+}
+.fs-tal.has-points .fs-tal-rank {
+	color: var(--cls);
+}
+.fs-tal-code {
+	margin-top: 10px;
+}
+.fs-tal-code input {
+	width: 100%;
+	margin-top: 4px;
+	padding: 8px 10px;
+	background: var(--sky);
+	color: var(--ink);
+	border: 1px solid var(--panel-edge);
+	border-radius: var(--radius-field);
+	font-family: ui-monospace, Consolas, monospace;
+	font-size: 0.9rem;
+}
+/* Phones: one tree at a time with tabs */
+@media (max-width: 720px) {
+	.fs-tal-tabs {
+		display: flex;
+	}
+	.fs-tal-tab {
+		background: var(--panel);
+		border: 1px solid var(--panel-edge);
+		border-radius: var(--radius-field);
+		color: var(--ink);
+		font: inherit;
+		font-size: 0.85rem;
+		padding: 6px 10px;
+	}
+	.fs-tal-tab[aria-selected='true'] {
+		border-color: var(--cls);
+	}
+	.fs-tal-trees {
+		grid-template-columns: 1fr;
+	}
+	.fs-tal-tree:not(.is-current) {
+		display: none;
+	}
+}
