@@ -1,0 +1,86 @@
+{
+ "rotation": "ui/elemental_shaman/apls/forever/forever_elemental.apl.json",
+ "options": {},
+ "order": [
+  [
+   0,
+   "Concussion",
+   5
+  ],
+  [
+   0,
+   "Convection",
+   5
+  ],
+  [
+   0,
+   "Call of Flame",
+   3
+  ],
+  [
+   0,
+   "Reverberation",
+   2
+  ],
+  [
+   0,
+   "Elemental Alacrity",
+   3
+  ],
+  [
+   0,
+   "Elemental Focus",
+   1
+  ],
+  [
+   0,
+   "Call of Thunder",
+   1
+  ],
+  [
+   0,
+   "Lightning Overload",
+   3
+  ],
+  [
+   0,
+   "Reverberation",
+   2
+  ],
+  [
+   0,
+   "Elemental Fury",
+   5
+  ],
+  [
+   0,
+   "Lava Burst",
+   1
+  ],
+  [
+   1,
+   "Thundering Strikes",
+   5
+  ],
+  [
+   2,
+   "Totemic Focus",
+   5
+  ],
+  [
+   2,
+   "Tidal Focus",
+   5
+  ],
+  [
+   2,
+   "Mindfulness",
+   3
+  ],
+  [
+   1,
+   "Ancestral Knowledge",
+   2
+  ]
+ ]
+}

@@ -100,6 +100,7 @@ func NewShaman(character *core.Character, talents string) *Shaman {
 	}
 
 	core.FillTalentsProto(shaman.Talents.ProtoReflect(), talents, TalentTreeSizes)
+	shaman.useForeverTalentLayout()
 	shaman.EnableManaBar()
 
 	// Add Shaman stat dependencies
@@ -234,6 +235,11 @@ type Shaman struct {
 	shamanisticRageDRMultiplier  float64
 	staticSHocksProcChance       float64
 	useLavaBurstCritScaling      bool
+
+	// WoW Forever (see forever_talents.go)
+	foreverLavaBurstDamage   [2]float64
+	foreverMaelstromPerStack float64
+	foreverStormstrikeAuras  core.AuraArray
 }
 
 // Implemented by each Shaman spec.

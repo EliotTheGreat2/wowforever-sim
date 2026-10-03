@@ -65,9 +65,12 @@ func (shaman *Shaman) newStormstrikeHitSpell(isMH bool) *core.Spell {
 		damageFunc = shaman.OHWeaponDamage
 	}
 
-	stormStrikeAuras := shaman.NewEnemyAuraArray(func(target *core.Unit, _ int32) *core.Aura {
-		return core.StormstrikeAura(target)
-	})
+	stormStrikeAuras := shaman.foreverStormstrikeAuras
+	if stormStrikeAuras == nil {
+		stormStrikeAuras = shaman.NewEnemyAuraArray(func(target *core.Unit, _ int32) *core.Aura {
+			return core.StormstrikeAura(target)
+		})
+	}
 
 	return shaman.RegisterSpell(core.SpellConfig{
 		ClassSpellMask: ClassSpellMask_ShamanStormstrikeHit,

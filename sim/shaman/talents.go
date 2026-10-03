@@ -9,6 +9,7 @@ import (
 )
 
 func (shaman *Shaman) ApplyTalents() {
+
 	// Elemental Talents
 	shaman.applyConcussion()
 	shaman.applyCallOfFlame()
@@ -78,6 +79,8 @@ func (shaman *Shaman) ApplyTalents() {
 			}
 		})
 	}
+
+	shaman.applyForeverTalents()
 }
 
 func (shaman *Shaman) applyConcussion() {
@@ -365,6 +368,10 @@ func (shaman *Shaman) makeFlurryAura(points int32) *core.Aura {
 
 	spellID := []int32{16257, 16277, 16278, 16279, 16280}[points-1]
 	attackSpeed := []float64{1.1, 1.15, 1.2, 1.25, 1.3}[points-1]
+	if shaman.ForeverTalents != nil {
+		// WoW Forever's Flurry: 5/10/15/20/25% attack speed.
+		attackSpeed = 1 + 0.05*float64(points)
+	}
 	label := fmt.Sprintf("Flurry Proc (%d)", spellID)
 
 	if aura := shaman.GetAura(label); aura != nil {

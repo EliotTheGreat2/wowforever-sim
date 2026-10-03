@@ -15,7 +15,8 @@ func (shaman *Shaman) registerLavaBurstSpell() {
 
 	shaman.LavaBurst = shaman.RegisterSpell(shaman.newLavaBurstSpellConfig(false))
 
-	if shaman.HasRune(proto.ShamanRune_RuneChestOverload) {
+	// WoW Forever's Lightning Overload doesn't proc from Lava Burst.
+	if shaman.HasRune(proto.ShamanRune_RuneChestOverload) && shaman.ForeverTalents == nil {
 		shaman.LavaBurstOverload = shaman.RegisterSpell(shaman.newLavaBurstSpellConfig(true))
 	}
 }
@@ -29,6 +30,11 @@ func (shaman *Shaman) newLavaBurstSpellConfig(isOverload bool) core.SpellConfig 
 	castTime := time.Second * 2
 	cooldown := time.Second * 8
 	manaCost := .10
+	// WoW Forever's Lava Burst talent: its own damage, and +20% damage (not a guaranteed crit) with Flame Shock.
+	isForever := shaman.ForeverTalents != nil
+	if isForever {
+		baseDamageLow, baseDamageHigh = shaman.foreverLavaBurstDamage[0], shaman.foreverLavaBurstDamage[1]
+	}
 
 	var flags core.SpellFlag
 	if !isOverload {
@@ -102,7 +108,9 @@ func (shaman *Shaman) newLavaBurstSpellConfig(isOverload bool) core.SpellConfig 
 				}
 			}
 
-			if flameShockActive {
+			if flameShockActive && isForever {
+				critChanceBonusPct *= 1.2
+			} else if flameShockActive {
 				spell.BonusCritRating += 100.0 * core.SpellCritRatingPerCritChance
 			}
 
@@ -110,14 +118,14 @@ func (shaman *Shaman) newLavaBurstSpellConfig(isOverload bool) core.SpellConfig 
 			result := spell.CalcDamage(sim, target, baseDamage, spell.OutcomeMagicHitAndCrit)
 			spell.ApplyMultiplicativeDamageBonus(100 / critChanceBonusPct)
 
-			if flameShockActive {
+			if flameShockActive && !isForever {
 				spell.BonusCritRating -= 100.0 * core.SpellCritRatingPerCritChance
 			}
 
 			spell.WaitTravelTime(sim, func(sim *core.Simulation) {
 				spell.DealDamage(sim, result)
 
-				if !isOverload && shaman.procOverload(sim, "Lava Burst Overload", 1) {
+				if !isOverload && shaman.LavaBurstOverload != nil && shaman.procOverload(sim, "Lava Burst Overload", 1) {
 					shaman.LavaBurstOverload.Cast(sim, target)
 				}
 			})
