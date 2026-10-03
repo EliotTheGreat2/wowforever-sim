@@ -185,12 +185,18 @@ func (mage *Mage) applyFingersOfFrost() {
 	}
 
 	mage.FingersOfFrostProcChance += 0.25
+	maxStacks := int32(2)
+	if mage.foreverFingersOfFrostStacks > 0 {
+		// WoW Forever's Fingers of Frost talent: 15% chance, 1/2 charges
+		mage.FingersOfFrostProcChance -= 0.10
+		maxStacks = mage.foreverFingersOfFrostStacks
+	}
 
 	mage.FingersOfFrostAura = mage.RegisterAura(core.Aura{
 		Label:     "Fingers of Frost Proc",
 		ActionID:  core.ActionID{SpellID: int32(proto.MageRune_RuneChestFingersOfFrost)},
 		Duration:  time.Second * 15,
-		MaxStacks: 2,
+		MaxStacks: maxStacks,
 		OnGain: func(aura *core.Aura, sim *core.Simulation) {
 			for _, aura := range mage.FrozenAuras {
 				aura.Activate(sim)
@@ -350,6 +356,10 @@ func (mage *Mage) applyMissileBarrage() {
 
 	arcaneMissilesSpells := []*core.Spell{}
 	affectedSpellClassMasks := ClassSpellMask_MageArcaneBlast | ClassSpellMask_MageFireball | ClassSpellMask_MageFrostbolt
+	if mage.ForeverTalents != nil {
+		// WoW Forever's Missile Barrage also procs from Frostfire Bolt
+		affectedSpellClassMasks |= ClassSpellMask_MageFrostfireBolt
+	}
 
 	mage.MissileBarrageAura = mage.RegisterAura(core.Aura{
 		Label:    "Missile Barrage",

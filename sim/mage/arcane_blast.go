@@ -26,8 +26,19 @@ func (mage *Mage) registerArcaneBlastSpell() {
 
 	mage.ArcaneBlastDamageMultiplier = 0.15
 
+	flatMask := ClassSpellMask_MageArcaneBlastAuraFlat
+	duration := time.Second * 6
+	if mage.ForeverTalents != nil {
+		// WoW Forever's Arcane Blast talent (forever_talents.go)
+		baseLowDamage, baseHighDamage = mage.foreverArcaneBlastDamage()
+		mage.ArcaneBlastDamageMultiplier = 0.10
+		flatMask = foreverArcaneBlastBuffedSpells
+		affectedSpells = foreverArcaneBlastConsumingSpells
+		duration = time.Second * 8
+	}
+
 	abDamageModFlat := mage.AddDynamicMod(core.SpellModConfig{
-		ClassMask: ClassSpellMask_MageArcaneBlastAuraFlat,
+		ClassMask: flatMask,
 		Kind:      core.SpellMod_DamageDone_Flat,
 	})
 	abDamageModPct := mage.AddDynamicMod(core.SpellModConfig{
@@ -44,7 +55,7 @@ func (mage *Mage) registerArcaneBlastSpell() {
 	mage.ArcaneBlastAura = mage.GetOrRegisterAura(core.Aura{
 		Label:     "Arcane Blast Aura",
 		ActionID:  core.ActionID{SpellID: 400573},
-		Duration:  time.Second * 6,
+		Duration:  duration,
 		MaxStacks: 4,
 		OnStacksChange: func(aura *core.Aura, sim *core.Simulation, oldStacks int32, newStacks int32) {
 			abCostMod.UpdateIntValue(175 * int64(newStacks))

@@ -1,0 +1,93 @@
+{
+ "rotation": "ui/mage/apls/forever/forever_frost.apl.json",
+ "options": {
+  "armor": "MageArmor"
+ },
+ "order": [
+  [
+   2,
+   "Improved Frostbolt",
+   5
+  ],
+  [
+   2,
+   "Elemental Precision",
+   5
+  ],
+  [
+   2,
+   "Ice Shards",
+   5
+  ],
+  [
+   2,
+   "Piercing Ice",
+   3
+  ],
+  [
+   2,
+   "Ice Lance",
+   1
+  ],
+  [
+   2,
+   "Frost Channeling",
+   3
+  ],
+  [
+   2,
+   "Shatter",
+   3
+  ],
+  [
+   2,
+   "Fingers of Frost",
+   2
+  ],
+  [
+   2,
+   "Cold Snap",
+   1
+  ],
+  [
+   2,
+   "Winter's Chill",
+   5
+  ],
+  [
+   0,
+   "Arcane Focus",
+   3
+  ],
+  [
+   0,
+   "Wand Specialization",
+   2
+  ],
+  [
+   0,
+   "Arcane Concentration",
+   5
+  ],
+  [
+   0,
+   "Arcane Subtlety",
+   2
+  ],
+  [
+   0,
+   "Magic Absorption",
+   2
+  ],
+  [
+   0,
+   "Arcane Blast",
+   1
+  ],
+  [
+   0,
+   "Arcane Meditation",
+   3
+  ]
+ ]
+}

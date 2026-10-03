@@ -19,6 +19,10 @@ func (mage *Mage) registerIceLanceSpell() {
 	baseDamageHigh := mage.baseRuneAbilityDamage() * 0.65
 	spellCoeff := 0.429
 	manaCost := 0.08
+	if mage.ForeverTalents != nil {
+		// WoW Forever's Ice Lance talent (forever_talents.go)
+		baseDamageLow, baseDamageHigh = mage.foreverIceLanceDamage()
+	}
 
 	damageModPct := mage.AddDynamicMod(core.SpellModConfig{
 		ClassMask:  ClassSpellMask_MageIceLance,

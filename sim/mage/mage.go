@@ -145,6 +145,9 @@ type Mage struct {
 	// Special functions that need to be able to be overwritten by certain effects
 	isTargetFrozen func(target *core.Unit) bool
 	procIgnite     func(sim *core.Simulation, result *core.SpellResult)
+
+	// WoW Forever talents and spells (forever_talents.go)
+	foreverFingersOfFrostStacks int32
 }
 
 // Agent is a generic way to access underlying mage on any of the agents.
@@ -197,6 +200,7 @@ func NewMage(character *core.Character, options *proto.Player) *Mage {
 		Options:   mageOptions.Options,
 	}
 	core.FillTalentsProto(mage.Talents.ProtoReflect(), options.TalentsString, TalentTreeSizes)
+	mage.useForeverTalentLayout()
 
 	mage.EnableManaBar()
 

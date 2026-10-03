@@ -13,6 +13,8 @@ func (mage *Mage) ApplyTalents() {
 	mage.applyArcaneTalents()
 	mage.applyFireTalents()
 	mage.applyFrostTalents()
+	// WoW Forever talent trees
+	mage.applyForeverTalents()
 }
 
 func (mage *Mage) applyArcaneTalents() {
