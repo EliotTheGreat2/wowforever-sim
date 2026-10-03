@@ -5,7 +5,7 @@
   "spec": "Balance",
   "role": "Caster DPS",
   "talents": "5000550012551251--5005031",
-  "rotation": "ui/balance_druid/apls/forever/default.apl.json",
+  "rotation": "ui/balance_druid/apls/forever/forever_balance.apl.json",
   "gear": "ui/balance_druid/gear_sets/forever/preraid.gear.json",
   "gearSource": "wowsims/classic pre-raid + auto-filled",
   "faction": "Horde",
@@ -35,7 +35,8 @@
      5324,
      15944,
      0
-    ]
+    ],
+    "foreverTalents": "1--"
    },
    "11": {
     "talents": "2",
@@ -57,7 +58,8 @@
      15444,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "2--"
    },
    "12": {
     "talents": "3",
@@ -79,7 +81,8 @@
      15444,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "3--"
    },
    "13": {
     "talents": "4",
@@ -101,7 +104,8 @@
      15444,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "4--"
    },
    "14": {
     "talents": "5",
@@ -123,7 +127,8 @@
      15444,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5--"
    },
    "15": {
     "talents": "50001",
@@ -145,7 +150,8 @@
      1300,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "50001--"
    },
    "16": {
     "talents": "50002",
@@ -167,7 +173,8 @@
      1300,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "50002--"
    },
    "17": {
     "talents": "50003",
@@ -189,7 +196,8 @@
      6505,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "50012--"
    },
    "18": {
     "talents": "50004",
@@ -211,7 +219,8 @@
      5201,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "50022--"
    },
    "19": {
     "talents": "50005",
@@ -233,7 +242,8 @@
      890,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "50122--"
    },
    "20": {
     "talents": "500050001",
@@ -255,7 +265,8 @@
      890,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "50222--"
    },
    "21": {
     "talents": "5000500011",
@@ -277,7 +288,8 @@
      890,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "50322--"
    },
    "22": {
     "talents": "5000500012",
@@ -299,7 +311,8 @@
      890,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "503221--"
    },
    "23": {
     "talents": "50005000121",
@@ -321,7 +334,8 @@
      2567,
      16887,
      0
-    ]
+    ],
+    "foreverTalents": "503222--"
    },
    "24": {
     "talents": "50005000122",
@@ -343,7 +357,8 @@
      1155,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "50322201--"
    },
    "25": {
     "talents": "50005000123",
@@ -365,7 +380,8 @@
      1155,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5032220101--"
    },
    "26": {
     "talents": "50005000124",
@@ -387,7 +403,8 @@
      1155,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5032220102--"
    },
    "27": {
     "talents": "50005000125",
@@ -409,7 +426,8 @@
      1155,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5032220103--"
    },
    "28": {
     "talents": "500050001251",
@@ -431,7 +449,8 @@
      1998,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5032220104--"
    },
    "29": {
     "talents": "500050001252",
@@ -453,7 +472,8 @@
      1998,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5032220105--"
    },
    "30": {
     "talents": "5000500012521",
@@ -475,7 +495,8 @@
      1998,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5032220115--"
    },
    "31": {
     "talents": "50005000125211",
@@ -497,7 +518,8 @@
      1998,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "50322201151--"
    },
    "32": {
     "talents": "50005000125212",
@@ -519,7 +541,8 @@
      7757,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "50322201152--"
    },
    "33": {
     "talents": "500050001252121",
@@ -541,7 +564,8 @@
      7757,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "50322201153--"
    },
    "34": {
     "talents": "500050001252122",
@@ -563,7 +587,8 @@
      7714,
      7685,
      0
-    ]
+    ],
+    "foreverTalents": "50322201154--"
    },
    "35": {
     "talents": "500050001252123",
@@ -585,7 +610,8 @@
      7714,
      7685,
      0
-    ]
+    ],
+    "foreverTalents": "50322201155--"
    },
    "36": {
     "talents": "500050001252124",
@@ -607,7 +633,8 @@
      7714,
      7685,
      0
-    ]
+    ],
+    "foreverTalents": "5032220115501--"
    },
    "37": {
     "talents": "500050001252125",
@@ -629,7 +656,8 @@
      7714,
      7685,
      0
-    ]
+    ],
+    "foreverTalents": "50322201155011--"
    },
    "38": {
     "talents": "5000500012521251",
@@ -651,7 +679,8 @@
      7714,
      7685,
      0
-    ]
+    ],
+    "foreverTalents": "50322201155012--"
    },
    "39": {
     "talents": "5000510012521251",
@@ -673,7 +702,8 @@
      7714,
      7685,
      0
-    ]
+    ],
+    "foreverTalents": "50322201155013--"
    },
    "40": {
     "talents": "5000520012521251",
@@ -695,7 +725,8 @@
      7714,
      7685,
      0
-    ]
+    ],
+    "foreverTalents": "503222011550131--"
    },
    "41": {
     "talents": "5000530012521251",
@@ -717,7 +748,8 @@
      7714,
      7685,
      0
-    ]
+    ],
+    "foreverTalents": "503222011550132--"
    },
    "42": {
     "talents": "5000540012521251",
@@ -739,7 +771,8 @@
      9482,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "503222011550133--"
    },
    "43": {
     "talents": "5000550012521251",
@@ -761,7 +794,8 @@
      9482,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "503222011550134--"
    },
    "44": {
     "talents": "5000550012531251",
@@ -783,7 +817,8 @@
      9482,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "503222011550135--"
    },
    "45": {
     "talents": "5000550012541251",
@@ -805,7 +840,8 @@
      9482,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5032220115501351--"
    },
    "46": {
     "talents": "5000550012551251",
@@ -827,7 +863,8 @@
      9482,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5132220115501351--"
    },
    "47": {
     "talents": "5000550012551251--1",
@@ -849,7 +886,8 @@
      9482,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5232220115501351--"
    },
    "48": {
     "talents": "5000550012551251--2",
@@ -871,7 +909,8 @@
      9482,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5332220115501351--"
    },
    "49": {
     "talents": "5000550012551251--3",
@@ -893,7 +932,8 @@
      9482,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5432220115501351--"
    },
    "50": {
     "talents": "5000550012551251--4",
@@ -915,7 +955,8 @@
      9482,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5532220115501351--"
    },
    "51": {
     "talents": "5000550012551251--5",
@@ -937,7 +978,8 @@
      9482,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5532220115501351--1"
    },
    "52": {
     "talents": "5000550012551251--5001",
@@ -959,7 +1001,8 @@
      9482,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5532220115501351--2"
    },
    "53": {
     "talents": "5000550012551251--5002",
@@ -981,7 +1024,8 @@
      9482,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5532220115501351--3"
    },
    "54": {
     "talents": "5000550012551251--5003",
@@ -1003,7 +1047,8 @@
      18321,
      11904,
      0
-    ]
+    ],
+    "foreverTalents": "5532220115501351--4"
    },
    "55": {
     "talents": "5000550012551251--5004",
@@ -1025,7 +1070,8 @@
      13964,
      11904,
      0
-    ]
+    ],
+    "foreverTalents": "5532220115501351--5"
    },
    "56": {
     "talents": "5000550012551251--5005",
@@ -1047,7 +1093,8 @@
      18534,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5532220115501351--501"
    },
    "57": {
     "talents": "5000550012551251--500501",
@@ -1069,7 +1116,8 @@
      18534,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5532220115501351--502"
    },
    "58": {
     "talents": "5000550012551251--500502",
@@ -1091,7 +1139,8 @@
      18534,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5532220115501351--503"
    },
    "59": {
     "talents": "5000550012551251--500503",
@@ -1113,7 +1162,8 @@
      18534,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5532220115501351--504"
    }
   },
   "gearSpec": {
@@ -1178,6 +1228,12 @@
     },
     {
      "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 9835,
+        "rank": 10
+       }
+      },
       "condition": {
        "cmp": {
         "op": "OpLe",
@@ -1190,17 +1246,17 @@
          }
         }
        }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 9835,
-        "rank": 10
-       }
       }
      }
     },
     {
      "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 9912,
+        "rank": 8
+       }
+      },
       "condition": {
        "cmp": {
         "op": "OpLe",
@@ -1209,21 +1265,21 @@
         },
         "rhs": {
          "const": {
-          "val": "3.5"
+          "val": "2.5"
          }
         }
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 9912,
-        "rank": 8
        }
       }
      }
     },
     {
      "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 9835,
+        "rank": 10
+       }
+      },
       "condition": {
        "not": {
         "val": {
@@ -1235,11 +1291,102 @@
          }
         }
        }
-      },
+      }
+     }
+    },
+    {
+     "action": {
       "castSpell": {
        "spellId": {
-        "spellId": 9835,
-        "rank": 10
+        "spellId": 24977,
+        "rank": 5
+       }
+      },
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "spellIsKnown": {
+           "spellId": {
+            "spellId": 24977,
+            "rank": 5
+           }
+          }
+         },
+         {
+          "not": {
+           "val": {
+            "dotIsActive": {
+             "spellId": {
+              "spellId": 24977,
+              "rank": 5
+             }
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "8"
+            }
+           }
+          }
+         }
+        ]
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 25298,
+        "rank": 7
+       }
+      },
+      "condition": {
+       "auraIsActive": {
+        "auraId": {
+         "spellId": 408255
+        }
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 9912,
+        "rank": 8
+       }
+      },
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "auraIsKnown": {
+           "auraId": {
+            "spellId": 408255
+           }
+          }
+         },
+         {
+          "spellIsKnown": {
+           "spellId": {
+            "spellId": 25298,
+            "rank": 7
+           }
+          }
+         }
+        ]
        }
       }
      }
@@ -1256,6 +1403,12 @@
     },
     {
      "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 9912,
+        "rank": 8
+       }
+      },
       "condition": {
        "not": {
         "val": {
@@ -1266,17 +1419,13 @@
          }
         }
        }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 9912
-       }
       }
      }
     }
    ]
   },
-  "distance": 25
+  "distance": 25,
+  "foreverTalents": "5532220115501351--505"
  },
  {
   "key": "feral_druid",
@@ -1284,7 +1433,7 @@
   "spec": "Feral (Cat)",
   "role": "Melee DPS",
   "talents": "500005301-5500021323202151-05",
-  "rotation": "ui/feral_druid/apls/forever/default.apl.json",
+  "rotation": "ui/feral_druid/apls/forever/forever_cat.apl.json",
   "gear": "ui/feral_druid/gear_sets/forever/preraid.gear.json",
   "gearSource": "wowsims/classic pre-raid + auto-filled",
   "faction": "Horde",
@@ -1314,7 +1463,8 @@
      6205,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-1-"
    },
    "11": {
     "talents": "-2",
@@ -1336,7 +1486,8 @@
      15444,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-2-"
    },
    "12": {
     "talents": "-3",
@@ -1358,7 +1509,8 @@
      15444,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-3-"
    },
    "13": {
     "talents": "-4",
@@ -1380,7 +1532,8 @@
      5306,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-4-"
    },
    "14": {
     "talents": "-5",
@@ -1402,7 +1555,8 @@
      4778,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5-"
    },
    "15": {
     "talents": "-500001",
@@ -1424,7 +1578,8 @@
      3452,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-51-"
    },
    "16": {
     "talents": "-500002",
@@ -1446,7 +1601,8 @@
      3194,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-52-"
    },
    "17": {
     "talents": "-5000021",
@@ -1468,7 +1624,8 @@
      6505,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-53-"
    },
    "18": {
     "talents": "-50000211",
@@ -1490,7 +1647,8 @@
      7230,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-54-"
    },
    "19": {
     "talents": "-50000212",
@@ -1512,7 +1670,8 @@
      7230,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55-"
    },
    "20": {
     "talents": "-50000213",
@@ -1534,7 +1693,8 @@
      7230,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500001-"
    },
    "21": {
     "talents": "-500002131",
@@ -1556,7 +1716,8 @@
      7230,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500002-"
    },
    "22": {
     "talents": "-500002132",
@@ -1578,7 +1739,8 @@
      2549,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500003-"
    },
    "23": {
     "talents": "-5000021321",
@@ -1600,7 +1762,8 @@
      3203,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500003001-"
    },
    "24": {
     "talents": "-5000021322",
@@ -1622,7 +1785,8 @@
      1976,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500003002-"
    },
    "25": {
     "talents": "-5000021323",
@@ -1644,7 +1808,8 @@
      1976,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500003102-"
    },
    "26": {
     "talents": "-50000213231",
@@ -1666,7 +1831,8 @@
      791,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500003202-"
    },
    "27": {
     "talents": "-50000213232",
@@ -1688,7 +1854,8 @@
      9449,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500003202001-"
    },
    "28": {
     "talents": "-5000021323201",
@@ -1710,7 +1877,8 @@
      9449,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500003202002-"
    },
    "29": {
     "talents": "-5000021323202",
@@ -1732,7 +1900,8 @@
      9449,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500003202003-"
    },
    "30": {
     "talents": "-50000213232021",
@@ -1754,7 +1923,8 @@
      13045,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032020031-"
    },
    "31": {
     "talents": "-500002132320211",
@@ -1776,7 +1946,8 @@
      13045,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032020032-"
    },
    "32": {
     "talents": "-500002132320212",
@@ -1798,7 +1969,8 @@
      6327,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032-"
    },
    "33": {
     "talents": "-500002132320213",
@@ -1820,7 +1992,8 @@
      6327,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500003202103201-"
    },
    "34": {
     "talents": "-500002132320214",
@@ -1842,7 +2015,8 @@
      6327,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032011-"
    },
    "35": {
     "talents": "-500002132320215",
@@ -1864,7 +2038,8 @@
      9408,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032012-"
    },
    "36": {
     "talents": "-5000021323202151",
@@ -1886,7 +2061,8 @@
      9408,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032112-"
    },
    "37": {
     "talents": "-5100021323202151",
@@ -1908,7 +2084,8 @@
      1722,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032212-"
    },
    "38": {
     "talents": "-5200021323202151",
@@ -1930,7 +2107,8 @@
      1722,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500003202103221201-"
    },
    "39": {
     "talents": "-5300021323202151",
@@ -1952,7 +2130,8 @@
      1722,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500003202103221202-"
    },
    "40": {
     "talents": "-5400021323202151",
@@ -1974,7 +2153,8 @@
      1722,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500003202103221203-"
    },
    "41": {
     "talents": "-5500021323202151",
@@ -1996,7 +2176,8 @@
      1720,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500003202103221204-"
    },
    "42": {
     "talents": "1-5500021323202151",
@@ -2018,7 +2199,8 @@
      1720,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5500003202103221205-"
    },
    "43": {
     "talents": "2-5500021323202151",
@@ -2040,7 +2222,8 @@
      1720,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032212051-"
    },
    "44": {
     "talents": "3-5500021323202151",
@@ -2062,7 +2245,8 @@
      9413,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032212051-01"
    },
    "45": {
     "talents": "4-5500021323202151",
@@ -2084,7 +2268,8 @@
      9413,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032212051-02"
    },
    "46": {
     "talents": "5-5500021323202151",
@@ -2106,7 +2291,8 @@
      9413,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032212051-03"
    },
    "47": {
     "talents": "500001-5500021323202151",
@@ -2128,7 +2314,8 @@
      9413,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032212051-04"
    },
    "48": {
     "talents": "500002-5500021323202151",
@@ -2150,7 +2337,8 @@
      9413,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032212051-05"
    },
    "49": {
     "talents": "500003-5500021323202151",
@@ -2172,7 +2360,8 @@
      9413,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032212051-051"
    },
    "50": {
     "talents": "500004-5500021323202151",
@@ -2194,7 +2383,8 @@
      11921,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032212051-052"
    },
    "51": {
     "talents": "500005-5500021323202151",
@@ -2216,7 +2406,8 @@
      11921,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032212051-053"
    },
    "52": {
     "talents": "5000051-5500021323202151",
@@ -2238,7 +2429,8 @@
      11921,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032212051-054"
    },
    "53": {
     "talents": "5000052-5500021323202151",
@@ -2260,7 +2452,8 @@
      13167,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55000032021032212051-055"
    },
    "54": {
     "talents": "5000053-5500021323202151",
@@ -2282,7 +2475,8 @@
      13167,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "01-55000032021032212051-055"
    },
    "55": {
     "talents": "500005301-5500021323202151",
@@ -2304,7 +2498,8 @@
      13372,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "02-55000032021032212051-055"
    },
    "56": {
     "talents": "500005301-5500021323202151-01",
@@ -2326,7 +2521,8 @@
      18420,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "03-55000032021032212051-055"
    },
    "57": {
     "talents": "500005301-5500021323202151-02",
@@ -2348,7 +2544,8 @@
      18420,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "04-55000032021032212051-055"
    },
    "58": {
     "talents": "500005301-5500021323202151-03",
@@ -2370,7 +2567,8 @@
      18420,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "05-55000032021032212051-055"
    },
    "59": {
     "talents": "500005301-5500021323202151-04",
@@ -2392,7 +2590,8 @@
      18420,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "05001-55000032021032212051-055"
    }
   },
   "gearSpec": {
@@ -2453,21 +2652,6 @@
      "action": {
       "castSpell": {
        "spellId": {
-        "spellId": 17392,
-        "rank": 4
-       }
-      }
-     },
-     "doAtValue": {
-      "const": {
-       "val": "-1.0s"
-      }
-     }
-    },
-    {
-     "action": {
-      "castSpell": {
-       "spellId": {
         "spellId": 9846,
         "rank": 4
        }
@@ -2481,64 +2665,6 @@
     }
    ],
    "priorityList": [
-    {
-     "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "auraRemainingTime": {
-             "sourceUnit": {
-              "type": "CurrentTarget"
-             },
-             "auraId": {
-              "spellId": 17392,
-              "rank": 4
-             }
-            }
-           },
-           "rhs": {
-            "const": {
-             "val": "1.0"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "auraRemainingTime": {
-             "sourceUnit": {
-              "type": "CurrentTarget"
-             },
-             "auraId": {
-              "spellId": 9907,
-              "rank": 4
-             }
-            }
-           },
-           "rhs": {
-            "const": {
-             "val": "1.0"
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 17392,
-        "rank": 4
-       }
-      }
-     }
-    },
     {
      "action": {
       "condition": {
@@ -2606,104 +2732,18 @@
     },
     {
      "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "auraIsKnown": {
-           "auraId": {
-            "spellId": 17061,
-            "rank": 5
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpGe",
-           "lhs": {
-            "currentMana": {}
-           },
-           "rhs": {
-            "spellCurrentCost": {
-             "spellId": {
-              "spellId": 768
-             }
-            }
-           }
-          }
-         },
-         {
-          "gcdIsReady": {}
-         },
-         {
-          "and": {
-           "vals": [
-            {
-             "auraIsKnown": {
-              "auraId": {
-               "spellId": 16870
-              }
-             }
-            },
-            {
-             "auraIsActive": {
-              "auraId": {
-               "spellId": 16870
-              }
-             }
-            },
-            {
-             "cmp": {
-              "op": "OpLt",
-              "lhs": {
-               "currentEnergy": {}
-              },
-              "rhs": {
-               "const": {
-                "val": "27.8"
-               }
-              }
-             }
-            }
-           ]
-          }
-         }
-        ]
+      "castSpell": {
+       "spellId": {
+        "spellId": 1290100
        }
       },
-      "cancelAura": {
-       "auraId": {
-        "spellId": 768
-       }
-      }
-     }
-    },
-    {
-     "action": {
       "condition": {
        "and": {
         "vals": [
          {
-          "cmp": {
-           "op": "OpEq",
-           "lhs": {
-            "currentComboPoints": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "5.0"
-            }
-           }
-          }
-         },
-         {
-          "not": {
-           "val": {
-            "auraIsActive": {
-             "auraId": {
-              "spellId": 16870
-             }
-            }
+          "auraIsActive": {
+           "auraId": {
+            "spellId": 768
            }
           }
          },
@@ -2711,48 +2751,16 @@
           "cmp": {
            "op": "OpLt",
            "lhs": {
-            "math": {
-             "op": "OpAdd",
-             "lhs": {
-              "currentEnergy": {}
-             },
-             "rhs": {
-              "const": {
-               "val": "20.2"
-              }
-             }
-            }
+            "currentEnergy": {}
            },
            "rhs": {
-            "math": {
-             "op": "OpAdd",
-             "lhs": {
-              "spellCurrentCost": {
-               "spellId": {
-                "spellId": 9830,
-                "rank": 5
-               }
-              }
-             },
-             "rhs": {
-              "spellCurrentCost": {
-               "spellId": {
-                "spellId": 31018,
-                "rank": 4
-               }
-              }
-             }
+            "const": {
+             "val": "60"
             }
            }
           }
          }
         ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 31018,
-        "rank": 4
        }
       }
      }
@@ -2764,533 +2772,68 @@
         "spellId": 9830,
         "rank": 5
        }
-      }
-     }
-    },
-    {
-     "action": {
+      },
       "condition": {
        "and": {
         "vals": [
          {
-          "auraIsKnown": {
+          "auraIsActive": {
            "auraId": {
-            "spellId": 17061,
-            "rank": 5
+            "spellId": 768
            }
           }
          },
          {
-          "cmp": {
-           "op": "OpGe",
-           "lhs": {
-            "currentMana": {}
-           },
-           "rhs": {
-            "spellCurrentCost": {
-             "spellId": {
-              "spellId": 768
-             }
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpGt",
-           "lhs": {
-            "timeToEnergyTick": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "1.02"
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 9850,
-        "rank": 5
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "auraIsKnown": {
+          "auraIsActive": {
            "auraId": {
-            "spellId": 17061,
-            "rank": 5
+            "spellId": 16870
+           }
+          }
+         }
+        ]
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 9896,
+        "rank": 6
+       }
+      },
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "auraIsActive": {
+           "auraId": {
+            "spellId": 768
            }
           }
          },
          {
           "cmp": {
-           "op": "OpGe",
+           "op": "OpEq",
            "lhs": {
-            "currentMana": {}
+            "currentComboPoints": {}
            },
            "rhs": {
-            "spellCurrentCost": {
+            "const": {
+             "val": "5"
+            }
+           }
+          }
+         },
+         {
+          "not": {
+           "val": {
+            "dotIsActive": {
              "spellId": {
-              "spellId": 768
+              "spellId": 9896,
+              "rank": 6
              }
-            }
-           }
-          }
-         },
-         {
-          "gcdIsReady": {}
-         },
-         {
-          "or": {
-           "vals": [
-            {
-             "and": {
-              "vals": [
-               {
-                "cmp": {
-                 "op": "OpLt",
-                 "lhs": {
-                  "currentComboPoints": {}
-                 },
-                 "rhs": {
-                  "const": {
-                   "val": "5.0"
-                  }
-                 }
-                }
-               },
-               {
-                "cmp": {
-                 "op": "OpLt",
-                 "lhs": {
-                  "math": {
-                   "op": "OpAdd",
-                   "lhs": {
-                    "currentEnergy": {}
-                   },
-                   "rhs": {
-                    "const": {
-                     "val": "20.2"
-                    }
-                   }
-                  }
-                 },
-                 "rhs": {
-                  "spellCurrentCost": {
-                   "spellId": {
-                    "spellId": 9830,
-                    "rank": 5
-                   }
-                  }
-                 }
-                }
-               }
-              ]
-             }
-            },
-            {
-             "and": {
-              "vals": [
-               {
-                "cmp": {
-                 "op": "OpEq",
-                 "lhs": {
-                  "currentComboPoints": {}
-                 },
-                 "rhs": {
-                  "const": {
-                   "val": "5.0"
-                  }
-                 }
-                }
-               },
-               {
-                "cmp": {
-                 "op": "OpLt",
-                 "lhs": {
-                  "math": {
-                   "op": "OpAdd",
-                   "lhs": {
-                    "currentEnergy": {}
-                   },
-                   "rhs": {
-                    "const": {
-                     "val": "20.2"
-                    }
-                   }
-                  }
-                 },
-                 "rhs": {
-                  "spellCurrentCost": {
-                   "spellId": {
-                    "spellId": 31018,
-                    "rank": 4
-                   }
-                  }
-                 }
-                }
-               }
-              ]
-             }
-            },
-            {
-             "and": {
-              "vals": [
-               {
-                "auraIsKnown": {
-                 "auraId": {
-                  "spellId": 16870
-                 }
-                }
-               },
-               {
-                "auraIsActive": {
-                 "auraId": {
-                  "spellId": 16870
-                 }
-                }
-               },
-               {
-                "cmp": {
-                 "op": "OpLt",
-                 "lhs": {
-                  "currentEnergy": {}
-                 },
-                 "rhs": {
-                  "const": {
-                   "val": "27.8"
-                  }
-                 }
-                }
-               }
-              ]
-             }
-            }
-           ]
-          }
-         }
-        ]
-       }
-      },
-      "cancelAura": {
-       "auraId": {
-        "spellId": 768
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "auraRemainingTime": {
-             "sourceUnit": {
-              "type": "CurrentTarget"
-             },
-             "auraId": {
-              "spellId": 17392,
-              "rank": 4
-             }
-            }
-           },
-           "rhs": {
-            "const": {
-             "val": "14.0"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "auraRemainingTime": {
-             "sourceUnit": {
-              "type": "CurrentTarget"
-             },
-             "auraId": {
-              "spellId": 9907,
-              "rank": 4
-             }
-            }
-           },
-           "rhs": {
-            "const": {
-             "val": "14.0"
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 17392,
-        "rank": 4
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "not": {
-        "val": {
-         "auraIsActive": {
-          "auraId": {
-           "spellId": 768
-          }
-         }
-        }
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "itemId": 10646
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "not": {
-           "val": {
-            "auraIsActive": {
-             "auraId": {
-              "spellId": 768
-             }
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "math": {
-             "op": "OpAdd",
-             "lhs": {
-              "currentMana": {}
-             },
-             "rhs": {
-              "const": {
-               "val": "1500.0"
-              }
-             }
-            }
-           },
-           "rhs": {
-            "math": {
-             "op": "OpDiv",
-             "lhs": {
-              "currentMana": {}
-             },
-             "rhs": {
-              "currentManaPercent": {}
-             }
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "itemId": 12662
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "not": {
-           "val": {
-            "auraIsActive": {
-             "auraId": {
-              "spellId": 768
-             }
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "math": {
-             "op": "OpAdd",
-             "lhs": {
-              "currentMana": {}
-             },
-             "rhs": {
-              "const": {
-               "val": "2250.0"
-              }
-             }
-            }
-           },
-           "rhs": {
-            "math": {
-             "op": "OpDiv",
-             "lhs": {
-              "currentMana": {}
-             },
-             "rhs": {
-              "currentManaPercent": {}
-             }
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "otherId": "OtherActionPotion"
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "not": {
-           "val": {
-            "auraIsActive": {
-             "auraId": {
-              "spellId": 768
-             }
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "currentManaPercent": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "80%"
-            }
-           }
-          }
-         },
-         {
-          "not": {
-           "val": {
-            "or": {
-             "vals": [
-              {
-               "and": {
-                "vals": [
-                 {
-                  "spellIsKnown": {
-                   "spellId": {
-                    "itemId": 12662
-                   }
-                  }
-                 },
-                 {
-                  "spellIsReady": {
-                   "spellId": {
-                    "itemId": 12662
-                   }
-                  }
-                 }
-                ]
-               }
-              },
-              {
-               "and": {
-                "vals": [
-                 {
-                  "spellIsKnown": {
-                   "spellId": {
-                    "otherId": "OtherActionPotion"
-                   }
-                  }
-                 },
-                 {
-                  "spellIsReady": {
-                   "spellId": {
-                    "otherId": "OtherActionPotion"
-                   }
-                  }
-                 }
-                ]
-               }
-              }
-             ]
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 23724
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "not": {
-           "val": {
-            "auraIsActive": {
-             "auraId": {
-              "spellId": 768
-             }
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "currentManaPercent": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "40%"
             }
            }
           }
@@ -3303,67 +2846,113 @@
            },
            "rhs": {
             "const": {
-             "val": "20.0"
-            }
-           }
-          }
-         },
-         {
-          "not": {
-           "val": {
-            "or": {
-             "vals": [
-              {
-               "and": {
-                "vals": [
-                 {
-                  "spellIsKnown": {
-                   "spellId": {
-                    "itemId": 12662
-                   }
-                  }
-                 },
-                 {
-                  "spellIsReady": {
-                   "spellId": {
-                    "itemId": 12662
-                   }
-                  }
-                 }
-                ]
-               }
-              },
-              {
-               "and": {
-                "vals": [
-                 {
-                  "spellIsKnown": {
-                   "spellId": {
-                    "otherId": "OtherActionPotion"
-                   }
-                  }
-                 },
-                 {
-                  "spellIsReady": {
-                   "spellId": {
-                    "otherId": "OtherActionPotion"
-                   }
-                  }
-                 }
-                ]
-               }
-              }
-             ]
+             "val": "10"
             }
            }
           }
          }
         ]
        }
-      },
+      }
+     }
+    },
+    {
+     "action": {
       "castSpell": {
        "spellId": {
-        "spellId": 29166
+        "spellId": 9904,
+        "rank": 4
+       }
+      },
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "auraIsActive": {
+           "auraId": {
+            "spellId": 768
+           }
+          }
+         },
+         {
+          "not": {
+           "val": {
+            "dotIsActive": {
+             "spellId": {
+              "spellId": 9904,
+              "rank": 4
+             }
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "6"
+            }
+           }
+          }
+         }
+        ]
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 31018,
+        "rank": 4
+       }
+      },
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "auraIsActive": {
+           "auraId": {
+            "spellId": 768
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpEq",
+           "lhs": {
+            "currentComboPoints": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "5"
+            }
+           }
+          }
+         }
+        ]
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 9830,
+        "rank": 5
+       }
+      },
+      "condition": {
+       "auraIsActive": {
+        "auraId": {
+         "spellId": 768
+        }
        }
       }
      }
@@ -3390,7 +2979,8 @@
     }
    ]
   },
-  "distance": 5
+  "distance": 5,
+  "foreverTalents": "05002-55000032021032212051-055"
  },
  {
   "key": "feral_tank_druid",
@@ -3398,7 +2988,7 @@
   "spec": "Guardian (Bear)",
   "role": "Tank",
   "talents": "-5052501303022151-55042",
-  "rotation": "ui/feral_tank_druid/apls/forever/default.apl.json",
+  "rotation": "ui/feral_tank_druid/apls/forever/forever_bear.apl.json",
   "gear": "ui/feral_tank_druid/gear_sets/forever/preraid.gear.json",
   "gearSource": "auto-picked pre-raid",
   "faction": "Horde",
@@ -3430,7 +3020,8 @@
      5340,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-1-"
    },
    "11": {
     "talents": "-2",
@@ -3452,7 +3043,8 @@
      15444,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-2-"
    },
    "12": {
     "talents": "-3",
@@ -3474,7 +3066,8 @@
      15444,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-3-"
    },
    "13": {
     "talents": "-4",
@@ -3496,7 +3089,8 @@
      5306,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-4-"
    },
    "14": {
     "talents": "-5",
@@ -3518,7 +3112,8 @@
      5306,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5-"
    },
    "15": {
     "talents": "-501",
@@ -3540,7 +3135,8 @@
      3452,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-500001-"
    },
    "16": {
     "talents": "-502",
@@ -3562,7 +3158,8 @@
      12983,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-500002-"
    },
    "17": {
     "talents": "-503",
@@ -3584,7 +3181,8 @@
      6505,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-500003-"
    },
    "18": {
     "talents": "-504",
@@ -3606,7 +3204,8 @@
      6505,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-500103-"
    },
    "19": {
     "talents": "-505",
@@ -3628,7 +3227,8 @@
      6505,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-500203-"
    },
    "20": {
     "talents": "-5050001",
@@ -3650,7 +3250,8 @@
      6631,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5002030001-"
    },
    "21": {
     "talents": "-50500011",
@@ -3672,7 +3273,8 @@
      6318,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5002030002-"
    },
    "22": {
     "talents": "-50500012",
@@ -3694,7 +3296,8 @@
      6318,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5002030102-"
    },
    "23": {
     "talents": "-50500013",
@@ -3716,7 +3319,8 @@
      3203,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5002030202-"
    },
    "24": {
     "talents": "-5050001301",
@@ -3738,7 +3342,8 @@
      1976,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5002031202-"
    },
    "25": {
     "talents": "-5050001302",
@@ -3760,7 +3365,8 @@
      1976,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-500203120201-"
    },
    "26": {
     "talents": "-5050001303",
@@ -3782,7 +3388,8 @@
      791,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5002031202011-"
    },
    "27": {
     "talents": "-505000130301",
@@ -3804,7 +3411,8 @@
      9449,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5002031202012-"
    },
    "28": {
     "talents": "-505000130302",
@@ -3826,7 +3434,8 @@
      9449,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5002031202013-"
    },
    "29": {
     "talents": "-5050001303021",
@@ -3848,7 +3457,8 @@
      9449,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-50020312020131-"
    },
    "30": {
     "talents": "-5050001303022",
@@ -3870,7 +3480,8 @@
      13045,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-50020312020132-"
    },
    "31": {
     "talents": "-50500013030221",
@@ -3892,7 +3503,8 @@
      7710,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5002031202013201-"
    },
    "32": {
     "talents": "-505000130302211",
@@ -3914,7 +3526,8 @@
      7713,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-50020312020132011-"
    },
    "33": {
     "talents": "-505000130302212",
@@ -3936,7 +3549,8 @@
      7713,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-50020312020132012-"
    },
    "34": {
     "talents": "-505000130302213",
@@ -3958,7 +3572,8 @@
      7713,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-51020312020132012-"
    },
    "35": {
     "talents": "-505000130302214",
@@ -3980,7 +3595,8 @@
      9408,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-52020312020132012-"
    },
    "36": {
     "talents": "-505000130302215",
@@ -4002,7 +3618,8 @@
      9408,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-53020312020132012-"
    },
    "37": {
     "talents": "-5050001303022151",
@@ -4024,7 +3641,8 @@
      7723,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-54020312020132012-"
    },
    "38": {
     "talents": "-5051001303022151",
@@ -4046,7 +3664,8 @@
      7723,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55020312020132012-"
    },
    "39": {
     "talents": "-5052001303022151",
@@ -4068,7 +3687,8 @@
      7723,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-550203120201320121-"
    },
    "40": {
     "talents": "-5052101303022151",
@@ -4090,7 +3710,8 @@
      7723,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-550203120201320122-"
    },
    "41": {
     "talents": "-5052201303022151",
@@ -4112,7 +3733,8 @@
      7723,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-550203120201320123-"
    },
    "42": {
     "talents": "-5052301303022151",
@@ -4134,7 +3756,8 @@
      18082,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-550203120201320124-"
    },
    "43": {
     "talents": "-5052401303022151",
@@ -4156,7 +3779,8 @@
      18082,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-550203120201320125-"
    },
    "44": {
     "talents": "-5052501303022151",
@@ -4178,7 +3802,8 @@
      9413,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5502031202013201251-"
    },
    "45": {
     "talents": "-5052501303022151-1",
@@ -4200,7 +3825,8 @@
      13046,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5502031202013201252-"
    },
    "46": {
     "talents": "-5052501303022151-2",
@@ -4222,7 +3848,8 @@
      11750,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5502031202013201253-"
    },
    "47": {
     "talents": "-5052501303022151-3",
@@ -4244,7 +3871,8 @@
      11750,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5502031202013201254-"
    },
    "48": {
     "talents": "-5052501303022151-4",
@@ -4266,7 +3894,8 @@
      11750,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-5502031202013201255-"
    },
    "49": {
     "talents": "-5052501303022151-5",
@@ -4288,7 +3917,8 @@
      10844,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55020312020132012551-"
    },
    "50": {
     "talents": "-5052501303022151-51",
@@ -4310,7 +3940,8 @@
      11921,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55030312020132012551-"
    },
    "51": {
     "talents": "-5052501303022151-52",
@@ -4332,7 +3963,8 @@
      12532,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55030322020132012551-"
    },
    "52": {
     "talents": "-5052501303022151-53",
@@ -4354,7 +3986,8 @@
      11932,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-55030332020132012551-"
    },
    "53": {
     "talents": "-5052501303022151-54",
@@ -4376,7 +4009,8 @@
      13167,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "01-55030332020132012551-"
    },
    "54": {
     "talents": "-5052501303022151-55",
@@ -4398,7 +4032,8 @@
      13167,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "02-55030332020132012551-"
    },
    "55": {
     "talents": "-5052501303022151-5501",
@@ -4420,7 +4055,8 @@
      18531,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "03-55030332020132012551-"
    },
    "56": {
     "talents": "-5052501303022151-5502",
@@ -4442,7 +4078,8 @@
      18531,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "04-55030332020132012551-"
    },
    "57": {
     "talents": "-5052501303022151-5503",
@@ -4464,7 +4101,8 @@
      18531,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "05-55030332020132012551-"
    },
    "58": {
     "talents": "-5052501303022151-5504",
@@ -4486,7 +4124,8 @@
      18531,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "05001-55030332020132012551-"
    },
    "59": {
     "talents": "-5052501303022151-55041",
@@ -4508,7 +4147,8 @@
      18531,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "05002-55030332020132012551-"
    }
   },
   "gearSpec": {
@@ -4630,25 +4270,77 @@
     },
     {
      "action": {
-      "condition": {
-       "not": {
-        "val": {
-         "auraIsActive": {
-          "sourceUnit": {
-           "type": "CurrentTarget"
-          },
-          "auraId": {
-           "spellId": 17392,
-           "rank": 4
-          }
-         }
-        }
-       }
-      },
       "castSpell": {
        "spellId": {
-        "spellId": 17392,
-        "rank": 4
+        "spellId": 407995
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 414644
+       }
+      },
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "spellIsKnown": {
+           "spellId": {
+            "spellId": 414644
+           }
+          }
+         },
+         {
+          "or": {
+           "vals": [
+            {
+             "cmp": {
+              "op": "OpLt",
+              "lhs": {
+               "auraNumStacks": {
+                "sourceUnit": {
+                 "type": "CurrentTarget"
+                },
+                "auraId": {
+                 "spellId": 414647
+                }
+               }
+              },
+              "rhs": {
+               "const": {
+                "val": "5"
+               }
+              }
+             }
+            },
+            {
+             "cmp": {
+              "op": "OpLe",
+              "lhs": {
+               "auraRemainingTime": {
+                "sourceUnit": {
+                 "type": "CurrentTarget"
+                },
+                "auraId": {
+                 "spellId": 414647
+                }
+               }
+              },
+              "rhs": {
+               "const": {
+                "val": "4"
+               }
+              }
+             }
+            }
+           ]
+          }
+         }
+        ]
        }
       }
      }
@@ -4702,7 +4394,8 @@
     }
    ]
   },
-  "distance": 5
+  "distance": 5,
+  "foreverTalents": "050021-55030332020132012551-"
  },
  {
   "key": "restoration_druid",
@@ -4784,7 +4477,7 @@
   "spec": "Elemental",
   "role": "Caster DPS",
   "talents": "050331552000151--50105301005",
-  "rotation": "ui/elemental_shaman/apls/forever/default.apl.json",
+  "rotation": "ui/elemental_shaman/apls/forever/forever_elemental.apl.json",
   "gear": "ui/elemental_shaman/gear_sets/forever/preraid.gear.json",
   "gearSource": "auto-picked pre-raid",
   "faction": "Horde",
@@ -4814,7 +4507,8 @@
      1927,
      3652,
      0
-    ]
+    ],
+    "foreverTalents": "01--"
    },
    "11": {
     "talents": "02",
@@ -4836,7 +4530,8 @@
      15443,
      3652,
      0
-    ]
+    ],
+    "foreverTalents": "02--"
    },
    "12": {
     "talents": "03",
@@ -4858,7 +4553,8 @@
      15443,
      3652,
      0
-    ]
+    ],
+    "foreverTalents": "03--"
    },
    "13": {
     "talents": "04",
@@ -4880,7 +4576,8 @@
      15443,
      6380,
      0
-    ]
+    ],
+    "foreverTalents": "04--"
    },
    "14": {
     "talents": "05",
@@ -4902,7 +4599,8 @@
      15443,
      6380,
      0
-    ]
+    ],
+    "foreverTalents": "05--"
    },
    "15": {
     "talents": "0501",
@@ -4924,7 +4622,8 @@
      3848,
      6380,
      0
-    ]
+    ],
+    "foreverTalents": "15--"
    },
    "16": {
     "talents": "0502",
@@ -4946,7 +4645,8 @@
      1483,
      15893,
      0
-    ]
+    ],
+    "foreverTalents": "25--"
    },
    "17": {
     "talents": "0503",
@@ -4968,7 +4668,8 @@
      1457,
      15893,
      0
-    ]
+    ],
+    "foreverTalents": "35--"
    },
    "18": {
     "talents": "05031",
@@ -4990,7 +4691,8 @@
      2567,
      4822,
      0
-    ]
+    ],
+    "foreverTalents": "45--"
    },
    "19": {
     "talents": "05032",
@@ -5012,7 +4714,8 @@
      2567,
      6383,
      0
-    ]
+    ],
+    "foreverTalents": "55--"
    },
    "20": {
     "talents": "050321",
@@ -5034,7 +4737,8 @@
      2567,
      6630,
      0
-    ]
+    ],
+    "foreverTalents": "55001--"
    },
    "21": {
     "talents": "0503211",
@@ -5056,7 +4760,8 @@
      2567,
      6630,
      0
-    ]
+    ],
+    "foreverTalents": "55002--"
    },
    "22": {
     "talents": "0503212",
@@ -5078,7 +4783,8 @@
      2567,
      6630,
      0
-    ]
+    ],
+    "foreverTalents": "55003--"
    },
    "23": {
     "talents": "0503213",
@@ -5100,7 +4806,8 @@
      2567,
      6630,
      0
-    ]
+    ],
+    "foreverTalents": "55013--"
    },
    "24": {
     "talents": "0503214",
@@ -5122,7 +4829,8 @@
      2567,
      6630,
      0
-    ]
+    ],
+    "foreverTalents": "55023--"
    },
    "25": {
     "talents": "050321401",
@@ -5144,7 +4852,8 @@
      2567,
      6630,
      0
-    ]
+    ],
+    "foreverTalents": "55023001--"
    },
    "26": {
     "talents": "050321402",
@@ -5166,7 +4875,8 @@
      2567,
      6630,
      0
-    ]
+    ],
+    "foreverTalents": "55023002--"
    },
    "27": {
     "talents": "0503214020001",
@@ -5188,7 +4898,8 @@
      2567,
      6630,
      0
-    ]
+    ],
+    "foreverTalents": "55023003--"
    },
    "28": {
     "talents": "05032140200011",
@@ -5210,7 +4921,8 @@
      2567,
      6630,
      0
-    ]
+    ],
+    "foreverTalents": "55023013--"
    },
    "29": {
     "talents": "05032140200012",
@@ -5232,7 +4944,8 @@
      17039,
      6630,
      0
-    ]
+    ],
+    "foreverTalents": "55023013001--"
    },
    "30": {
     "talents": "05032140200013",
@@ -5254,7 +4967,8 @@
      17039,
      6630,
      0
-    ]
+    ],
+    "foreverTalents": "5502301300101--"
    },
    "31": {
     "talents": "05032140200014",
@@ -5276,7 +4990,8 @@
      17039,
      6630,
      0
-    ]
+    ],
+    "foreverTalents": "5502301300102--"
    },
    "32": {
     "talents": "05032140200015",
@@ -5298,7 +5013,8 @@
      17039,
      6630,
      0
-    ]
+    ],
+    "foreverTalents": "5502301300103--"
    },
    "33": {
     "talents": "050321402000151",
@@ -5320,7 +5036,8 @@
      17039,
      6746,
      0
-    ]
+    ],
+    "foreverTalents": "5503301300103--"
    },
    "34": {
     "talents": "050331402000151",
@@ -5342,7 +5059,8 @@
      7714,
      6746,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103--"
    },
    "35": {
     "talents": "050331502000151",
@@ -5364,7 +5082,8 @@
      7714,
      6746,
      0
-    ]
+    ],
+    "foreverTalents": "550430130010301--"
    },
    "36": {
     "talents": "050331512000151",
@@ -5386,7 +5105,8 @@
      7714,
      6746,
      0
-    ]
+    ],
+    "foreverTalents": "550430130010302--"
    },
    "37": {
     "talents": "050331522000151",
@@ -5408,7 +5128,8 @@
      7714,
      6746,
      0
-    ]
+    ],
+    "foreverTalents": "550430130010303--"
    },
    "38": {
     "talents": "050331532000151",
@@ -5430,7 +5151,8 @@
      7714,
      6746,
      0
-    ]
+    ],
+    "foreverTalents": "550430130010304--"
    },
    "39": {
     "talents": "050331542000151",
@@ -5452,7 +5174,8 @@
      7714,
      14777,
      0
-    ]
+    ],
+    "foreverTalents": "550430130010305--"
    },
    "40": {
     "talents": "050331552000151",
@@ -5474,7 +5197,8 @@
      7714,
      14777,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051--"
    },
    "41": {
     "talents": "050331552000151--1",
@@ -5496,7 +5220,8 @@
      7714,
      14777,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-01-"
    },
    "42": {
     "talents": "050331552000151--2",
@@ -5518,7 +5243,8 @@
      7714,
      14777,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-02-"
    },
    "43": {
     "talents": "050331552000151--3",
@@ -5540,7 +5266,8 @@
      7714,
      14777,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-03-"
    },
    "44": {
     "talents": "050331552000151--4",
@@ -5562,7 +5289,8 @@
      7714,
      14780,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-04-"
    },
    "45": {
     "talents": "050331552000151--5",
@@ -5584,7 +5312,8 @@
      7714,
      14780,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-05-"
    },
    "46": {
     "talents": "050331552000151--501",
@@ -5606,7 +5335,8 @@
      7714,
      17718,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-05-01"
    },
    "47": {
     "talents": "050331552000151--50101",
@@ -5628,7 +5358,8 @@
      7714,
      17718,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-05-02"
    },
    "48": {
     "talents": "050331552000151--50102",
@@ -5650,7 +5381,8 @@
      7714,
      17718,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-05-03"
    },
    "49": {
     "talents": "050331552000151--50103",
@@ -5672,7 +5404,8 @@
      7714,
      17718,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-05-04"
    },
    "50": {
     "talents": "050331552000151--50104",
@@ -5694,7 +5427,8 @@
      7714,
      17718,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-05-05"
    },
    "51": {
     "talents": "050331552000151--50105",
@@ -5716,7 +5450,8 @@
      7714,
      17718,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-05-05001"
    },
    "52": {
     "talents": "050331552000151--501051",
@@ -5738,7 +5473,8 @@
      7714,
      17718,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-05-05002"
    },
    "53": {
     "talents": "050331552000151--501052",
@@ -5760,7 +5496,8 @@
      7714,
      17718,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-05-05003"
    },
    "54": {
     "talents": "050331552000151--501053",
@@ -5782,7 +5519,8 @@
      18321,
      17718,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-05-05004"
    },
    "55": {
     "talents": "050331552000151--50105301",
@@ -5804,7 +5542,8 @@
      13964,
      17718,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-05-05005"
    },
    "56": {
     "talents": "050331552000151--50105301001",
@@ -5826,7 +5565,8 @@
      13964,
      17718,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-05-05105"
    },
    "57": {
     "talents": "050331552000151--50105301002",
@@ -5848,7 +5588,8 @@
      13964,
      17718,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-05-05205"
    },
    "58": {
     "talents": "050331552000151--50105301003",
@@ -5870,7 +5611,8 @@
      13964,
      17718,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-05-05305"
    },
    "59": {
     "talents": "050331552000151--50105301004",
@@ -5892,7 +5634,8 @@
      13964,
      17718,
      0
-    ]
+    ],
+    "foreverTalents": "5504301300103051-051-05305"
    }
   },
   "gearSpec": {
@@ -5970,6 +5713,12 @@
    "priorityList": [
     {
      "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 10438,
+        "rank": 6
+       }
+      },
       "condition": {
        "and": {
         "vals": [
@@ -6000,17 +5749,17 @@
          }
         ]
        }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 10438,
-        "rank": 6
-       }
       }
      }
     },
     {
      "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 10587,
+        "rank": 4
+       }
+      },
       "condition": {
        "and": {
         "vals": [
@@ -6041,12 +5790,6 @@
          }
         ]
        }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 10587,
-        "rank": 4
-       }
       }
      }
     },
@@ -6059,31 +5802,83 @@
      "action": {
       "castSpell": {
        "spellId": {
+        "spellId": 29228,
+        "rank": 6
+       }
+      },
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "not": {
+           "val": {
+            "dotIsActive": {
+             "spellId": {
+              "spellId": 29228,
+              "rank": 6
+             }
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "8s"
+            }
+           }
+          }
+         }
+        ]
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 408490
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
         "spellId": 10605,
         "rank": 4
        }
-      }
-     }
-    },
-    {
-     "action": {
+      },
       "condition": {
-       "auraIsActive": {
-        "auraId": {
-         "spellId": 16166
+       "cmp": {
+        "op": "OpGe",
+        "lhs": {
+         "numberTargets": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "2"
+         }
         }
        }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 10414,
-        "rank": 7
-       }
       }
      }
     },
     {
      "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 15208,
+        "rank": 10
+       }
+      },
       "condition": {
        "cmp": {
         "op": "OpGe",
@@ -6092,15 +5887,9 @@
         },
         "rhs": {
          "const": {
-          "val": "30%"
+          "val": "50%"
          }
         }
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 15208,
-        "rank": 10
        }
       }
      }
@@ -6117,21 +5906,22 @@
     },
     {
      "action": {
-      "condition": {
-       "const": {
-        "val": "false"
-       }
-      },
       "castSpell": {
        "spellId": {
         "spellId": 20572
+       }
+      },
+      "condition": {
+       "const": {
+        "val": "false"
        }
       }
      }
     }
    ]
   },
-  "distance": 25
+  "distance": 25,
+  "foreverTalents": "5504301300103051-052-05305"
  },
  {
   "key": "enhancement_shaman",
@@ -6139,7 +5929,7 @@
   "spec": "Enhancement",
   "role": "Melee DPS",
   "talents": "05-5025002105023051-05105301",
-  "rotation": "ui/enhancement_shaman/apls/forever/default.apl.json",
+  "rotation": "ui/enhancement_shaman/apls/forever/forever_enhancement.apl.json",
   "gear": "ui/enhancement_shaman/gear_sets/forever/preraid.gear.json",
   "gearSource": "auto-picked pre-raid",
   "faction": "Horde",
@@ -6169,7 +5959,8 @@
      3586,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-01-"
    },
    "11": {
     "talents": "-2",
@@ -6191,7 +5982,8 @@
      15424,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-02-"
    },
    "12": {
     "talents": "-3",
@@ -6213,7 +6005,8 @@
      1959,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-03-"
    },
    "13": {
     "talents": "-4",
@@ -6235,7 +6028,8 @@
      5318,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-04-"
    },
    "14": {
     "talents": "-5",
@@ -6257,7 +6051,8 @@
      2203,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05-"
    },
    "15": {
     "talents": "-501",
@@ -6279,7 +6074,8 @@
      5423,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05001-"
    },
    "16": {
     "talents": "-502",
@@ -6301,7 +6097,8 @@
      3194,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05002-"
    },
    "17": {
     "talents": "-5021",
@@ -6323,7 +6120,8 @@
      6505,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05003-"
    },
    "18": {
     "talents": "-5022",
@@ -6345,7 +6143,8 @@
      7230,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05103-"
    },
    "19": {
     "talents": "-5023",
@@ -6367,7 +6166,8 @@
      7230,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05203-"
    },
    "20": {
     "talents": "-5023001",
@@ -6389,7 +6189,8 @@
      7230,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05303-"
    },
    "21": {
     "talents": "-5023002",
@@ -6411,7 +6212,8 @@
      6318,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05403-"
    },
    "22": {
     "talents": "-50230021",
@@ -6433,7 +6235,8 @@
      2549,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05503-"
    },
    "23": {
     "talents": "-5023002101",
@@ -6455,7 +6258,8 @@
      3203,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05503001-"
    },
    "24": {
     "talents": "-5023002102",
@@ -6477,7 +6281,8 @@
      1976,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05503002-"
    },
    "25": {
     "talents": "-5023002103",
@@ -6499,7 +6304,8 @@
      1976,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05503003-"
    },
    "26": {
     "talents": "-5023002104",
@@ -6521,7 +6327,8 @@
      791,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031-"
    },
    "27": {
     "talents": "-5023002105",
@@ -6543,7 +6350,8 @@
      9449,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031001-"
    },
    "28": {
     "talents": "-502300210501",
@@ -6565,7 +6373,8 @@
      9449,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031002-"
    },
    "29": {
     "talents": "-502300210502",
@@ -6587,7 +6396,8 @@
      9449,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031003-"
    },
    "30": {
     "talents": "-5023002105021",
@@ -6609,7 +6419,8 @@
      13045,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031004-"
    },
    "31": {
     "talents": "-5023002105022",
@@ -6631,7 +6442,8 @@
      13045,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031005-"
    },
    "32": {
     "talents": "-5023002105023",
@@ -6653,7 +6465,8 @@
      9459,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-0550300310051-"
    },
    "33": {
     "talents": "-502300210502301",
@@ -6675,7 +6488,8 @@
      9459,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031005101-"
    },
    "34": {
     "talents": "-502300210502302",
@@ -6697,7 +6511,8 @@
      10570,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031005102-"
    },
    "35": {
     "talents": "-502300210502303",
@@ -6719,7 +6534,8 @@
      9408,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05503003100510201-"
    },
    "36": {
     "talents": "-502300210502304",
@@ -6741,7 +6557,8 @@
      9408,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05503003100510202-"
    },
    "37": {
     "talents": "-502300210502305",
@@ -6763,7 +6580,8 @@
      1722,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05503003100510203-"
    },
    "38": {
     "talents": "-5023002105023051",
@@ -6785,7 +6603,8 @@
      1722,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05503003100510204-"
    },
    "39": {
     "talents": "-5024002105023051",
@@ -6807,7 +6626,8 @@
      1722,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-05503003100510205-"
    },
    "40": {
     "talents": "-5025002105023051",
@@ -6829,7 +6649,8 @@
      1722,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031005102051-"
    },
    "41": {
     "talents": "-5025002105023051-01",
@@ -6851,7 +6672,8 @@
      1720,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031005102051-01"
    },
    "42": {
     "talents": "-5025002105023051-02",
@@ -6873,7 +6695,8 @@
      1720,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031005102051-02"
    },
    "43": {
     "talents": "-5025002105023051-03",
@@ -6895,7 +6718,8 @@
      13018,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031005102051-03"
    },
    "44": {
     "talents": "-5025002105023051-04",
@@ -6917,7 +6741,8 @@
      9413,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031005102051-04"
    },
    "45": {
     "talents": "-5025002105023051-05",
@@ -6939,7 +6764,8 @@
      9413,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031005102051-05"
    },
    "46": {
     "talents": "-5025002105023051-051",
@@ -6961,7 +6787,8 @@
      9413,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031005102051-05001"
    },
    "47": {
     "talents": "-5025002105023051-05101",
@@ -6983,7 +6810,8 @@
      9413,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031005102051-05002"
    },
    "48": {
     "talents": "-5025002105023051-05102",
@@ -7005,7 +6833,8 @@
      9413,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031005102051-05003"
    },
    "49": {
     "talents": "-5025002105023051-05103",
@@ -7027,7 +6856,8 @@
      11816,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031005102051-05004"
    },
    "50": {
     "talents": "-5025002105023051-05104",
@@ -7049,7 +6879,8 @@
      11921,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "-055030031005102051-05005"
    },
    "51": {
     "talents": "-5025002105023051-05105",
@@ -7071,7 +6902,8 @@
      18324,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "1-055030031005102051-05005"
    },
    "52": {
     "talents": "-5025002105023051-051051",
@@ -7093,7 +6925,8 @@
      18324,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "2-055030031005102051-05005"
    },
    "53": {
     "talents": "-5025002105023051-051052",
@@ -7115,7 +6948,8 @@
      13167,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "3-055030031005102051-05005"
    },
    "54": {
     "talents": "-5025002105023051-051053",
@@ -7137,7 +6971,8 @@
      13167,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "4-055030031005102051-05005"
    },
    "55": {
     "talents": "-5025002105023051-05105301",
@@ -7159,7 +6994,8 @@
      13372,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5-055030031005102051-05005"
    },
    "56": {
     "talents": "01-5025002105023051-05105301",
@@ -7181,7 +7017,8 @@
      18420,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "500001-055030031005102051-05005"
    },
    "57": {
     "talents": "02-5025002105023051-05105301",
@@ -7203,7 +7040,8 @@
      18420,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "500002-055030031005102051-05005"
    },
    "58": {
     "talents": "03-5025002105023051-05105301",
@@ -7225,7 +7063,8 @@
      18420,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "500003-055030031005102051-05005"
    },
    "59": {
     "talents": "04-5025002105023051-05105301",
@@ -7247,7 +7086,8 @@
      18420,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "510003-055030031005102051-05005"
    }
   },
   "gearSpec": {
@@ -7375,6 +7215,33 @@
      "action": {
       "castSpell": {
        "spellId": {
+        "spellId": 15208,
+        "rank": 10
+       }
+      },
+      "condition": {
+       "cmp": {
+        "op": "OpGe",
+        "lhs": {
+         "auraNumStacks": {
+          "auraId": {
+           "spellId": 408505
+          }
+         }
+        },
+        "rhs": {
+         "const": {
+          "val": "5"
+         }
+        }
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
         "spellId": 17364,
         "rank": 1
        }
@@ -7383,6 +7250,12 @@
     },
     {
      "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 10438,
+        "rank": 6
+       }
+      },
       "condition": {
        "and": {
         "vals": [
@@ -7413,17 +7286,71 @@
          }
         ]
        }
-      },
+      }
+     }
+    },
+    {
+     "action": {
       "castSpell": {
        "spellId": {
-        "spellId": 10438,
+        "spellId": 29228,
         "rank": 6
+       }
+      },
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "not": {
+           "val": {
+            "dotIsActive": {
+             "spellId": {
+              "spellId": 29228,
+              "rank": 6
+             }
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "remainingTime": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "8s"
+            }
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "currentManaPercent": {}
+           },
+           "rhs": {
+            "const": {
+             "val": "30%"
+            }
+           }
+          }
+         }
+        ]
        }
       }
      }
     },
     {
      "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 10414,
+        "rank": 7
+       }
+      },
       "condition": {
        "cmp": {
         "op": "OpGe",
@@ -7436,18 +7363,13 @@
          }
         }
        }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 10414,
-        "rank": 7
-       }
       }
      }
     }
    ]
   },
-  "distance": 5
+  "distance": 5,
+  "foreverTalents": "520003-055030031005102051-05005"
  },
  {
   "key": "restoration_shaman",
@@ -7529,7 +7451,7 @@
   "spec": "Marksmanship",
   "role": "Ranged DPS",
   "talents": "55000000505-05451002503051",
-  "rotation": "ui/hunter/apls/forever/default.apl.json",
+  "rotation": "ui/hunter/apls/forever/forever_marksmanship.apl.json",
   "gear": "ui/hunter/gear_sets/forever/preraid.gear.json",
   "gearSource": "wowsims/classic pre-raid + auto-filled",
   "faction": "Horde",
@@ -7563,7 +7485,8 @@
      3586,
      0,
      3036
-    ]
+    ],
+    "foreverTalents": "-001-"
    },
    "11": {
     "talents": "-02",
@@ -7585,7 +7508,8 @@
      15444,
      0,
      11303
-    ]
+    ],
+    "foreverTalents": "-002-"
    },
    "12": {
     "talents": "-03",
@@ -7607,7 +7531,8 @@
      11854,
      0,
      11303
-    ]
+    ],
+    "foreverTalents": "-003-"
    },
    "13": {
     "talents": "-04",
@@ -7629,7 +7554,8 @@
      5318,
      0,
      5309
-    ]
+    ],
+    "foreverTalents": "-004-"
    },
    "14": {
     "talents": "-05",
@@ -7651,7 +7577,8 @@
      5318,
      0,
      5309
-    ]
+    ],
+    "foreverTalents": "-005-"
    },
    "15": {
     "talents": "-051",
@@ -7673,7 +7600,8 @@
      5423,
      0,
      5309
-    ]
+    ],
+    "foreverTalents": "-005001-"
    },
    "16": {
     "talents": "-052",
@@ -7695,7 +7623,8 @@
      5423,
      0,
      13136
-    ]
+    ],
+    "foreverTalents": "-005002-"
    },
    "17": {
     "talents": "-053",
@@ -7717,7 +7646,8 @@
      6505,
      0,
      13136
-    ]
+    ],
+    "foreverTalents": "-005003-"
    },
    "18": {
     "talents": "-054",
@@ -7739,7 +7669,8 @@
      1318,
      0,
      13136
-    ]
+    ],
+    "foreverTalents": "-005004-"
    },
    "19": {
     "talents": "-0541",
@@ -7761,7 +7692,8 @@
      890,
      0,
      13136
-    ]
+    ],
+    "foreverTalents": "-005005-"
    },
    "20": {
     "talents": "-05411",
@@ -7783,7 +7715,8 @@
      6631,
      0,
      3021
-    ]
+    ],
+    "foreverTalents": "-005015-"
    },
    "21": {
     "talents": "-05411001",
@@ -7805,7 +7738,8 @@
      6318,
      0,
      3021
-    ]
+    ],
+    "foreverTalents": "-005025-"
    },
    "22": {
     "talents": "-05411002",
@@ -7827,7 +7761,8 @@
      2549,
      0,
      2098
-    ]
+    ],
+    "foreverTalents": "-005035-"
    },
    "23": {
     "talents": "-054110021",
@@ -7849,7 +7784,8 @@
      13057,
      0,
      2098
-    ]
+    ],
+    "foreverTalents": "-005045-"
    },
    "24": {
     "talents": "-054110022",
@@ -7871,7 +7807,8 @@
      9490,
      0,
      9487
-    ]
+    ],
+    "foreverTalents": "-005055-"
    },
    "25": {
     "talents": "-054110023",
@@ -7893,7 +7830,8 @@
      9490,
      0,
      9487
-    ]
+    ],
+    "foreverTalents": "-00505500001-"
    },
    "26": {
     "talents": "-054110024",
@@ -7915,7 +7853,8 @@
      791,
      0,
      9487
-    ]
+    ],
+    "foreverTalents": "-00505500002-"
    },
    "27": {
     "talents": "-054110025",
@@ -7937,7 +7876,8 @@
      6689,
      0,
      6696
-    ]
+    ],
+    "foreverTalents": "-00505500003-"
    },
    "28": {
     "talents": "-05411002501",
@@ -7959,7 +7899,8 @@
      2877,
      0,
      6696
-    ]
+    ],
+    "foreverTalents": "-00505500004-"
    },
    "29": {
     "talents": "-05411002502",
@@ -7981,7 +7922,8 @@
      6687,
      0,
      13137
-    ]
+    ],
+    "foreverTalents": "-00505500005-"
    },
    "30": {
     "talents": "-05411002503",
@@ -8003,7 +7945,8 @@
      7689,
      0,
      9456
-    ]
+    ],
+    "foreverTalents": "-00505510005-"
    },
    "31": {
     "talents": "-0541100250301",
@@ -8025,7 +7968,8 @@
      1726,
      0,
      9456
-    ]
+    ],
+    "foreverTalents": "-00505520005-"
    },
    "32": {
     "talents": "-0541100250302",
@@ -8047,7 +7991,8 @@
      7713,
      0,
      9456
-    ]
+    ],
+    "foreverTalents": "-00505520005001-"
    },
    "33": {
     "talents": "-0541100250303",
@@ -8069,7 +8014,8 @@
      7713,
      0,
      9456
-    ]
+    ],
+    "foreverTalents": "-00505520005002-"
    },
    "34": {
     "talents": "-0541100250304",
@@ -8091,7 +8037,8 @@
      10570,
      0,
      13020
-    ]
+    ],
+    "foreverTalents": "-00505520005003-"
    },
    "35": {
     "talents": "-0541100250305",
@@ -8113,7 +8060,8 @@
      10570,
      0,
      13038
-    ]
+    ],
+    "foreverTalents": "-0050552000500301-"
    },
    "36": {
     "talents": "-05411002503051",
@@ -8135,7 +8083,8 @@
      10570,
      0,
      9426
-    ]
+    ],
+    "foreverTalents": "-0050552000500302-"
    },
    "37": {
     "talents": "-05421002503051",
@@ -8157,7 +8106,8 @@
      10570,
      0,
      13138
-    ]
+    ],
+    "foreverTalents": "-0050552000500303-"
    },
    "38": {
     "talents": "-05431002503051",
@@ -8179,7 +8129,8 @@
      10570,
      0,
      13138
-    ]
+    ],
+    "foreverTalents": "-0050552000500304-"
    },
    "39": {
     "talents": "-05441002503051",
@@ -8201,7 +8152,8 @@
      13058,
      0,
      13138
-    ]
+    ],
+    "foreverTalents": "-0050552000500305-"
    },
    "40": {
     "talents": "-05451002503051",
@@ -8223,7 +8175,8 @@
      9416,
      0,
      13138
-    ]
+    ],
+    "foreverTalents": "1-0050552000500305-"
    },
    "41": {
     "talents": "1-05451002503051",
@@ -8245,7 +8198,8 @@
      9416,
      0,
      13138
-    ]
+    ],
+    "foreverTalents": "2-0050552000500305-"
    },
    "42": {
     "talents": "2-05451002503051",
@@ -8267,7 +8221,8 @@
      9416,
      0,
      10624
-    ]
+    ],
+    "foreverTalents": "3-0050552000500305-"
    },
    "43": {
     "talents": "3-05451002503051",
@@ -8289,7 +8244,8 @@
      9480,
      0,
      13039
-    ]
+    ],
+    "foreverTalents": "4-0050552000500305-"
    },
    "44": {
     "talents": "4-05451002503051",
@@ -8311,7 +8267,8 @@
      9480,
      0,
      13039
-    ]
+    ],
+    "foreverTalents": "5-0050552000500305-"
    },
    "45": {
     "talents": "5-05451002503051",
@@ -8333,7 +8290,8 @@
      9480,
      0,
      13139
-    ]
+    ],
+    "foreverTalents": "501-0050552000500305-"
    },
    "46": {
     "talents": "51-05451002503051",
@@ -8355,7 +8313,8 @@
      11750,
      0,
      17717
-    ]
+    ],
+    "foreverTalents": "502-0050552000500305-"
    },
    "47": {
     "talents": "52-05451002503051",
@@ -8377,7 +8336,8 @@
      13052,
      0,
      17717
-    ]
+    ],
+    "foreverTalents": "512-0050552000500305-"
    },
    "48": {
     "talents": "53-05451002503051",
@@ -8399,7 +8359,8 @@
      13052,
      0,
      17717
-    ]
+    ],
+    "foreverTalents": "522-0050552000500305-"
    },
    "49": {
     "talents": "54-05451002503051",
@@ -8421,7 +8382,8 @@
      13052,
      0,
      17717
-    ]
+    ],
+    "foreverTalents": "532-0050552000500305-"
    },
    "50": {
     "talents": "55-05451002503051",
@@ -8443,7 +8405,8 @@
      13052,
      0,
      13022
-    ]
+    ],
+    "foreverTalents": "53200001-0050552000500305-"
    },
    "51": {
     "talents": "550000001-05451002503051",
@@ -8465,7 +8428,8 @@
      13056,
      0,
      18323
-    ]
+    ],
+    "foreverTalents": "53200002-0050552000500305-"
    },
    "52": {
     "talents": "550000002-05451002503051",
@@ -8487,7 +8451,8 @@
      18725,
      0,
      12651
-    ]
+    ],
+    "foreverTalents": "53200003-0050552000500305-"
    },
    "53": {
     "talents": "550000003-05451002503051",
@@ -8509,7 +8474,8 @@
      18725,
      0,
      12651
-    ]
+    ],
+    "foreverTalents": "53200004-0050552000500305-"
    },
    "54": {
     "talents": "550000004-05451002503051",
@@ -8531,7 +8497,8 @@
      18725,
      0,
      18680
-    ]
+    ],
+    "foreverTalents": "53200005-0050552000500305-"
    },
    "55": {
     "talents": "550000005-05451002503051",
@@ -8553,7 +8520,8 @@
      18725,
      0,
      18680
-    ]
+    ],
+    "foreverTalents": "53200015-0050552000500305-"
    },
    "56": {
     "talents": "55000000501-05451002503051",
@@ -8575,7 +8543,8 @@
      18520,
      0,
      18680
-    ]
+    ],
+    "foreverTalents": "5320001501-0050552000500305-"
    },
    "57": {
     "talents": "55000000502-05451002503051",
@@ -8597,7 +8566,8 @@
      18520,
      0,
      18680
-    ]
+    ],
+    "foreverTalents": "5320001502-0050552000500305-"
    },
    "58": {
     "talents": "55000000503-05451002503051",
@@ -8619,7 +8589,8 @@
      18520,
      0,
      13023
-    ]
+    ],
+    "foreverTalents": "5320001503-0050552000500305-"
    },
    "59": {
     "talents": "55000000504-05451002503051",
@@ -8641,7 +8612,8 @@
      18520,
      0,
      13023
-    ]
+    ],
+    "foreverTalents": "5320001504-0050552000500305-"
    }
   },
   "gearSpec": {
@@ -8726,7 +8698,7 @@
      },
      "doAtValue": {
       "const": {
-       "val": "-3.5s"
+       "val": "-2.5s"
       }
      }
     }
@@ -8739,48 +8711,33 @@
     },
     {
      "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 3045
+       }
+      }
+     }
+    },
+    {
+     "action": {
       "condition": {
-       "and": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpLt",
-           "lhs": {
-            "autoTimeToNext": {
-             "autoType": "Ranged"
-            }
-           },
-           "rhs": {
-            "const": {
-             "val": "0.1"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpLt",
-           "lhs": {
-            "spellTimeToReady": {
-             "spellId": {
-              "spellId": 20904,
-              "rank": 6
-             }
-            }
-           },
-           "rhs": {
-            "const": {
-             "val": "0.5"
-            }
-           }
-          }
+       "cmp": {
+        "op": "OpGt",
+        "lhs": {
+         "autoTimeToNext": {
+          "autoType": "Ranged"
          }
-        ]
+        },
+        "rhs": {
+         "const": {
+          "val": "1s"
+         }
+        }
        }
       },
       "castSpell": {
        "spellId": {
-        "spellId": 3045
+        "spellId": 1290201
        }
       }
      }
@@ -8853,73 +8810,6 @@
            },
            "rhs": {
             "const": {
-             "val": "5s"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpGe",
-           "lhs": {
-            "spellTimeToReady": {
-             "spellId": {
-              "spellId": 20904,
-              "rank": 6
-             }
-            }
-           },
-           "rhs": {
-            "const": {
-             "val": "0.5"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpGe",
-           "lhs": {
-            "spellTimeToReady": {
-             "spellId": {
-              "spellId": 25294,
-              "rank": 4
-             }
-            }
-           },
-           "rhs": {
-            "const": {
-             "val": "0.5"
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 25295,
-        "rank": 8
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpGt",
-           "lhs": {
-            "autoTimeToNext": {
-             "autoType": "Ranged"
-            }
-           },
-           "rhs": {
-            "const": {
              "val": "1s"
             }
            }
@@ -8942,6 +8832,40 @@
             }
            }
           }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 25295,
+        "rank": 8
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "cmp": {
+           "op": "OpGe",
+           "lhs": {
+            "spellTimeToReady": {
+             "spellId": {
+              "spellId": 20904,
+              "rank": 6
+             }
+            }
+           },
+           "rhs": {
+            "const": {
+             "val": "1"
+            }
+           }
+          }
          },
          {
           "cmp": {
@@ -8965,11 +8889,11 @@
           "cmp": {
            "op": "OpGt",
            "lhs": {
-            "currentTime": {}
+            "currentManaPercent": {}
            },
            "rhs": {
             "const": {
-             "val": "6"
+             "val": "70%"
             }
            }
           }
@@ -8979,14 +8903,16 @@
       },
       "castSpell": {
        "spellId": {
-        "itemId": 18641
+        "spellId": 14287,
+        "rank": 8
        }
       }
      }
     }
    ]
   },
-  "distance": 25
+  "distance": 25,
+  "foreverTalents": "5320001505-0050552000500305-"
  },
  {
   "key": "mage",
@@ -8994,7 +8920,7 @@
   "spec": "Frost",
   "role": "Caster DPS",
   "talents": "230205021002--05353203102351001",
-  "rotation": "ui/mage/apls/forever/default.apl.json",
+  "rotation": "ui/mage/apls/forever/forever_frost.apl.json",
   "gear": "ui/mage/gear_sets/forever/preraid.gear.json",
   "gearSource": "wowsims/classic pre-raid + auto-filled",
   "faction": "Horde",
@@ -9026,7 +8952,8 @@
      9513,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--01"
    },
    "11": {
     "talents": "--02",
@@ -9048,7 +8975,8 @@
      15444,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--02"
    },
    "12": {
     "talents": "--03",
@@ -9070,7 +8998,8 @@
      15444,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--03"
    },
    "13": {
     "talents": "--04",
@@ -9092,7 +9021,8 @@
      15444,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--04"
    },
    "14": {
     "talents": "--05",
@@ -9114,7 +9044,8 @@
      15444,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--05"
    },
    "15": {
     "talents": "--0501",
@@ -9136,7 +9067,8 @@
      1300,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--051"
    },
    "16": {
     "talents": "--0502",
@@ -9158,7 +9090,8 @@
      1300,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--052"
    },
    "17": {
     "talents": "--0503",
@@ -9180,7 +9113,8 @@
      935,
      2879,
      5069
-    ]
+    ],
+    "foreverTalents": "--053"
    },
    "18": {
     "talents": "--0504",
@@ -9202,7 +9136,8 @@
      2567,
      2879,
      5069
-    ]
+    ],
+    "foreverTalents": "--054"
    },
    "19": {
     "talents": "--0505",
@@ -9224,7 +9159,8 @@
      2567,
      2879,
      5069
-    ]
+    ],
+    "foreverTalents": "--055"
    },
    "20": {
     "talents": "--05050001",
@@ -9246,7 +9182,8 @@
      2567,
      2879,
      5069
-    ]
+    ],
+    "foreverTalents": "--0551"
    },
    "21": {
     "talents": "--05050002",
@@ -9268,7 +9205,8 @@
      2567,
      2879,
      5069
-    ]
+    ],
+    "foreverTalents": "--0552"
    },
    "22": {
     "talents": "--05050003",
@@ -9290,7 +9228,8 @@
      2567,
      2879,
      7001
-    ]
+    ],
+    "foreverTalents": "--0553"
    },
    "23": {
     "talents": "--050500031",
@@ -9312,7 +9251,8 @@
      2567,
      2879,
      7001
-    ]
+    ],
+    "foreverTalents": "--0554"
    },
    "24": {
     "talents": "--05050003101",
@@ -9334,7 +9274,8 @@
      2567,
      2879,
      7001
-    ]
+    ],
+    "foreverTalents": "--0555"
    },
    "25": {
     "talents": "--05050003102",
@@ -9356,7 +9297,8 @@
      2567,
      2879,
      7001
-    ]
+    ],
+    "foreverTalents": "--05550001"
    },
    "26": {
     "talents": "--050500031021",
@@ -9378,7 +9320,8 @@
      2567,
      2879,
      7001
-    ]
+    ],
+    "foreverTalents": "--05550002"
    },
    "27": {
     "talents": "--050500031022",
@@ -9400,7 +9343,8 @@
      2567,
      2879,
      7001
-    ]
+    ],
+    "foreverTalents": "--05550003"
    },
    "28": {
     "talents": "--050500031023",
@@ -9422,7 +9366,8 @@
      2567,
      2879,
      7001
-    ]
+    ],
+    "foreverTalents": "--0555000301"
    },
    "29": {
     "talents": "--0505000310231",
@@ -9444,7 +9389,8 @@
      13033,
      2879,
      7001
-    ]
+    ],
+    "foreverTalents": "--0555000311"
    },
    "30": {
     "talents": "--05050003102311",
@@ -9466,7 +9412,8 @@
      13033,
      2879,
      7001
-    ]
+    ],
+    "foreverTalents": "--0555000321"
    },
    "31": {
     "talents": "--05050003102311001",
@@ -9488,7 +9435,8 @@
      13033,
      2879,
      7001
-    ]
+    ],
+    "foreverTalents": "--0555000331"
    },
    "32": {
     "talents": "--05150003102311001",
@@ -9510,7 +9458,8 @@
      13033,
      2879,
      7001
-    ]
+    ],
+    "foreverTalents": "--05550003310001"
    },
    "33": {
     "talents": "--05250003102311001",
@@ -9532,7 +9481,8 @@
      13033,
      7685,
      7514
-    ]
+    ],
+    "foreverTalents": "--05550003310002"
    },
    "34": {
     "talents": "--05350003102311001",
@@ -9554,7 +9504,8 @@
      7714,
      7685,
      7514
-    ]
+    ],
+    "foreverTalents": "--05550003310003"
    },
    "35": {
     "talents": "--05351003102311001",
@@ -9576,7 +9527,8 @@
      7714,
      7515,
      7514
-    ]
+    ],
+    "foreverTalents": "--05550003310003001"
    },
    "36": {
     "talents": "--05352003102311001",
@@ -9598,7 +9550,8 @@
      7714,
      7515,
      7514
-    ]
+    ],
+    "foreverTalents": "--05550003310003002"
    },
    "37": {
     "talents": "--05353003102311001",
@@ -9620,7 +9573,8 @@
      7714,
      7515,
      7514
-    ]
+    ],
+    "foreverTalents": "--05550003310003012"
    },
    "38": {
     "talents": "--05353103102311001",
@@ -9642,7 +9596,8 @@
      7714,
      7515,
      7514
-    ]
+    ],
+    "foreverTalents": "--055500033100030121"
    },
    "39": {
     "talents": "--05353203102311001",
@@ -9664,7 +9619,8 @@
      7714,
      7515,
      7514
-    ]
+    ],
+    "foreverTalents": "--055500033100030122"
    },
    "40": {
     "talents": "--05353203102321001",
@@ -9686,7 +9642,8 @@
      7714,
      7515,
      7514
-    ]
+    ],
+    "foreverTalents": "--055500033100030123"
    },
    "41": {
     "talents": "--05353203102331001",
@@ -9708,7 +9665,8 @@
      7714,
      7515,
      7514
-    ]
+    ],
+    "foreverTalents": "--055500033100030124"
    },
    "42": {
     "talents": "--05353203102341001",
@@ -9730,7 +9688,8 @@
      7714,
      7515,
      7514
-    ]
+    ],
+    "foreverTalents": "--055500033100030125"
    },
    "43": {
     "talents": "--05353203102351001",
@@ -9752,7 +9711,8 @@
      7714,
      7515,
      7514
-    ]
+    ],
+    "foreverTalents": "01--055500033100030125"
    },
    "44": {
     "talents": "1--05353203102351001",
@@ -9774,7 +9734,8 @@
      7714,
      7515,
      7514
-    ]
+    ],
+    "foreverTalents": "02--055500033100030125"
    },
    "45": {
     "talents": "2--05353203102351001",
@@ -9796,7 +9757,8 @@
      7714,
      7515,
      7514
-    ]
+    ],
+    "foreverTalents": "03--055500033100030125"
    },
    "46": {
     "talents": "21--05353203102351001",
@@ -9818,7 +9780,8 @@
      7714,
      7515,
      7514
-    ]
+    ],
+    "foreverTalents": "13--055500033100030125"
    },
    "47": {
     "talents": "22--05353203102351001",
@@ -9840,7 +9803,8 @@
      7714,
      7515,
      7514
-    ]
+    ],
+    "foreverTalents": "23--055500033100030125"
    },
    "48": {
     "talents": "23--05353203102351001",
@@ -9862,7 +9826,8 @@
      7714,
      7515,
      7514
-    ]
+    ],
+    "foreverTalents": "230001--055500033100030125"
    },
    "49": {
     "talents": "2301--05353203102351001",
@@ -9884,7 +9849,8 @@
      7714,
      11904,
      7514
-    ]
+    ],
+    "foreverTalents": "230002--055500033100030125"
    },
    "50": {
     "talents": "2302--05353203102351001",
@@ -9906,7 +9872,8 @@
      7714,
      11904,
      7514
-    ]
+    ],
+    "foreverTalents": "230003--055500033100030125"
    },
    "51": {
     "talents": "230201--05353203102351001",
@@ -9928,7 +9895,8 @@
      7714,
      11904,
      7514
-    ]
+    ],
+    "foreverTalents": "230004--055500033100030125"
    },
    "52": {
     "talents": "230202--05353203102351001",
@@ -9950,7 +9918,8 @@
      7714,
      11904,
      7514
-    ]
+    ],
+    "foreverTalents": "230005--055500033100030125"
    },
    "53": {
     "talents": "230203--05353203102351001",
@@ -9972,7 +9941,8 @@
      7714,
      11904,
      7514
-    ]
+    ],
+    "foreverTalents": "230105--055500033100030125"
    },
    "54": {
     "talents": "230204--05353203102351001",
@@ -9994,7 +9964,8 @@
      7714,
      11904,
      7514
-    ]
+    ],
+    "foreverTalents": "230205--055500033100030125"
    },
    "55": {
     "talents": "230205--05353203102351001",
@@ -10016,7 +9987,8 @@
      13964,
      11904,
      7514
-    ]
+    ],
+    "foreverTalents": "230215--055500033100030125"
    },
    "56": {
     "talents": "23020501--05353203102351001",
@@ -10038,7 +10010,8 @@
      18534,
      0,
      7514
-    ]
+    ],
+    "foreverTalents": "230225--055500033100030125"
    },
    "57": {
     "talents": "23020502--05353203102351001",
@@ -10060,7 +10033,8 @@
      18534,
      0,
      13938
-    ]
+    ],
+    "foreverTalents": "2302250001--055500033100030125"
    },
    "58": {
     "talents": "230205021--05353203102351001",
@@ -10082,7 +10056,8 @@
      18534,
      0,
      13938
-    ]
+    ],
+    "foreverTalents": "2302250001001--055500033100030125"
    },
    "59": {
     "talents": "230205021001--05353203102351001",
@@ -10104,7 +10079,8 @@
      18534,
      0,
      13938
-    ]
+    ],
+    "foreverTalents": "2302250001002--055500033100030125"
    }
   },
   "gearSpec": {
@@ -10172,118 +10148,16 @@
     },
     {
      "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 400640
+       }
+      },
       "condition": {
-       "cmp": {
-        "op": "OpEq",
-        "lhs": {
-         "auraNumStacks": {
-          "sourceUnit": {
-           "type": "CurrentTarget"
-          },
-          "auraId": {
-           "spellId": 12873,
-           "rank": 3
-          }
-         }
-        },
-        "rhs": {
-         "const": {
-          "val": "5"
-         }
+       "auraIsActive": {
+        "auraId": {
+         "spellId": 400647
         }
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 11129
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "auraIsKnown": {
-           "auraId": {
-            "spellId": 11129
-           }
-          }
-         },
-         {
-          "or": {
-           "vals": [
-            {
-             "cmp": {
-              "op": "OpLt",
-              "lhs": {
-               "auraNumStacks": {
-                "sourceUnit": {
-                 "type": "CurrentTarget"
-                },
-                "auraId": {
-                 "spellId": 12873,
-                 "rank": 3
-                }
-               }
-              },
-              "rhs": {
-               "const": {
-                "val": "5"
-               }
-              }
-             }
-            },
-            {
-             "cmp": {
-              "op": "OpLe",
-              "lhs": {
-               "auraRemainingTime": {
-                "sourceUnit": {
-                 "type": "CurrentTarget"
-                },
-                "auraId": {
-                 "spellId": 12873,
-                 "rank": 3
-                }
-               }
-              },
-              "rhs": {
-               "const": {
-                "val": "5s"
-               }
-              }
-             }
-            }
-           ]
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 10207,
-        "rank": 7
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "spellIsKnown": {
-        "spellId": {
-         "spellId": 11129
-        }
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 25306,
-        "rank": 12
        }
       }
      }
@@ -10346,15 +10220,15 @@
      "action": {
       "castSpell": {
        "spellId": {
-        "spellId": 25304,
-        "rank": 10
+        "spellId": 25304
        }
       }
      }
     }
    ]
   },
-  "distance": 25
+  "distance": 25,
+  "foreverTalents": "2302250001003--055500033100030125"
  },
  {
   "key": "rogue",
@@ -10362,7 +10236,7 @@
   "spec": "Combat",
   "role": "Melee DPS",
   "talents": "005323105-0240052020050150231",
-  "rotation": "ui/rogue/apls/forever/default.apl.json",
+  "rotation": "ui/rogue/apls/forever/forever_combat.apl.json",
   "gear": "ui/rogue/gear_sets/forever/preraid.gear.json",
   "gearSource": "wowsims/classic pre-raid + auto-filled",
   "faction": "Horde",
@@ -10392,7 +10266,8 @@
      3570,
      5112,
      3036
-    ]
+    ],
+    "foreverTalents": "-01-"
    },
    "11": {
     "talents": "-02",
@@ -10414,7 +10289,8 @@
      15445,
      15443,
      11303
-    ]
+    ],
+    "foreverTalents": "-02-"
    },
    "12": {
     "talents": "-021",
@@ -10436,7 +10312,8 @@
      15445,
      3581,
      11303
-    ]
+    ],
+    "foreverTalents": "-12-"
    },
    "13": {
     "talents": "-022",
@@ -10458,7 +10335,8 @@
      5279,
      5321,
      5309
-    ]
+    ],
+    "foreverTalents": "-22-"
    },
    "14": {
     "talents": "-023",
@@ -10480,7 +10358,8 @@
      5279,
      5321,
      5309
-    ]
+    ],
+    "foreverTalents": "-32-"
    },
    "15": {
     "talents": "-023001",
@@ -10502,7 +10381,8 @@
      12976,
      935,
      5309
-    ]
+    ],
+    "foreverTalents": "-320001-"
    },
    "16": {
     "talents": "-023002",
@@ -10524,7 +10404,8 @@
      1483,
      12976,
      13136
-    ]
+    ],
+    "foreverTalents": "-320002-"
    },
    "17": {
     "talents": "-023003",
@@ -10546,7 +10427,8 @@
      6504,
      1483,
      13136
-    ]
+    ],
+    "foreverTalents": "-320003-"
    },
    "18": {
     "talents": "-023004",
@@ -10568,7 +10450,8 @@
      6504,
      2567,
      13136
-    ]
+    ],
+    "foreverTalents": "-321003-"
    },
    "19": {
     "talents": "-023005",
@@ -10590,7 +10473,8 @@
      1482,
      5191,
      13136
-    ]
+    ],
+    "foreverTalents": "-322003-"
    },
    "20": {
     "talents": "-0230051",
@@ -10612,7 +10496,8 @@
      1482,
      3413,
      3021
-    ]
+    ],
+    "foreverTalents": "-323003-"
    },
    "21": {
     "talents": "-0230052",
@@ -10634,7 +10519,8 @@
      4446,
      4454,
      3021
-    ]
+    ],
+    "foreverTalents": "-324003-"
    },
    "22": {
     "talents": "-023005201",
@@ -10656,7 +10542,8 @@
      4446,
      4454,
      2098
-    ]
+    ],
+    "foreverTalents": "-325003-"
    },
    "23": {
     "talents": "-023005202",
@@ -10678,7 +10565,8 @@
      16886,
      4446,
      2098
-    ]
+    ],
+    "foreverTalents": "-325013-"
    },
    "24": {
     "talents": "-023005202001",
@@ -10700,7 +10588,8 @@
      16886,
      4446,
      9487
-    ]
+    ],
+    "foreverTalents": "-325023-"
    },
    "25": {
     "talents": "-023005202002",
@@ -10722,7 +10611,8 @@
      16886,
      4446,
      9487
-    ]
+    ],
+    "foreverTalents": "-325023000001-"
    },
    "26": {
     "talents": "-023005202003",
@@ -10744,7 +10634,8 @@
      8226,
      776,
      9487
-    ]
+    ],
+    "foreverTalents": "-325023000002-"
    },
    "27": {
     "talents": "-023005202004",
@@ -10766,7 +10657,8 @@
      2912,
      9453,
      6696
-    ]
+    ],
+    "foreverTalents": "-325023000003-"
    },
    "28": {
     "talents": "-023005202005",
@@ -10788,7 +10680,8 @@
      7752,
      2912,
      6696
-    ]
+    ],
+    "foreverTalents": "-325023000004-"
    },
    "29": {
     "talents": "-02300520200501",
@@ -10810,7 +10703,8 @@
      13033,
      7682,
      13137
-    ]
+    ],
+    "foreverTalents": "-325023000005-"
    },
    "30": {
     "talents": "-023005202005011",
@@ -10832,7 +10726,8 @@
      7687,
      9457,
      9456
-    ]
+    ],
+    "foreverTalents": "-3250230000051-"
    },
    "31": {
     "talents": "-023005202005012",
@@ -10854,7 +10749,8 @@
      9384,
      8225,
      9456
-    ]
+    ],
+    "foreverTalents": "-32502300000511-"
    },
    "32": {
     "talents": "-023005202005013",
@@ -10876,7 +10772,8 @@
      10571,
      9384,
      9456
-    ]
+    ],
+    "foreverTalents": "-32502300000512-"
    },
    "33": {
     "talents": "-023005202005014",
@@ -10898,7 +10795,8 @@
      936,
      10571,
      9456
-    ]
+    ],
+    "foreverTalents": "-32502300000513-"
    },
    "34": {
     "talents": "-023005202005015",
@@ -10920,7 +10818,8 @@
      936,
      7736,
      13020
-    ]
+    ],
+    "foreverTalents": "-32502300000514-"
    },
    "35": {
     "talents": "-02300520200501501",
@@ -10942,7 +10841,8 @@
      936,
      9392,
      13038
-    ]
+    ],
+    "foreverTalents": "-32502300000515-"
    },
    "36": {
     "talents": "-02300520200501502",
@@ -10964,7 +10864,8 @@
      9424,
      13034,
      9426
-    ]
+    ],
+    "foreverTalents": "-32502300001515-"
    },
    "37": {
     "talents": "-023005202005015021",
@@ -10986,7 +10887,8 @@
      10823,
      6802,
      13138
-    ]
+    ],
+    "foreverTalents": "-3250230000151501-"
    },
    "38": {
     "talents": "-023005202005015022",
@@ -11008,7 +10910,8 @@
      10823,
      6802,
      13138
-    ]
+    ],
+    "foreverTalents": "-3250230000151502-"
    },
    "39": {
     "talents": "-023005202005015023",
@@ -11030,7 +10933,8 @@
      10823,
      6802,
      13138
-    ]
+    ],
+    "foreverTalents": "-3250230000151503-"
    },
    "40": {
     "talents": "-0230052020050150231",
@@ -11052,7 +10956,8 @@
      10823,
      9359,
      13138
-    ]
+    ],
+    "foreverTalents": "-32502300001515031-"
    },
    "41": {
     "talents": "-0240052020050150231",
@@ -11074,7 +10979,8 @@
      10823,
      9359,
      13138
-    ]
+    ],
+    "foreverTalents": "-32502300001515131-"
    },
    "42": {
     "talents": "001-0240052020050150231",
@@ -11096,7 +11002,8 @@
      4091,
      10823,
      10624
-    ]
+    ],
+    "foreverTalents": "-32502300001515231-"
    },
    "43": {
     "talents": "002-0240052020050150231",
@@ -11118,7 +11025,8 @@
      4091,
      10823,
      13039
-    ]
+    ],
+    "foreverTalents": "001-32502300001515231-"
    },
    "44": {
     "talents": "003-0240052020050150231",
@@ -11140,7 +11048,8 @@
      4091,
      10625,
      13039
-    ]
+    ],
+    "foreverTalents": "002-32502300001515231-"
    },
    "45": {
     "talents": "004-0240052020050150231",
@@ -11162,7 +11071,8 @@
      17055,
      17054,
      13139
-    ]
+    ],
+    "foreverTalents": "003-32502300001515231-"
    },
    "46": {
     "talents": "005-0240052020050150231",
@@ -11184,7 +11094,8 @@
      17943,
      17719,
      11629
-    ]
+    ],
+    "foreverTalents": "004-32502300001515231-"
    },
    "47": {
     "talents": "0051-0240052020050150231",
@@ -11206,7 +11117,8 @@
      10750,
      17719,
      11629
-    ]
+    ],
+    "foreverTalents": "005-32502300001515231-"
    },
    "48": {
     "talents": "0052-0240052020050150231",
@@ -11228,7 +11140,8 @@
      10750,
      10797,
      11629
-    ]
+    ],
+    "foreverTalents": "005001-32502300001515231-"
    },
    "49": {
     "talents": "0053-0240052020050150231",
@@ -11250,7 +11163,8 @@
      12535,
      10750,
      11629
-    ]
+    ],
+    "foreverTalents": "005002-32502300001515231-"
    },
    "50": {
     "talents": "00531-0240052020050150231",
@@ -11272,7 +11186,8 @@
      13182,
      11922,
      13022
-    ]
+    ],
+    "foreverTalents": "005003-32502300001515231-"
    },
    "51": {
     "talents": "00532-0240052020050150231",
@@ -11294,7 +11209,8 @@
      13182,
      11922,
      18323
-    ]
+    ],
+    "foreverTalents": "005103-32502300001515231-"
    },
    "52": {
     "talents": "005321-0240052020050150231",
@@ -11316,7 +11232,8 @@
      13036,
      18310,
      12651
-    ]
+    ],
+    "foreverTalents": "005203-32502300001515231-"
    },
    "53": {
     "talents": "005322-0240052020050150231",
@@ -11338,7 +11255,8 @@
      13036,
      13183,
      12651
-    ]
+    ],
+    "foreverTalents": "005303-32502300001515231-"
    },
    "54": {
     "talents": "005323-0240052020050150231",
@@ -11360,7 +11278,8 @@
      13218,
      14024,
      18680
-    ]
+    ],
+    "foreverTalents": "0053031-32502300001515231-"
    },
    "55": {
     "talents": "0053231-0240052020050150231",
@@ -11382,7 +11301,8 @@
      15806,
      18392,
      13173
-    ]
+    ],
+    "foreverTalents": "005303101-32502300001515231-"
    },
    "56": {
     "talents": "005323101-0240052020050150231",
@@ -11404,7 +11324,8 @@
      12940,
      18484,
      13173
-    ]
+    ],
+    "foreverTalents": "005303102-32502300001515231-"
    },
    "57": {
     "talents": "005323102-0240052020050150231",
@@ -11426,7 +11347,8 @@
      12940,
      13368,
      13173
-    ]
+    ],
+    "foreverTalents": "005303103-32502300001515231-"
    },
    "58": {
     "talents": "005323103-0240052020050150231",
@@ -11448,7 +11370,8 @@
      12783,
      13368,
      13173
-    ]
+    ],
+    "foreverTalents": "005303104-32502300001515231-"
    },
    "59": {
     "talents": "005323104-0240052020050150231",
@@ -11470,7 +11393,8 @@
      12783,
      13368,
      13173
-    ]
+    ],
+    "foreverTalents": "005303105-32502300001515231-"
    }
   },
   "gearSpec": {
@@ -11775,7 +11699,8 @@
     }
    ]
   },
-  "distance": 5
+  "distance": 5,
+  "foreverTalents": "005313105-32502300001515231-"
  },
  {
   "key": "holy_paladin",
@@ -11859,7 +11784,7 @@
   "spec": "Protection",
   "role": "Tank",
   "talents": "-053020335001551-0500535",
-  "rotation": "ui/protection_paladin/apls/forever/default.apl.json",
+  "rotation": "ui/protection_paladin/apls/forever/forever_fury.apl.json",
   "gear": "ui/protection_paladin/gear_sets/forever/preraid.gear.json",
   "gearSource": "auto-picked pre-raid",
   "faction": "Alliance",
@@ -11893,7 +11818,8 @@
      1480,
      6187,
      0
-    ]
+    ],
+    "foreverTalents": "-01-"
    },
    "11": {
     "talents": "-02",
@@ -11915,7 +11841,8 @@
      3572,
      6187,
      0
-    ]
+    ],
+    "foreverTalents": "-02-"
    },
    "12": {
     "talents": "-03",
@@ -11937,7 +11864,8 @@
      1958,
      6187,
      0
-    ]
+    ],
+    "foreverTalents": "-03-"
    },
    "13": {
     "talents": "-04",
@@ -11959,7 +11887,8 @@
      5757,
      6187,
      0
-    ]
+    ],
+    "foreverTalents": "-04-"
    },
    "14": {
     "talents": "-05",
@@ -11981,7 +11910,8 @@
      5757,
      6187,
      0
-    ]
+    ],
+    "foreverTalents": "-05-"
    },
    "15": {
     "talents": "-051",
@@ -12003,7 +11933,8 @@
      935,
      5443,
      0
-    ]
+    ],
+    "foreverTalents": "-051-"
    },
    "16": {
     "talents": "-052",
@@ -12025,7 +11956,8 @@
      1483,
      5443,
      0
-    ]
+    ],
+    "foreverTalents": "-052-"
    },
    "17": {
     "talents": "-053",
@@ -12047,7 +11979,8 @@
      1483,
      5443,
      0
-    ]
+    ],
+    "foreverTalents": "-053-"
    },
    "18": {
     "talents": "-05301",
@@ -12069,7 +12002,8 @@
      12990,
      5443,
      0
-    ]
+    ],
+    "foreverTalents": "-05301-"
    },
    "19": {
     "talents": "-05302",
@@ -12091,7 +12025,8 @@
      1482,
      12997,
      0
-    ]
+    ],
+    "foreverTalents": "-05302-"
    },
    "20": {
     "talents": "-0530201",
@@ -12113,7 +12048,8 @@
      1482,
      12997,
      0
-    ]
+    ],
+    "foreverTalents": "-05302001-"
    },
    "21": {
     "talents": "-0530202",
@@ -12135,7 +12071,8 @@
      1482,
      12997,
      0
-    ]
+    ],
+    "foreverTalents": "-05302002-"
    },
    "22": {
     "talents": "-0530203",
@@ -12157,7 +12094,8 @@
      3414,
      7002,
      0
-    ]
+    ],
+    "foreverTalents": "-05302003-"
    },
    "23": {
     "talents": "-05302031",
@@ -12179,7 +12117,8 @@
      16886,
      7002,
      0
-    ]
+    ],
+    "foreverTalents": "-05302013-"
    },
    "24": {
     "talents": "-05302032",
@@ -12201,7 +12140,8 @@
      16886,
      7002,
      0
-    ]
+    ],
+    "foreverTalents": "-05302023-"
    },
    "25": {
     "talents": "-053020320001",
@@ -12223,7 +12163,8 @@
      7786,
      13079,
      0
-    ]
+    ],
+    "foreverTalents": "-05302023001-"
    },
    "26": {
     "talents": "-0530203200011",
@@ -12245,7 +12186,8 @@
      13048,
      7787,
      0
-    ]
+    ],
+    "foreverTalents": "-05302023002-"
    },
    "27": {
     "talents": "-0530203200012",
@@ -12267,7 +12209,8 @@
      13048,
      7787,
      0
-    ]
+    ],
+    "foreverTalents": "-05302023003-"
    },
    "28": {
     "talents": "-0530203200013",
@@ -12289,7 +12232,8 @@
      7752,
      7787,
      0
-    ]
+    ],
+    "foreverTalents": "-05303023003-"
    },
    "29": {
     "talents": "-0530203200014",
@@ -12311,7 +12255,8 @@
      13033,
      6725,
      0
-    ]
+    ],
+    "foreverTalents": "-05304023003-"
    },
    "30": {
     "talents": "-0530203200015",
@@ -12333,7 +12278,8 @@
      9457,
      6725,
      0
-    ]
+    ],
+    "foreverTalents": "-05305023003-"
    },
    "31": {
     "talents": "-05302032000151",
@@ -12355,7 +12301,8 @@
      6692,
      6725,
      0
-    ]
+    ],
+    "foreverTalents": "-05305023003001-"
    },
    "32": {
     "talents": "-05302032000152",
@@ -12377,7 +12324,8 @@
      13025,
      4975,
      0
-    ]
+    ],
+    "foreverTalents": "-05305023003002-"
    },
    "33": {
     "talents": "-05302032000153",
@@ -12399,7 +12347,8 @@
      936,
      13081,
      0
-    ]
+    ],
+    "foreverTalents": "-05305023003003-"
    },
    "34": {
     "talents": "-05302032000154",
@@ -12421,7 +12370,8 @@
      936,
      13081,
      0
-    ]
+    ],
+    "foreverTalents": "-05305023003004-"
    },
    "35": {
     "talents": "-05302032000155",
@@ -12443,7 +12393,8 @@
      9392,
      4068,
      0
-    ]
+    ],
+    "foreverTalents": "-05305023003005-"
    },
    "36": {
     "talents": "-053020320001551",
@@ -12465,7 +12416,8 @@
      13034,
      4070,
      0
-    ]
+    ],
+    "foreverTalents": "-053050230030051-"
    },
    "37": {
     "talents": "-053020330001551",
@@ -12487,7 +12439,8 @@
      6829,
      4129,
      0
-    ]
+    ],
+    "foreverTalents": "-053050230030052-"
    },
    "38": {
     "talents": "-053020331001551",
@@ -12509,7 +12462,8 @@
      6829,
      4129,
      0
-    ]
+    ],
+    "foreverTalents": "-053050230030053-"
    },
    "39": {
     "talents": "-053020332001551",
@@ -12531,7 +12485,8 @@
      6829,
      4129,
      0
-    ]
+    ],
+    "foreverTalents": "-053050230030054-"
    },
    "40": {
     "talents": "-053020333001551",
@@ -12553,7 +12508,8 @@
      9359,
      4129,
      0
-    ]
+    ],
+    "foreverTalents": "-053050230030055-"
    },
    "41": {
     "talents": "-053020334001551",
@@ -12575,7 +12531,8 @@
      9359,
      8135,
      0
-    ]
+    ],
+    "foreverTalents": "-053050230030155-"
    },
    "42": {
     "talents": "-053020335001551",
@@ -12597,7 +12554,8 @@
      754,
      8135,
      0
-    ]
+    ],
+    "foreverTalents": "-0530502300301551-"
    },
    "43": {
     "talents": "-053020335001551-01",
@@ -12619,7 +12577,8 @@
      9639,
      2040,
      0
-    ]
+    ],
+    "foreverTalents": "-0530503300301551-"
    },
    "44": {
     "talents": "-053020335001551-02",
@@ -12641,7 +12600,8 @@
      13035,
      2040,
      0
-    ]
+    ],
+    "foreverTalents": "-0530503310301551-"
    },
    "45": {
     "talents": "-053020335001551-03",
@@ -12663,7 +12623,8 @@
      17055,
      2040,
      0
-    ]
+    ],
+    "foreverTalents": "-0530503320301551-"
    },
    "46": {
     "talents": "-053020335001551-04",
@@ -12685,7 +12646,8 @@
      11784,
      2040,
      0
-    ]
+    ],
+    "foreverTalents": "-1530503320301551-"
    },
    "47": {
     "talents": "-053020335001551-05",
@@ -12707,7 +12669,8 @@
      11784,
      2040,
      0
-    ]
+    ],
+    "foreverTalents": "-2530503320301551-"
    },
    "48": {
     "talents": "-053020335001551-05001",
@@ -12729,7 +12692,8 @@
      13014,
      2040,
      0
-    ]
+    ],
+    "foreverTalents": "-3530503320301551-"
    },
    "49": {
     "talents": "-053020335001551-05002",
@@ -12751,7 +12715,8 @@
      1721,
      1203,
      0
-    ]
+    ],
+    "foreverTalents": "-4530503320301551-"
    },
    "50": {
     "talents": "-053020335001551-05003",
@@ -12773,7 +12738,8 @@
      13182,
      1203,
      0
-    ]
+    ],
+    "foreverTalents": "-5530503320301551-"
    },
    "51": {
     "talents": "-053020335001551-05004",
@@ -12795,7 +12761,8 @@
      13182,
      1203,
      0
-    ]
+    ],
+    "foreverTalents": "1-5530503320301551-"
    },
    "52": {
     "talents": "-053020335001551-05005",
@@ -12817,7 +12784,8 @@
      18044,
      1203,
      0
-    ]
+    ],
+    "foreverTalents": "2-5530503320301551-"
    },
    "53": {
     "talents": "-053020335001551-050051",
@@ -12839,7 +12807,8 @@
      18044,
      1203,
      0
-    ]
+    ],
+    "foreverTalents": "3-5530503320301551-"
    },
    "54": {
     "talents": "-053020335001551-050052",
@@ -12861,7 +12830,8 @@
      18044,
      18673,
      0
-    ]
+    ],
+    "foreverTalents": "4-5530503320301551-"
    },
    "55": {
     "talents": "-053020335001551-050053",
@@ -12883,7 +12853,8 @@
      13952,
      18673,
      0
-    ]
+    ],
+    "foreverTalents": "5-5530503320301551-"
    },
    "56": {
     "talents": "-053020335001551-0500531",
@@ -12905,7 +12876,8 @@
      13952,
      18673,
      0
-    ]
+    ],
+    "foreverTalents": "50001-5530503320301551-"
    },
    "57": {
     "talents": "-053020335001551-0500532",
@@ -12927,7 +12899,8 @@
      18376,
      18673,
      0
-    ]
+    ],
+    "foreverTalents": "50002-5530503320301551-"
    },
    "58": {
     "talents": "-053020335001551-0500533",
@@ -12949,7 +12922,8 @@
      18376,
      12602,
      0
-    ]
+    ],
+    "foreverTalents": "50003-5530503320301551-"
    },
    "59": {
     "talents": "-053020335001551-0500534",
@@ -12971,7 +12945,8 @@
      18376,
      12602,
      0
-    ]
+    ],
+    "foreverTalents": "51003-5530503320301551-"
    }
   },
   "gearSpec": {
@@ -13032,7 +13007,11 @@
    "prepullActions": [
     {
      "action": {
-      "castPaladinPrimarySeal": {}
+      "castSpell": {
+       "spellId": {
+        "spellId": 1294002
+       }
+      }
      },
      "doAtValue": {
       "const": {
@@ -13054,41 +13033,49 @@
        "val": "-2s"
       }
      }
-    },
-    {
-     "action": {
-      "castSpell": {
-       "spellId": {
-        "itemId": 11832
-       }
-      }
-     },
-     "doAtValue": {
-      "const": {
-       "val": "-0.5s"
-      }
-     }
     }
    ],
    "priorityList": [
     {
      "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 20928,
+        "rank": 3
+       }
+      }
+     }
+    },
+    {
+     "action": {
       "condition": {
-       "cmp": {
-        "op": "OpLt",
-        "lhs": {
-         "currentSealRemainingTime": {}
-        },
-        "rhs": {
-         "const": {
-          "val": "2s"
-         }
+       "spellCanCast": {
+        "spellId": {
+         "spellId": 20271
         }
        }
       },
       "castSpell": {
        "spellId": {
         "spellId": 20271
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 1294001
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 407632
        }
       }
      }
@@ -13103,20 +13090,14 @@
         },
         "rhs": {
          "const": {
-          "val": "1"
+          "val": "2s"
          }
         }
        }
       },
-      "castPaladinPrimarySeal": {}
-     }
-    },
-    {
-     "action": {
       "castSpell": {
        "spellId": {
-        "spellId": 20924,
-        "rank": 5
+        "spellId": 1294002
        }
       }
      }
@@ -13124,23 +13105,30 @@
     {
      "action": {
       "condition": {
-       "auraIsActive": {
-        "auraId": {
-         "spellId": 20134
+       "cmp": {
+        "op": "OpGt",
+        "lhs": {
+         "currentManaPercent": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "30%"
+         }
         }
        }
       },
       "castSpell": {
        "spellId": {
-        "spellId": 20928,
-        "rank": 3
+        "spellId": 20924,
+        "rank": 5
        }
       }
      }
     }
    ]
   },
-  "distance": 5
+  "distance": 5,
+  "foreverTalents": "52003-5530503320301551-"
  },
  {
   "key": "retribution_paladin",
@@ -13148,7 +13136,7 @@
   "spec": "Retribution",
   "role": "Melee DPS",
   "talents": "500501-503-52230351200315",
-  "rotation": "ui/retribution_paladin/apls/forever/default.apl.json",
+  "rotation": "ui/retribution_paladin/apls/forever/forever_twist.apl.json",
   "gear": "ui/retribution_paladin/gear_sets/forever/preraid.gear.json",
   "gearSource": "auto-picked pre-raid",
   "faction": "Alliance",
@@ -13181,7 +13169,8 @@
      1566,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--01"
    },
    "11": {
     "talents": "--2",
@@ -13203,7 +13192,8 @@
      1566,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--02"
    },
    "12": {
     "talents": "--3",
@@ -13225,7 +13215,8 @@
      1959,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--03"
    },
    "13": {
     "talents": "--4",
@@ -13247,7 +13238,8 @@
      5615,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--04"
    },
    "14": {
     "talents": "--5",
@@ -13269,7 +13261,8 @@
      2203,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05"
    },
    "15": {
     "talents": "--501",
@@ -13291,7 +13284,8 @@
      5423,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05001"
    },
    "16": {
     "talents": "--502",
@@ -13313,7 +13307,8 @@
      3194,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05002"
    },
    "17": {
     "talents": "--5021",
@@ -13335,7 +13330,8 @@
      3194,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05003"
    },
    "18": {
     "talents": "--5022",
@@ -13357,7 +13353,8 @@
      7230,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05004"
    },
    "19": {
     "talents": "--5023",
@@ -13379,7 +13376,8 @@
      7230,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05005"
    },
    "20": {
     "talents": "--502301",
@@ -13401,7 +13399,8 @@
      7230,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05005001"
    },
    "21": {
     "talents": "--502302",
@@ -13423,7 +13422,8 @@
      3417,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05005101"
    },
    "22": {
     "talents": "--502303",
@@ -13445,7 +13445,8 @@
      3417,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05005201"
    },
    "23": {
     "talents": "--5023031",
@@ -13467,7 +13468,8 @@
      3203,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05005301"
    },
    "24": {
     "talents": "--5023032",
@@ -13489,7 +13491,8 @@
      9490,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05105301"
    },
    "25": {
     "talents": "--502303200001",
@@ -13511,7 +13514,8 @@
      9490,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05205301"
    },
    "26": {
     "talents": "--502303200002",
@@ -13533,7 +13537,8 @@
      9490,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05205311"
    },
    "27": {
     "talents": "--502303200003",
@@ -13555,7 +13560,8 @@
      9449,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05205321"
    },
    "28": {
     "talents": "--5023032000031",
@@ -13577,7 +13583,8 @@
      9449,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05205331"
    },
    "29": {
     "talents": "--5123032000031",
@@ -13599,7 +13606,8 @@
      9449,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05205331001"
    },
    "30": {
     "talents": "--5223032000031",
@@ -13621,7 +13629,8 @@
      13045,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--052053310011"
    },
    "31": {
     "talents": "--5223033000031",
@@ -13643,7 +13652,8 @@
      13045,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--052053310012"
    },
    "32": {
     "talents": "--5223034000031",
@@ -13665,7 +13675,8 @@
      10573,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--052053310013"
    },
    "33": {
     "talents": "--5223035000031",
@@ -13687,7 +13698,8 @@
      10573,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--0520533100131"
    },
    "34": {
     "talents": "--5223035100031",
@@ -13709,7 +13721,8 @@
      7758,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--0520533100132"
    },
    "35": {
     "talents": "--5223035110031",
@@ -13731,7 +13744,8 @@
      10758,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--0520533100133"
    },
    "36": {
     "talents": "--5223035120031",
@@ -13753,7 +13767,8 @@
      10758,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--052053310013301"
    },
    "37": {
     "talents": "--52230351200311",
@@ -13775,7 +13790,8 @@
      6830,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--052053310013302"
    },
    "38": {
     "talents": "--52230351200312",
@@ -13797,7 +13813,8 @@
      6830,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--052053310013303"
    },
    "39": {
     "talents": "--52230351200313",
@@ -13819,7 +13836,8 @@
      6830,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--052153310013303"
    },
    "40": {
     "talents": "--52230351200314",
@@ -13841,7 +13859,8 @@
      9416,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--052253310013303"
    },
    "41": {
     "talents": "--52230351200315",
@@ -13863,7 +13882,8 @@
      9416,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "--05225331001330301"
    },
    "42": {
     "talents": "1--52230351200315",
@@ -13885,7 +13905,8 @@
      9416,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "1--05225331001330301"
    },
    "43": {
     "talents": "2--52230351200315",
@@ -13907,7 +13928,8 @@
      13018,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "2--05225331001330301"
    },
    "44": {
     "talents": "3--52230351200315",
@@ -13929,7 +13951,8 @@
      9413,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "3--05225331001330301"
    },
    "45": {
     "talents": "4--52230351200315",
@@ -13951,7 +13974,8 @@
      9413,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "4--05225331001330301"
    },
    "46": {
     "talents": "5--52230351200315",
@@ -13973,7 +13997,8 @@
      9413,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "5--05225331001330301"
    },
    "47": {
     "talents": "5001--52230351200315",
@@ -13995,7 +14020,8 @@
      13052,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "50001--05225331001330301"
    },
    "48": {
     "talents": "5002--52230351200315",
@@ -14017,7 +14043,8 @@
      13052,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "50002--05225331001330301"
    },
    "49": {
     "talents": "5003--52230351200315",
@@ -14039,7 +14066,8 @@
      11816,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "50003--05225331001330301"
    },
    "50": {
     "talents": "5004--52230351200315",
@@ -14061,7 +14089,8 @@
      11921,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "51003--05225331001330301"
    },
    "51": {
     "talents": "5005--52230351200315",
@@ -14083,7 +14112,8 @@
      18324,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "52003--05225331001330301"
    },
    "52": {
     "talents": "500501--52230351200315",
@@ -14105,7 +14135,8 @@
      18725,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "53003--05225331001330301"
    },
    "53": {
     "talents": "500501-1-52230351200315",
@@ -14127,7 +14158,8 @@
      18725,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "54003--05225331001330301"
    },
    "54": {
     "talents": "500501-2-52230351200315",
@@ -14149,7 +14181,8 @@
      18725,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "55003--05225331001330301"
    },
    "55": {
     "talents": "500501-3-52230351200315",
@@ -14171,7 +14204,8 @@
      13163,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "55003001--05225331001330301"
    },
    "56": {
     "talents": "500501-4-52230351200315",
@@ -14193,7 +14227,8 @@
      18520,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "55003002--05225331001330301"
    },
    "57": {
     "talents": "500501-5-52230351200315",
@@ -14215,7 +14250,8 @@
      18520,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "55003003--05225331001330301"
    },
    "58": {
     "talents": "500501-501-52230351200315",
@@ -14237,7 +14273,8 @@
      18520,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "55003003--05225331001330311"
    },
    "59": {
     "talents": "500501-502-52230351200315",
@@ -14259,7 +14296,8 @@
      18520,
      0,
      0
-    ]
+    ],
+    "foreverTalents": "55003003--05225331001330321"
    }
   },
   "gearSpec": {
@@ -14330,6 +14368,16 @@
    "priorityList": [
     {
      "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 24239,
+        "rank": 3
+       }
+      }
+     }
+    },
+    {
+     "action": {
       "condition": {
        "spellCanCast": {
         "spellId": {
@@ -14346,6 +14394,15 @@
     },
     {
      "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 1294001
+       }
+      }
+     }
+    },
+    {
+     "action": {
       "condition": {
        "cmp": {
         "op": "OpLe",
@@ -14354,7 +14411,7 @@
         },
         "rhs": {
          "const": {
-          "val": "1"
+          "val": "1.5s"
          }
         }
        }
@@ -14365,21 +14422,114 @@
     {
      "action": {
       "condition": {
+       "cmp": {
+        "op": "OpGt",
+        "lhs": {
+         "currentManaPercent": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "70%"
+         }
+        }
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 20924,
+        "rank": 5
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
        "and": {
         "vals": [
          {
-          "cmp": {
-           "op": "OpLt",
-           "lhs": {
-            "autoTimeToNext": {
-             "autoType": "Melee"
+          "and": {
+           "vals": [
+            {
+             "auraIsKnown": {
+              "auraId": {
+               "spellId": 1294005
+              }
+             }
+            },
+            {
+             "not": {
+              "val": {
+               "auraIsActive": {
+                "auraId": {
+                 "spellId": 1294005
+                }
+               }
+              }
+             }
             }
+           ]
+          }
+         },
+         {
+          "auraIsActive": {
+           "auraId": {
+            "spellId": 20920,
+            "rank": 5
+           }
+          }
+         },
+         {
+          "cmp": {
+           "op": "OpGt",
+           "lhs": {
+            "currentManaPercent": {}
            },
            "rhs": {
             "const": {
-             "val": "0.4s"
+             "val": "30%"
             }
            }
+          }
+         }
+        ]
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 20293,
+        "rank": 8
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "condition": {
+       "and": {
+        "vals": [
+         {
+          "and": {
+           "vals": [
+            {
+             "auraIsKnown": {
+              "auraId": {
+               "spellId": 1294005
+              }
+             }
+            },
+            {
+             "not": {
+              "val": {
+               "auraIsActive": {
+                "auraId": {
+                 "spellId": 1294005
+                }
+               }
+              }
+             }
+            }
+           ]
           }
          },
          {
@@ -14395,54 +14545,16 @@
       },
       "castSpell": {
        "spellId": {
-        "spellId": 20375,
-        "rank": 1
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpLt",
-           "lhs": {
-            "autoTimeToNext": {
-             "autoType": "Melee"
-            }
-           },
-           "rhs": {
-            "const": {
-             "val": "0.4s"
-            }
-           }
-          }
-         },
-         {
-          "auraIsActive": {
-           "auraId": {
-            "spellId": 20375,
-            "rank": 1
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 20293,
-        "rank": 8
+        "spellId": 20920,
+        "rank": 5
        }
       }
      }
     }
    ]
   },
-  "distance": 5
+  "distance": 5,
+  "foreverTalents": "55003003--05225331011330321"
  },
  {
   "key": "healing_priest",
@@ -14645,7 +14757,7 @@
   "spec": "Shadow",
   "role": "Caster DPS",
   "talents": "0512301302--5002504103501251",
-  "rotation": "ui/shadow_priest/apls/forever/default.apl.json",
+  "rotation": "ui/shadow_priest/apls/forever/forever_shadow.apl.json",
   "gear": "ui/shadow_priest/gear_sets/forever/preraid.gear.json",
   "gearSource": "wowsims/classic pre-raid + auto-filled",
   "faction": "Horde",
@@ -14677,7 +14789,8 @@
      5324,
      15944,
      5069
-    ]
+    ],
+    "foreverTalents": "--1"
    },
    "11": {
     "talents": "--2",
@@ -14699,7 +14812,8 @@
      15444,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--2"
    },
    "12": {
     "talents": "--3",
@@ -14721,7 +14835,8 @@
      15444,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--3"
    },
    "13": {
     "talents": "--4",
@@ -14743,7 +14858,8 @@
      15444,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--4"
    },
    "14": {
     "talents": "--5",
@@ -14765,7 +14881,8 @@
      15444,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--5"
    },
    "15": {
     "talents": "--5001",
@@ -14787,7 +14904,8 @@
      1300,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--50001"
    },
    "16": {
     "talents": "--5002",
@@ -14809,7 +14927,8 @@
      1300,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--50002"
    },
    "17": {
     "talents": "--50021",
@@ -14831,7 +14950,8 @@
      1484,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--50102"
    },
    "18": {
     "talents": "--50022",
@@ -14853,7 +14973,8 @@
      1484,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--50202"
    },
    "19": {
     "talents": "--50023",
@@ -14875,7 +14996,8 @@
      1484,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--50302"
    },
    "20": {
     "talents": "--5002301",
@@ -14897,7 +15019,8 @@
      1484,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--503020001"
    },
    "21": {
     "talents": "--5002302",
@@ -14919,7 +15042,8 @@
      1484,
      0,
      5069
-    ]
+    ],
+    "foreverTalents": "--5030200011"
    },
    "22": {
     "talents": "--5002303",
@@ -14941,7 +15065,8 @@
      2549,
      0,
      7001
-    ]
+    ],
+    "foreverTalents": "--5030200012"
    },
    "23": {
     "talents": "--5002304",
@@ -14963,7 +15088,8 @@
      2549,
      0,
      7001
-    ]
+    ],
+    "foreverTalents": "--5030201012"
    },
    "24": {
     "talents": "--50023041",
@@ -14985,7 +15111,8 @@
      2549,
      0,
      7001
-    ]
+    ],
+    "foreverTalents": "--5030202012"
    },
    "25": {
     "talents": "--5002304101",
@@ -15007,7 +15134,8 @@
      2549,
      0,
      7001
-    ]
+    ],
+    "foreverTalents": "--5030202012001"
    },
    "26": {
     "talents": "--5002304102",
@@ -15029,7 +15157,8 @@
      2549,
      0,
      7001
-    ]
+    ],
+    "foreverTalents": "--5030202012002"
    },
    "27": {
     "talents": "--5002304103",
@@ -15051,7 +15180,8 @@
      2549,
      0,
      7001
-    ]
+    ],
+    "foreverTalents": "--5030202012003"
    },
    "28": {
     "talents": "--50023041031",
@@ -15073,7 +15203,8 @@
      2549,
      0,
      7001
-    ]
+    ],
+    "foreverTalents": "--5030203012003"
    },
    "29": {
     "talents": "--50023041032",
@@ -15095,7 +15226,8 @@
      2549,
      0,
      7001
-    ]
+    ],
+    "foreverTalents": "--5030204012003"
    },
    "30": {
     "talents": "--5002304103201",
@@ -15117,7 +15249,8 @@
      2549,
      0,
      7001
-    ]
+    ],
+    "foreverTalents": "--5030205012003"
    },
    "31": {
     "talents": "--50023041032011",
@@ -15139,7 +15272,8 @@
      2549,
      0,
      7001
-    ]
+    ],
+    "foreverTalents": "--5030205012013"
    },
    "32": {
     "talents": "--50023041032012",
@@ -15161,7 +15295,8 @@
      2549,
      0,
      7001
-    ]
+    ],
+    "foreverTalents": "--503020501201301"
    },
    "33": {
     "talents": "--500230410320121",
@@ -15183,7 +15318,8 @@
      2549,
      0,
      7001
-    ]
+    ],
+    "foreverTalents": "--503020501201302"
    },
    "34": {
     "talents": "--500230410320122",
@@ -15205,7 +15341,8 @@
      7714,
      7685,
      7001
-    ]
+    ],
+    "foreverTalents": "--504020501201302"
    },
    "35": {
     "talents": "--500230410320123",
@@ -15227,7 +15364,8 @@
      7714,
      7685,
      7001
-    ]
+    ],
+    "foreverTalents": "--50402050120130201"
    },
    "36": {
     "talents": "--500230410320124",
@@ -15249,7 +15387,8 @@
      7714,
      7685,
      7001
-    ]
+    ],
+    "foreverTalents": "--50402050120130202"
    },
    "37": {
     "talents": "--500230410320125",
@@ -15271,7 +15410,8 @@
      7714,
      7685,
      13064
-    ]
+    ],
+    "foreverTalents": "--50402050120130203"
    },
    "38": {
     "talents": "--5002304103201251",
@@ -15293,7 +15433,8 @@
      7714,
      13029,
      13064
-    ]
+    ],
+    "foreverTalents": "--50402050120130204"
    },
    "39": {
     "talents": "--5002404103201251",
@@ -15315,7 +15456,8 @@
      7714,
      13029,
      13064
-    ]
+    ],
+    "foreverTalents": "--50402050120130205"
    },
    "40": {
     "talents": "--5002504103201251",
@@ -15337,7 +15479,8 @@
      7714,
      13029,
      13064
-    ]
+    ],
+    "foreverTalents": "--504020501201302051"
    },
    "41": {
     "talents": "--5002504103301251",
@@ -15359,7 +15502,8 @@
      7714,
      13029,
      13064
-    ]
+    ],
+    "foreverTalents": "--504020501201302151"
    },
    "42": {
     "talents": "--5002504103401251",
@@ -15381,7 +15525,8 @@
      7714,
      13029,
      13064
-    ]
+    ],
+    "foreverTalents": "--504020501201302251"
    },
    "43": {
     "talents": "--5002504103501251",
@@ -15403,7 +15548,8 @@
      7714,
      13029,
      13064
-    ]
+    ],
+    "foreverTalents": "001--504020501201302251"
    },
    "44": {
     "talents": "01--5002504103501251",
@@ -15425,7 +15571,8 @@
      7714,
      13029,
      13064
-    ]
+    ],
+    "foreverTalents": "002--504020501201302251"
    },
    "45": {
     "talents": "02--5002504103501251",
@@ -15447,7 +15594,8 @@
      7714,
      13029,
      13064
-    ]
+    ],
+    "foreverTalents": "003--504020501201302251"
    },
    "46": {
     "talents": "03--5002504103501251",
@@ -15469,7 +15617,8 @@
      7714,
      13029,
      13064
-    ]
+    ],
+    "foreverTalents": "004--504020501201302251"
    },
    "47": {
     "talents": "04--5002504103501251",
@@ -15491,7 +15640,8 @@
      7714,
      13029,
      13064
-    ]
+    ],
+    "foreverTalents": "005--504020501201302251"
    },
    "48": {
     "talents": "05--5002504103501251",
@@ -15513,7 +15663,8 @@
      7714,
      13029,
      13064
-    ]
+    ],
+    "foreverTalents": "015--504020501201302251"
    },
    "49": {
     "talents": "051--5002504103501251",
@@ -15535,7 +15686,8 @@
      7714,
      11904,
      13064
-    ]
+    ],
+    "foreverTalents": "025--504020501201302251"
    },
    "50": {
     "talents": "0511--5002504103501251",
@@ -15557,7 +15709,8 @@
      7714,
      11904,
      13064
-    ]
+    ],
+    "foreverTalents": "0251--504020501201302251"
    },
    "51": {
     "talents": "0512--5002504103501251",
@@ -15579,7 +15732,8 @@
      7714,
      11904,
      13064
-    ]
+    ],
+    "foreverTalents": "0252--504020501201302251"
    },
    "52": {
     "talents": "05121--5002504103501251",
@@ -15601,7 +15755,8 @@
      7714,
      11904,
      13396
-    ]
+    ],
+    "foreverTalents": "0253--504020501201302251"
    },
    "53": {
     "talents": "05122--5002504103501251",
@@ -15623,7 +15778,8 @@
      7714,
      11904,
      13396
-    ]
+    ],
+    "foreverTalents": "025300001--504020501201302251"
    },
    "54": {
     "talents": "05123--5002504103501251",
@@ -15645,7 +15801,8 @@
      18321,
      11904,
      13396
-    ]
+    ],
+    "foreverTalents": "025300011--504020501201302251"
    },
    "55": {
     "talents": "0512301--5002504103501251",
@@ -15667,7 +15824,8 @@
      13964,
      11904,
      13396
-    ]
+    ],
+    "foreverTalents": "025300021--504020501201302251"
    },
    "56": {
     "talents": "05123011--5002504103501251",
@@ -15689,7 +15847,8 @@
      18534,
      0,
      13396
-    ]
+    ],
+    "foreverTalents": "025300031--504020501201302251"
    },
    "57": {
     "talents": "05123012--5002504103501251",
@@ -15711,7 +15870,8 @@
      18534,
      0,
      13396
-    ]
+    ],
+    "foreverTalents": "0253000311--504020501201302251"
    },
    "58": {
     "talents": "05123013--5002504103501251",
@@ -15733,7 +15893,8 @@
      18534,
      0,
      13396
-    ]
+    ],
+    "foreverTalents": "0253000312--504020501201302251"
    },
    "59": {
     "talents": "0512301301--5002504103501251",
@@ -15755,7 +15916,8 @@
      18534,
      0,
      13396
-    ]
+    ],
+    "foreverTalents": "0253000313--504020501201302251"
    }
   },
   "gearSpec": {
@@ -15913,6 +16075,20 @@
     },
     {
      "action": {
+      "condition": {
+       "isExecutePhase": {
+        "threshold": "E20"
+       }
+      },
+      "castSpell": {
+       "spellId": {
+        "spellId": 32379
+       }
+      }
+     }
+    },
+    {
+     "action": {
       "castSpell": {
        "spellId": {
         "spellId": 18807,
@@ -15943,7 +16119,8 @@
     }
    ]
   },
-  "distance": 25
+  "distance": 25,
+  "foreverTalents": "025300031301--504020501201302251"
  },
  {
   "key": "warlock",
@@ -17483,7 +17660,7 @@
   "spec": "Fury",
   "role": "Melee DPS",
   "talents": "30305001302-05050005525010051",
-  "rotation": "ui/warrior/apls/forever/default.apl.json",
+  "rotation": "ui/warrior/apls/forever/forever_fury.apl.json",
   "gear": "ui/warrior/gear_sets/forever/preraid.gear.json",
   "gearSource": "wowsims/classic pre-raid",
   "faction": "Horde",
@@ -17513,7 +17690,8 @@
      3570,
      7116,
      3036
-    ]
+    ],
+    "foreverTalents": "-01-"
    },
    "11": {
     "talents": "-02",
@@ -17535,7 +17713,8 @@
      15445,
      15443,
      11303
-    ]
+    ],
+    "foreverTalents": "-02-"
    },
    "12": {
     "talents": "-03",
@@ -17557,7 +17736,8 @@
      15445,
      3581,
      11303
-    ]
+    ],
+    "foreverTalents": "-03-"
    },
    "13": {
     "talents": "-04",
@@ -17579,7 +17759,8 @@
      5321,
      5279,
      5309
-    ]
+    ],
+    "foreverTalents": "-04-"
    },
    "14": {
     "talents": "-05",
@@ -17601,7 +17782,8 @@
      5321,
      2235,
      5309
-    ]
+    ],
+    "foreverTalents": "-05-"
    },
    "15": {
     "talents": "-0501",
@@ -17623,7 +17805,8 @@
      12976,
      935,
      5309
-    ]
+    ],
+    "foreverTalents": "-0501-"
    },
    "16": {
     "talents": "-0502",
@@ -17645,7 +17828,8 @@
      1483,
      12976,
      13136
-    ]
+    ],
+    "foreverTalents": "-0502-"
    },
    "17": {
     "talents": "-0503",
@@ -17667,7 +17851,8 @@
      6504,
      1483,
      13136
-    ]
+    ],
+    "foreverTalents": "-0503-"
    },
    "18": {
     "talents": "-0504",
@@ -17689,7 +17874,8 @@
      6504,
      12990,
      13136
-    ]
+    ],
+    "foreverTalents": "-0504-"
    },
    "19": {
     "talents": "-0505",
@@ -17711,7 +17897,8 @@
      1482,
      5191,
      13136
-    ]
+    ],
+    "foreverTalents": "-0505-"
    },
    "20": {
     "talents": "-05050001",
@@ -17733,7 +17920,8 @@
      1482,
      1292,
      3021
-    ]
+    ],
+    "foreverTalents": "-05050001-"
    },
    "21": {
     "talents": "-05050002",
@@ -17755,7 +17943,8 @@
      4446,
      4454,
      3021
-    ]
+    ],
+    "foreverTalents": "-05050002-"
    },
    "22": {
     "talents": "-05050003",
@@ -17777,7 +17966,8 @@
      4446,
      1454,
      2098
-    ]
+    ],
+    "foreverTalents": "-05050003-"
    },
    "23": {
     "talents": "-05050004",
@@ -17799,7 +17989,8 @@
      16886,
      4446,
      2098
-    ]
+    ],
+    "foreverTalents": "-05051003-"
    },
    "24": {
     "talents": "-05050005",
@@ -17821,7 +18012,8 @@
      16886,
      4446,
      9487
-    ]
+    ],
+    "foreverTalents": "-05052003-"
    },
    "25": {
     "talents": "-050500051",
@@ -17843,7 +18035,8 @@
      16886,
      7786,
      9487
-    ]
+    ],
+    "foreverTalents": "-050520031-"
    },
    "26": {
     "talents": "-050500052",
@@ -17865,7 +18058,8 @@
      13048,
      16886,
      9487
-    ]
+    ],
+    "foreverTalents": "-050520032-"
    },
    "27": {
     "talents": "-050500053",
@@ -17887,7 +18081,8 @@
      2912,
      9453,
      6696
-    ]
+    ],
+    "foreverTalents": "-050520033-"
    },
    "28": {
     "talents": "-050500054",
@@ -17909,7 +18104,8 @@
      7752,
      2912,
      7729
-    ]
+    ],
+    "foreverTalents": "-050520034-"
    },
    "29": {
     "talents": "-050500055",
@@ -17931,7 +18127,8 @@
      7752,
      13033,
      13137
-    ]
+    ],
+    "foreverTalents": "-050520035-"
    },
    "30": {
     "talents": "-0505000550001",
@@ -17953,7 +18150,8 @@
      7687,
      9457,
      9456
-    ]
+    ],
+    "foreverTalents": "-0505200351-"
    },
    "31": {
     "talents": "-0505000550001001",
@@ -17975,7 +18173,8 @@
      6692,
      9384,
      9456
-    ]
+    ],
+    "foreverTalents": "-05052003511-"
    },
    "32": {
     "talents": "-0505000550001002",
@@ -17997,7 +18196,8 @@
      10571,
      5756,
      9456
-    ]
+    ],
+    "foreverTalents": "-05052003512-"
    },
    "33": {
     "talents": "-0505000550001003",
@@ -18019,7 +18219,8 @@
      936,
      9378,
      9456
-    ]
+    ],
+    "foreverTalents": "-05052003513-"
    },
    "34": {
     "talents": "-0505000550001004",
@@ -18041,7 +18242,8 @@
      936,
      1602,
      13020
-    ]
+    ],
+    "foreverTalents": "-05052003514-"
    },
    "35": {
     "talents": "-0505000550001005",
@@ -18063,7 +18265,8 @@
      9392,
      936,
      13038
-    ]
+    ],
+    "foreverTalents": "-05052003515-"
    },
    "36": {
     "talents": "-05050005500010051",
@@ -18085,7 +18288,8 @@
      9424,
      13034,
      9426
-    ]
+    ],
+    "foreverTalents": "-0505200351501-"
    },
    "37": {
     "talents": "-05050005510010051",
@@ -18107,7 +18311,8 @@
      10823,
      6802,
      13138
-    ]
+    ],
+    "foreverTalents": "-0505200351502-"
    },
    "38": {
     "talents": "-05050005520010051",
@@ -18129,7 +18334,8 @@
      10823,
      6802,
      13138
-    ]
+    ],
+    "foreverTalents": "-0505200351503-"
    },
    "39": {
     "talents": "-05050005521010051",
@@ -18151,7 +18357,8 @@
      10823,
      6802,
      13138
-    ]
+    ],
+    "foreverTalents": "-05052003515031-"
    },
    "40": {
     "talents": "-05050005522010051",
@@ -18173,7 +18380,8 @@
      10823,
      6802,
      13138
-    ]
+    ],
+    "foreverTalents": "-05052003515031001-"
    },
    "41": {
     "talents": "-05050005523010051",
@@ -18195,7 +18403,8 @@
      10823,
      6802,
      13138
-    ]
+    ],
+    "foreverTalents": "-05052003515031002-"
    },
    "42": {
     "talents": "-05050005524010051",
@@ -18217,7 +18426,8 @@
      4091,
      10823,
      10624
-    ]
+    ],
+    "foreverTalents": "-05052003515031003-"
    },
    "43": {
     "talents": "-05050005525010051",
@@ -18239,7 +18449,8 @@
      4091,
      10823,
      13039
-    ]
+    ],
+    "foreverTalents": "-05052003515031004-"
    },
    "44": {
     "talents": "1-05050005525010051",
@@ -18261,7 +18472,8 @@
      4091,
      10625,
      13039
-    ]
+    ],
+    "foreverTalents": "-05052003515031005-"
    },
    "45": {
     "talents": "2-05050005525010051",
@@ -18283,7 +18495,8 @@
      17055,
      17054,
      13139
-    ]
+    ],
+    "foreverTalents": "-050520035150310051-"
    },
    "46": {
     "talents": "3-05050005525010051",
@@ -18305,7 +18518,8 @@
      17943,
      17719,
      11629
-    ]
+    ],
+    "foreverTalents": "-050520035151310051-"
    },
    "47": {
     "talents": "301-05050005525010051",
@@ -18327,7 +18541,8 @@
      10750,
      17719,
      11629
-    ]
+    ],
+    "foreverTalents": "-050520035152310051-"
    },
    "48": {
     "talents": "302-05050005525010051",
@@ -18349,7 +18564,8 @@
      13027,
      10750,
      11629
-    ]
+    ],
+    "foreverTalents": "1-050520035152310051-"
    },
    "49": {
     "talents": "303-05050005525010051",
@@ -18371,7 +18587,8 @@
      12535,
      10750,
      11629
-    ]
+    ],
+    "foreverTalents": "2-050520035152310051-"
    },
    "50": {
     "talents": "30301-05050005525010051",
@@ -18393,7 +18610,8 @@
      13182,
      12774,
      13022
-    ]
+    ],
+    "foreverTalents": "3-050520035152310051-"
    },
    "51": {
     "talents": "30302-05050005525010051",
@@ -18415,7 +18633,8 @@
      10837,
      13182,
      18323
-    ]
+    ],
+    "foreverTalents": "301-050520035152310051-"
    },
    "52": {
     "talents": "30303-05050005525010051",
@@ -18437,7 +18656,8 @@
      13036,
      18310,
      12651
-    ]
+    ],
+    "foreverTalents": "302-050520035152310051-"
    },
    "53": {
     "talents": "30304-05050005525010051",
@@ -18459,7 +18679,8 @@
      13036,
      13183,
      12651
-    ]
+    ],
+    "foreverTalents": "303-050520035152310051-"
    },
    "54": {
     "talents": "30305-05050005525010051",
@@ -18481,7 +18702,8 @@
      13218,
      14024,
      12651
-    ]
+    ],
+    "foreverTalents": "313-050520035152310051-"
    },
    "55": {
     "talents": "30305001-05050005525010051",
@@ -18503,7 +18725,8 @@
      13952,
      15806,
      13173
-    ]
+    ],
+    "foreverTalents": "323-050520035152310051-"
    },
    "56": {
     "talents": "303050011-05050005525010051",
@@ -18525,7 +18748,8 @@
      12940,
      18484,
      13173
-    ]
+    ],
+    "foreverTalents": "333-050520035152310051-"
    },
    "57": {
     "talents": "303050012-05050005525010051",
@@ -18547,7 +18771,8 @@
      12940,
      13368,
      13173
-    ]
+    ],
+    "foreverTalents": "343-050520035152310051-"
    },
    "58": {
     "talents": "303050013-05050005525010051",
@@ -18569,7 +18794,8 @@
      12783,
      13368,
      13173
-    ]
+    ],
+    "foreverTalents": "34300001-050520035152310051-"
    },
    "59": {
     "talents": "30305001301-05050005525010051",
@@ -18591,7 +18817,8 @@
      12783,
      13368,
      13173
-    ]
+    ],
+    "foreverTalents": "34300002-050520035152310051-"
    }
   },
   "gearSpec": {
@@ -19374,7 +19601,6 @@
      }
     },
     {
-     "hide": true,
      "action": {
       "condition": {
        "and": {
@@ -19468,7 +19694,8 @@
     }
    ]
   },
-  "distance": 5
+  "distance": 5,
+  "foreverTalents": "34300003-050520035152310051-"
  },
  {
   "key": "tank_warrior",
@@ -19476,13 +19703,15 @@
   "spec": "Protection",
   "role": "Tank",
   "talents": "20304300302-03-55200110530201051",
-  "rotation": "ui/tank_warrior/apls/forever/default.apl.json",
+  "rotation": "ui/tank_warrior/apls/forever/forever_protection.apl.json",
   "gear": "ui/tank_warrior/gear_sets/forever/preraid.gear.json",
   "gearSource": "wowsims/classic pre-raid + auto-filled",
   "faction": "Horde",
   "race": "RaceOrc",
   "specOptions": {
-   "options": {}
+   "options": {
+    "stance": "WarriorStanceDefensive"
+   }
   },
   "supported": true,
   "levels": {
@@ -19506,7 +19735,8 @@
      5324,
      5325,
      3036
-    ]
+    ],
+    "foreverTalents": "--1"
    },
    "11": {
     "talents": "--2",
@@ -19528,7 +19758,8 @@
      15445,
      5325,
      11303
-    ]
+    ],
+    "foreverTalents": "--2"
    },
    "12": {
     "talents": "--3",
@@ -19550,7 +19781,8 @@
      15445,
      5325,
      11303
-    ]
+    ],
+    "foreverTalents": "--3"
    },
    "13": {
     "talents": "--4",
@@ -19572,7 +19804,8 @@
      5321,
      5302,
      5309
-    ]
+    ],
+    "foreverTalents": "--4"
    },
    "14": {
     "talents": "--5",
@@ -19594,7 +19827,8 @@
      5321,
      5302,
      5309
-    ]
+    ],
+    "foreverTalents": "--5"
    },
    "15": {
     "talents": "--501",
@@ -19616,7 +19850,8 @@
      935,
      5443,
      5309
-    ]
+    ],
+    "foreverTalents": "--5001"
    },
    "16": {
     "talents": "--502",
@@ -19638,7 +19873,8 @@
      1483,
      5443,
      13136
-    ]
+    ],
+    "foreverTalents": "--5002"
    },
    "17": {
     "talents": "--502001",
@@ -19660,7 +19896,8 @@
      6504,
      5443,
      13136
-    ]
+    ],
+    "foreverTalents": "--5003"
    },
    "18": {
     "talents": "--5020011",
@@ -19682,7 +19919,8 @@
      6504,
      5443,
      13136
-    ]
+    ],
+    "foreverTalents": "--5004"
    },
    "19": {
     "talents": "--502001101",
@@ -19704,7 +19942,8 @@
      1482,
      12997,
      13136
-    ]
+    ],
+    "foreverTalents": "--5005"
    },
    "20": {
     "talents": "--502001102",
@@ -19726,7 +19965,8 @@
      1482,
      12997,
      3021
-    ]
+    ],
+    "foreverTalents": "--500500001"
    },
    "21": {
     "talents": "--502001103",
@@ -19748,7 +19988,8 @@
      4446,
      12997,
      3021
-    ]
+    ],
+    "foreverTalents": "--500500002"
    },
    "22": {
     "talents": "--502001104",
@@ -19770,7 +20011,8 @@
      4446,
      7002,
      2098
-    ]
+    ],
+    "foreverTalents": "--500500003"
    },
    "23": {
     "talents": "--502001105",
@@ -19792,7 +20034,8 @@
      16886,
      7002,
      2098
-    ]
+    ],
+    "foreverTalents": "--500500013"
    },
    "24": {
     "talents": "--5020011051",
@@ -19814,7 +20057,8 @@
      16886,
      7002,
      9487
-    ]
+    ],
+    "foreverTalents": "--500500023"
    },
    "25": {
     "talents": "--5020011052",
@@ -19836,7 +20080,8 @@
      7786,
      3761,
      9487
-    ]
+    ],
+    "foreverTalents": "--500500033"
    },
    "26": {
     "talents": "--5020011053",
@@ -19858,7 +20103,8 @@
      13048,
      7787,
      9487
-    ]
+    ],
+    "foreverTalents": "--500500133"
    },
    "27": {
     "talents": "--502001105301",
@@ -19880,7 +20126,8 @@
      13048,
      7787,
      6696
-    ]
+    ],
+    "foreverTalents": "--500500233"
    },
    "28": {
     "talents": "--502001105302",
@@ -19902,7 +20149,8 @@
      7752,
      7787,
      7729
-    ]
+    ],
+    "foreverTalents": "--5005002331"
    },
    "29": {
     "talents": "--50200110530201",
@@ -19924,7 +20172,8 @@
      13033,
      6725,
      13137
-    ]
+    ],
+    "foreverTalents": "--5005002332"
    },
    "30": {
     "talents": "--5020011053020101",
@@ -19946,7 +20195,8 @@
      6691,
      6725,
      9456
-    ]
+    ],
+    "foreverTalents": "--5005002332000001"
    },
    "31": {
     "talents": "--5020011053020102",
@@ -19968,7 +20218,8 @@
      9384,
      6725,
      9456
-    ]
+    ],
+    "foreverTalents": "--5005002332000002"
    },
    "32": {
     "talents": "--5020011053020103",
@@ -19990,7 +20241,8 @@
      13025,
      6725,
      9456
-    ]
+    ],
+    "foreverTalents": "--5005002332000003"
    },
    "33": {
     "talents": "--5020011053020104",
@@ -20012,7 +20264,8 @@
      936,
      13081,
      9456
-    ]
+    ],
+    "foreverTalents": "--5005002332000004"
    },
    "34": {
     "talents": "--5020011053020105",
@@ -20034,7 +20287,8 @@
      936,
      13081,
      13020
-    ]
+    ],
+    "foreverTalents": "--5005002332000005"
    },
    "35": {
     "talents": "--50200110530201051",
@@ -20056,7 +20310,8 @@
      9392,
      4507,
      13038
-    ]
+    ],
+    "foreverTalents": "--5005002332000105"
    },
    "36": {
     "talents": "--51200110530201051",
@@ -20078,7 +20333,8 @@
      13034,
      4070,
      9426
-    ]
+    ],
+    "foreverTalents": "--50050023320001051"
    },
    "37": {
     "talents": "--52200110530201051",
@@ -20100,7 +20356,8 @@
      6802,
      4129,
      13138
-    ]
+    ],
+    "foreverTalents": "--50050023320001052"
    },
    "38": {
     "talents": "--53200110530201051",
@@ -20122,7 +20379,8 @@
      6802,
      4129,
      9422
-    ]
+    ],
+    "foreverTalents": "--50050023320001053"
    },
    "39": {
     "talents": "--54200110530201051",
@@ -20144,7 +20402,8 @@
      6802,
      4129,
      9422
-    ]
+    ],
+    "foreverTalents": "--50050023330001053"
    },
    "40": {
     "talents": "--55200110530201051",
@@ -20166,7 +20425,8 @@
      9359,
      4129,
      9422
-    ]
+    ],
+    "foreverTalents": "--500500233300010531"
    },
    "41": {
     "talents": "1--55200110530201051",
@@ -20188,7 +20448,8 @@
      9359,
      8135,
      9422
-    ]
+    ],
+    "foreverTalents": "-01-500500233300010531"
    },
    "42": {
     "talents": "2--55200110530201051",
@@ -20210,7 +20471,8 @@
      4091,
      8135,
      13021
-    ]
+    ],
+    "foreverTalents": "-02-500500233300010531"
    },
    "43": {
     "talents": "201--55200110530201051",
@@ -20232,7 +20494,8 @@
      4091,
      2040,
      13039
-    ]
+    ],
+    "foreverTalents": "-03-500500233300010531"
    },
    "44": {
     "talents": "202--55200110530201051",
@@ -20254,7 +20517,8 @@
      10625,
      2040,
      13039
-    ]
+    ],
+    "foreverTalents": "-04-500500233300010531"
    },
    "45": {
     "talents": "203--55200110530201051",
@@ -20276,7 +20540,8 @@
      17055,
      2040,
      13139
-    ]
+    ],
+    "foreverTalents": "-05-500500233300010531"
    },
    "46": {
     "talents": "20301--55200110530201051",
@@ -20298,7 +20563,8 @@
      11784,
      2040,
      11629
-    ]
+    ],
+    "foreverTalents": "-0501-500500233300010531"
    },
    "47": {
     "talents": "20302--55200110530201051",
@@ -20320,7 +20586,8 @@
      10750,
      2040,
      11629
-    ]
+    ],
+    "foreverTalents": "-0502-500500233300010531"
    },
    "48": {
     "talents": "20303--55200110530201051",
@@ -20342,7 +20609,8 @@
      10750,
      2040,
      11629
-    ]
+    ],
+    "foreverTalents": "-0503-500500233300010531"
    },
    "49": {
     "talents": "20304--55200110530201051",
@@ -20364,7 +20632,8 @@
      1721,
      1203,
      11629
-    ]
+    ],
+    "foreverTalents": "-0504-500500233300010531"
    },
    "50": {
     "talents": "203041--55200110530201051",
@@ -20386,7 +20655,8 @@
      13182,
      1203,
      13022
-    ]
+    ],
+    "foreverTalents": "-0505-500500233300010531"
    },
    "51": {
     "talents": "203042--55200110530201051",
@@ -20408,7 +20678,8 @@
      13182,
      1203,
      18323
-    ]
+    ],
+    "foreverTalents": "-05050001-500500233300010531"
    },
    "52": {
     "talents": "203043--55200110530201051",
@@ -20430,7 +20701,8 @@
      18044,
      1203,
      12651
-    ]
+    ],
+    "foreverTalents": "-05050002-500500233300010531"
    },
    "53": {
     "talents": "203043001--55200110530201051",
@@ -20452,7 +20724,8 @@
      18044,
      1203,
      12651
-    ]
+    ],
+    "foreverTalents": "-05050003-500500233300010531"
    },
    "54": {
     "talents": "203043002--55200110530201051",
@@ -20474,7 +20747,8 @@
      13218,
      18673,
      13380
-    ]
+    ],
+    "foreverTalents": "-05051003-500500233300010531"
    },
    "55": {
     "talents": "203043003--55200110530201051",
@@ -20496,7 +20770,8 @@
      13952,
      18673,
      13173
-    ]
+    ],
+    "foreverTalents": "-05052003-500500233300010531"
    },
    "56": {
     "talents": "20304300301--55200110530201051",
@@ -20518,7 +20793,8 @@
      13952,
      18673,
      13173
-    ]
+    ],
+    "foreverTalents": "-05052003001-500500233300010531"
    },
    "57": {
     "talents": "20304300302--55200110530201051",
@@ -20540,7 +20816,8 @@
      18376,
      18673,
      13173
-    ]
+    ],
+    "foreverTalents": "-05052003002-500500233300010531"
    },
    "58": {
     "talents": "20304300302-01-55200110530201051",
@@ -20562,7 +20839,8 @@
      5267,
      12602,
      13173
-    ]
+    ],
+    "foreverTalents": "-05052003003-500500233300010531"
    },
    "59": {
     "talents": "20304300302-02-55200110530201051",
@@ -20584,7 +20862,8 @@
      5267,
      12602,
      13173
-    ]
+    ],
+    "foreverTalents": "-05052003004-500500233300010531"
    }
   },
   "gearSpec": {
@@ -20644,51 +20923,82 @@
   },
   "rotationJson": {
    "type": "TypeAPL",
+   "prepullActions": [],
    "priorityList": [
     {
      "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpLt",
-           "lhs": {
-            "auraNumStacks": {
-             "sourceUnit": {
-              "type": "CurrentTarget"
-             },
-             "auraId": {
-              "spellId": 11597,
-              "rank": 5
-             }
-            }
-           },
-           "rhs": {
-            "const": {
-             "val": "1"
-            }
-           }
-          }
-         },
-         {
-          "not": {
-           "val": {
-            "auraIsActive": {
-             "sourceUnit": {
-              "type": "CurrentTarget"
-             },
-             "auraId": {
-              "spellId": 11198,
-              "rank": 5
-             }
-            }
-           }
-          }
-         }
-        ]
+      "castSpell": {
+       "spellId": {
+        "spellId": 2565
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 2687
        }
       },
+      "condition": {
+       "cmp": {
+        "op": "OpLt",
+        "lhs": {
+         "currentRage": {}
+        },
+        "rhs": {
+         "const": {
+          "val": "60"
+         }
+        }
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 23925,
+        "rank": 4
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 25288,
+        "rank": 6
+       }
+      }
+     }
+    },
+    {
+     "action": {
+      "castSpell": {
+       "spellId": {
+        "spellId": 25289,
+        "rank": 7
+       }
+      },
+      "condition": {
+       "not": {
+        "val": {
+         "auraIsActive": {
+          "auraId": {
+           "spellId": 25289
+          }
+         }
+        }
+       }
+      }
+     }
+    },
+    {
+     "action": {
       "castSpell": {
        "spellId": {
         "spellId": 11597,
@@ -20701,766 +21011,29 @@
      "action": {
       "castSpell": {
        "spellId": {
-        "itemId": 10646
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "castSpell": {
-       "spellId": {
-        "itemId": 18641
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "or": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "30s"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpGe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "211.5s"
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 12328
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "const": {
-        "val": "false"
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 1719
-       }
-      }
-     }
-    },
-    {
-     "hide": true,
-     "action": {
-      "condition": {
-       "cmp": {
-        "op": "OpLe",
-        "lhs": {
-         "remainingTime": {}
-        },
-        "rhs": {
-         "const": {
-          "val": "15s"
-         }
-        }
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 1719
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "or": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "20s"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpGe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "140s"
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "otherId": "OtherActionPotion"
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "or": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "20s"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpGe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "141.5s"
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 20572
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "cmp": {
-        "op": "OpLe",
-        "lhs": {
-         "remainingTime": {}
-        },
-        "rhs": {
-         "const": {
-          "val": "60s"
-         }
-        }
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 24427
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "or": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "30s"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpGe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "130s"
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "itemId": 21180
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "or": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "30s"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpGe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "130s"
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 29602
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "or": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "30s"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpGe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "130s"
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "itemId": 23041
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "or": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "30s"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpGe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "130s"
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "itemId": 23041
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "or": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpLe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "30s"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpGe",
-           "lhs": {
-            "remainingTime": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "140s"
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "autocastOtherCooldowns": {}
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "cmp": {
-        "op": "OpGt",
-        "lhs": {
-         "numberTargets": {}
-        },
-        "rhs": {
-         "const": {
-          "val": "1"
-         }
-        }
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 1680
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "isExecutePhase": {
-        "threshold": "E20"
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 20662,
-        "rank": 5
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "castSpell": {
-       "spellId": {
-        "spellId": 23894,
-        "rank": 4
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "cmp": {
-        "op": "OpGt",
-        "lhs": {
-         "spellTimeToReady": {
-          "spellId": {
-           "spellId": 23894,
-           "rank": 4
-          }
-         }
-        },
-        "rhs": {
-         "const": {
-          "val": "1.5s"
-         }
-        }
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 1680
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpEq",
-           "lhs": {
-            "numberTargets": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "1"
-            }
-           }
-          }
-         },
-         {
-          "or": {
-           "vals": [
-            {
-             "cmp": {
-              "op": "OpGe",
-              "lhs": {
-               "currentRage": {}
-              },
-              "rhs": {
-               "const": {
-                "val": "40"
-               }
-              }
-             }
-            },
-            {
-             "isExecutePhase": {
-              "threshold": "E20"
-             }
-            }
-           ]
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
         "spellId": 25286,
         "tag": 1,
         "rank": 8
        }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpGt",
-           "lhs": {
-            "numberTargets": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "1"
-            }
-           }
-          }
-         },
-         {
-          "or": {
-           "vals": [
-            {
-             "cmp": {
-              "op": "OpGe",
-              "lhs": {
-               "currentRage": {}
-              },
-              "rhs": {
-               "const": {
-                "val": "40"
-               }
-              }
-             }
-            },
-            {
-             "isExecutePhase": {
-              "threshold": "E20"
-             }
-            }
-           ]
-          }
-         }
-        ]
-       }
       },
-      "castSpell": {
-       "spellId": {
-        "spellId": 20569,
-        "tag": 1,
-        "rank": 5
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpGt",
-           "lhs": {
-            "spellTimeToReady": {
-             "spellId": {
-              "spellId": 23894,
-              "rank": 4
-             }
-            }
-           },
-           "rhs": {
-            "const": {
-             "val": "1.5s"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpGt",
-           "lhs": {
-            "spellTimeToReady": {
-             "spellId": {
-              "spellId": 1680
-             }
-            }
-           },
-           "rhs": {
-            "const": {
-             "val": "1.5s"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpGt",
-           "lhs": {
-            "currentRage": {}
-           },
-           "rhs": {
-            "const": {
-             "val": "80"
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 27584,
-        "rank": 3
-       }
-      }
-     }
-    },
-    {
-     "action": {
       "condition": {
        "cmp": {
-        "op": "OpLt",
+        "op": "OpGe",
         "lhs": {
          "currentRage": {}
         },
         "rhs": {
          "const": {
-          "val": "90"
+          "val": "45"
          }
         }
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 2687
-       }
-      }
-     }
-    },
-    {
-     "hide": true,
-     "action": {
-      "condition": {
-       "and": {
-        "vals": [
-         {
-          "cmp": {
-           "op": "OpGt",
-           "lhs": {
-            "spellTimeToReady": {
-             "spellId": {
-              "spellId": 23894,
-              "rank": 4
-             }
-            }
-           },
-           "rhs": {
-            "const": {
-             "val": "1.5s"
-            }
-           }
-          }
-         },
-         {
-          "cmp": {
-           "op": "OpGt",
-           "lhs": {
-            "spellTimeToReady": {
-             "spellId": {
-              "spellId": 1680
-             }
-            }
-           },
-           "rhs": {
-            "const": {
-             "val": "1.5s"
-            }
-           }
-          }
-         }
-        ]
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 18499
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "not": {
-        "val": {
-         "auraIsActive": {
-          "auraId": {
-           "spellId": 25289,
-           "rank": 6
-          }
-         }
-        }
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 25289,
-        "rank": 6
-       }
-      }
-     }
-    },
-    {
-     "action": {
-      "condition": {
-       "not": {
-        "val": {
-         "auraIsActive": {
-          "auraId": {
-           "spellId": 2458
-          }
-         }
-        }
-       }
-      },
-      "castSpell": {
-       "spellId": {
-        "spellId": 2458
        }
       }
      }
     }
    ]
   },
-  "distance": 5
+  "distance": 5,
+  "foreverTalents": "-05052003005-500500233300010531"
  }
 ]
